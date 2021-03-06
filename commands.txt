@@ -1,0 +1,6 @@
+python -m pip install virtualenvwrapper-win
+mkvirtualenv sports
+pip install django
+django-admin --version
+django-admin startproject SportsWebsite
+python manage.py runserver
