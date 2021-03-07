@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .modules import Scapping_mybookie_ag, RandomCredentials
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 
@@ -15,10 +17,14 @@ def createrandomCredentials(request, totalCredentials):
     return HttpResponse("randomCredentials Saved suceessfully")
 
 
+@csrf_exempt
 def updateCredential(request, id):
-    username = request.POST["username"]
-    password = request.POST["password"]
-    role = request.POST["role"]
+    body_unicode = request.body.decode("utf-8")
+    body = json.loads(body_unicode)
+    username = body["username"]
+    password = body["password"]
+    role = body["role"]
     credential = []
     credential.extend([username, password, role])
     RandomCredentials.updateCredential(credential, id)
+    return HttpResponse("updated suceessfully")

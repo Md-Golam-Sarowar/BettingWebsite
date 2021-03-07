@@ -5,7 +5,7 @@ from BettingApp.models import Credential
 
 def addCredentials(totalCredentials):
 
-    createCredentials.objects.all().delete()
+    Credential.objects.all().delete()
     credentials = []
 
     for i in range(0, totalCredentials):
@@ -24,9 +24,9 @@ def addCredentials(totalCredentials):
     return credentials
 
 
-def updateCredential(credential, id):
+def updateCredential(updatecredential, id):
     credential = Credential.objects.get(pk=id)
-    credential.username = credential[0]
-    credential.password = credential[1]
-    credential.role = credential[2]
-    updatedInfo.save()
+    credential.username = updatecredential[0]
+    credential.password = updatecredential[1]
+    credential.role = updatecredential[2]
+    credential.save()
