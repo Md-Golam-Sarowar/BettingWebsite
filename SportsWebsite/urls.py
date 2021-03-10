@@ -28,10 +28,26 @@ from BettingApp.views import (
     getInformationfromWebpage,
     createrandomCredentials,
     updateCredential,
+    readCredentials,
+    deleteCredential,
+    index,
+    findCredential,
+    createBet,
+    # updateBet,
+    # deleteBet,
+    # readBets,
 )
 
 urlpatterns = [
-    path("", getInformationfromWebpage),
+    path("", index),
+    path("scrapBettingpage", getInformationfromWebpage),
     path("generatecredentials/<int:totalCredentials>", createrandomCredentials),
+    path("readcredentials", readCredentials),
     path("update/<int:id>", updateCredential),
+    path("delete/<int:id>", deleteCredential),
+    path("findCredential/<int:id>", findCredential),
+    path("createBet", createBet),
+    # path("updateBet", updateBet),
+    # path("deleteBet", deleteBet),
+    # path("readBets", readBets),
 ]

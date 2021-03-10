@@ -10,6 +10,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ExpectedConditions
 import time
+from BettingApp.models import userInfo, liveSport
 
 Basketball = []
 finalBasketball = []
@@ -311,12 +312,12 @@ def getLiveSports():
                     live_matches("Hockey")
 
                 elif "Cricket" in left_menu_title:
-                    list_of_cricket = sport_name.find_all(
+                    list_of_crickets = sport_name.find_all(
                         "li", class_="nav-item sub-items-menu__body__item"
                     )
 
                     for cricket_type in list_of_crickets:
-                        url = baseUrl + hockey_type.find("a").get("href")
+                        url = baseUrl + cricket_type.find("a").get("href")
                         print(url)
                         browser.get(url)
                         try:
@@ -433,5 +434,45 @@ def getLiveSports():
     scrapped_info["baseball"] = finalbaseball
     scrapped_info["MMA"] = finalMMA
     scrapped_info["football"] = finalfootball
+
+    for data in finalTennis:
+        if "point7" in data:
+            sportInfo = liveSport(
+                name=data["name"],
+                team1=data["team1"],
+                team2=data["team2"],
+                dateTime=data["date_time"],
+                point1=data["point1"],
+                point2=data["point2"],
+                point3=data["point3"],
+                point4=data["point4"],
+                point5=data["point5"],
+                point6=data["point6"],
+                point7=data["point7"],
+                liveInfo=data["liveinfo"],
+                score1=data["score1"],
+                score2=data["score2"],
+                sportCategory="Tennis",
+            )
+        else:
+            sportInfo = liveSport(
+                name=data["name"],
+                team1=data["team1"],
+                team2=data["team2"],
+                dateTime=data["date_time"],
+                point1=data["point1"],
+                point2=data["point2"],
+                point3=data["point3"],
+                point4=data["point4"],
+                point5=data["point5"],
+                point6=data["point6"],
+                liveInfo=data["liveinfo"],
+                score1=data["score1"],
+                score2=data["score2"],
+                sportCategory="Tennis",
+            )
+
+        sportInfo.save()
+
     return scrapped_info
     browser.close()
