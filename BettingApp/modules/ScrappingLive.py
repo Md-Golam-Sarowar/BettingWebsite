@@ -136,13 +136,7 @@ def liveSports():
                 )
             except Exception as inst:
                 print("Scores are not available")
-            # else:
-            #     try:
-            #         WebDriverWait(browser, 5).until(
-            #             ExpectedConditions.presence_of_element_located(
-            #                 (By.CLASS_NAME, "event-list__item__details__more")
-            #             )
-            #         )
+
             except Exception as inst:
                 print("Golf or others Scores are not available")
 
