@@ -60,6 +60,7 @@ def dropdowninfo():
 
     for panel in panels:
         panelTitle = panel.find_element_by_class_name("panel-title").text
+        print(panelTitle, "   ", title)
         if panelTitle == title:
             try:
                 WebDriverWait(browser, 5).until(
@@ -70,6 +71,7 @@ def dropdowninfo():
                         )
                     )
                 )
+                time.sleep(2)
             except Exception as inst:
                 print("market selector dropdowns are not available")
 
@@ -86,6 +88,7 @@ def dropdowninfo():
             pointspanel = panel.find_elements_by_class_name("offerings")
             for pointpanel in pointspanel:
                 points.append(pointpanel.text)
+        break
 
     browser.close()
 
