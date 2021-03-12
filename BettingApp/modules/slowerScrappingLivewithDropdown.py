@@ -29,8 +29,26 @@ Baseball = []
 def processingpanelInfo(panel):
     panelInfo = dict()
     panelInfo["panelTitle"] = panel.find("h3", class_="panel-title").text
-    panelInfo["eventlistheader"] = panel.find("div", class_="event-list__header").text
+    panelInfo["eventlistheader"] = panel.find(
+        "div", class_="event-list__header__desc"
+    ).text
     events = panel.find_all("div", class_="event-list__item")
+    dropdownmenus = panel.find_all(
+        "ul", class_="dropdown-menu dropdown-menu-right market-selector--list"
+    )
+    dropdownmenudict = dict()
+
+    if dropdownmenus:
+        i = 0
+        for dropdownmenu in dropdownmenus:
+            i = i + 1
+            menus = []
+            allmenus = dropdownmenu.find_all("li")
+            for li in allmenus:
+                menus.append(li.text)
+            index = "dropdown" + str(i)
+            dropdownmenudict[index] = menus
+
     itr = 0
     for event in events:
         panelInfonew = dict()
@@ -62,7 +80,7 @@ def processingpanelInfo(panel):
         panelInfonew["detailsmore"] = detailsmoreinfo.text
         panelInfo[eventindex] = panelInfonew
 
-    print(panelInfo, "\n\n")
+    panelInfo["dropdownmenu"] = dropdownmenudict
     return panelInfo
 
 
@@ -92,7 +110,7 @@ def liveSports():
     browser.get(url)
 
     try:
-        WebDriverWait(browser, 15).until(
+        WebDriverWait(browser, 10).until(
             ExpectedConditions.element_to_be_clickable(
                 (By.CLASS_NAME, "sports-menu__item-link")
             )
@@ -127,57 +145,71 @@ def liveSports():
         namestripped = "".join([i for i in name if not i.isdigit()])
 
         if namestripped in validSports:
-            print(namestripped)
             try:
-                WebDriverWait(browser, 10).until(
+                WebDriverWait(browser, 5).until(
                     ExpectedConditions.presence_of_element_located(
-                        (By.CLASS_NAME, "event-scores__team-period")
+                        (
+                            By.CLASS_NAME,
+                            "dropdown-menu dropdown-menu-right market-selector--list",
+                        )
                     )
                 )
             except Exception as inst:
                 print("Scores are not available")
-
-            except Exception as inst:
-                print("Golf or others Scores are not available")
 
         panelperSportName = BeautifulSoup(browser.page_source, "html.parser").find_all(
             "div", class_="panel"
         )
 
         for panel in panelperSportName:
-            if "Featured" in name:
+            if "Featured" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 featured.append(panelInfo)
-            elif "Tennis" in name:
+            elif "Tennis" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Tennis.append(panelInfo)
-            elif "Basketball" in name:
+            elif "Basketball" == namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Basketball.append(panelInfo)
-            elif "Volleyball" in name:
+            elif "Volleyball" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Volleyball.append(panelInfo)
-            elif "Soccer" in name:
+            elif "Soccer" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Soccer.append(panelInfo)
-            elif "Hockey" in name:
+            elif "Hockey" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Hockey.append(panelInfo)
-            elif "Cricket" in name:
+            elif "Cricket" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Cricket.append(panelInfo)
-            elif "Football" in name:
+            elif "Football" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Football.append(panelInfo)
-            elif "Baseball" in name:
+            elif "Baseball" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 Baseball.append(panelInfo)
-            elif "MMA" in name:
+            elif "MMA" in namestripped:
                 panelInfo = processingpanelInfo(panel)
                 MMA.append(panelInfo)
-            elif "College Basketball" in name:
+            elif "College Basketball" == namestripped:
                 panelInfo = processingpanelInfo(panel)
                 College_basketball.append(panelInfo)
+
+    scrapped_info = dict()
+    scrapped_info["tennis"] = Tennis
+    scrapped_info["basketball"] = Baseball
+    scrapped_info["clgbasketball"] = College_basketball
+    scrapped_info["volleyball"] = Volleyball
+    scrapped_info["soccer"] = Soccer
+    scrapped_info["hockey"] = Hockey
+    scrapped_info["cricket"] = Cricket
+    scrapped_info["baseball"] = Baseball
+    scrapped_info["MMA"] = MMA
+    scrapped_info["football"] = Football
+    scrapped_info["featured"] = featured
+    browser.close()
+    return scrapped_info
 
 
 liveSports()
