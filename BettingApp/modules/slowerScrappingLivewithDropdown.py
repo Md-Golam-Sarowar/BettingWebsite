@@ -210,6 +210,3 @@ def liveSports():
     scrapped_info["featured"] = featured
     browser.close()
     return scrapped_info
-
-
-liveSports()

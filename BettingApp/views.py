@@ -1,5 +1,11 @@
 from django.shortcuts import render
-from .modules import Scapping_mybookie_ag, RandomCredentials, betMethods
+from .modules import (
+    fasterScrappingLive,
+    RandomCredentials,
+    betMethods,
+    slowerScrappingLivewithDropdown,
+    dropdownpoints,
+)
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -57,10 +63,22 @@ def deleteCredential(request, id):
     return HttpResponse("deleted suceessfully")
 
 
-def getInformationfromWebpage(request):
-    scrapped_data = Scapping_mybookie_ag.getLiveSports()
+def getfromwebpagesfaster(request):
+    scrapped_data = fasterScrappingLive.liveSports()
     print(scrapped_data)
-    return HttpResponse("website scraped successfully")
+    return HttpResponse("website fasterscraped successfully")
+
+
+def getfromwebpageslower(request):
+    scrapped_data = slowerScrappingLivewithDropdown.liveSports()
+    print(scrapped_data)
+    return HttpResponse("website slowerscraped successfully")
+
+
+def getdropdownoptions(request):
+    dropdownmenus = dropdownpoints.dropdowninfo()
+    print(dropdownmenus)
+    return HttpResponse("dropdownmenus extracted successfully")
 
 
 def createrandomCredentials(request, totalCredentials):

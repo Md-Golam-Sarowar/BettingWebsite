@@ -60,34 +60,33 @@ def dropdowninfo():
 
     for panel in panels:
         panelTitle = panel.find_element_by_class_name("panel-title").text
-
-        try:
-            WebDriverWait(browser, 5).until(
-                ExpectedConditions.element_to_be_clickable(
-                    (
-                        By.CLASS_NAME,
-                        "dropdown",
+        if panelTitle == title:
+            try:
+                WebDriverWait(browser, 5).until(
+                    ExpectedConditions.element_to_be_clickable(
+                        (
+                            By.CLASS_NAME,
+                            "dropdown",
+                        )
                     )
                 )
-            )
-        except Exception as inst:
-            print("market selector dropdowns are not available")
+            except Exception as inst:
+                print("market selector dropdowns are not available")
 
-        dropdowns = panel.find_elements_by_class_name("dropdown")
+            dropdowns = panel.find_elements_by_class_name("dropdown")
 
-        for dropdown in dropdowns:
-            time.sleep(1)
-            dropdown.click()
-            options = dropdown.find_elements_by_tag_name("li")
-            for option in options:
-                if dropdown1 == option.text:
-                    option.click()
+            for dropdown in dropdowns:
+                time.sleep(1)
+                dropdown.click()
+                options = dropdown.find_elements_by_tag_name("li")
+                for option in options:
+                    if dropdown1 == option.text:
+                        option.click()
 
-        pointspanel = panel.find_elements_by_class_name("offerings")
-        for pointpanel in pointspanel:
-            points.append(pointpanel.text)
+            pointspanel = panel.find_elements_by_class_name("offerings")
+            for pointpanel in pointspanel:
+                points.append(pointpanel.text)
+
+    browser.close()
 
     return points
-
-
-print(dropdowninfo())
