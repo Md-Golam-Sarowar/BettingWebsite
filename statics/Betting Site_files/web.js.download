@@ -1,0 +1,1240 @@
+path = '/wager/betslip/';
+var win = null;
+
+function NewWindow(_0xa31ax3, _0xa31ax4) {
+    settings = 'width=785,height=480,top=20,left=20,scrollbars=yes,location=no,status=no,menubar=no,toolbar=no,resizable=yes';
+    win = window['open'](_0xa31ax3, _0xa31ax4, settings);
+    win['focus']()
+}
+
+function getactiveleagues(_0xa31ax6, _0xa31ax7, _0xa31ax8, _0xa31ax9, wt) {
+    var _0xa31axb = $('#currentP')['val']();
+    $['post'](path + 'getActiveLeagues.asp', {
+        pi: _0xa31axb,
+        wt: wt,
+        wt: wt,
+        idp: _0xa31ax6,
+        idlt: _0xa31ax7,
+        idlan: _0xa31ax8,
+        bid: _0xa31ax9
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="showLines()">CONTINUE</a></div>')['addClass']('stFooter');
+        var _0xa31axd = document['getElementsByClassName']('accordion');
+        for (var _0xa31axe = 0; _0xa31axe < _0xa31axd['length']; _0xa31axe++) {
+            _0xa31axd[_0xa31axe]['onclick'] = function () {
+                this['classList']['toggle']('active');
+                temp = $(this)['html']();
+                sid = $(this)['attr']('id');
+                $(this)['find']('a')['toggleClass']('hide');
+                this['nextElementSibling']['classList']['toggle']('show')
+            }
+        }
+    })
+
+
+}
+
+function checkAll(_0xa31ax10) {
+    var _0xa31ax11 = $(_0xa31ax10)['data']('spt');
+    if (_0xa31ax11 != '') {
+        $('#panel_' + _0xa31ax11)['find'](':checkbox')['each'](function (_0xa31ax12) {
+            $(this)['prop']('checked', ($(this)['prop']('checked')) ? false : true)
+        });
+        showLines()
+    }
+}
+
+function applyBtnAct() {
+    btnAct = $('#mainBtn')['attr']('onClick');
+    $('#btnCnt')['attr']('onClick', btnAct)
+}
+
+function changeLineStyle() {
+    var _0xa31ax15 = $('#jm')['val']();
+    $('#idls')['val'](_0xa31ax15);
+    loadLinesByLeague()
+}
+
+function changeWT() {
+    var wt = $('#selWT')['val']();
+    window['location'] = 'Sports.aspx?WT=' + wt
+}
+
+function loadLinesByLeague() {
+    leagues = $('#currentLine')['val']();
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax19 = $('#aid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1a = $('#idpl')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    var _0xa31ax7 = $('#idlt')['val']();
+    var _0xa31ax1c = $('#idls')['val']();
+    var _0xa31ax1d = $('#nhll')['val']();
+    var _0xa31ax1e = $('#mlbl')['val']();
+    var _0xa31ax1f = $('#utc')['val']();
+    var _0xa31ax8 = $('#idlan')['val']();
+    var _0xa31ax20 = $('#idbook')['val']();
+    var wt = $('#currentWT')['val']();
+    var _0xa31ax21 = $('#currentWTID')['val']();
+    $['post'](path + 'getLinesbyLeague.asp', {
+        pi: _0xa31axb,
+        pid: _0xa31ax18,
+        aid: _0xa31ax19,
+        idp: _0xa31ax6,
+        idpl: _0xa31ax1a,
+        idc: _0xa31ax1b,
+        idlt: _0xa31ax7,
+        idls: _0xa31ax1c,
+        idl: leagues,
+        nhll: _0xa31ax1d,
+        mlbl: _0xa31ax1e,
+        utc: _0xa31ax1f,
+        idlan: _0xa31ax8,
+        bid: _0xa31ax20,
+        wt: wt,
+        wtid: _0xa31ax21
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+       
+        var lastLeague = '';
+        $('.banner-sports-img').each(function (index, item) {
+            var val = $(item).attr('class').replace('img-responsive banner-sports-img ', '');
+            var currentLeague = val;
+            jQuery.ajaxSetup({ async: false });
+            $.getJSON('../images/banners/BannerGenerator.ashx?l=' + val, { async: false }, function (result) {
+                currentLeague = result.ShortDescription;
+                val = result.league;
+            });
+            $(item).removeClass();
+            if (currentLeague == lastLeague) {
+                $(item).addClass('img-responsive banner-sports-img ');
+            }
+            else {
+                $(item).addClass('img-responsive banner-sports-img ' + currentLeague);
+                var src = $(item).attr('src');
+                //isUrlExists(src, function (status) {
+                //    if (status === 200) {
+                //        // file was found
+                //    }
+                //    else if (status === 404) {
+                //        $(item).attr('src', '../images/banners/' + val + '.jpg');
+                //    }
+                //});
+
+                if (val.indexOf('empty') >= 0) {
+                    $(item).attr('src', '../images/banners/' + val + '.png');
+                    $(item).attr('alt', currentLeague);
+                }
+                else {
+                    $(item).attr('src', '../images/banners/' + val + '.jpg');
+                    $(item).attr('alt', currentLeague);
+                }
+                //if (src.split('?')[0] == '../images/banners/empty.png') {
+                //    $(item).attr('src', '../images/banners/' + val + '.jpg');
+                //}
+                //console.log(src);
+            }
+            lastLeague = currentLeague;
+            //console.log($(item).attr('class'));
+        });
+
+        $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="checkBet()">CONTINUE</a></div>')['addClass']('stFooter');
+        sg = $('#games-sel')['val']();
+        if (sg != '') {
+            sg = sg['slice'](0, -1);
+            x = sg['split'](',');
+            for (i = 0; i < x['length']; i++) {
+                $('#' + x[i])['removeClass']('btn-light')['addClass']('btn-warning')
+            }
+        }
+    })
+    if (document.URL.indexOf('?WT=0') > -1 || document.URL.indexOf('?WT=2') > -1) {
+        //is Straight or Teaser
+    }
+    else{
+        setTimeout(function () {
+            var queryParameters = {}, queryString = location.search.substring(1), re = /([^&=]+)=([^&]*)/g, m;
+            while (m = re.exec(queryString)) {
+                queryParameters[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            try {
+                var sel = queryParameters['sel'];
+                var bets = queryParameters['sel'].split(',');
+                for (var i = 0; i < bets.length; i++) {
+                    var str1 = '#' + bets[i].split('_')[1] + "_" + bets[i].split('_')[0] + "_S";
+                    var str2 = '#' + bets[i].split('_')[1] + "_" + bets[i].split('_')[0] + "_Ov";
+                    var str3 = '#' + bets[i].split('_')[1] + "_" + bets[i].split('_')[0] + "_Un";
+                    var str4 = '#' + bets[i].split('_')[1] + "_" + bets[i].split('_')[0] + "_ML";
+                    console.log(str2);
+                    $(str1).click();
+                    $(str2).click();
+                    $(str3).click();
+                    $(str4).click();
+                }
+            } catch (error3) { }
+        }, 2000);
+    }
+}
+
+function replaceLeagueName(league) {
+    if (test.indexOf('NCAA BK') >= 0) {
+        // Found world
+    }
+}
+
+function isUrlExists(url, cb) {
+    jQuery.ajax({
+        url: url,
+        dataType: 'text',
+        type: 'GET',
+        complete: function (xhr) {
+            if (typeof cb === 'function')
+                cb.apply(this, [xhr.status]);
+        }
+    });
+}
+
+function loadSingleLeague(_0xa31ax23) {
+    if (_0xa31ax23 == '') {
+        err_modal('No League is supplied.');
+        return false
+    };
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax19 = $('#aid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1a = $('#idpl')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    var _0xa31ax7 = $('#idlt')['val']();
+    var _0xa31ax1c = $('#idls')['val']();
+    var _0xa31ax1d = $('#nhll')['val']();
+    var _0xa31ax1e = $('#mlbl')['val']();
+    var _0xa31ax1f = $('#utc')['val']();
+    var _0xa31ax8 = $('#idlan')['val']();
+    $['post'](path + 'getLinesbyLeague.asp', {
+        pid: _0xa31ax18,
+        aid: _0xa31ax19,
+        idp: _0xa31ax6,
+        idpl: _0xa31ax1a,
+        idc: _0xa31ax1b,
+        idlt: _0xa31ax7,
+        idls: _0xa31ax1c,
+        idl: _0xa31ax23,
+        nhll: _0xa31ax1d,
+        mlbl: _0xa31ax1e,
+        utc: _0xa31ax1f,
+        idlan: _0xa31ax8
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        sg = $('#games-sel')['val']();
+        if (sg != '') {
+            sg = sg['slice'](0, -1);
+            x = sg['split'](',');
+            for (i = 0; i < x['length']; i++) {
+                $('#' + x[i])['removeClass']('btn-light')['addClass']('btn-warning')
+            }
+        }
+    })
+}
+
+function autoRefresh() {
+    loadLinesByLeague()
+}
+
+function checkBet() {
+    var wt = Number($('#selWT')['val']());
+    switch (wt) {
+        case 0:
+            start_straight();
+            break;
+        case 1:
+            start_parlay(wt);
+            break;
+        case 2:
+            do_teaser();
+            break;
+        case 3:
+            start_parlay(wt);
+            break;
+        case 4:
+            start_parlay(wt);
+            break;
+        case 5:
+            start_parlay(wt);
+            break;
+        case 7:
+            start_parlay(wt);
+            break;
+        case 8:
+            start_parlay(wt);
+            break;
+        default:
+            alert('Error')
+    }
+}
+
+function onlyNumbers(_0xa31ax27) {
+    var _0xa31ax28 = event || _0xa31ax27;
+    var _0xa31ax29 = _0xa31ax28['which'] || _0xa31ax28['keyCode'];
+    if (_0xa31ax29 > 31 && (_0xa31ax29 < 48 || _0xa31ax29 > 57)) {
+        return false
+    };
+    return true
+}
+
+function del(_0xa31ax2b, _0xa31ax2c) {
+    bet_counter = $('#counter')['val']();
+    $('div[data-did=\'' + _0xa31ax2b + '\']')['hide'](300);
+    dbet = $('div[data-did=\'' + _0xa31ax2b + '\']')['data']('betid');
+    deletebet = dbet;
+    current_bets = $('#betslip_hide')['html']();
+    new_bets = current_bets['replace'](deletebet, '');
+    $('#betslip_hide')['html'](new_bets);
+    gamesSel = $('#games-sel')['val']();
+    gamesSel = gamesSel['replace'](_0xa31ax2c + ',', '');
+    $('#games-sel')['val'](gamesSel);
+    $('#' + _0xa31ax2c)['removeClass']('btn-warning')['addClass']('btn-light');
+    $('#counter')['val'](Number(bet_counter) - 1)
+}
+
+function removePick(_0xa31ax2e, _0xa31ax2f) {
+    betCounter = $('#counter')['val']();
+    newBetCounter = Number(betCounter) - 1;
+    currentBets = $('#betslip_hide')['html']();
+    newBets = currentBets['replace'](_0xa31ax2f, '');
+    $('#' + _0xa31ax2e)['removeClass']('btn-warning')['addClass']('btn-light');
+    $('#betslip_hide')['html'](newBets);
+    $('#counter')['val'](newBetCounter)
+}
+
+function removeStraightPick(_0xa31ax2f) {
+    betCounter = $('#counter')['val']();
+    newBetCounter = Number(betCounter) - 1;
+    if (newBetCounter === 0) {
+        window['location'] = 'Sports.aspx'
+    } else {
+        currentBets = $('#betslip_hide')['html']();
+        newBets = currentBets['replace'](_0xa31ax2f + ',', '');
+        $('#betslip_hide')['html'](newBets);
+        $('#counter')['val'](newBetCounter);
+        checkBet()
+    }
+}
+
+function removeParlayPick(_0xa31ax2f) {
+    betCounter = $('#counter')['val']();
+    newBetCounter = Number(betCounter) - 1;
+    if (newBetCounter === 1) {
+        window['location'] = 'Sports.aspx?WT=1'
+    } else {
+        currentBets = $('#betslip_hide')['html']();
+        newBets = currentBets['replace'](_0xa31ax2f + ',', '');
+        $('#betslip_hide')['html'](newBets);
+        $('#counter')['val'](newBetCounter);
+        checkBet()
+    }
+}
+
+function goback(_0xa31ax33) {
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    $('#sportsDiv')['html']($('#betslip_temp')['html']());
+    $('#opdiv')['show']()
+}
+
+function changeAmount(_0xa31ax35) {
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    $('#sportsDiv')['html']($('#betslip_temp')['html']());
+    if (_0xa31ax35 != '') {
+        $('#' + _0xa31ax35)['focus']()
+    }
+}
+
+function changePicks() {
+    $('#betslip_on')['html']('');
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    lid = $('#currentLine')['val']();
+    wt = $('#selWT')['val']();
+    if (lid > 0) {
+        window['location'] = '/wager/Sports.aspx?WT=' + wt + '&lid=' + lid
+    }
+}
+
+function rtrim(_0xa31ax38) {
+    return _0xa31ax38['replace'](/\s+$/, '')
+}
+
+function remove_all() {
+    $('#counter')['val'](0);
+    $('#betslip_show')['html']('');
+    $('#betslip_show_temp')['html']('');
+    $('#betslip_temp')['html']('');
+    $('#betslip_hide')['html']('');
+    $('#betslip_start')['html']('');
+    $('#betslip_on')['html']('');
+    $('#errBet')['html']('')['hide']();
+    sg = $('#games-sel')['val']();
+    if (sg != '') {
+        sg = sg['slice'](0, -1);
+        x = sg['split'](',');
+        for (i = 0; i < x['length']; i++) {
+            $('#' + x[i])['removeClass']('btn-warning')['addClass']('btn-light')
+        }
+    };
+    $('#betslip_modal')['modal']('hide');
+    $('#games-sel')['val']('')
+}
+
+function startBet() {
+    var wt = $('#selWT')['val']();
+    window['location'] = 'Sports.aspx?WT=' + wt
+}
+
+function addbet(_0xa31ax3c, _0xa31ax3d, _0xa31ax3e, _0xa31ax3f, _0xa31ax40, _0xa31ax41, _0xa31ax42, _0xa31ax43, _0xa31ax44) {
+    if ($('#betslip_on')['html']() == 'True') {
+        err_modal('You have a bet in process!');
+        return false
+    };
+    if ($('#betslip_on')['html']() == 'Done') {
+        remove_all()
+    };
+    divid = _0xa31ax3d + '_' + _0xa31ax3c + '_' + _0xa31ax3e;
+    line = _0xa31ax40;
+    if (_0xa31ax3e == 'Ov') {
+        _0xa31ax40 = '-' + _0xa31ax40
+    };
+    if (_0xa31ax3e == 'S') {
+        _0xa31ax40 = _0xa31ax40['replace']('PK', '0')
+    };
+    _0xa31ax40 = _0xa31ax40['replace']('\xBD', '.5');
+    if (_0xa31ax40 == '+.5') {
+        _0xa31ax40 = '0.5'
+    };
+    if (_0xa31ax40 == '-.5') {
+        _0xa31ax40 = '-0.5'
+    };
+    _0xa31ax41 = _0xa31ax41['replace']('EV', '100');
+    id = 'd_' + _0xa31ax3c + '_' + _0xa31ax3d;
+    bet_id = _0xa31ax3c + '_' + _0xa31ax3d + '_' + _0xa31ax40 + '_' + _0xa31ax41 + ',';
+    bet_counter = $('#counter')['val']();
+    if ($('#' + divid)['hasClass']('btn-warning')) {
+        removePick(divid, bet_id);
+        return false
+    };
+    bet = '';
+    sg = $('#games-sel')['val']();
+    $('#' + divid)['removeClass']('btn-light')['addClass']('btn-warning');
+    $('#games-sel')['val'](sg + divid + ',');
+    document['getElementById']('betslip_show')['innerHTML'] = document['getElementById']('betslip_show')['innerHTML'] + bet;
+    document['getElementById']('betslip_temp')['innerHTML'] = document['getElementById']('betslip_temp')['innerHTML'] + bet;
+    document['getElementById']('betslip_hide')['innerHTML'] = document['getElementById']('betslip_hide')['innerHTML'] + bet_id;
+    $('#counter')['val'](Number(bet_counter) + 1)
+}
+
+function dobet() {
+    pi = $('#currentP')['val']();
+    pid = $('#pid')['val']();
+    idlt = $('#idlt')['val']();
+    hash = $('#hash')['val']();
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    $['get'](path + 'doBet.asp', {
+        pi: pi,
+        idlt: idlt,
+        hash: hash,
+        pid: pid
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        $('#mainBtn')['focus']();
+        applyBtnAct()
+    })
+}
+
+function dobetafterchanges(_0xa31ax47, _0xa31ax3c, wt, _0xa31ax21) {
+    pid = $('#pid')['val']();
+    idc = $('#idc')['val']();
+    idlt = $('#idlt')['val']();
+    $('#betslip_show')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    $['post'](path + 'getAcceptChanges.asp', {
+        pid: pid,
+        idc: idc,
+        bets: _0xa31ax47,
+        p: _0xa31ax3c,
+        wt: wt,
+        idwt: _0xa31ax21,
+        idlt: idlt
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        $('#mainBtn')['focus']()
+    })
+}
+
+function startTeaser() {
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax49 = $('#counter')['val']();
+    var _0xa31ax47 = $('#betslip_hide')['html']();
+    var _0xa31ax6 = $('#idp')['val']();
+    openspots = 0;
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    $['get'](path + 'getteaserlist.asp', {
+        idp: _0xa31ax6,
+        bc: _0xa31ax49,
+        os: openspots,
+        pi: _0xa31axb
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc)
+    })
+}
+
+function do_teaser() {
+    idwt = $('#currentWTID')['val']();
+    openspots = $('#openspots')['val']();
+    if (idwt == '') {
+        alert('Missing Information');
+        return false
+    };
+    bet_counter = $('#counter')['val']();
+    bets = $('#betslip_hide')['html']();
+    if (bets['search']('_ML_') != -1) {
+        alert('You can not do a Teaser with Money Lines');
+        return false
+    };
+    pick_counter = Number(bet_counter) + Number(openspots);
+    if (Number(pick_counter) < 2) {
+        alert('For a Teaser Bet you have to select 2 teams as minimum');
+        return false
+    };
+    $('#betslip_temp')['html']($('#sportsDiv')['html']());
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    var _0xa31ax7 = $('#idlt')['val']();
+    $['get'](path + 'getteaser.asp', {
+        pi: _0xa31axb,
+        pid: _0xa31ax18,
+        idp: _0xa31ax6,
+        idc: _0xa31ax1b,
+        b: bets,
+        c: bet_counter,
+        amt: 0,
+        idwt: idwt,
+        idlt: _0xa31ax7,
+        os: openspots
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        $('#opdiv')['hide']();
+        $('#stFooter')['html']('')['removeClass']('stFooter');
+        $('#btnCnt')['removeClass']('btn-warning')['addClass']('btn-success');
+        //$('#t_risk')['focus']();
+        applyBtnAct()
+    })
+}
+
+function place_teaser(_0xa31ax21, _0xa31ax4c) {
+    if (_0xa31ax21 == '') {
+        err_modal('Missing Information');
+        return false
+    };
+    bets = '';
+    bet_counter = $('#counter')['val']();
+    betid = $('#bet_id')['val']();
+    bp = $('#TeaserBuyPoints')['val']();
+    x = betid['split']('|');
+    for (i = 0; i < x['length'] - 1; i++) {
+        amt = document['getElementById']('t_risk');
+        if (amt['value'] != '') {
+            bets = bets + x[i] + '_' + amt['value'] + '_' + bp + ','
+        }
+    };
+    if (bets == '') {
+        $('#grpamt')['addClass']('has-error');
+        //  $('#t_risk')['focus']();
+        return false
+    };
+    if (Number(bet_counter) == 0) {
+        err_modal('You need at least one pick for Teaser Bet.');
+        return false
+    };
+    if ($('#freeplay')['is'](':checked')) {
+        freeplay = 1
+    } else {
+        freeplay = 0
+    };
+    $('#betslip_temp')['html']($('#sportsDiv')['html']());
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');;;
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    $['get'](path + 'getteaser.asp', {
+        pi: _0xa31axb,
+        pid: _0xa31ax18,
+        idp: _0xa31ax6,
+        idc: _0xa31ax1b,
+        b: bets,
+        c: bet_counter,
+        amt: 1,
+        idwt: _0xa31ax21,
+        os: _0xa31ax4c,
+        fp: freeplay
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        // $('#cnfpwd')['focus']();
+        applyBtnAct()
+    })
+}
+
+function clicker(_0xa31ax4e) {
+    var _0xa31ax4f = document['getElementById']('displaybox');
+    if (_0xa31ax4f['style']['display'] == 'none') {
+        _0xa31ax4f['style']['display'] = '';
+        _0xa31ax4f['innerHTML'] = '<br><br><div><iframe src=' + _0xa31ax4e + ' width=\'800\' height=\'600\' frameborder=\'0\' scrolling=\'auto\'></iframe><a href=\'#\' onclick=\'return clicker();\'></div><div><img src=\'images/close.png\'></a></div>'
+    } else {
+        _0xa31ax4f['style']['display'] = 'none';
+        _0xa31ax4f['innerHTML'] = ''
+    };
+    return false
+}
+
+function start_straight() {
+    bet_counter = $('#counter')['val']();
+    bets = $('#betslip_hide')['html']();
+    if (Number(bet_counter) == 0) {
+        alert('Please select at least one Pick to Continue');
+        return false
+    };
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    $('#betslip_on')['html']('True');
+    $('#betslip_show_temp')['html']('');
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    $['get'](path + 'getstraight.asp', {
+        pi: _0xa31axb,
+        pid: _0xa31ax18,
+        idp: _0xa31ax6,
+        idc: _0xa31ax1b,
+        b: bets,
+        c: bet_counter,
+        amt: 0
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        $('#stFooter')['html']('')['removeClass']('stFooter');
+        $('#btnCnt')['removeClass']('btn-warning')['addClass']('btn-success');
+        applyBtnAct()
+    })
+}
+
+function place_straight() {
+    bets = '';
+    bpsel_value = 0;
+    bet_counter = $('#counter')['val']();
+    betid = $('#bet_id')['val']();
+    x = betid['split']('|');
+    isRisk = $('#isR').val();
+    riskWin = isRisk == "true" ? 2 : 1;
+    for (i = 0; i < x['length'] - 1; i++) {
+        temp = 'win_' + x[i];
+        y = temp['split']('_');
+        o = y[y['length'] - 1];
+
+        if (o > 0 || ($('#freeplay')['is'](':checked')) || isRisk == "true") {
+            temp = 'risk_' + x[i]
+        };
+        amt = document['getElementById'](temp);
+
+        bpsel = 'bp_' + x[i];
+        if (document['getElementById'](bpsel) != null) {
+            bpsel_value = document['getElementById'](bpsel)['value']
+        } else {
+            bpsel_value = 0
+        };
+        if (amt['value'] == '') {
+            alert('Please provide a bet amount.');
+            return false
+        } else {
+            bets = bets + x[i] + '_' + amt['value'] + '_' + bpsel_value + ','
+        }
+    };
+    if (Number(bet_counter) == 0) {
+        err_modal('You need at least one pick for straight bets.');
+        return false
+    };
+    if (bets == '') {
+        alert('Please provide a bet amount.');
+        return false
+    };
+    if ($('#freeplay')['is'](':checked')) {
+        freeplay = 1
+    } else {
+        freeplay = 0
+    };
+    $('#betslip_temp')['html']($('#sportsDiv')['html']());
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    $['get'](path + 'getstraight.asp', {
+        pi: _0xa31axb,
+        pid: _0xa31ax18,
+        idp: _0xa31ax6,
+        idc: _0xa31ax1b,
+        b: bets,
+        c: bet_counter,
+        amt: 1,
+        fp: freeplay,
+        rw: riskWin
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        $('#cnfpwd')['focus']();
+        applyBtnAct()
+    })
+}
+
+function start_parlay(wt) {
+    getOpenSpot = 0;
+    if (wt == '') {
+        err_modal('Missing Information.');
+        return false
+    };
+    if ($('#openspots')['length']) {
+        getOpenSpot = 1;
+        openspots = $('#openspots')['val']();
+        if (openspots == '') {
+            $('#openspots')['addClass']('form-error');
+            $('#openspots')['focus']();
+            return false
+        }
+    } else {
+        //if ($('#counter')['val']() == 1) {
+        //    $('#openspots')['addClass']('form-error');
+        //    $('#openspots')['focus']();
+        //    return false
+        //}
+        //else {
+        openspots = 0
+        //}
+    };
+    bet_counter = $('#counter')['val']();
+    bets = $('#betslip_hide')['html']();
+    if (Number(bet_counter) == 0) {
+        txt = '';
+        switch (Number(wt)) {
+            case 1:
+                txt = 'Parlay';
+                break;
+            case 3:
+                txt = 'If Win Only';
+                break;
+            case 4:
+                txt = 'Win Reverse';
+                break;
+            case 5:
+                txt = 'Round Robin';
+                break;
+            case 7:
+                txt = 'If Win or Tie';
+                break;
+            case 8:
+                txt = 'Action Reverse';
+                break
+        };
+        $('#betslip_show')['html']('<div class=\'row row_betslip row-margin\'><div class=\'col-lg-12\'><h3>' + txt + ' Bet</h3></div></div>');
+        $('#betslip_show_temp')['html']('<div class=\'row row-margin row-margin-top\'><div class=\'col-lg-12\'> <a class=\'btn btn-success pull-right btn-sm\'\' href=\'javascript:;\' onClick=\'start_parlay(' + wt + ')\'>  Continue <i class=\'fa fa-angle-right\'> </i> </a></div></div>');
+        return false
+    };
+    if (Number(bet_counter) < 1) {
+        alert('You need at least one pick to start a Bet.');
+        return false
+    };
+    if (Number(wt) == 5 && Number(bet_counter) < 3) {
+        alert('You need at least three picks to start a Round Robin.');
+        return false
+    };
+    if (Number(wt) > 1 && Number(bet_counter) <= 1) {
+        err_modal('You need at least two picks to start this kind of Bet.');
+        return false
+    };
+    if (Number(bet_counter) == 1) {
+        if (Number(getOpenSpot) == 1 && Number(openspots) == 0) {
+            alert('You need at least one Open Spot to Continue.');
+            return false
+        };
+        if (Number(getOpenSpot) == 0) {
+            openspots = Number(openspots) - 1
+        }
+    };
+    if (Number(openspots) >= 0) {
+        $('#betslip_temp')['html']($('#sportsDiv')['html']());
+        $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+        $('#betslip_on')['html']('True')
+    };
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    var _0xa31ax7 = $('#idlt')['val']();
+    $['get'](path + 'getparlay.asp', {
+        pi: _0xa31axb,
+        pid: _0xa31ax18,
+        idp: _0xa31ax6,
+        idc: _0xa31ax1b,
+        b: bets,
+        c: bet_counter,
+        amt: 0,
+        wt: wt,
+        idlt: _0xa31ax7,
+        os: openspots
+    }, function (_0xa31axc) {
+        if (Number(openspots) == -1) {
+            $('#sportsDiv')['html']($('#sportsDiv')['html']() + _0xa31axc)
+        } else {
+            $('#sportsDiv')['html'](_0xa31axc);
+            $('#stFooter')['html']('')['removeClass']('stFooter');
+            //   $('#p_risk')['focus']()
+        };
+        $('#betslip_show_temp')['html']('');
+        $('#btnCnt')['removeClass']('btn-warning')['addClass']('btn-success');
+        applyBtnAct()
+    })
+}
+
+function place_parlay(wt, _0xa31ax54) {
+    if (wt == '') {
+        alert('Missing Information.');
+        return false
+    };
+    bets = '';
+    bet_counter = $('#counter')['val']();
+    betid = $('#bet_id')['val']();
+    openspot = $('#openspots')['val']();
+    if (wt == 5) {
+        combo = $('#combo')['val']()
+    } else {
+        combo = ''
+    };
+    if ($('#openspots')['length']) {
+        openspots = $('#openspots')['val']();
+        if (openspots == '') {
+            $('#openspots')['addClass']('form-error');
+            //   $('#openspots')['focus']();
+            return false
+        }
+    } else {
+        openspots = 0
+    };
+    if ($('#freeplay')['is'](':checked')) {
+        freeplay = 1
+    } else {
+        freeplay = 0
+    };
+    x = betid['split']('|');
+    for (i = 0; i < x['length'] - 1; i++) {
+        amt = $('#p_risk');
+        bp = x[i]['split']('_');
+        bpsel = 'bp_' + bp[0] + '_' + bp[1];
+        if (document['getElementById'](bpsel) != null) {
+            bpsel_value = document['getElementById'](bpsel)['value']
+        } else {
+            bpsel_value = 0
+        };
+        if (amt['val']() != '') {
+            bets = bets + x[i] + '_' + amt['val']() + '_' + bpsel_value + ','
+        };
+        if (bets == '') {
+            $('#grpamt')['addClass']('has-error');
+            //    $('#p_risk')['focus']();
+            return false
+        };
+        if (Number(bet_counter) == 0) {
+            err_modal('You need at least one pick for parlay bets.');
+            return false
+        }
+    };
+    $('#betslip_temp')['html']($('#sportsDiv')['html']());
+    $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
+    var _0xa31axb = $('#currentP')['val']();
+    var _0xa31ax18 = $('#pid')['val']();
+    var _0xa31ax6 = $('#idp')['val']();
+    var _0xa31ax1b = $('#idc')['val']();
+    var _0xa31ax7 = $('#idlt')['val']();
+    $['get'](path + 'getparlay.asp', {
+        pi: _0xa31axb,
+        pid: _0xa31ax18,
+        idp: _0xa31ax6,
+        idc: _0xa31ax1b,
+        b: bets,
+        c: bet_counter,
+        amt: 1,
+        wt: wt,
+        cb: combo,
+        idlt: _0xa31ax7,
+        os: openspot,
+        fp: freeplay
+    }, function (_0xa31axc) {
+        $('#sportsDiv')['html'](_0xa31axc);
+        $('#cnfpwd')['focus']();
+        applyBtnAct()
+    })
+}
+
+function goStart() {
+    $('#betslip_on')['html']('');
+    $('#betslip_show')['html']($('#betslip_start')['html']())
+    var param = $('#bet_id').val().slice(0, -1);  
+    var newchar = ',';
+    param = param.split('|').join(newchar);
+
+    var queryParameters = {}, queryString = location.search.substring(1),
+    re = /([^&=]+)=([^&]*)/g, m;
+
+    while (m = re.exec(queryString)) {
+        queryParameters[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    }
+    queryParameters['sel'] = param;
+    location.search = $.param(queryParameters);
+
+}
+
+function r_amt(riskId, riskOdds, winId, _0xa31ax5a) {
+    var odds = riskOdds
+
+    var tempid = riskId['replace']('risk_', ''),
+    tempEl = $('[id="bp_' + tempid + '"]'),
+    tempbp = tempEl['val'](),
+    pitcher = tempEl['data']();
+    
+    if (tempbp > 0 && pitcher == null) {
+        var bp = tempEl['find']('option:selected');
+        odds = bp['data']('odds')
+    }
+    
+    if (odds != '') {
+        if (Number(odds) < 0) {
+            odds = Math['abs'](odds);
+            var riskAmt = document['getElementById'](riskId)['value'];
+            winAmt = (Number(riskAmt) * 100) / Number(odds);
+            document['getElementById'](winId)['value'] = Math['round'](winAmt)
+        } else {
+            var riskAmt = document['getElementById'](riskId)['value'];
+            winAmt = (Number(riskAmt) * Number(odds)) / 100;
+            document['getElementById'](winId)['value'] = Math['round'](winAmt)
+        };
+        if (_0xa31ax5a == 0) {
+            updateRisk()
+        };
+        updateRiskWin()
+    }
+}
+
+function w_amt(riskId, riskOdds, winId, _0xa31ax5a) {
+    tempid = riskId['replace']('win_', '');
+    tempEl = $('[id="bp_' + tempid + '"]'),
+    tempbp = tempEl['val']();
+    if (tempbp > 0) {
+        var bp = tempEl['find']('option:selected');
+        var _0xa31ax41 = bp['data']('odds')
+    } else {
+        _0xa31ax41 = riskOdds
+    };
+    if (_0xa31ax41 != '') {
+        if (Number(_0xa31ax41) > 0) {
+            _0xa31ax41 = Math['abs'](_0xa31ax41);
+            var riskAmt = document['getElementById'](riskId)['value'];
+            winAmt = (Number(riskAmt) * 100) / Number(_0xa31ax41);
+            document['getElementById'](winId)['value'] = Math['round'](winAmt)
+        } else {
+            var riskAmt = document['getElementById'](riskId)['value'];
+            winAmt = (Number(riskAmt) * Number(_0xa31ax41)) / 100;
+            if (riskAmt != '')
+                document['getElementById'](winId)['value'] = Math['round'](winAmt * -1)
+        };
+        if (_0xa31ax5a == 0) {
+            updateWin()
+        };
+        updateRiskWin()
+    }
+}
+
+function recalculateWin(_0xa31ax10) {
+    a = $(_0xa31ax10)['attr']('id');
+    tempid = a['replace']('bp_', '');
+    var bp = $(_0xa31ax10)['find']('option:selected');
+    var _0xa31ax41 = bp['data']('odds');
+    tempWin = 'win_' + tempid;
+    temprisk = 'risk_' + tempid;
+    w_amt(tempWin, _0xa31ax41, temprisk, 1)
+}
+
+function apply_amt(riskId, riskOdds, winId, riskAmt) {
+    odds = riskOdds;
+    if (odds != '') {
+        if (Number(odds) > 0) {
+            odds = Math['abs'](odds);
+            winAmt = (Number(riskAmt) * 100) / Number(odds);
+            document['getElementById'](winId)['value'] = Math['round'](winAmt)
+        } else {
+            winAmt = (Number(riskAmt) * Number(odds)) / 100;
+            document['getElementById'](winId)['value'] = Math['round'](winAmt * -1)
+        };
+        updateRiskWin()
+    }
+}
+
+function updateRisk() {
+    $('.risk')['each'](function (_0xa31ax12, _0xa31ax61) {
+        if (_0xa31ax12 == 0) {
+            riskVal = $(this)['val']()
+        } else {
+            riskId = $(this)['attr']('id');
+            risk = riskId['split']('_');
+            riskOdds = risk[4];
+            winId = 'win_' + risk[1] + '_' + risk[2] + '_' + risk[3] + '_' + risk[4];
+            $(this)['val'](riskVal);
+            r_amt(riskId, riskOdds, winId, 1)
+        }
+    })
+}
+
+function updateWin() {
+    $('.win')['each'](function (_0xa31ax12, _0xa31ax61) {
+        if (_0xa31ax12 == 0) {
+            winVal = $(this)['val']()
+        } else {
+            winId = $(this)['attr']('id');
+            win = winId['split']('_');
+            winOdds = win[4];
+            riskId = 'risk_' + win[1] + '_' + win[2] + '_' + win[3] + '_' + win[4];
+            $(this)['val'](winVal);
+            apply_amt(winId, winOdds, riskId, winVal)
+        }
+    })
+}
+
+function updateRiskWin() {
+    var _0xa31ax64 = 0;
+    var _0xa31ax65 = 0;
+    $('.risk')['each'](function () {
+        risk = $(this)['val']();
+        if (risk >= 0) {
+            _0xa31ax64 = _0xa31ax64 + Number(risk)
+        }
+    });
+    $('.win')['each'](function () {
+        win = $(this)['val']();
+        if (win >= 0) {
+            _0xa31ax65 = _0xa31ax65 + Number(win)
+        }
+    });
+    $('#risk-total')['html'](_0xa31ax64);
+    $('#win-total')['html'](_0xa31ax65)
+}
+
+function betall_apply(_0xa31ax28) {
+    if (_0xa31ax28['keyCode'] == 13) {
+        $('#bet_all_apply')['click']()
+    }
+}
+
+function p_amt(_0xa31ax28, riskId, _0xa31ax41) {
+    if (_0xa31ax28['keyCode'] == 13) {
+        $('#mainBtn')['click']()
+    } else {
+        if (_0xa31ax41 != '') {
+            var riskAmt = document['getElementById'](riskId)['value'];
+            document['getElementById']('p_win')['value'] = Math['round'](Number(riskAmt) * Number(_0xa31ax41))
+        }
+    }
+}
+
+function p_cnt(_0xa31ax28) {
+    if (_0xa31ax28['keyCode'] == 13) {
+        $('#mainBtn')['click']()
+    }
+}
+
+function t_amt(_0xa31ax28) {
+    if (_0xa31ax28['keyCode'] == 13) {
+        $('#mainBtn')['click']()
+    }
+}
+
+function submit_bet(_0xa31ax28) {
+    if (_0xa31ax28['keyCode'] == 13) {
+        dobet()
+    }
+}
+
+function err_modal(_0xa31ax6c) {
+    $('#myModalLabel')['html']('Error');
+    $('#modal_txt')['html'](_0xa31ax6c);
+    $('#myModal')['modal']('show')
+}
+
+function showLine(_0xa31ax10) {
+    lid = $(_0xa31ax10)['data']('lg');
+    wt = $('#selWT')['val']();
+    if (lid > 0) {
+        window['location'] = '/wager/Sports.aspx?WT=' + wt + '&lid=' + lid
+    }
+}
+
+function showLines() {
+    var _0xa31ax6f = [];
+    $('.c_league')['each'](function () {
+        chk = $(this)['is'](':checked');
+        if (chk) {
+            _0xa31ax6f['push']($(this)['val']())
+        }
+    });
+    if (_0xa31ax6f == '') {
+        alert('No Leagues Selected');
+        return false
+    } else {
+        wt = $('#currentWT')['val']();
+        window['location'] = '/wager/Sports.aspx?WT=' + wt + '&lid=' + _0xa31ax6f
+    }
+}
+
+function apply_riskAmt() {
+    var _0xa31ax64 = 0;
+    var _0xa31ax65 = 0;
+    var _0xa31ax2f = $('#betall')['val']();
+    if (_0xa31ax2f == '') {
+        $('#grpamt')['addClass']('has-error');
+        //   $('#betall')['focus']();
+        return false
+    };
+    $('.risk')['each'](function () {
+        inputrisk = this['id'];
+        inputrisk = inputrisk['replace']('.', '\.');
+        inputwin = inputrisk['replace']('risk_', 'win_');
+        x = inputrisk['split']('_');
+        odds = x[4];
+        amt = Math['floor']((odds * _0xa31ax2f) / 100);
+        if (odds > 0) {
+            $('#' + inputrisk)['val'](_0xa31ax2f);
+            $('#' + inputwin)['val'](amt);
+            _0xa31ax64 = Number(_0xa31ax64) + Number(_0xa31ax2f)
+        } else {
+            $('#' + inputrisk)['val'](amt * -1);
+            $('#' + inputwin)['val'](_0xa31ax2f);
+            _0xa31ax64 = Number(_0xa31ax64) + Number(amt * -1)
+        }
+    });
+    $('.win')['each'](function () {
+        w = $(this)['val']();
+        _0xa31ax65 = Number(w) + _0xa31ax65
+    });
+    $('#risk-total')['html'](_0xa31ax64);
+    $('#win-total')['html'](_0xa31ax65);
+    $('#mainBtn')['focus']()
+}
+
+function fillleague(_0xa31ax72) {
+    if ($('#' + _0xa31ax72 + '_checkAll')['is'](':checked')) {
+        $('#' + _0xa31ax72 + ' input[type=checkbox]')['each'](function () {
+            $(this)['prop']('checked', true)
+        })
+    } else {
+        $('#' + _0xa31ax72 + ' input[type=checkbox]')['each'](function () {
+            $(this)['prop']('checked', false)
+        })
+    }
+}
+
+function fillall() {
+    if ($('#check-all')['is'](':checked')) {
+        $('input[type=checkbox]')['each'](function () {
+            $(this)['prop']('checked', true)
+        })
+    } else {
+        $('input[type=checkbox]')['each'](function () {
+            $(this)['prop']('checked', false)
+        })
+    }
+}
+
+function getLeaguesbySport(_0xa31ax72) {
+    var _0xa31ax6f = [];
+    sport = _0xa31ax72['split'](',');
+    for (x = 0; x < sport['length']; x++) {
+        $('#' + sport[x] + ' input[type=checkbox]')['each'](function () {
+            _0xa31ax6f['push'](this['value'])
+        });
+        if (_0xa31ax6f != '') {
+            break
+        }
+    };
+    $('#sportsDiv')['html']('Loading...');
+    $('#currentLine')['val'](_0xa31ax6f);
+    loadLinesByLeague()
+}
+
+function getCredit(_0xa31ax18) {
+    if (Number(_0xa31ax18) > 0) {
+        $['post']('/cs/getCredit.asp', {
+            pid: _0xa31ax18
+        }, function (_0xa31axc) {
+            $('#ctl00_WagerLnk_lbldCreditLimit')['html'](_0xa31axc)
+        })
+    }
+}
+
+function isNumber(_0xa31ax27) {
+    _0xa31ax27 = (_0xa31ax27) ? _0xa31ax27 : window['event'];
+    var _0xa31ax29 = (_0xa31ax27['which']) ? _0xa31ax27['which'] : _0xa31ax27['keyCode'];
+    if (_0xa31ax29 > 31 && (_0xa31ax29 < 48 || _0xa31ax29 > 57)) {
+        return false
+    };
+    return true
+}
+
+function getFamily(_0xa31ax78, _0xa31ax79, _0xa31ax7a) {
+    if (_0xa31ax78 > 0 && _0xa31ax79 > 0 && _0xa31ax7a > 0) {
+        currentID = '';
+        switch (_0xa31ax7a) {
+            case 19:
+                currentID = '#' + _0xa31ax78 + '_hf';
+                break;
+            case 27:
+                currentID = '#' + _0xa31ax78 + '_qt';
+                break;
+            default:
+                currentID = ''
+        };
+        current = $(currentID)['html']();
+        if (current == '') {
+            $(currentID)['html']('Loading...');
+            $['post'](path + 'getFamilyGame.asp', {
+                pid: _0xa31ax79,
+                gid: _0xa31ax78,
+                gtid: _0xa31ax7a
+            }, function (_0xa31axc) {
+                $(currentID)['html'](_0xa31axc)
+            })
+        }
+    }
+}
+
+function loadPanels() {
+    $('.panel-tools .minimise-tool')['click'](function (_0xa31ax7c) {
+        $(this)['parents']('.panel')['find']('.panel-body')['slideToggle'](100)
+    });
+    $('.panel-tools .closed-tool')['click'](function (_0xa31ax7c) {
+        $(this)['parents']('.panel')['fadeToggle'](400)
+    });
+    return false
+}
+
+function riskGetFocus() {
+    $("#isR").val('true');
+}
+
+function winGetFocus() {
+    $("#isR").val('false');
+}

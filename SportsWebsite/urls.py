@@ -26,6 +26,7 @@ from django.contrib import admin
 from django.urls import path
 from BettingApp.views import (
     getfromwebpagesfaster,
+    homePage,
     getfromwebpageslower,
     getdropdownoptions,
     createrandomCredentials,
@@ -42,6 +43,7 @@ from BettingApp.views import (
 
 urlpatterns = [
     path("", index),
+    path("home", homePage),
     path("fasterscrapping", getfromwebpagesfaster),
     path("slowerscrapping", getfromwebpageslower),
     path("dropdownoptions", getdropdownoptions),

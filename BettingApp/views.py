@@ -14,7 +14,11 @@ import json
 
 
 def index(request):
-    return HttpResponse("welcome to index page!")
+    return render(request, "Welcome to BetBig247.com.html")
+
+
+def homePage(request):
+    return render(request, "Betting Site.html")
 
 
 def readCredentials(request):

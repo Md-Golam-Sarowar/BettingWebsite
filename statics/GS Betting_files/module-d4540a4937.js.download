@@ -1,0 +1,2 @@
+"use strict";angular.module("gsLive",["ngAnimate","ngStorage","angular-loading-bar","cfp.loadingBar","daterangepicker","angular.bind.notifier","ngRoute","pascalprecht.translate","ngSanitize"]);
+//# sourceMappingURL=module-d4540a4937.js.map

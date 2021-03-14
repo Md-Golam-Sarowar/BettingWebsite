@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = ")6@5vrn5@g7%-^iug031o&k1-r)rsaw!tm1188uo!_#$u*#vib"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -50,12 +52,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = "SportsWebsite.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -68,6 +71,13 @@ TEMPLATES = [
     },
 ]
 
+# this is the statics files context path when request the static file in url. for example http://127.0.0.1:8000/static/js/script.js
+STATIC_URL = "/static/"
+
+# this is the static files folder name which you created in django project root folder. This is different from above STATIC_URL.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "statics"),
+]
 WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 
 
