@@ -13,7 +13,7 @@ import json
 
 # Create your views here.
 def index(request):
-    return render(request, "Welcome to BetrLounge247.com.html")
+    return render(request, "Welcome to BetBig247.com.html")
 
 
 def homePage(request):
