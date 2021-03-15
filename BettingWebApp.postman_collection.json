@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "b70bba3a-570b-4025-b0f2-562f0b969804",
+		"name": "BettingWebApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createBet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ticketNo\" : 13823,\r\n    \"user_phone\" : \"insateernet/-1\",\r\n    \"placed\" : \"2021-03-15 03:17:01.687333+00:00\",\r\n    \"risk\" : 422235,\r\n    \"win\" : 54321,\r\n    \"userId\" : 39,\r\n    \"team1\" : \"bangladesh\",\r\n    \"team2\" : \"India\",\r\n    \"whomtobet\" : \"bansgladesh\",\r\n    \"matchDate\" : \"2021-03-15 03:17:01.687333+00:00\",\r\n    \"panelTitle\" : \"world cup\",\r\n    \"game_point_details\" : \"details over/under +125\",\r\n    \"point\" : 12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/createBet",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"createBet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generateCredentials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/generatecredentials/10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"generatecredentials",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readCredential",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/readcredentials",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"readcredentials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readBets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/readBets/39",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"readBets",
+						"39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBet/Move to history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/deleteBet/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"deleteBet",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"CstQfKtsAj\",\r\n    \"password\" : \"2!&UkR:x\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
