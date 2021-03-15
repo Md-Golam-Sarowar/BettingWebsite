@@ -8,11 +8,10 @@ from .modules import (
 )
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from .models import myBet, userInfo
 import json
 
 # Create your views here.
-
-
 def index(request):
     return render(request, "Welcome to BetBig247.com.html")
 
@@ -23,6 +22,14 @@ def homePage(request):
 
 def readCredentials(request):
     allCredentials = RandomCredentials.readCredentials()
+    for data in allCredentials:
+        print(
+            data.id,
+            "  ",
+            data.username,
+            "  ",
+            data.password,
+        )
     return HttpResponse("credentials read successfully")
 
 
@@ -53,17 +60,57 @@ def findCredential(request, id):
 def createBet(request):
     body_unicode = request.body.decode("utf-8")
     body = json.loads(body_unicode)
+    ticketNo = body["ticketNo"]
+    user_phone = body["user_phone"]
+    description = body["description"]
     risk = body["risk"]
-    userId = body["userId"]
-    sportId = body["sportId"]
+    win = body["win"]
+    user = body["userId"]
     newBet = []
-    newBet.extend([risk, userId, sportId])
-    betMethods.createnewBet(newBet)
-    return HttpResponse("created suceessfully")
+    newBet.extend([ticketNo, user_phone, description, risk, win, user])
+    createdBet = betMethods.createnewBet(newBet)
+
+    if createdBet == True:
+        return HttpResponse("created suceessfully")
+    else:
+        return HttpResponse("failed to create")
+
+
+def readBets(request, userId):
+    userfetched = userInfo.objects.get(id=userId)
+    allBets = myBet.objects.filter(user=userfetched)
+
+    for data in allBets:
+        print(
+            data.id,
+            "  ",
+            data.ticketNo,
+            "  ",
+            data.placed,
+            "  ",
+            data.created_at,
+            "  ",
+            data.risk,
+            "  ",
+            data.win,
+            "  ",
+            data.updated_at,
+            "  ",
+            data.user_phone,
+            "   ",
+            data.user.id,
+        )
+
+    return HttpResponse("bets Read suceessfully")
+
+
+def deleteBet(request, betId):
+    betMethods.deleteBet(betId)
+    return HttpResponse("deleted successfully")
 
 
 def deleteCredential(request, id):
-    RandomCredentials.updateCredential(id)
+    RandomCredentials.deleteCredential(id)
     return HttpResponse("deleted suceessfully")
 
 
@@ -88,3 +135,35 @@ def getdropdownoptions(request):
 def createrandomCredentials(request, totalCredentials):
     totalCredentials = RandomCredentials.addCredentials(totalCredentials)
     return HttpResponse("randomCredentials Saved suceessfully")
+
+
+@csrf_exempt
+def authenticate(request):
+    body_unicode = request.body.decode("utf-8")
+    body = json.loads(body_unicode)
+    usernamedata = body["username"]
+    passworddata = body["password"]
+    flag = False
+    user = None
+
+    allData = userInfo.objects.all()
+
+    for data in allData:
+        if data.username == usernamedata and data.password == passworddata:
+            flag = True
+            user = data
+            break
+
+    if flag == True:
+        request.session["username"] = user.username
+        request.session["password"] = user.password
+        request.session["role"] = user.role
+        request.session["available"] = user.available
+        return HttpResponse("user is authenticated")
+    else:
+        return HttpResponse("invalid username/password")
+
+
+def logout(request):
+    request.session.flush()
+    return HttpResponse("session data flushed")

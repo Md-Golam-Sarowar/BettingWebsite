@@ -14,8 +14,12 @@ def addCredentials(totalCredentials):
         password_characters = string.ascii_letters + string.digits + string.punctuation
         password = "".join(random.choice(password_characters) for i in range(8))
         role = "user"
+        availablepoint = 1000
         credentialObject = userInfo(
-            username=usernameRandom, password=password, role=role
+            username=usernameRandom,
+            password=password,
+            role=role,
+            available=availablepoint,
         )
         credentialObject.save()
         credentials.append(usernameRandom)
@@ -33,7 +37,7 @@ def updateCredential(updatecredential, id):
     credential.save()
 
 
-def updateCredential(id):
+def deleteCredential(id):
     credential = userInfo.objects.get(pk=id)
     credential.delete()
 

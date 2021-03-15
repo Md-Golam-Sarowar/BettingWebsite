@@ -41,20 +41,26 @@ class liveSport(TimeStampMixin):
 
 
 class myBet(TimeStampMixin):
+    ticketNo = models.IntegerField(default=0)
+    user_phone = models.CharField(max_length=250)
+    description = models.TextField()
+    win = models.IntegerField(default=0)
     risk = models.IntegerField(default=0)
-    balance = models.IntegerField(default=0)
-    user = models.ForeignKey(userInfo, default=None, on_delete=models.DO_NOTHING)
-    sport = models.ForeignKey(liveSport, default=None, on_delete=models.DO_NOTHING)
+    placed = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(userInfo, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user
+        return self.user_phone
 
 
 class betHistory(TimeStampMixin):
-    mybet = models.ForeignKey(myBet, default=None, on_delete=models.DO_NOTHING)
-    win_lose = models.CharField(max_length=250)
-    balance = models.IntegerField(default=0)
-    user = models.ForeignKey(userInfo, default=None, on_delete=models.DO_NOTHING)
+    ticketNo = models.IntegerField(default=0)
+    user_phone = models.CharField(max_length=250)
+    description = models.TextField()
+    win = models.IntegerField(default=0)
+    risk = models.IntegerField(default=0)
+    placed = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(userInfo, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.win_lose
+        return self.user_phone
