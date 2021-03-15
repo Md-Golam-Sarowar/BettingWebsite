@@ -13,7 +13,7 @@ import json
 
 # Create your views here.
 def index(request):
-    return render(request, "Welcome to BetBig247.com.html")
+    return render(request, "Welcome to BetrLounge247.com.html")
 
 
 def homePage(request):
@@ -62,12 +62,35 @@ def createBet(request):
     body = json.loads(body_unicode)
     ticketNo = body["ticketNo"]
     user_phone = body["user_phone"]
-    description = body["description"]
+    placed = body["placed"]
     risk = body["risk"]
     win = body["win"]
     user = body["userId"]
+    team1 = body["team1"]
+    team2 = body["team2"]
+    whomtobet = body["whomtobet"]
+    matchDate = body["matchDate"]
+    panelTitle = body["panelTitle"]
+    game_point_details = body["game_point_details"]
+    point = body["point"]
     newBet = []
-    newBet.extend([ticketNo, user_phone, description, risk, win, user])
+    newBet.extend(
+        [
+            ticketNo,
+            user_phone,
+            placed,
+            risk,
+            win,
+            user,
+            team1,
+            team2,
+            whomtobet,
+            matchDate,
+            panelTitle,
+            game_point_details,
+            point,
+        ]
+    )
     createdBet = betMethods.createnewBet(newBet)
 
     if createdBet == True:
@@ -79,28 +102,6 @@ def createBet(request):
 def readBets(request, userId):
     userfetched = userInfo.objects.get(id=userId)
     allBets = myBet.objects.filter(user=userfetched)
-
-    for data in allBets:
-        print(
-            data.id,
-            "  ",
-            data.ticketNo,
-            "  ",
-            data.placed,
-            "  ",
-            data.created_at,
-            "  ",
-            data.risk,
-            "  ",
-            data.win,
-            "  ",
-            data.updated_at,
-            "  ",
-            data.user_phone,
-            "   ",
-            data.user.id,
-        )
-
     return HttpResponse("bets Read suceessfully")
 
 
@@ -167,3 +168,7 @@ def authenticate(request):
 def logout(request):
     request.session.flush()
     return HttpResponse("session data flushed")
+
+
+def showHistory(request, userId):
+    return HttpResponse("showed all the history for " + str(userId))

@@ -40,6 +40,7 @@ from BettingApp.views import (
     readBets,
     authenticate,
     logout,
+    showHistory,
 )
 
 urlpatterns = [
@@ -58,4 +59,5 @@ urlpatterns = [
     path("createBet", createBet),
     path("deleteBet/<int:betId>", deleteBet),
     path("readBets/<int:userId>", readBets),
+    path("showHistory/<int:userId>", showHistory),
 ]
