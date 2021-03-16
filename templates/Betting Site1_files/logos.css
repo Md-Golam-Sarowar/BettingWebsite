@@ -1,0 +1,233 @@
+﻿
+
+.logos {
+    width: 34px;
+    height: 22px;
+    padding: 0;
+    float: left;
+    color: #fff;
+}
+
+.logos2, .logosDown, .logosUp {
+    width: 34px;
+    height: 22px;
+    margin-right: 8px;
+    margin-left: 4px;
+    vertical-align: middle;
+    padding: 0;
+    display: inline-block;
+}
+
+.logosDown, .logosUp {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    margin-left: 14px;
+}
+
+.leagues {
+    background: url(leagues_1.png) no-repeat right 0;
+}
+
+.E-SPORTS {
+    background-position: right -22px;
+}
+
+.GOLF {
+    background-position: right -44px;
+}
+
+.BASKETBALL,.COLLEGE_BASKETBALL {
+    background-position: right -66px;
+}
+
+.RUGBY,.ARENA_FOOTBALL {
+    background-position: right -88px;
+}
+
+.HOCKEY, .OTHER_HOCKEY {
+    background-position: right -110px;
+}
+
+.HORSES {
+    background-position: right -132px;
+}
+
+.OTHER_BASEBALL {
+    background-position: right -154px;
+}
+
+.INTERNATIONAL_BASKETBALL, .FIBA {
+    background-position: right -176px;
+}
+
+.INTERNATIONAL_HOCKEY {
+    background-position: right -198px;
+}
+
+.LACROSSE {
+    background-position: right -220px;
+}
+
+.CASINO {
+    background-position: right -242px;
+}
+
+.BOXING {
+    background-position: right -264px;
+}
+
+.ALERT {
+    background-position: right -286px;
+}
+
+.SOCCER_FUTURES, .SOCCER_PROPS {
+    background-position: right -308px;
+}
+
+.BASEBALL {
+    background-position: right -330px;
+}
+
+.KICKBOX {
+    background-position: right -352px;
+}
+
+.NBA {
+    background-position: right -374px;
+}
+
+.INTERNATIONAL_BASEBALL {
+    background-position: right -396px;
+}
+
+.NCAA_BASKETBALL {
+    background-position: right -418px;
+}
+
+.COLLEGE_FOOTBALL,.NCAA_FOOTBALL {
+    background-position: right -440px;
+}
+
+.COLLEGE_HOCKEY, .NCAA_HOCKEY {
+    background-position: right -462px;
+}
+
+.NFL_FOOTBALL, #NFL-FOOTBALL, .FOOTBALL {
+    background-position: right -484px;
+}
+
+.NHL,.ICE_HOCKEY,.HOCKEY {
+    background-position: right -506px;
+}
+
+.OLIMPICS {
+    background-position: right -528px;
+}
+
+.OLYMPICS {
+    background-position: right -550px;
+}
+
+.POKER {
+    background-position: right -572px;
+}
+
+.POLITICS {
+    background-position: right -594px;
+}
+
+.FIGHTING_2 {
+    background-position: right -616px;
+}
+
+.REGATA, .REGATTA {
+    background-position: right -638px;
+}
+
+.SOCCER {
+    background-position: right -660px;
+}
+
+.PING_PONG,.TABLE_TENNIS {
+    background-position: right -682px;
+}
+
+.TENNIS {
+    background-position: right -704px;
+}
+
+.United_Football_League {
+    background-position: right -726px;
+}
+
+.VOLLEYBALL {
+    background-position: right -748px;
+}
+
+.MMA_FIGHTING {
+    background-position: right -770px;
+}
+
+.WNBA {
+    background-position: right -792px;
+}
+
+.l38 {
+    background-position: right -814px;
+}
+
+..IN-HOUSE-LIVE-WAGERING,.IN-HOUSE_LIVE_WAGERING, .LIVE_BETTING {
+    background-position: right -836px;
+}
+
+.Australian_Football_League, .AFL {
+    background-position: right -858px;
+}
+.AUTO_RACING {
+    background-position: right -880px;
+}
+
+.FIGHTING {
+    background-position: right -902px;
+}
+
+.CFL_FOOTBALL, .CANADIAN_FOOTBALL {
+    background-position: right -924px;
+}
+
+.CRICKET {
+    background-position: right -946px;
+}
+
+.MOUNTAIN_BIKE, .CYCLING {
+    background-position: right -968px;
+}
+
+.DARTS {
+    background-position: right -990px;
+}
+
+.DOGS {
+    background-position: right -1012px;
+}
+
+.CINEMA, .ENTERTAIMENT {
+    background-position: right -1034px;
+}
+
+.OTHER_SPORTS {
+    background-position: right -1056px;
+}
+
+.SIMILAR_AL_CRICKET {
+    background-position: right -1078px;
+}
+
+
+
+
+
+
+
+

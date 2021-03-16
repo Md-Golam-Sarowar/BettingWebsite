@@ -6,6 +6,9 @@
     <link href= "{% static 'Welcome to BetBig247.com_files/bootstrap.css' %}" rel="stylesheet" type="text/css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src= "{% static 'Welcome to BetBig247.com_files/jquery.min.js.download' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src= "{% static 'Welcome to BetBig247.com_files/script.js' %}"></script>
+
     <!-- Custom Theme files -->
     <link href= "{% static 'Welcome to BetBig247.com_files/stylex.css' %}" rel="stylesheet" type="text/css" media="all">
     <!-- Custom Theme files -->
@@ -319,11 +322,12 @@ and (max-width : 480px) {
                                 <div class="member_login_word"><img src= "{% static 'Welcome to BetBig247.com_files/memb.png' %}" alt="" border="0"></div>
                                 <span style="font-family:Verdana, Arial, Helvetica, sans-serif; text-align:center; color:#FFFF00; font-size:11px;"><strong>*Password must be lowercase</strong></span>
                                 <div class="username_contx">
-                                    <input name="account" type="text" class="gray_text" id="account" tabindex="500" onfocus=" if (this.value==&#39;Username:&#39; ) { this.value=&#39;&#39; ; }" onblur="if (this.value == &#39;&#39;) {this.value=&#39;&#39;;} " value="Username:" size="21" placeholder="Username:" required="">
+                                    <input type="text" id="username" placeholder="username">
                                 </div>
 
                                 <div class="password_contx">
-                                    <input name="password" type="password" class="gray_text" id="password" tabindex="500" onfocus=" if (this.value==&#39;Password:&#39; ) { this.value=&#39;&#39; ; }" onblur="if (this.value == &#39;&#39;) {this.value=&#39;&#39;;} " value="Password:" size="21" placeholder="Password:" required="">
+                                    <input type="password" id="password" placeholder="password">
+
                                 </div>
 
                                 <!--<div class="classic_title">Click for Classic View:
@@ -332,8 +336,7 @@ and (max-width : 480px) {
                                 </div>-->
 
 
-                                <div class="login_contx"><img onclick="document.getElementById(&#39;login&#39;).submit();" src= "{% static 'Welcome to BetBig247.com_files/login.png' %}" width="60" height="26"></div>
-                                <a href="https://betbig247.com/index-agents.php" style="width: 100%; display: block; float: left; text-align: center; border-top: 1px solid #333; padding-top: 10px; padding-bottom: 0; margin-top: 10px; text-transform: uppercase; font-family: arial, sans-serif; font-size: 11px; font-weight: bold;">Reports</a>
+                                <div class="login_contx"><img id = "login" onclick="authenticateuser()" src= "{% static 'Welcome to BetBig247.com_files/login.png' %}" width="60" height="26"></div>
                             </div>
                             <input type="hidden" name="IdBook" value="4">
                 

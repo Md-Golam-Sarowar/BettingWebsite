@@ -8,8 +8,11 @@ from .modules import (
 )
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import myBet, userInfo
+from .models import myBet, userInfo, myBet, betHistory
 import json
+from django.http import JsonResponse
+from SportsWebsite.settings import BASE_DIR, settings_dir, PROJECT_ROOT
+
 
 # Create your views here.
 def index(request):
@@ -17,7 +20,27 @@ def index(request):
 
 
 def homePage(request):
-    return render(request, "Betting Site.html")
+
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+    return render(request, "Betting Site.html", data)
 
 
 def readCredentials(request):
@@ -102,6 +125,8 @@ def createBet(request):
 def readBets(request, userId):
     userfetched = userInfo.objects.get(id=userId)
     allBets = myBet.objects.filter(user=userfetched)
+    for bet in allBets:
+        print(bet.risk)
     return HttpResponse("bets Read suceessfully")
 
 
@@ -140,10 +165,8 @@ def createrandomCredentials(request, totalCredentials):
 
 @csrf_exempt
 def authenticate(request):
-    body_unicode = request.body.decode("utf-8")
-    body = json.loads(body_unicode)
-    usernamedata = body["username"]
-    passworddata = body["password"]
+    usernamedata = request.POST["username"]
+    passworddata = request.POST["password"]
     flag = False
     user = None
 
@@ -160,14 +183,30 @@ def authenticate(request):
         request.session["password"] = user.password
         request.session["role"] = user.role
         request.session["available"] = user.available
-        return HttpResponse("user is authenticated")
+        return JsonResponse(
+            {
+                "success": "successfully authenticated",
+                "status": 200,
+                "base_dir": "http://" + request.META["HTTP_HOST"],
+            },
+            content_type="application/json",
+        )
     else:
-        return HttpResponse("invalid username/password")
+        return JsonResponse(
+            {"error": "failed to authenticate", "status": 500},
+            content_type="application/json",
+        )
 
 
 def logout(request):
     request.session.flush()
-    return HttpResponse("session data flushed")
+    return JsonResponse(
+        {
+            "success": "successfully logged out",
+            "status": 200,
+        },
+        content_type="application/json",
+    )
 
 
 def showHistory(request, userId):
