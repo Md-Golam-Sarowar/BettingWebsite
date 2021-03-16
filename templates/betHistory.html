@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
+
 <!-- saved from url=(0047)https://engine.betbig247.com/wager/History.aspx -->
 <html lang="en"><head id="ctl00_Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="HandheldFriendly" content="true"><link href="./betHistory/css" rel="stylesheet"><title>
 	Betting Site
-</title><link href="./betHistory/root.css" rel="stylesheet"><link href="./betHistory/custom.css" rel="stylesheet"><link href="./betHistory/logos.css" rel="stylesheet">
-    <script type="text/javascript" src="./betHistory/jquery.min.js.download"></script>
+</title><link href= "{% static 'betHistory/root.css' %}" rel="stylesheet"><link href= "{% static 'betHistory/custom.css' %}" rel="stylesheet"><link href= "{% static 'betHistory/logos.css' %}" rel="stylesheet">
+    <script type="text/javascript" src= "{% static 'betHistory/jquery.min.js.download' %}"></script>
+    <script type="text/javascript" src = "{% static 'Betting Site_files/logout.js' %}"></script>
 
     <style>
         html, body {
@@ -38,12 +41,12 @@
             }
         }, false);
     </script>
-    <link href="./betHistory/PlayerChat.css" rel="stylesheet"><link href="./betHistory/Calendar.css" type="text/css" rel="stylesheet"></head>
+    <link href="{% static 'betHistory/PlayerChat.css' %}" rel="stylesheet"><link href="{% static 'betHistory/Calendar.css' %}" type="text/css" rel="stylesheet"></head>
 
 <body class="color6-bg">
     <!-- Start Page Loading -->
     <div class="loading" style="display: none;">
-        <img src="./betHistory/loading.gif" alt="loading-img">
+        <img src="{% static 'betHistory/loading.gif' %}" alt="loading-img">
     </div>
     <!-- End Page Loading -->
     <!-- START TOP -->
@@ -52,7 +55,7 @@
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <div class="logo">Bal: <a href="https://engine.betbig247.com/Wager/History.aspx" class="linkTop balLinkTop" style="color: rgb(50, 205, 50);"><span id="ctl00_WagerLnkTop_lblCurrentBalance">0 </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">340 </span> | Risk: <a href="https://engine.betbig247.com/Wager/OpenBets.aspx" class="linkTop"><span id="ctl00_WagerLnkTop_lblAmountAtRisk">260 </span></a></div>
+            <div class="logo">Bal: <a href="https://engine.betbig247.com/Wager/History.aspx" class="linkTop balLinkTop" style="color: rgb(50, 205, 50);"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="https://engine.betbig247.com/Wager/OpenBets.aspx" class="linkTop"><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
         </div>
         <!-- End App Logo -->
 
@@ -69,36 +72,47 @@
             
                 <li><a id="ctl00_lnkRacing" href="https://engine.betbig247.com/wager/Bridge.aspx?to=blrhorses">Racing</a></li>
             
-                <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=LiveBetting">VIP Live Betting</a></li>
+                <li><a style="color: #ff0;" href="/vipLiveBetting">VIP Live Betting</a></li>
             
-                <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=Esports">E-Sports</a></li>
+                <li><div style=" height: 29px;
+                    width: 100px;
+                    border: groove;
+                    border-width: 2px;
+                    border-color: black;
+                    display: table-cell;
+                    padding-top: 15px;
+                " class="rectangle"></div></style></li>
             
 
+            
+             <li>   <a id="ctl00_lnkOpenBets" href="/openBets">Open Bets</a></li>
             <li>
-                <a id="ctl00_lnkFillOpen" href="https://engine.betbig247.com/wager/FillChoose.aspx">Fill Open</a></li>
-            <li>
-                <a id="ctl00_lnkOpenBets" href="https://engine.betbig247.com/wager/OpenBets.aspx">Open Bets</a></li>
-            <li>
-                <a id="ctl00_lnkHistory" href="https://engine.betbig247.com/wager/History.aspx">History</a></li>
-            <li>
-                <a id="ctl00_lnkFigures" href="https://engine.betbig247.com/wager/Figures.aspx">Figures</a></li>
-            <li><a target="_blank" href="https://engine.betbig247.com/rules/rules-regulations.php">Rules</a></li>
+                <a id="ctl00_lnkHistory" href="/betHistory">BetHistory</a></li>
+                <li><div style=" height: 29px;
+                    width: 113px;
+                    border: groove;
+                    border-width: 2px;
+                    border-color: black;
+                    display: table-cell;
+                    padding-top: 15px;
+                " class="rectangle"></div></style></li>
+            
             <!--<li><a target="_blank" href="/wager/bridge_Historical.asp?a=BT18916&p=blazer">Previous History</a></li>-->
             
-                <li><a href="https://engine.betbig247.com/Wager/PlayerChat.aspx"><i class="fa fa-comments-o fa-3" aria-hidden="true"></i>Chat<span id="countMessages" style="display: none;"></span></a></li>
+                
             
         </ul>
         <span id="cs_phone" class="cs_phone"></span>
         <!-- End Top Menu -->
         <!-- Start Sidepanel Show-Hide Button -->
-        <a href="https://engine.betbig247.com/LogOut.aspx" class="sidepanel-open-button"><i class="fa fa-power-off" style="color: #F00"></i></a>
+        <a href="/" id = "logoutuser" onclick="logout()" class="sidepanel-open-button"><i class="fa fa-power-off" style="color: #F00"></i></a>
         <!-- End Sidepanel Show-Hide Button -->
         <!-- Start Top Right-->
         <ul class="top-right">
             <li class="link" data-toggle="modal" data-target="#BetTicketMB">
                 <a href="https://engine.betbig247.com/wager/History.aspx#" class="notifications"><i class="fa fa-user"></i>
                     
-        <span id="ctl00_AccountName_lblAccount">BT18916</span>
+        <span id="ctl00_AccountName_lblAccount">{{username}}</span>
     
                 </a>
             </li>
@@ -112,7 +126,7 @@
         <ul class="sidebar-panel nav">
             <li><a href="https://engine.betbig247.com/wager/History.aspx#"><span class="icon fa fa-user"></span>
                 
-        <span id="ctl00_AccountFigures1_lblAccount">BT18916</span>
+        <span id="ctl00_AccountFigures1_lblAccount">{{username}}</span>
     
             </a></li>
             <li><a href="https://engine.betbig247.com/wager/Sports.aspx"><span class="icon sport-menu football"></span>Sports</a></li>
@@ -120,21 +134,17 @@
             
             <li><a href="https://engine.betbig247.com/wager/Bridge.aspx?to=blrhorses" target="_blank"><span class="icon sport-menu horse-racing"></span>Racebook</a></li>
             
-            <li><a style="color: #ff0;" target="_blank" href="https://engine.betbig247.com/Addons/LiveBetting.aspx"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
-            
-                <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=Esports">E-Sports</a></li>
-            
+            <li><a style="color: #ff0;" target="_blank" href="/vipLiveBetting"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
+                        
             
             <!--<li><a target="_blank" href="/wager/bridge_Historical.asp?a=BT18916&p=blazer"><span class="icon sport-menu other"></span>Previous History</a></li>
             -->
-            
-                <li><a href="https://engine.betbig247.com/Wager/PlayerChat.aspx"><i class="fa fa-comments-o fa-3" aria-hidden="true"></i>Chat<span id="countMessages"></span></a></li>
-            
+                        
         </ul>
         <ul class="sidebar-panel nav">
             <li class="sidetitle">ACCOUNT</li>
             <li><a href="https://engine.betbig247.com/wager/FillChoose.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Fill Open</a></li>
-            <li><a href="https://engine.betbig247.com/wager/OpenBets.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Open Bets</a></li>
+            <li><a href="/openBets"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Open Bets</a></li>
             <li><a href="https://engine.betbig247.com/wager/History.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>History</a></li>
             <li><a href="https://engine.betbig247.com/wager/Figures.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Figures</a></li>
             <li><a target="_blank" href="https://engine.betbig247.com/rules/rules-regulations.php"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Rules</a></li>
@@ -308,11 +318,11 @@
     </div>
 
     <!-- End Content -->
-    <script src="./betHistory/bootstrap.min.js.download"></script>
-    <script type="text/javascript" src="./betHistory/bootstrap-select.js.download"></script>
-    <script type="text/javascript" src="./betHistory/plugins.js.download"></script>
-    <script src="./betHistory/fastclick.min.js.download"></script>
-    <script type="text/javascript" src="./betHistory/web.js.download"></script>
+    <script src= "{% static 'betHistory/bootstrap.min.js.download' %}"></script>
+    <script type="text/javascript" src= "{% static 'betHistory/bootstrap-select.js.download' %}"></script>
+    <script type="text/javascript" src= "{% static 'betHistory/plugins.js.download' %}"></script>
+    <script src="{% static 'betHistory/fastclick.min.js.download' %}"></script>
+    <script type="text/javascript" src= "{% static 'betHistory/web.js.download' %}"></script>
     <script>
         var bal = $('.balLinkTop');
         balance = parseFloat(bal.find('span').html());
@@ -322,7 +332,7 @@
             bal.css('color', '#F00');
         }
     </script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(function () {
             FastClick.attach(document.body);
 
@@ -361,7 +371,7 @@
         }
 
 
-    </script>
+    </script> -->
 
 
 

@@ -41,13 +41,20 @@ from BettingApp.views import (
     authenticate,
     logout,
     showHistory,
+    userInformation,
+    OpenBets,
+    betHistorydetails,
 )
 
 urlpatterns = [
     path("", index),
     path("home", homePage),
+    path("vipLiveBetting", homePage),
+    path("openBets", OpenBets),
+    path("betHistory", betHistorydetails),
     path("login", authenticate),
     path("logout", logout),
+    path("userinformation", userInformation),
     path("fasterscrapping", getfromwebpagesfaster),
     path("slowerscrapping", getfromwebpageslower),
     path("dropdownoptions", getdropdownoptions),

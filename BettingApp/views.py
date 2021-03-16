@@ -18,6 +18,50 @@ from SportsWebsite.settings import BASE_DIR, settings_dir, PROJECT_ROOT
 def index(request):
     return render(request, "Welcome to BetBig247.com.html")
 
+def betHistorydetails(request):
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+    return render(request, "betHistory.html", data)
+
+
+def OpenBets(request):
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+    return render(request, "myBets.html", data)
 
 def homePage(request):
 
@@ -42,6 +86,30 @@ def homePage(request):
     }
     return render(request, "Betting Site.html", data)
 
+def userInformation(request):
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+
+    return JsonResponse(data,
+        content_type="application/json",
+    )
 
 def readCredentials(request):
     allCredentials = RandomCredentials.readCredentials()
