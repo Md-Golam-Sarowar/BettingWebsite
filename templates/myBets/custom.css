@@ -1,0 +1,2126 @@
+.content {
+    margin-left: 0px;
+}
+
+.page-header .phNumbers {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    min-width: 500px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.sideBal {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    color: #ff0;
+}
+
+div.panel-title.linesPanelTitle {
+    /*background-color: #2d3039;*/
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #0E1627;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 8px 20px;
+    text-align:center;
+}
+
+div.panel-title.linesSlipTitle {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-transform: uppercase;
+    color: #0B1629;
+    font-size: 14px;
+    padding: 8px 20px;
+}
+
+.gameDate {
+    /*color: #53565f;
+    background-color: #e3e3e3;*/
+    font-size: 11px;
+    background-color: #23527c;
+    color: #fff;
+    text-align: center;
+    font-weight: 900 !important;
+}
+
+.linesHeader {
+    background: #101928;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 1);
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px !important;
+    float: left;
+    text-align: center;
+}
+
+.linesEven {
+    background: #fff;
+}
+
+.elementOdd {
+    background: #f7f7f7;
+}
+
+.linesTime {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px !important;
+    float: left;
+    text-align: center;
+}
+
+.linesRot {
+    /*border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);*/
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px !important;
+    float: left;
+    text-align: center;
+}
+
+.linesTeam {
+    /*border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);*/
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px !important;
+    float: left;
+    text-align: left;
+    font-weight:900;
+}
+
+.linesSpread {
+    /*border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);*/
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px !important;
+    float: left;
+    text-align: center;
+    padding: 4px;
+}
+
+.linesMl {
+    /*border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);*/
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px !important;
+    float: left;
+    text-align: center;
+    padding: 4px;
+}
+
+.linesTotal {
+    /*border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);*/
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px !important;
+    float: left;
+    text-align: center;
+    padding: 4px;
+}
+
+.mobRot {
+    float: left;
+    margin-right: 10px;
+}
+
+.lineChange {
+    color: #C83A2A;
+    font-weight: bold;
+}
+
+.lineChangeDw {
+    color: #2ebd59;
+    font-weight: bold;
+}
+
+
+/* BETTICKER */
+
+.removeBet {
+    color: #f04122;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.BT-startHeader {
+    margin-top: 15px;
+    padding: 7px 0 3px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.BT-startmsg {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.BT-helpMsg {
+    text-align: center;
+    font-size: 12px;
+    margin: 5px;
+    padding: 0px;
+}
+
+.stFooter {
+    position: absolute;
+    position: fixed;
+    display: block;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    background-color: #f5f5f5;
+    padding-top: 10px;
+    z-index: 9999;
+}
+
+.BT-header {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 0;
+    color: #FFF;
+    background: #0B1422;
+    border: 0;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.BT-allcont {
+    font-size: 11px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: #CECFD2 solid 2px;
+}
+
+input.BT-dkAmount {
+    vertical-align: top;
+    /*
+	width: 70px;
+    max-width: 70px;
+	*/
+    margin-left: 2px;
+    color: #7A7979;
+    background-color: #fcfcfc;
+    /*-moz-box-shadow: inset 0 10px 5px -5px rgba(156,156,156,0.1);  -webkit-box-shadow: inset 0 10px 5px -5px rgba(156,156,156,0.1); box-shadow: inset 0 10px 5px -5px rgba(156,156,156,0.1); */
+    border: #e6e6e6 solid thin;
+    padding: 3px 5px;
+    border-radius: 4px !important;
+}
+
+.lnSeparator {
+    background: #7a7c81;
+    height: 3px;
+}
+
+.BalanceBar {
+    background: #fff;
+    margin: -20px -30px 20px -30px;
+    padding: 0px 30px 0px 20px;
+    border-bottom: none;
+    position: relative;
+    font-size: 12px;
+}
+
+
+/********************** TICKET TOTALS **************************/
+
+.BT-Total {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 0;
+    padding: 10px 10px 0px 10px;
+    border-top: 0;
+    -moz-box-shadow: inset 0 15px 10px -10px rgba(156, 156, 156, 0.2);
+    -webkit-box-shadow: inset 0 15px 10px -10px rgba(156, 156, 156, 0.2);
+    box-shadow: inset 0 15px 10px -10px rgba(156, 156, 156, 0.2);
+}
+
+.BT-total-header {
+    background-color: #e3e3e3;
+    color: #000;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 3px 0;
+    margin-bottom: 5px;
+    /*border-bottom: thin dotted #CECFD2;*/
+}
+
+.BT-totalSum {
+    padding: 5px 0;
+    border-bottom: thin dotted #CECFD2;
+}
+
+select.input-sm {
+    height: 24px;
+    line-height: 24px;
+}
+
+
+/***** LIVE BETTING *****/
+
+.liveBox {
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000000;
+    color: #dedede;
+    padding: 30px 0px;
+}
+
+.liveBox span.gameScore {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000000;
+    color: #ffffff;
+}
+
+.nbaLiveBox {
+    background: #000 url("../img/background-basketball-med.jpg") no-repeat center center;
+    background-size: 100% auto;
+    height: auto;
+}
+
+.nflLiveBox {
+    background: #000 url("../img/background-football-med.jpg") no-repeat center center;
+    background-size: 100% auto;
+    height: 100%;
+}
+
+.nhlLiveBox {
+    background: #000 url("../img/background-hokey-med.jpg") no-repeat center center;
+    background-size: 100% auto;
+    height: auto;
+}
+
+.soccerLiveBox {
+    background: #000 url("../img/background-soccer-med.jpg") no-repeat center center;
+    background-size: 100% auto;
+    height: auto;
+}
+
+.mmaLiveBox {
+    background: #000 url("../img/background-mma-med.jpg") no-repeat center center;
+    background-size: 100% auto;
+    height: auto;
+}
+
+.boxLiveBox {
+    background: #000 url("../img/background-box-med.jpg") no-repeat center center;
+    background-size: 100% auto;
+    height: auto;
+}
+
+
+/* Menu Icons */
+
+.sidebar-panel li .icon {
+    position: absolute;
+    left: 20px;
+    top: 8px;
+    display: block;
+    font-size: 19px;
+    border-radius: 3px;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    padding-top: 2px;
+}
+
+.sport-menu {
+    background-image: url('../img/menu-sports.png');
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    background-position: -999px -999px
+}
+
+.sport-menu.badminton {
+    background-position: 0 0
+}
+
+.sport-menu.bandy {
+    background-position: -18px 0
+}
+
+.sport-menu.baseball {
+    background-position: -36px 0
+}
+
+.sport-menu.basketball {
+    background-position: -54px 0
+}
+
+.sport-menu.beach-volleyball {
+    background-position: -72px 0
+}
+
+.sport-menu.boxing {
+    background-position: -90px 0
+}
+
+.sport-menu.chess {
+    background-position: -108px 0
+}
+
+.sport-menu.cricket {
+    background-position: -126px 0
+}
+
+.sport-menu.curling {
+    background-position: -144px 0
+}
+
+.sport-menu.darts {
+    background-position: -162px 0
+}
+
+.sport-menu.darts-legs {
+    background-position: -180px 0
+}
+
+.sport-menu.e-sports {
+    background-position: -198px 0
+}
+
+.sport-menu.field-hockey {
+    background-position: -216px 0
+}
+
+.sport-menu.floorball {
+    background-position: -234px 0
+}
+
+.sport-menu.football {
+    background-position: -252px 0
+}
+
+.sport-menu.futsal {
+    background-position: -270px 0
+}
+
+.sport-menu.golf {
+    background-position: -288px 0
+}
+
+.sport-menu.handball {
+    background-position: -306px -0px
+}
+
+.sport-menu.hockey {
+    background-position: -324px 0
+}
+
+.sport-menu.horse-racing {
+    background-position: -342px 0
+}
+
+.sport-menu.lacrosse {
+    background-position: -360px 0
+}
+
+.sport-menu.mixed-martial-arts {
+    background-position: -378px 0
+}
+
+.sport-menu.other {
+    background-position: -396px 0
+}
+
+.sport-menu.politics {
+    background-position: -414px 0
+}
+
+.sport-menu.rink-hockey {
+    background-position: -432px 0
+}
+
+.sport-menu.rugby-league {
+    background-position: -450px 0
+}
+
+.sport-menu.rugby-union {
+    background-position: -450px 0
+}
+
+.sport-menu.snooker {
+    background-position: -468px 0
+}
+
+.sport-menu.soccer {
+    background-position: -486px 0
+}
+
+.sport-menu.squash {
+    background-position: -504px 0
+}
+
+.sport-menu.table-tennis {
+    background-position: -522px 0
+}
+
+.sport-menu.tennis {
+    background-position: -540px 0
+}
+
+.sport-menu.volleyball {
+    background-position: -558px 0
+}
+
+.sport-menu.water-polo {
+    background-position: -576px 0
+}
+
+.sport-menu.padel-tennis {
+    background-position: -594px 0
+}
+
+.sport-menu.aussie-rules-football {
+    background-position: -612px 0
+}
+
+.sport-menu.cycling {
+    background-position: -630px 0
+}
+
+.sport-menu.casino {
+    background-position: -648px 0
+}
+
+.sport-menu.pool {
+    background-position: -666px 0
+}
+
+.sport-menu.bowling {
+    background-position: -684px 0
+}
+
+.sport-menu.surfing {
+    background-position: -702px 0
+}
+
+.sport-menu.winter-sports {
+    background-position: -720px 0
+}
+
+.sport-menu.magic-the-gathering {
+    background-position: -738px 0
+}
+
+.sport-menu.sailing {
+    background-position: -756px 0
+}
+
+.sport-menu.rowing {
+    background-position: -774px 0
+}
+
+.sport-menu.entertainment {
+    background-position: -774px 0
+}
+
+.sport-menu.formula-one {
+    background-position: -810px 0
+}
+
+.sport-menu.olympics {
+    background-position: -828px 0
+}
+
+.sport-menu.athletics {
+    background-position: -846px 0
+}
+
+.sport-menu.racing {
+    background-position: -864px 0
+}
+
+.sport-menu.motor-sport {
+    background-position: -882px 0
+}
+
+.sport-menu.esport-games {
+    background-position: -900px 0
+}
+
+.sport-menu.swimming {
+    background-position: -918px 0
+}
+
+
+/* Sprites Logos */
+
+.teamnsLogos {
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-right: 4px;
+}
+
+
+/* NFL Logos */
+
+.nfl-falcons {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1px;
+    width: 25px;
+    height: 24px;
+}
+
+.nfl-bills {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -55px;
+    width: 25px;
+    height: 17px;
+}
+
+.nfl-bears {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -104px;
+    width: 25px;
+    height: 17px;
+}
+
+.nfl-bengals {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -154px;
+    width: 25px;
+    height: 18px;
+}
+
+.nfl-browns {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -203px;
+    width: 23px;
+    height: 19px;
+}
+
+.nfl-cowboys {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -251px;
+    width: 24px;
+    height: 24px;
+}
+
+.nfl-broncos {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -306px;
+    width: 25px;
+    height: 15px;
+}
+
+.nfl-lions {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -353px;
+    width: 25px;
+    height: 19px;
+}
+
+.nfl-packers, .nfl-bay-packers {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -405px;
+    width: 25px;
+    height: 17px;
+}
+
+.nfl-titans {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -454px;
+    width: 25px;
+    height: 18px;
+}
+
+.nfl-colts {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -501px;
+    width: 23px;
+    height: 24px;
+}
+
+.nfl-chiefs {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -555px;
+    width: 24px;
+    height: 16px;
+}
+
+.nfl-raiders {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -600px;
+    width: 23px;
+    height: 24px;
+}
+
+.nfl-rams {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -655px;
+    width: 25px;
+    height: 17px;
+}
+
+.nfl-dolphins {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -703px;
+    width: 24px;
+    height: 19px;
+}
+
+.nfl-vikings {
+    background: url('../img/teams-nfl-25.png') no-repeat -2px -751px;
+    width: 20px;
+    height: 24px;
+}
+
+.nfl-patriots, .nfl-england-patriots {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -807px;
+    width: 24px;
+    height: 12px;
+}
+
+.nfl-saints, .nfl-orleans-saints {
+    background: url('../img/teams-nfl-25.png') no-repeat -3px -851px;
+    width: 19px;
+    height: 23px;
+}
+
+.nfl-giants {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -904px;
+    width: 24px;
+    height: 19px;
+}
+
+.nfl-jets, .nfl-york-jets {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -956px;
+    width: 24px;
+    height: 13px;
+}
+
+.nfl-eagles {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1004px;
+    width: 25px;
+    height: 18px;
+}
+
+.nfl-cardinals {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1051px;
+    width: 25px;
+    height: 23px;
+}
+
+.nfl-steelers {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -1101px;
+    width: 24px;
+    height: 24px;
+}
+
+.nfl-chargers {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1156px;
+    width: 25px;
+    height: 14px;
+}
+
+.nfl-49ers, .nfl-francisco-49ers {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1206px;
+    width: 25px;
+    height: 15px;
+}
+
+.nfl-seahawks {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1258px;
+    width: 25px;
+    height: 11px;
+}
+
+.nfl-buccaneers, .nfl-bay-buccaneers {
+    background: url('../img/teams-nfl-25.png') no-repeat -1px -1301px;
+    width: 24px;
+    height: 21px;
+}
+
+.nfl-redskins {
+    background: url('../img/teams-nfl-25.png') no-repeat -2px -1352px;
+    width: 22px;
+    height: 23px;
+}
+
+.nfl-panthers {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1406px;
+    width: 25px;
+    height: 14px;
+}
+
+.nfl-jaguars {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1454px;
+    width: 25px;
+    height: 19px;
+}
+
+.nfl-ravens {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1607px;
+    width: 24px;
+    height: 12px;
+}
+
+.nfl-texans {
+    background: url('../img/teams-nfl-25.png') no-repeat 0 -1652px;
+    width: 24px;
+    height: 23px;
+}
+
+
+/* NBA Logos */
+
+.nba-hawks {
+    background: url('../img/teams-nba-25.png') no-repeat -3px -4px;
+    width: 20px;
+    height: 20px;
+}
+
+.nba-celtics {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -52px;
+    width: 22px;
+    height: 22px;
+}
+
+.nba-pelicans {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -101px;
+    width: 21px;
+    height: 24px;
+}
+
+.nba-bulls {
+    background: url('../img/teams-nba-25.png') no-repeat 0 -152px;
+    width: 25px;
+    height: 23px;
+}
+
+.nba-cavaliers {
+    background: url('../img/teams-nba-25.png') no-repeat -1px -204px;
+    width: 24px;
+    height: 18px;
+}
+
+.nba-mavericks {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -252px;
+    width: 21px;
+    height: 21px;
+}
+
+.nba-nuggets {
+    background: url('../img/teams-nba-25.png') no-repeat -3px -303px;
+    width: 20px;
+    height: 20px;
+}
+
+.nba-pistons {
+    background: url('../img/teams-nba-25.png') no-repeat -3px -352px;
+    width: 16px;
+    height: 21px;
+}
+
+.nba-warriors {
+    background: url('../img/teams-nba-25.png') no-repeat -3px -403px;
+    width: 20px;
+    height: 20px;
+}
+
+.nba-rockets {
+    background: url('../img/teams-nba-25.png') no-repeat -3px -450px;
+    width: 19px;
+    height: 25px;
+}
+
+.nba-pacers {
+    background: url('../img/teams-nba-25.png') no-repeat -1px -502px;
+    width: 23px;
+    height: 21px;
+}
+
+.nba-clippers {
+    background: url('../img/teams-nba-25.png') no-repeat -5px -552px;
+    width: 16px;
+    height: 22px;
+}
+
+.nba-lakers {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -604px;
+    width: 21px;
+    height: 17px;
+}
+
+.nba-heat {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -651px;
+    width: 22px;
+    height: 23px;
+}
+
+.nba-bucks {
+    background: url('../img/teams-nba-25.png') no-repeat -4px -702px;
+    width: 17px;
+    height: 22px;
+}
+
+.nba-timberwolves {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -752px;
+    width: 21px;
+    height: 22px;
+}
+
+.nba-nets {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -802px;
+    width: 22px;
+    height: 22px;
+}
+
+.nba-knicks {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -852px;
+    width: 22px;
+    height: 22px;
+}
+
+.nba-magic {
+    background: url('../img/teams-nba-25.png') no-repeat 0 -906px;
+    width: 25px;
+    height: 14px;
+}
+
+.nba-76ers {
+    background: url('../img/teams-nba-25.png') no-repeat -1px -951px;
+    width: 24px;
+    height: 24px;
+}
+
+.nba-suns {
+    background: url('../img/teams-nba-25.png') no-repeat -1px -1001px;
+    width: 24px;
+    height: 24px;
+}
+
+.nba-trail-blazers {
+    background: url('../img/teams-nba-25.png') no-repeat -3px -1052px;
+    width: 19px;
+    height: 21px;
+}
+
+.nba-kings {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -1106px;
+    width: 22px;
+    height: 15px;
+}
+
+.nba-spurs {
+    background: url('../img/teams-nba-25.png') no-repeat -3px -1152px;
+    width: 19px;
+    height: 23px;
+}
+
+.nba-city-thunder {
+    background: url('../img/teams-nba-25.png') no-repeat 0 -1206px;
+    width: 25px;
+    height: 14px;
+}
+
+.nba-jazz {
+    background: url('../img/teams-nba-25.png') no-repeat 0 -1255px;
+    width: 25px;
+    height: 17px;
+}
+
+.nba-wizards {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -1302px;
+    width: 22px;
+    height: 22px;
+}
+
+.nba-raptors {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -1353px;
+    width: 22px;
+    height: 22px;
+}
+
+.nba-grizzlies {
+    background: url('../img/teams-nba-25.png') no-repeat 0 -1401px;
+    width: 25px;
+    height: 24px;
+}
+
+.nba-hornets {
+    background: url('../img/teams-nba-25.png') no-repeat -2px -1452px;
+    width: 22px;
+    height: 22px;
+}
+
+
+/* MLB Logos */
+
+.mlb-orioles {
+    background: url('../img/teams-mlb-25.png') no-repeat 0 -1px;
+    width: 25px;
+    height: 24px;
+}
+
+.mlb-red-sox {
+    background: url('../img/teams-mlb-25.png') no-repeat -4px -50px;
+    width: 19px;
+    height: 25px;
+}
+
+.mlb-angels, .mlb-angeles-angels {
+    background: url('../img/teams-mlb-25.png') no-repeat -4px -101px;
+    width: 18px;
+    height: 24px;
+}
+
+.mlb-white-sox, .mlb-sox  {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -150px;
+    width: 18px;
+    height: 25px;
+}
+
+.mlb-indians {
+    background: url('../img/teams-mlb-25.png') no-repeat -4px -201px;
+    width: 18px;
+    height: 24px;
+}
+
+.mlb-tigers {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -251px;
+    width: 20px;
+    height: 24px;
+}
+
+.mlb-royals, .mlb-city-royals {
+    background: url('../img/teams-mlb-25.png') no-repeat -2px -301px;
+    width: 23px;
+    height: 23px;
+}
+
+.mlb-brewers {
+    background: url('../img/teams-mlb-25.png') no-repeat -2px -351px;
+    width: 21px;
+    height: 24px;
+}
+
+.mlb-twins {
+    background: url('../img/teams-mlb-25.png') no-repeat -2px -403px;
+    width: 21px;
+    height: 21px;
+}
+
+.mlb-yankees, .mlb-york-yankees {
+    background: url('../img/teams-mlb-25.png') no-repeat -2px -450px;
+    width: 23px;
+    height: 24px;
+}
+
+.mlb-athletics {
+    background: url('../img/teams-mlb-25.png') no-repeat 0 -502px;
+    width: 25px;
+    height: 21px;
+}
+
+.mlb-mariners {
+    background: url('../img/teams-mlb-25.png') no-repeat -5px -551px;
+    width: 15px;
+    height: 24px;
+}
+
+.mlb-rangers {
+    background: url('../img/teams-mlb-25.png') no-repeat -2px -601px;
+    width: 21px;
+    height: 24px;
+}
+
+.mlb-blue-jays, .mlb-jays {
+    background: url('../img/teams-mlb-25.png') no-repeat 0 -652px;
+    width: 25px;
+    height: 22px;
+}
+
+.mlb-braves {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -704px;
+    width: 18px;
+    height: 17px;
+}
+
+.mlb-cubs {
+    background: url('../img/teams-mlb-25.png') no-repeat -1px -751px;
+    width: 23px;
+    height: 24px;
+}
+
+.mlb-reds {
+    background: url('../img/teams-mlb-25.png') no-repeat -2px -805px;
+    width: 22px;
+    height: 16px;
+}
+
+.mlb-astros {
+    background: url('../img/teams-mlb-25.png') no-repeat 0 -850px;
+    width: 25px;
+    height: 25px;
+}
+
+.mlb-dodgers, .mlb-angeles-dodgers {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -900px;
+    width: 20px;
+    height: 25px;
+}
+
+.mlb-nationals {
+    background: url('../img/teams-mlb-25.png') no-repeat -1px -951px;
+    width: 24px;
+    height: 24px;
+}
+
+.mlb-mets, .mlb-york-mets {
+    background: url('../img/teams-mlb-25.png') no-repeat -4px -1000px;
+    width: 19px;
+    height: 24px;
+}
+
+.mlb-phillies {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -1050px;
+    width: 19px;
+    height: 25px;
+}
+
+.mlb-pirates {
+    background: url('../img/teams-mlb-25.png') no-repeat -4px -1101px;
+    width: 19px;
+    height: 25px;
+}
+
+.mlb-cardinals {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -1151px;
+    width: 20px;
+    height: 24px;
+}
+
+.mlb-padres, .mlb-diego-padres {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -1201px;
+    width: 19px;
+    height: 24px;
+}
+
+.mlb-giants {
+    background: url('../img/teams-mlb-25.png') no-repeat -4px -1251px;
+    width: 18px;
+    height: 24px;
+}
+
+.mlb-rockies {
+    background: url('../img/teams-mlb-25.png') no-repeat -3px -1301px;
+    width: 21px;
+    height: 24px;
+}
+
+.mlb-marlins {
+    background: url('../img/teams-mlb-25.png') no-repeat 0 -1350px;
+    width: 25px;
+    height: 23px;
+}
+
+.mlb-dbacks, .mlb-diamondbacks {
+    background: url('../img/teams-mlb-25.png') no-repeat 0 -1402px;
+    width: 25px;
+    height: 21px;
+}
+
+.mlb-rays {
+    background: url('../img/teams-mlb-25.png') no-repeat -1px -1452px;
+    width: 24px;
+    height: 22px;
+}
+
+
+/* NHL Logos */
+
+.nhl-bruins {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 0;
+    width: 25px;
+    height: 25px;
+}
+
+.nhl-sabres {
+    background: url('../img/teams-nhl-25.png') no-repeat -1px -51px;
+    width: 24px;
+    height: 24px;
+}
+
+.nhl-flames {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -102px;
+    width: 25px;
+    height: 22px;
+}
+
+.nhl-blackhawks {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -152px;
+    width: 25px;
+    height: 22px;
+}
+
+.nhl-wings {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -203px;
+    width: 25px;
+    height: 19px;
+}
+
+.nhl-oilers {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -251px;
+    width: 25px;
+    height: 25px;
+}
+
+.nhl-hurricanes {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -305px;
+    width: 25px;
+    height: 15px;
+}
+
+.nhl-kings {
+    background: url('../img/teams-nhl-25.png') no-repeat -3px -351px;
+    width: 20px;
+    height: 24px;
+}
+
+.nhl-stars {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -402px;
+    width: 25px;
+    height: 21px;
+}
+
+.nhl-canadiens {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -454px;
+    width: 25px;
+    height: 17px;
+}
+
+.nhl-devils {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -500px;
+    width: 25px;
+    height: 26px;
+}
+
+.nhl-islanders {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -551px;
+    width: 25px;
+    height: 24px;
+}
+
+.nhl-rangers {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -601px;
+    width: 25px;
+    height: 25px;
+}
+
+.nhl-senators {
+    background: url('../img/teams-nhl-25.png') no-repeat -2px -651px;
+    width: 20px;
+    height: 24px;
+}
+
+.nhl-flyers {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -704px;
+    width: 25px;
+    height: 18px;
+}
+
+.nhl-penguins {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -751px;
+    width: 25px;
+    height: 24px;
+}
+
+.nhl-avalanche {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -802px;
+    width: 25px;
+    height: 21px;
+}
+
+.nhl-sharks {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -852px;
+    width: 25px;
+    height: 22px;
+}
+
+.nhl-blues {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -903px;
+    width: 25px;
+    height: 20px;
+}
+
+.nhl-lightning {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -951px;
+    width: 25px;
+    height: 24px;
+}
+
+.nhl-leafs {
+    background: url('../img/teams-nhl-25.png') no-repeat -1px -1000px;
+    width: 24px;
+    height: 25px;
+}
+
+.nhl-canucks {
+    background: url('../img/teams-nhl-25.png') no-repeat -2px -1052px;
+    width: 22px;
+    height: 21px;
+}
+
+.nhl-capitals {
+    background: url('../img/teams-nhl-25.png') no-repeat -1px -1104px;
+    width: 23px;
+    height: 18px;
+}
+
+.nhl-coyotes {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -1150px;
+    width: 25px;
+    height: 26px;
+}
+
+.nhl-ducks {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -1206px;
+    width: 25px;
+    height: 14px;
+}
+
+.nhl-panthers {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -1250px;
+    width: 25px;
+    height: 25px;
+}
+
+.nhl-predators {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -1306px;
+    width: 25px;
+    height: 15px;
+}
+
+.nhl-jets {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -1350px;
+    width: 25px;
+    height: 25px;
+}
+
+.nhl-jackets {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -1402px;
+    width: 25px;
+    height: 22px;
+}
+
+.nhl-wild {
+    background: url('../img/teams-nhl-25.png') no-repeat 0 -1455px;
+    width: 25px;
+    height: 16px;
+}
+
+
+/******************* Horse Racing *******************/
+
+.raceTitle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ececec;
+    cursor: pointer !important;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #2D3039;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.sRaceSelected {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0B1422;
+    cursor: pointer !important;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #cccccc;
+    padding: 2px 10px;
+    margin-right: 8px;
+}
+
+.sRaceActive {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ececec;
+    cursor: pointer !important;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #ff9900;
+    padding: 2px 10px;
+    margin-right: 8px;
+}
+
+.runnerTable>thead:first-child>tr:first-child>th {
+    background-color: #0B1422;
+    color: #ececec;
+    height: 14px;
+    padding: 6px;
+}
+
+.runnerTable>tbody>tr>td {
+    height: 14px;
+    padding: 6px;
+}
+
+input.raceIn {
+    height: 14px;
+    padding: 6px;
+}
+
+.ProgramNumberT1 {
+    background-color: #D20001;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT2 {
+    background-color: #cccccc;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT3 {
+    background-color: #2D2EFA;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT4 {
+    background-color: #E8EA31;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT5 {
+    background-color: #008001;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT6 {
+    background-color: #242424;
+    color: yellow;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT7 {
+    background-color: #FB581F;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT8 {
+    background-color: #FBAABD;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT9 {
+    background-color: #22C5C4;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT10 {
+    background-color: #8700CF;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT11 {
+    background-color: #8A8A8A;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT12 {
+    background-color: #A2DBAE;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT13 {
+    background-color: #6C4735;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT14 {
+    background-color: #5D1231;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT15 {
+    background-color: #C9C2BA;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT16 {
+    background-color: #888ABA;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT17 {
+    background-color: #2D3573;
+    color: white;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT18 {
+    background-color: #A98CFF;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT19 {
+    background-color: #FFAD5B;
+    color: black;
+    padding: 0px 5px;
+}
+
+.ProgramNumberT20 {
+    background-color: #004F4F;
+    color: white;
+    padding: 0px 5px;
+}
+
+.sidebar-panel li ul li a.horseRlink {
+    padding-left: 20px;
+}
+
+#sportsDiv {
+    padding: 5px 0;
+}
+
+.tableThead {
+    background-color: #2d3039;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+
+/* ACCORDION */
+
+div.accordion {
+    background-color: #eee;
+    color: #000;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 14px;
+    transition: 0.4s;
+    font-weight: bold;
+    border-bottom: 1px dotted #999;
+}
+
+
+
+/*div.accordion:hover {
+    background-color: #0B1629;
+    color: #fff;
+}*/
+
+
+/*
+div.accordion.odd {
+	background-color: #FFF;
+}
+div.accordion.odd.active{color: #000;}
+*/
+
+div.accordion.active,
+button.accordion:hover {
+    background-color: #0B1629;
+    color: #fff;
+}
+
+div.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+div.accordion.active:after {
+    content: "\2796";
+}
+
+div.SportPanel {
+    padding: 0 18px;
+    background-color: #F8F8FF;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.SportPanel.show {
+    opacity: 1;
+    max-height: 4500px;
+}
+
+a.sportLeague {
+    font-size: 12px;
+    color: #0D1628;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.form-error {
+    border-color: #a94442;
+}
+
+.linkTop {
+    color: #ff0;
+    text-decoration: underline;
+    z-index: 9999!important;
+}
+
+.labelInput {
+    padding-top: 6px;
+    color: #000;
+}
+
+
+/* CHECKBOX */
+
+.checkbox {
+    padding-left: 20px;
+}
+
+.checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+}
+
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #555555;
+}
+
+.checkbox input[type="checkbox"],
+.checkbox input[type="radio"] {
+    opacity: 0;
+    z-index: 1;
+}
+
+.checkbox input[type="checkbox"]:focus+label::before,
+.checkbox input[type="radio"]:focus+label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.checkbox input[type="checkbox"]:checked+label::after,
+.checkbox input[type="radio"]:checked+label::after {
+    font-family: "FontAwesome";
+    content: "\f00c";
+}
+
+.checkbox input[type="checkbox"]:indeterminate+label::after,
+.checkbox input[type="radio"]:indeterminate+label::after {
+    display: block;
+    content: "";
+    width: 10px;
+    height: 3px;
+    background-color: #555555;
+    border-radius: 2px;
+    margin-left: -16.5px;
+    margin-top: 7px;
+}
+
+.checkbox input[type="checkbox"]:disabled+label,
+.checkbox input[type="radio"]:disabled+label {
+    opacity: 0.65;
+}
+
+.checkbox input[type="checkbox"]:disabled+label::before,
+.checkbox input[type="radio"]:disabled+label::before {
+    background-color: #eeeeee;
+    cursor: not-allowed;
+}
+
+.checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+}
+
+.checkbox.checkbox-inline {
+    margin-top: 0;
+}
+
+.checkbox-primary input[type="checkbox"]:checked+label::before,
+.checkbox-primary input[type="radio"]:checked+label::before {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.checkbox-primary input[type="checkbox"]:checked+label::after,
+.checkbox-primary input[type="radio"]:checked+label::after {
+    color: #fff;
+}
+
+.checkbox-danger input[type="checkbox"]:checked+label::before,
+.checkbox-danger input[type="radio"]:checked+label::before {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.checkbox-danger input[type="checkbox"]:checked+label::after,
+.checkbox-danger input[type="radio"]:checked+label::after {
+    color: #fff;
+}
+
+.checkbox-info input[type="checkbox"]:checked+label::before,
+.checkbox-info input[type="radio"]:checked+label::before {
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+}
+
+.checkbox-info input[type="checkbox"]:checked+label::after,
+.checkbox-info input[type="radio"]:checked+label::after {
+    color: #fff;
+}
+
+.checkbox-warning input[type="checkbox"]:checked+label::before,
+.checkbox-warning input[type="radio"]:checked+label::before {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+.checkbox-warning input[type="checkbox"]:checked+label::after,
+.checkbox-warning input[type="radio"]:checked+label::after {
+    color: #fff;
+}
+
+.checkbox-success input[type="checkbox"]:checked+label::before,
+.checkbox-success input[type="radio"]:checked+label::before {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+
+.checkbox-success input[type="checkbox"]:checked+label::after,
+.checkbox-success input[type="radio"]:checked+label::after {
+    color: #fff;
+}
+
+.checkbox-primary input[type="checkbox"]:indeterminate+label::before,
+.checkbox-primary input[type="radio"]:indeterminate+label::before {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.checkbox-primary input[type="checkbox"]:indeterminate+label::after,
+.checkbox-primary input[type="radio"]:indeterminate+label::after {
+    background-color: #fff;
+}
+
+.checkbox-danger input[type="checkbox"]:indeterminate+label::before,
+.checkbox-danger input[type="radio"]:indeterminate+label::before {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.checkbox-danger input[type="checkbox"]:indeterminate+label::after,
+.checkbox-danger input[type="radio"]:indeterminate+label::after {
+    background-color: #fff;
+}
+
+.checkbox-info input[type="checkbox"]:indeterminate+label::before,
+.checkbox-info input[type="radio"]:indeterminate+label::before {
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+}
+
+.checkbox-info input[type="checkbox"]:indeterminate+label::after,
+.checkbox-info input[type="radio"]:indeterminate+label::after {
+    background-color: #fff;
+}
+
+.checkbox-warning input[type="checkbox"]:indeterminate+label::before,
+.checkbox-warning input[type="radio"]:indeterminate+label::before {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+.checkbox-warning input[type="checkbox"]:indeterminate+label::after,
+.checkbox-warning input[type="radio"]:indeterminate+label::after {
+    background-color: #fff;
+}
+
+.checkbox-success input[type="checkbox"]:indeterminate+label::before,
+.checkbox-success input[type="radio"]:indeterminate+label::before {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+
+.checkbox-success input[type="checkbox"]:indeterminate+label::after,
+.checkbox-success input[type="radio"]:indeterminate+label::after {
+    background-color: #fff;
+}
+
+.radio {
+    padding-left: 20px;
+}
+
+.radio label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+}
+
+.radio label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out;
+}
+
+.radio label::after {
+    display: inline-block;
+    position: absolute;
+    content: " ";
+    width: 11px;
+    height: 11px;
+    left: 3px;
+    top: 3px;
+    margin-left: -20px;
+    border-radius: 50%;
+    background-color: #555555;
+    -webkit-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    transform: scale(0, 0);
+    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+}
+
+.radio input[type="radio"] {
+    opacity: 0;
+    z-index: 1;
+}
+
+.radio input[type="radio"]:focus+label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.radio input[type="radio"]:checked+label::after {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+.radio input[type="radio"]:disabled+label {
+    opacity: 0.65;
+}
+
+.radio input[type="radio"]:disabled+label::before {
+    cursor: not-allowed;
+}
+
+.radio.radio-inline {
+    margin-top: 0;
+}
+
+.radio-primary input[type="radio"]+label::after {
+    background-color: #337ab7;
+}
+
+.radio-primary input[type="radio"]:checked+label::before {
+    border-color: #337ab7;
+}
+
+.radio-primary input[type="radio"]:checked+label::after {
+    background-color: #337ab7;
+}
+
+.radio-danger input[type="radio"]+label::after {
+    background-color: #d9534f;
+}
+
+.radio-danger input[type="radio"]:checked+label::before {
+    border-color: #d9534f;
+}
+
+.radio-danger input[type="radio"]:checked+label::after {
+    background-color: #d9534f;
+}
+
+.radio-info input[type="radio"]+label::after {
+    background-color: #5bc0de;
+}
+
+.radio-info input[type="radio"]:checked+label::before {
+    border-color: #5bc0de;
+}
+
+.radio-info input[type="radio"]:checked+label::after {
+    background-color: #5bc0de;
+}
+
+.radio-warning input[type="radio"]+label::after {
+    background-color: #f0ad4e;
+}
+
+.radio-warning input[type="radio"]:checked+label::before {
+    border-color: #f0ad4e;
+}
+
+.radio-warning input[type="radio"]:checked+label::after {
+    background-color: #f0ad4e;
+}
+
+.radio-success input[type="radio"]+label::after {
+    background-color: #5cb85c;
+}
+
+.radio-success input[type="radio"]:checked+label::before {
+    border-color: #5cb85c;
+}
+
+.radio-success input[type="radio"]:checked+label::after {
+    background-color: #5cb85c;
+}
+
+input[type="checkbox"].styled:checked+label:after,
+input[type="radio"].styled:checked+label:after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+}
+
+input[type="checkbox"] .styled:checked+label::before,
+input[type="radio"] .styled:checked+label::before {
+    color: #fff;
+}
+
+input[type="checkbox"] .styled:checked+label::after,
+input[type="radio"] .styled:checked+label::after {
+    color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+    .login-form {
+        width: 95%;
+        padding-top: 25px;
+    }
+    .applogo .logo {
+        font-size: 14px;
+    }
+    .linesRot,
+    .checkbox label {
+        font-size: 12px;
+    }
+    h6 {
+        line-height: 1.2;
+        margin-top: 12px;
+    }
+    .col-xs-12,
+    .col-xs-2 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    div.accordion {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .checkbox {
+        padding-left: 5px
+    }
+    div.checkbox {
+        margin-left: 20px;
+    }
+    div.panel-title.linesPanelTitle {
+        font-size: 13px;
+    }
+    .btn-sm {
+        padding: 5px;
+    }
+    .linesTeam {
+        font-size: 12px;
+        line-height: 20px !important;
+    }
+    .teamnsLogos {
+        margin-top: 0px !important
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .btnGrpUp {
+        position: fixed;
+        z-index: 99999;
+        right: 25px;
+    }
+
+    .teamnsLogos {
+        margin-top: 10px !important
+    }
+}
+
+#IN-PROGRESS {
+    color: red;
+}
+
+.row .odd{
+    background: #f2f4F8;
+}
+
+.BT-allcont .odd{
+    background: #f2f4F8;
+}
+
+.TrGameOdd {
+     background: #f2f4F8;
+}
+
+.leaguebanner {
+    background: #060E21;
+    color: #e1e1e1;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 8px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leaguebanner img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.strongline {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    text-align: left;
+    font-weight: 900;
+}
+
+input[type="text"].form-control, select.form-control  {
+        border: 1px solid #3c3c3c !important;
+}
+
+
+.hidden-xs-up {
+    display: none !important;
+}
+@media (max-width: 575px) {
+    .hidden-xs-down {
+        display: none !important;
+    }
+}
+@media (min-width: 576px) {
+    .hidden-sm-up {
+        display: none !important;
+    }
+}
+@media (max-width: 767px) {
+    .hidden-sm-down {
+        display: none !important;
+    }
+}
+@media (min-width: 768px) {
+    .hidden-md-up {
+        display: none !important;
+    }
+}
+@media (max-width: 991px) {
+    .hidden-md-down {
+        display: none !important;
+    }
+}
+@media (min-width: 992px) {
+    .hidden-lg-up {
+        display: none !important;
+    }
+}
+@media (max-width: 1199px) {
+    .hidden-lg-down {
+        display: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .hidden-xl-up {
+        display: none !important;
+    }
+}
+.hidden-xl-down {
+    display: none !important;
+}
