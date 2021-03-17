@@ -18,6 +18,7 @@ from SportsWebsite.settings import BASE_DIR, settings_dir, PROJECT_ROOT
 def index(request):
     return render(request, "Welcome to BetBig247.com.html")
 
+
 def betHistorydetails(request):
     userfetched = userInfo.objects.get(username=request.session["username"])
     allBets = myBet.objects.filter(user=userfetched)
@@ -63,6 +64,7 @@ def OpenBets(request):
     }
     return render(request, "myBets.html", data)
 
+
 def homePage(request):
 
     userfetched = userInfo.objects.get(username=request.session["username"])
@@ -86,6 +88,7 @@ def homePage(request):
     }
     return render(request, "Betting Site.html", data)
 
+
 def userInformation(request):
     userfetched = userInfo.objects.get(username=request.session["username"])
     allBets = myBet.objects.filter(user=userfetched)
@@ -107,9 +110,11 @@ def userInformation(request):
         "balance": balance,
     }
 
-    return JsonResponse(data,
+    return JsonResponse(
+        data,
         content_type="application/json",
     )
+
 
 def readCredentials(request):
     allCredentials = RandomCredentials.readCredentials()
