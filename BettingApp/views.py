@@ -167,15 +167,20 @@ def adminaccess(request):
 
 @csrf_exempt
 def updateCredential(request, id):
-    body_unicode = request.body.decode("utf-8")
-    body = json.loads(body_unicode)
-    username = body["username"]
-    password = body["password"]
-    role = body["role"]
+    username = request.POST["username"]
+    password = request.POST["password"]
+    role = request.POST["role"]
     credential = []
     credential.extend([username, password, role])
     RandomCredentials.updateCredential(credential, id)
-    return HttpResponse("updated suceessfully")
+    return JsonResponse(
+        {
+            "status": 200,
+            "base_dir": "http://" + request.META["HTTP_HOST"],
+
+        },
+        content_type="application/json",
+    )
 
 
 def findCredential(request, id):

@@ -37,6 +37,7 @@
     <link href= "{% static 'vendor/slick/slick.css' %}" rel="stylesheet" media="all">
     <link href= "{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
     <link href= "{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}" rel="stylesheet" media="all">
+    <script src= "{% static 'vendor/dashboardUpdate.js' %}" ></script>
 
     <!-- Main CSS-->
     <link href= "{% static 'css/theme.css' %}" rel="stylesheet" media="all">
@@ -144,26 +145,7 @@
             <div class="header__tool">
                
                 </div>
-                <div class="header-button-item js-item-menu">
-                    <i class="zmdi zmdi-settings"></i>
-                    <div class="setting-dropdown js-dropdown">
-                        <div class="account-dropdown__body">
-                            <div class="account-dropdown__item">
-                                <a href="#">
-                                    <i class="zmdi zmdi-account"></i>Account</a>
-                            </div>
-                            <div class="account-dropdown__item">
-                                <a href="#">
-                                    <i class="zmdi zmdi-settings"></i>Setting</a>
-                            </div>
-                            <div class="account-dropdown__item">
-                                <a href="#">
-                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
+                
                 <div class="account-wrap">
                     <div class="account-item account-item--style2 clearfix js-item-menu">
                         <div class="image">
@@ -218,29 +200,33 @@
                                     </thead>
                                     <tbody>
                                     {% for credential in admin %}                                        
-                                        <tr class="tr-shadow">
-                                           
-                                            <td>{{credential.id}}</td>
-                                            <td>
-                                                <span class="block-email">{{credential.username}}</span>
-                                            </td>
-                                            <td class="desc">{{credential.password}}</td>
-                                            <td>{{credential.role}}</td>
-                                            
-                                           
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Save">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    
-                                                    
-                                                </div>
-                                            </td>
-                                        </tr>
+                                    <tr class="tr-shadow">
+                                        <td>
+                                            <span class="block-email">{{credential.id}}</span>
+                                        </td>                                            
+                                        <td>
+                                            <input type="text" id="username" class="block-email" value={{credential.username}}>
+                                        </td>                                         
+                                        <td>
+                                            <input type="text" id="password" class="block-email" value={{credential.password}}>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="role" class="block-email" value={{credential.role}}>
+                                        </td>
+                                       
+                                        <td>
+                                            <div class="table-data-feature">
+                                                <button class="item" onclick="send(this)" data-toggle="tooltip" data-placement="top" title="Save">
+                                                    <i class="zmdi zmdi-mail-send"></i>
+                                                </button>
+
+                                                <button class="item" onclick="del(this)" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                </button>
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
                                         {% endfor %}
                                         <tr class="spacer"></tr>
                                         <tr class="tr-shadow">
@@ -296,25 +282,22 @@
                                                 <span class="block-email">{{user.id}}</span>
                                             </td>                                            
                                             <td>
-                                                <span class="block-email">{{user.username}}</span>
+                                                <input type="text" id="username" class="block-email" value={{user.username}}>
                                             </td>                                         
                                             <td>
-                                                <span class="block-email">{{user.password}}</span>
+                                                <input type="text" id="password" class="block-email" value={{user.password}}>
                                             </td>
                                             <td>
-                                                <span class="block-email">{{user.role}}</span>
+                                                <input type="text" id="role" class="block-email" value={{user.role}}>
                                             </td>
-                                            
                                            
                                             <td>
                                                 <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Save">
+                                                    <button class="item" onclick="send(this)" data-toggle="tooltip" data-placement="top" title="Save">
                                                         <i class="zmdi zmdi-mail-send"></i>
                                                     </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+
+                                                    <button class="item" onclick="del(this)" data-toggle="tooltip" data-placement="top" title="Delete">
                                                         <i class="zmdi zmdi-delete"></i>
                                                     </button>
                                                     
