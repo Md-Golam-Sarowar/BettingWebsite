@@ -44,11 +44,13 @@ from BettingApp.views import (
     userInformation,
     OpenBets,
     betHistorydetails,
+    adminaccess,
 )
 
 urlpatterns = [
     path("", index),
     path("home", homePage),
+    path("adminAccess", adminaccess),
     path("vipLiveBetting", homePage),
     path("openBets", OpenBets),
     path("betHistory", betHistorydetails),
@@ -59,7 +61,7 @@ urlpatterns = [
     path("slowerscrapping", getfromwebpageslower),
     path("dropdownoptions", getdropdownoptions),
     path("generatecredentials/<int:totalCredentials>", createrandomCredentials),
-    path("readcredentials", readCredentials),
+    path("dashboard", readCredentials),
     path("updateCredential/<int:id>", updateCredential),
     path("deleteCredential/<int:id>", deleteCredential),
     path("findCredential/<int:id>", findCredential),

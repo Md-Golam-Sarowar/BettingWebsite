@@ -7,6 +7,7 @@
 </title><link href= "{% static 'betHistory/root.css' %}" rel="stylesheet"><link href= "{% static 'betHistory/custom.css' %}" rel="stylesheet"><link href= "{% static 'betHistory/logos.css' %}" rel="stylesheet">
     <script type="text/javascript" src= "{% static 'betHistory/jquery.min.js.download' %}"></script>
     <script type="text/javascript" src = "{% static 'Betting Site_files/logout.js' %}"></script>
+    <script type="text/javascript" src = "{% static 'Betting Site_files/dashboard.js' %}"></script>
 
     <style>
         html, body {
@@ -110,7 +111,7 @@
         <!-- Start Top Right-->
         <ul class="top-right">
             <li class="link" data-toggle="modal" data-target="#BetTicketMB">
-                <a href="https://engine.betbig247.com/wager/History.aspx#" class="notifications"><i class="fa fa-user"></i>
+                <a href="/betHistory#" onclick="dashboard()" class="notifications"><i class="fa fa-user"></i>
                     
         <span id="ctl00_AccountName_lblAccount">{{username}}</span>
     

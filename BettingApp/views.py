@@ -118,28 +118,69 @@ def userInformation(request):
 
 def readCredentials(request):
     allCredentials = RandomCredentials.readCredentials()
+    userIds = []
+    usernames = []
+    passwords = []
+    roles = []
+    credentials = []
+    admin = []
     for data in allCredentials:
-        print(
-            data.id,
-            "  ",
-            data.username,
-            "  ",
-            data.password,
-        )
-    return HttpResponse("credentials read successfully")
+        singleCredential = dict()
+
+        if data.role != "admin":
+            singleCredential["id"] = data.id
+            singleCredential["username"] = data.username
+            singleCredential["password"] = data.password
+            singleCredential["role"] = data.role
+            credentials.append(singleCredential)
+        elif data.role == "admin":
+            singleCredential["id"] = data.id
+            singleCredential["username"] = data.username
+            singleCredential["password"] = data.password
+            singleCredential["role"] = data.role
+            admin.append(singleCredential)
+
+    return render(request, "index3.html", {"credentials": credentials, "admin": admin})
+
+
+def adminaccess(request):
+    if request.session.get("username") and request.session.get("role") == "admin":
+        data = {
+            "loggedin": "yes",
+            "role": "admin",
+        }
+    elif request.session.get("username"):
+        data = {
+            "loggedin": "yes",
+            "role": "user",
+        }
+
+    return JsonResponse(
+        {
+            "status": 200,
+            "data": data,
+            "base_dir": "http://" + request.META["HTTP_HOST"],
+        },
+        content_type="application/json",
+    )
 
 
 @csrf_exempt
 def updateCredential(request, id):
-    body_unicode = request.body.decode("utf-8")
-    body = json.loads(body_unicode)
-    username = body["username"]
-    password = body["password"]
-    role = body["role"]
+    username = request.POST["username"]
+    password = request.POST["password"]
+    role = request.POST["role"]
     credential = []
     credential.extend([username, password, role])
     RandomCredentials.updateCredential(credential, id)
-    return HttpResponse("updated suceessfully")
+    return JsonResponse(
+        {
+            "status": 200,
+            "base_dir": "http://" + request.META["HTTP_HOST"],
+
+        },
+        content_type="application/json",
+    )
 
 
 def findCredential(request, id):

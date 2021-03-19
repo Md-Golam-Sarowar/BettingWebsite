@@ -6,6 +6,7 @@
 </title><link href="{% static 'Betting Site_files/root.css' %}" rel="stylesheet"><link href= "{% static 'Betting Site_files/custom.css' %}" rel="stylesheet"><link href="{% static 'Betting Site_files/logos.css' %}" rel="stylesheet">
     <script type="text/javascript" src="{% static 'Betting Site_files/jquery.min.js.download' %}"></script>
     <script type="text/javascript" src = "{% static 'Betting Site_files/logout.js' %}"></script>
+    <script type="text/javascript" src = "{% static 'Betting Site_files/dashboard.js' %}"></script>
 
     <style>
         html, body {
@@ -107,7 +108,7 @@
         <!-- Start Top Right-->
         <ul class="top-right">
             <li class="link" data-toggle="modal" data-target="#BetTicketMB">
-                <a href="https://engine.betbig247.com/wager/OpenBets.aspx#" class="notifications"><i class="fa fa-user"></i>
+                <a href="/openBets#" onclick="dashboard()" class="notifications"><i class="fa fa-user"></i>
                     
         <span id="ctl00_AccountName_lblAccount">{{username}}</span>
     
