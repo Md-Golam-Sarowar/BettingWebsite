@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 {% load static %}
-<!-- saved from url=(0061)https://engine.betbig247.com/wager/bridge.aspx?to=LiveBetting -->
 <html lang="en"><head id="ctl00_Head"><meta http-equiv="Content-Type" charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="HandheldFriendly" content="true"><link href= "{% static 'Betting Site_files/css(1)' %}" rel="application/octet-stream"><title>
 	Bet Lounge 247
 </title><link href= "{% static 'Betting Site_files/root.css' %}" rel="stylesheet"><link href= "{% static 'Betting Site_files/custom.css' %}" rel="stylesheet"><link href= "{% static 'Betting Site_files/logos.css' %}" rel="stylesheet">
     <script type="text/javascript" src = "{% static 'Betting Site_files/jquery.min.js.download' %}"></script>
     <script type="text/javascript" src = "{% static 'Betting Site_files/logout.js' %}"></script>
+    <script type="text/javascript" src = "{% static 'Betting Site_files/dashboard.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
 
@@ -109,7 +109,7 @@
         <!-- Start Top Right-->
         <ul class="top-right">
             <li class="link" data-toggle="modal" data-target="#BetTicketMB">
-                <a href="/dashboard" class="notifications"><i class="fa fa-user"></i>
+                <a href="/home#" onclick="dashboard()" class="notifications"><i class="fa fa-user"></i>
                     
         <span id="ctl00_AccountName_lblAccount">{{username}}</span>
     

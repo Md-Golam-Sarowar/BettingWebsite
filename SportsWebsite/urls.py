@@ -44,11 +44,13 @@ from BettingApp.views import (
     userInformation,
     OpenBets,
     betHistorydetails,
+    adminaccess,
 )
 
 urlpatterns = [
     path("", index),
     path("home", homePage),
+    path("adminAccess", adminaccess),
     path("vipLiveBetting", homePage),
     path("openBets", OpenBets),
     path("betHistory", betHistorydetails),

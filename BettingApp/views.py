@@ -143,6 +143,28 @@ def readCredentials(request):
     return render(request, "index3.html", {"credentials": credentials, "admin": admin})
 
 
+def adminaccess(request):
+    if request.session.get("username") and request.session.get("role") == "admin":
+        data = {
+            "loggedin": "yes",
+            "role": "admin",
+        }
+    elif request.session.get("username"):
+        data = {
+            "loggedin": "yes",
+            "role": "user",
+        }
+
+    return JsonResponse(
+        {
+            "status": 200,
+            "data": data,
+            "base_dir": "http://" + request.META["HTTP_HOST"],
+        },
+        content_type="application/json",
+    )
+
+
 @csrf_exempt
 def updateCredential(request, id):
     body_unicode = request.body.decode("utf-8")
