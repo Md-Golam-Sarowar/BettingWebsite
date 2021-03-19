@@ -118,15 +118,29 @@ def userInformation(request):
 
 def readCredentials(request):
     allCredentials = RandomCredentials.readCredentials()
+    userIds = []
+    usernames = []
+    passwords = []
+    roles = []
+    credentials = []
+    admin = []
     for data in allCredentials:
-        print(
-            data.id,
-            "  ",
-            data.username,
-            "  ",
-            data.password,
-        )
-    return HttpResponse("credentials read successfully")
+        singleCredential = dict()
+
+        if data.role != "admin":
+            singleCredential["id"] = data.id
+            singleCredential["username"] = data.username
+            singleCredential["password"] = data.password
+            singleCredential["role"] = data.role
+            credentials.append(singleCredential)
+        elif data.role == "admin":
+            singleCredential["id"] = data.id
+            singleCredential["username"] = data.username
+            singleCredential["password"] = data.password
+            singleCredential["role"] = data.role
+            admin.append(singleCredential)
+
+    return render(request, "index3.html", {"credentials": credentials, "admin": admin})
 
 
 @csrf_exempt

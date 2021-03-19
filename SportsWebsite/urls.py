@@ -59,7 +59,7 @@ urlpatterns = [
     path("slowerscrapping", getfromwebpageslower),
     path("dropdownoptions", getdropdownoptions),
     path("generatecredentials/<int:totalCredentials>", createrandomCredentials),
-    path("readcredentials", readCredentials),
+    path("dashboard", readCredentials),
     path("updateCredential/<int:id>", updateCredential),
     path("deleteCredential/<int:id>", deleteCredential),
     path("findCredential/<int:id>", findCredential),
