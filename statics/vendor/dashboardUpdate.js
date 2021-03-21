@@ -35,3 +35,33 @@ function send(elem)
         }
       });
 }
+
+
+function del(elem)
+{
+    row = elem.parentNode.parentNode.parentNode;
+    adminId = row.querySelector("#adminId").textContent;
+
+    table = row.parentNode;
+    var rowNo;
+
+    $.ajax({
+        url: 'http://127.0.0.1:8000/deleteCredential/'+adminId,
+        type: "get",
+      });
+
+    for(let i in table.rows)
+    {
+        id = table.rows[i].querySelector("#adminId").textContent;
+        if(adminId == id)
+        {
+            rowNo = i;
+            break;
+        }
+    }
+
+    table.deleteRow(rowNo);
+
+    alert("Deleted Successfully!");
+
+}
