@@ -40,6 +40,7 @@ def updateCredential(updatecredential, id):
 def deleteCredential(id):
     credential = userInfo.objects.get(pk=id)
     credential.delete()
+    return True
 
 
 def findCredential(id):

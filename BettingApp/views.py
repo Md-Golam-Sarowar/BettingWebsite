@@ -251,8 +251,13 @@ def deleteBet(request, betId):
 
 def deleteCredential(request, id):
     RandomCredentials.deleteCredential(id)
-    return HttpResponse("deleted suceessfully")
+    return JsonResponse(
+        {
+            "status": 200,
 
+        },
+        content_type="application/json",
+    )
 
 def getfromwebpagesfaster(request):
     scrapped_data = fasterScrappingLive.liveSports()
