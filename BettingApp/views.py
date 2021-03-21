@@ -8,7 +8,7 @@ from .modules import (
 )
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import myBet, userInfo, myBet, betHistory
+from .models import myBet, userInfo, betHistory, componentBet
 import json
 from django.http import JsonResponse
 from SportsWebsite.settings import BASE_DIR, settings_dir, PROJECT_ROOT
@@ -177,7 +177,6 @@ def updateCredential(request, id):
         {
             "status": 200,
             "base_dir": "http://" + request.META["HTTP_HOST"],
-
         },
         content_type="application/json",
     )
@@ -195,52 +194,38 @@ def findCredential(request, id):
 
 @csrf_exempt
 def createBet(request):
-    body_unicode = request.body.decode("utf-8")
-    body = json.loads(body_unicode)
-    ticketNo = body["ticketNo"]
-    user_phone = body["user_phone"]
-    placed = body["placed"]
+    body = json.loads(request.body)
+    betType = body["type"]
     risk = body["risk"]
-    win = body["win"]
-    user = body["userId"]
-    team1 = body["team1"]
-    team2 = body["team2"]
-    whomtobet = body["whomtobet"]
-    matchDate = body["matchDate"]
-    panelTitle = body["panelTitle"]
-    game_point_details = body["game_point_details"]
-    point = body["point"]
+    accept = body["accept"]
+    sizesenabled = body["sizesEnabled"]
+    userFreeBetId = body["userFreeBetId"]
+    components = body["componentBets"]
+    a = body["a"]
+
+    fetchedUser = userInfo.objects.filter(id=request.session["id"])
+    user = fetchedUser[0]
+
     newBet = []
     newBet.extend(
-        [
-            ticketNo,
-            user_phone,
-            placed,
-            risk,
-            win,
-            user,
-            team1,
-            team2,
-            whomtobet,
-            matchDate,
-            panelTitle,
-            game_point_details,
-            point,
-        ]
+        [betType, risk, accept, sizesenabled, userFreeBetId, a, user, components]
     )
     createdBet = betMethods.createnewBet(newBet)
 
-    if createdBet == True:
-        return HttpResponse("created suceessfully")
-    else:
-        return HttpResponse("failed to create")
+    return JsonResponse(
+        {
+            "success": "successfully creatednewBet",
+            "status": 200,
+        },
+        content_type="application/json",
+    )
 
 
 def readBets(request, userId):
     userfetched = userInfo.objects.get(id=userId)
     allBets = myBet.objects.filter(user=userfetched)
     for bet in allBets:
-        print(bet.risk)
+        print(bet.componentBet_set.all())
     return HttpResponse("bets Read suceessfully")
 
 
@@ -293,6 +278,7 @@ def authenticate(request):
             break
 
     if flag == True:
+        request.session["id"] = user.id
         request.session["username"] = user.username
         request.session["password"] = user.password
         request.session["role"] = user.role

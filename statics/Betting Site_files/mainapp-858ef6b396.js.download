@@ -13393,7 +13393,7 @@ angular.module("gsLive").service("sportPeriodsService", function() {
             d: t.data && t.data.d || "CONNECTION_ERROR"
         }
     }
-    var n = "/betLobbyV2/logic/",
+    var n = "/createBet",
         e = "/betLobbyV2/getUpdates/",
         r = "/live/allEvents",
         o = "/betLobbyV2/blockedAndVigs/",
@@ -13531,6 +13531,7 @@ angular.module("gsLive").service("sportPeriodsService", function() {
                     }), t)
                 },
                 placeBet: function(e) {
+                  console.log(n, e);
                     return e.a = "placeBet", p.post(n, e, {
                         ignoreLoadingBar: !0
                     }).then((function(t) {
