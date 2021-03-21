@@ -279,8 +279,14 @@ def getdropdownoptions(request):
 
 def createrandomCredentials(request, totalCredentials):
     totalCredentials = RandomCredentials.addCredentials(totalCredentials)
-    return HttpResponse("randomCredentials Saved suceessfully")
+    return JsonResponse(
+        {
+            "status": 200,
+            "base_dir": "http://" + request.META["HTTP_HOST"],
 
+        },
+        content_type="application/json",
+    )
 
 @csrf_exempt
 def authenticate(request):

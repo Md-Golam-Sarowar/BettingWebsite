@@ -65,3 +65,21 @@ function del(elem)
     alert("Deleted Successfully!");
 
 }
+
+
+function generate()
+{
+    generateUser = document.getElementById("generateUser").value;
+
+    $.ajax({
+        url: 'http://127.0.0.1:8000/generatecredentials/'+generateUser,
+        type: "get",
+        success: function (data) {
+            if(data["status"] == 200)
+            {
+                alert("Successfully generated");
+                window.location = data["base_dir"]+"/dashboard";
+            }
+        }
+      });
+}

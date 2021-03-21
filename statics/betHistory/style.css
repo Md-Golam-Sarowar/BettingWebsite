@@ -166,7 +166,7 @@ body {
 }
 
 a {
-    color: #399bff;
+    color: #795548;
     text-decoration: none;
 }
 
@@ -340,7 +340,7 @@ Top
 
 #top {
     height: 60px;
-    background: #0B1629;
+    background: #e2d34b;
     color: #fff;
     width: 100%;
     position: fixed;
@@ -365,7 +365,7 @@ App Logo
 }
 
 .applogo .logo {
-    color: #fff;
+    color: black;
     font-size: 14px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
@@ -472,12 +472,8 @@ Top Menu
 }
 
 .topmenu a {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
     padding: 7px;
-}
-
-.topmenu a:hover {
-    color: #fff;
 }
 
 .topmenu li {
