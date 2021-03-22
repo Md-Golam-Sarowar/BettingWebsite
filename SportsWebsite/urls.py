@@ -45,6 +45,10 @@ from BettingApp.views import (
     OpenBets,
     betHistorydetails,
     adminaccess,
+    showsports,
+    parl,
+    teaser,
+
 )
 
 urlpatterns = [
@@ -69,4 +73,8 @@ urlpatterns = [
     path("deleteBet/<int:betId>", deleteBet),
     path("readBets/<int:userId>", readBets),
     path("showHistory/<int:userId>", showHistory),
+    path("sports", showsports),
+    path("parlay", parl),
+    path("teaser", teaser),
+
 ]

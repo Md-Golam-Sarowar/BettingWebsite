@@ -288,6 +288,69 @@ def createrandomCredentials(request, totalCredentials):
         content_type="application/json",
     )
 
+def showsports(request):
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+    return render(request, "showSports.html", data)
+
+def parl (request):
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+    return render(request, "parl.html", data)
+
+def teaser(request):
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+    return render(request, "teaser.html", data)
+
 @csrf_exempt
 def authenticate(request):
     usernamedata = request.POST["username"]
