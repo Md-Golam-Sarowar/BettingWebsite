@@ -90,11 +90,11 @@ WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "postgres",
-        "USER": "postgres",
+        "NAME": "Betting_db",
+        "USER": "wager",
         "PASSWORD": "123456",
         "HOST": "localhost",
-        "PORT": "5432",
+        "PORT": "",
     }
 }
 
