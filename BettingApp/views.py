@@ -225,7 +225,7 @@ def readBets(request, userId):
     userfetched = userInfo.objects.get(id=userId)
     allBets = myBet.objects.filter(user=userfetched)
     for bet in allBets:
-        print(bet.componentBet_set.all())
+        print(bet.id, bet.risk, bet.user.id, bet.userFreeBetId)
     return HttpResponse("bets Read suceessfully")
 
 
@@ -239,10 +239,10 @@ def deleteCredential(request, id):
     return JsonResponse(
         {
             "status": 200,
-
         },
         content_type="application/json",
     )
+
 
 def getfromwebpagesfaster(request):
     scrapped_data = fasterScrappingLive.liveSports()

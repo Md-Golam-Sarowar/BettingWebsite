@@ -5,14 +5,14 @@ function authenticateuser() {
     Data = {"username" : username, "password" : password}
 
     $.ajax({
-        url: 'http://127.0.0.1:8000/login',
+        url: 'login',
         type: "post",
         data: Data,
         dataType: 'json',
         success: function (data) {
             if(data["status"] == 200)
             {
-                window.location = data["base_dir"]+"/home";
+                window.location = "/home";
             }
             else if (data["status"] == 500)
             {
