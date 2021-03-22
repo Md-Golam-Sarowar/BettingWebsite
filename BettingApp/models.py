@@ -15,48 +15,34 @@ class userInfo(TimeStampMixin):
     role = models.CharField(max_length=50, default="")
     available = models.IntegerField(default=0)
 
-    def __str__(self):
-        return self.username
-
-
-class liveSport(TimeStampMixin):
-    name = models.CharField(max_length=250, default="")
-    team1 = models.CharField(max_length=250, default="")
-    team2 = models.CharField(max_length=250, default="")
-    dateTime = models.CharField(max_length=250, default="")
-    live = models.CharField(max_length=250, default="")
-    point1 = models.CharField(max_length=250, default="")
-    point2 = models.CharField(max_length=250, default="")
-    point3 = models.CharField(max_length=250, default="")
-    point4 = models.CharField(max_length=250, default="")
-    point5 = models.CharField(max_length=250, default="")
-    point6 = models.CharField(max_length=250, default="")
-    liveInfo = models.CharField(max_length=250, default="")
-    score1 = models.CharField(max_length=250, default="")
-    score2 = models.CharField(max_length=250, default="")
-    sportCategory = models.CharField(max_length=250, default="")
-
-    def __str__(self):
-        return self.name
+    def __int__(self):
+        return self.id
 
 
 class myBet(TimeStampMixin):
-    ticketNo = models.IntegerField(default=0)
-    user_phone = models.CharField(max_length=250, default="")
-    win = models.IntegerField(default=0)
+    betType = models.CharField(max_length=50, default="")
     risk = models.IntegerField(default=0)
-    placed = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(userInfo, default=None, on_delete=models.CASCADE)
-    team1 = models.CharField(max_length=250, default="")
-    team2 = models.CharField(max_length=250, default="")
-    whomtobet = models.CharField(max_length=260, default="")
-    matchDate = models.DateTimeField(null=True)
-    panelTitle = models.CharField(max_length=250, default="")
-    point = models.IntegerField(default=0)
-    game_point_details = models.TextField(default="")  # Game / Total: Over 206.5  -117
+    accept = models.IntegerField(default=0)
+    sizeEnabled = models.IntegerField(default=0)
+    userFreeBetId = models.IntegerField(default=0)
+    a = models.CharField(max_length=100, default="")
+    user = models.ForeignKey(userInfo, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.user_phone
+    def __int__(self):
+        return self.id
+
+
+class componentBet(TimeStampMixin):
+    e = models.IntegerField(default=0)
+    p = models.CharField(max_length=50, default="")
+    m = models.IntegerField(default=0)
+    k = models.IntegerField(default=0)
+    v = models.IntegerField(default=0)
+    sk = models.IntegerField(default=0)
+    myBet = models.ForeignKey(myBet, on_delete=models.CASCADE)
+
+    def __int__(self):
+        return self.e
 
 
 class betHistory(TimeStampMixin):
