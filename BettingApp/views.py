@@ -206,19 +206,35 @@ def createBet(request):
     fetchedUser = userInfo.objects.filter(id=request.session["id"])
     user = fetchedUser[0]
 
+    userfetched = userInfo.objects.get(username=request.session["username"])
+    allBets = myBet.objects.filter(user=userfetched)
+
+    riskValueDb = 0
+    for bet in allBets:
+        riskValueDb = riskValueDb + bet.risk
+
     newBet = []
     newBet.extend(
         [betType, risk, accept, sizesenabled, userFreeBetId, a, user, components]
     )
-    createdBet = betMethods.createnewBet(newBet)
 
-    return JsonResponse(
-        {
-            "success": "successfully creatednewBet",
-            "status": 200,
-        },
-        content_type="application/json",
-    )
+    if (riskValueDb + risk) > user.available or (riskValueDb + risk) > 300:
+        return JsonResponse(
+            {
+                "Failed": "risk value exceeds user limit! ",
+                "status": 500,
+            },
+            content_type="application/json",
+        )
+    else:
+        createdBet = betMethods.createnewBet(newBet)
+        return JsonResponse(
+            {
+                "success": "successfully creatednewBet",
+                "status": 200,
+            },
+            content_type="application/json",
+        )
 
 
 def readBets(request, userId):
@@ -268,10 +284,10 @@ def createrandomCredentials(request, totalCredentials):
         {
             "status": 200,
             "base_dir": "http://" + request.META["HTTP_HOST"],
-
         },
         content_type="application/json",
     )
+
 
 def showsports(request):
     userfetched = userInfo.objects.get(username=request.session["username"])
@@ -294,7 +310,8 @@ def showsports(request):
     }
     return render(request, "showSports.html", data)
 
-def parl (request):
+
+def parl(request):
     userfetched = userInfo.objects.get(username=request.session["username"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
@@ -314,6 +331,7 @@ def parl (request):
         "balance": balance,
     }
     return render(request, "parl.html", data)
+
 
 def teaser(request):
     userfetched = userInfo.objects.get(username=request.session["username"])
@@ -335,6 +353,7 @@ def teaser(request):
         "balance": balance,
     }
     return render(request, "teaser.html", data)
+
 
 @csrf_exempt
 def authenticate(request):
