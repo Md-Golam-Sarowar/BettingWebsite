@@ -76,7 +76,7 @@ TEMPLATES = [
 ]
 
 # this is the statics files context path when request the static file in url. for example http://127.0.0.1:8000/static/js/script.js
-STATIC_URL = "/statics/"
+STATIC_URL = "/static/"
 
 # this is the static files folder name which you created in django project root folder. This is different from above STATIC_URL.
 STATICFILES_DIRS = [
