@@ -55,7 +55,7 @@
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <div class="logo">Bal: <a href="https://engine.betbig247.com/Wager/History.aspx" class="" style="color: red;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="https://engine.betbig247.com/Wager/OpenBets.aspx" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
+            <div class="logo">Bal: <a href="/betHistory" class="" style="color: red;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/openBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
         </div>
         <!-- End App Logo -->
 
@@ -122,17 +122,17 @@
     <!-- START SIDEBAR -->
     <div class="sidebar clearfix hidden-lg hidden-md">
         <ul class="sidebar-panel nav">
-            <li><a href="/admin"><span class="icon fa fa-user"></span>
+            <li><a href="/dashboard"><span class="icon fa fa-user"></span>
                 
         <span id="ctl00_AccountFigures1_lblAccount">{{username}}</span>
     
             </a></li>
-            <li><a href="/vipLiveBetting"><span class="icon sport-menu football"></span>Sports</a></li>
+            <li><a href="/sports"><span class="icon sport-menu football"></span>Sports</a></li>
 
             
-            <li><a href="/vipLiveBetting"><span class="icon sport-menu horse-racing"></span>Racebook</a></li>
+            <li><a href="/vipLiveBetting"><span class="icon sport-menu horse-racing"></span>Racing</a></li>
             
-            <li><a style="color: #ff0;" href="/vipLiveBetting"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
+            <li><a style="color: red;" href="/vipLiveBetting"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
                                     
         </ul>
         <ul class="sidebar-panel nav">
@@ -166,7 +166,7 @@
             <div class="row">
                 <div class="col-xs-12">        
 				    <h3>
-      PLAYER: BT18916</h3><table class="linesTeam table table-bordered" style="font-weight: bold; text-Shadow: none;"><tbody><tr class="GameHeader" style="color: #ffffff; background-color: #000000 !important; text-align: center;"><td>Open Bets: 3</td><td>Total Amount: 260 / 3200</td></tr><tr style="background-color: #353852; color: #ffffff;"><th>Ticket#:</th><td>36088800</td></tr><tr class="TrGameOdd"><th>User/Phone</th><td>Internet /
+      PLAYER: {{username}}</h3><table class="linesTeam table table-bordered" style="font-weight: bold; text-Shadow: none;"><tbody><tr class="GameHeader" style="color: #ffffff; background-color: #000000 !important; text-align: center;"><td>Open Bets: 3</td><td>Total Amount: 260 / 3200</td></tr><tr style="background-color: #353852; color: #ffffff;"><th>Ticket#:</th><td>36088800</td></tr><tr class="TrGameOdd"><th>User/Phone</th><td>Internet /
             -1</td></tr><tr class="TrGameOdd"><th>Placed</th><td>Jan 25 07:31 PM </td></tr><tr class="TrGameOdd"><th>Description</th><td>NHL - STANLEY CUP 2020-2021 - ODDS TO WIN<br>Mar 15 04:08 PM  -
               TNT -
               [14024] MINNESOTA WILD +4200 <span style="color:green;">(Pending)</span><br></td></tr><tr class="TrGameOdd"><th>Risk/Win</th><td>50 /
