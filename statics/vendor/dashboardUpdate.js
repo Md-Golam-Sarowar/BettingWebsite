@@ -22,7 +22,7 @@ function send(elem)
     Data = { "username" : username, "password" : password, "role" : role}
 
     $.ajax({
-        url: 'http://127.0.0.1:8000/updateCredential/'+intId,
+        url: 'updateCredential/'+intId,
         type: "post",
         data: Data,
         dataType: 'json',
@@ -46,7 +46,7 @@ function del(elem)
     var rowNo;
 
     $.ajax({
-        url: 'http://127.0.0.1:8000/deleteCredential/'+adminId,
+        url: 'deleteCredential/'+adminId,
         type: "get",
       });
 
@@ -72,7 +72,7 @@ function generate()
     generateUser = document.getElementById("generateUser").value;
 
     $.ajax({
-        url: 'http://127.0.0.1:8000/generatecredentials/'+generateUser,
+        url: 'generatecredentials/'+generateUser,
         type: "get",
         success: function (data) {
             if(data["status"] == 200)

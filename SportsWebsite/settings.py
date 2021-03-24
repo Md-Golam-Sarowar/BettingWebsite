@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 settings_dir = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(settings_dir))
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,7 +31,7 @@ SECRET_KEY = ")6@5vrn5@g7%-^iug031o&k1-r)rsaw!tm1188uo!_#$u*#vib"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["betlounge247.com", "216.137.179.96", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -77,7 +78,6 @@ TEMPLATES = [
 # this is the statics files context path when request the static file in url. for example http://127.0.0.1:8000/static/js/script.js
 STATIC_URL = "/static/"
 
-# this is the static files folder name which you created in django project root folder. This is different from above STATIC_URL.
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "statics"),
 ]
@@ -90,11 +90,11 @@ WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "123456",
+        "NAME": "myproject",
+        "USER": "myprojectuser",
+        "PASSWORD": "password",
         "HOST": "localhost",
-        "PORT": "5432",
+        "PORT": "",
     }
 }
 
@@ -134,5 +134,3 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = "/static/"
