@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 settings_dir = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(settings_dir))
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 
 # Quick-start development settings - unsuitable for production
@@ -79,9 +79,9 @@ TEMPLATES = [
 STATIC_URL = "/static/"
 
 # this is the static files folder name which you created in django project root folder. This is different from above STATIC_URL.
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "statics"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "statics"),
+# ]
 WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 
 
