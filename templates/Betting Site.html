@@ -44,11 +44,19 @@
         }, false);
     </script>
     <link href= "{% static 'Betting Site_files/PlayerChat.css' %}" rel="stylesheet"><link href= "{% static 'Betting Site_files/Calendar.css' %}" type="text/css" rel="stylesheet"></head>
+    <script>
+        document.addEventListener('touchmove', function (event) {
+            event = event.originalEvent || event;
+            if (event.scale > 1) {
+                event.preventDefault();
+            }
+        }, false);
+    </script>
 
-<body class="color6-bg">
+<body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
     <!-- Start Page Loading -->
     <div class="loading" style="display: none;">
-        <img src= "{% static 'Betting Site_files/loading.gif' %}" alt="loading-img">
+        <img src="{% static 'Betting Site_files/loading.gif' %}" alt="loading-img">
     </div>
     <!-- End Page Loading -->
     <!-- START TOP -->
@@ -57,7 +65,7 @@
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <div class="logo">Bal: <a href="/betHistory" class="" style="color:#f44336;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="https://engine.betbig247.com/Wager/OpenBets.aspx" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
+            <div class="logo">Bal: <a href="/betHistory" class="" style="color:#f44336;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/openBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
         </div>
         <!-- End App Logo -->
 
@@ -123,7 +131,7 @@
     <!-- START SIDEBAR -->
     <div class="sidebar clearfix hidden-lg hidden-md">
         <ul class="sidebar-panel nav">
-            <li><a href="/admin"><span class="icon fa fa-user"></span>
+            <li><a href="/dashboard"><span class="icon fa fa-user"></span>
                 
         <span id="ctl00_AccountFigures1_lblAccount">{{username}}</span>
     
@@ -131,9 +139,9 @@
             <li><a href="/sports"><span class="icon sport-menu football"></span>Sports</a></li>
 
             
-            <li><a href="/vipLiveBetting"><span class="icon sport-menu horse-racing"></span>Racebook</a></li>
+            <li><a href="/vipLiveBetting"><span class="icon sport-menu horse-racing"></span>Racing</a></li>
             
-            <li><a style="color: #ff0;" href="/vipLiveBetting"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
+            <li><a style="color: red;" href="/vipLiveBetting"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
                                     
         </ul>
         <ul class="sidebar-panel nav">
@@ -146,7 +154,7 @@
 
     <!-- START CONTENT -->
     <div class="content">
-        <form name="aspnetForm" method="post" action="https://engine.betbig247.com/wager/bridge.aspx?to=LiveBetting" id="aspnetForm">
+        <form name="aspnetForm" method="post" action="#" id="aspnetForm">
 <div>
 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTMxNjc3NTM3NQ9kFgJmD2QWBgIBD2QWBgIBDw8WAh4EVGV4dAUFLTM0MCBkZAIDDw8WAh8ABQIwIGRkAgUPDxYCHwAFBDI2MCBkZAIKD2QWAgIBDw8WAh8ABQdCVDE4OTE2ZGQCCw9kFgICAQ8PFgIfAAUHQlQxODkxNmRkZIcJH8qJpkYr3AA9Y/uSGIzLad0A">
 </div>
@@ -190,7 +198,8 @@
             bal.css('color', '#F00');
         }
     </script>
-    <!-- <script type="text/javascript">
+
+    <script type="text/javascript">
         $(function () {
             FastClick.attach(document.body);
 
@@ -229,8 +238,7 @@
         }
 
 
-    </script> -->
-
-
+    </script>
+    
 
 </body></html>

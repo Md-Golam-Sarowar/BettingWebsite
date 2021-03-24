@@ -56,7 +56,7 @@
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <div class="logo">Bal: <a href="https://engine.betbig247.com/Wager/History.aspx" class="" style="color: red;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="https://engine.betbig247.com/Wager/OpenBets.aspx" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
+            <div class="logo">Bal: <a href="/betHistory" class="" style="color: red;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/openBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
         </div>
         <!-- End App Logo -->
 
@@ -125,15 +125,15 @@
     <!-- START SIDEBAR -->
     <div class="sidebar clearfix hidden-lg hidden-md">
         <ul class="sidebar-panel nav">
-            <li><a href="/admin"><span class="icon fa fa-user"></span>
+            <li><a href="/dashboard"><span class="icon fa fa-user"></span>
                 
         <span id="ctl00_AccountFigures1_lblAccount">{{username}}</span>
     
             </a></li>
-            <li><a href="/vipLiveBetting"><span class="icon sport-menu football"></span>Sports</a></li>
+            <li><a href="/sports"><span class="icon sport-menu football"></span>Sports</a></li>
 
             
-            <li><a href="/vipLiveBetting"><span class="icon sport-menu horse-racing"></span>Racebook</a></li>
+            <li><a href="/vipLiveBetting"><span class="icon sport-menu horse-racing"></span>Racing</a></li>
             
             <li><a style="color: red;" href="/vipLiveBetting"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
                                     
@@ -284,7 +284,7 @@
                 
         }
 
-  </style><div class="row"><div class="col-xs-12"><select id="selWeek" onchange="changeWeek(this)" class="btn-block"><option value="0">This Week</option><option value="1">Last Week</option><option value="2">Two Weeks Ago</option><option value="3">Three Weeks Ago</option><option value="4">Four Weeks Ago</option><option value="5">Five Weeks Ago</option><option value="6">Six Weeks Ago</option><option value="7">Seven Weeks Ago</option><option value="8">Eight Weeks Ago</option><option value="9">Nine Weeks Ago</option><option value="10">Ten Weeks Ago</option></select></div></div><div class="row"><div class="col-xs-12"><h3>History for :BT18916</h3><h4>From 03/15/2021 to 03/21/2021</h4><div class="toRows"><table class="strongline tblWeeklyBalance table table-striped table-bordered table-condensed"><thead class="tableThead"><tr><th valign="bottom"></th><th valign="bottom" class="header">BOW</th><th valign="bottom">Mon</th><th valign="bottom">Tue</th><th valign="bottom">Wed</th><th valign="bottom">Thu</th><th valign="bottom">Fri</th><th valign="bottom">Sat</th><th valign="bottom">Sun</th><th valign="bottom">Total</th></tr></thead><tbody><tr><td valign="top" class="header">Win/Loss</td><td valign="top"></td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td></tr><tr><td valign="top" class="header">Cash In/Out</td><td valign="top"></td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td></tr><tr><td valign="top" class="header">Balance</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td></tr></tbody></table></div><br><div class="table-responsive"><table class="strongline table table-striped table-bordered table-condensed hidden-xs-down"><thead class="tableThead"><tr><th>User/Phone</th><th>GameDate</th><th>Sport</th><th>Description</th><th>Risk/Win</th><th>Win/Loss<br>Amount</th><th>Result</th><th>Placed</th></tr></thead><tbody></tbody></table><table style="width: 100%; display: inline-table;" class="strongline tblWeeklyBalance table-striped table-bordered table-condensed hidden-sm-up"><thead class="tableThead"><tr><th></th><th>Description</th><th>Risk/Win<br>Result</th></tr></thead><tbody></tbody></table></div></div></div>
+  </style><div class="row"><div class="col-xs-12"><select id="selWeek" onchange="changeWeek(this)" class="btn-block"><option value="0">This Week</option><option value="1">Last Week</option><option value="2">Two Weeks Ago</option><option value="3">Three Weeks Ago</option><option value="4">Four Weeks Ago</option><option value="5">Five Weeks Ago</option><option value="6">Six Weeks Ago</option><option value="7">Seven Weeks Ago</option><option value="8">Eight Weeks Ago</option><option value="9">Nine Weeks Ago</option><option value="10">Ten Weeks Ago</option></select></div></div><div class="row"><div class="col-xs-12"><h3>History for: {{username}}</h3><h4>From 03/15/2021 to 03/21/2021</h4><div class="toRows"><table class="strongline tblWeeklyBalance table table-striped table-bordered table-condensed"><thead class="tableThead"><tr><th valign="bottom"></th><th valign="bottom" class="header">BOW</th><th valign="bottom">Mon</th><th valign="bottom">Tue</th><th valign="bottom">Wed</th><th valign="bottom">Thu</th><th valign="bottom">Fri</th><th valign="bottom">Sat</th><th valign="bottom">Sun</th><th valign="bottom">Total</th></tr></thead><tbody><tr><td valign="top" class="header">Win/Loss</td><td valign="top"></td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td></tr><tr><td valign="top" class="header">Cash In/Out</td><td valign="top"></td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td></tr><tr><td valign="top" class="header">Balance</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td></tr></tbody></table></div><br><div class="table-responsive"><table class="strongline table table-striped table-bordered table-condensed hidden-xs-down"><thead class="tableThead"><tr><th>User/Phone</th><th>GameDate</th><th>Sport</th><th>Description</th><th>Risk/Win</th><th>Win/Loss<br>Amount</th><th>Result</th><th>Placed</th></tr></thead><tbody></tbody></table><table style="width: 100%; display: inline-table;" class="strongline tblWeeklyBalance table-striped table-bordered table-condensed hidden-sm-up"><thead class="tableThead"><tr><th></th><th>Description</th><th>Risk/Win<br>Result</th></tr></thead><tbody></tbody></table></div></div></div>
         </div>
         <script>
 		function changeWeek(e){
