@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 settings_dir = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(settings_dir))
-STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 # Quick-start development settings - unsuitable for production
@@ -78,9 +78,9 @@ TEMPLATES = [
 # this is the statics files context path when request the static file in url. for example http://127.0.0.1:8000/static/js/script.js
 STATIC_URL = "/static/"
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "statics"),
+]
 WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 
 
