@@ -78,9 +78,9 @@ TEMPLATES = [
 # this is the statics files context path when request the static file in url. for example http://127.0.0.1:8000/static/js/script.js
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
 WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 
 
