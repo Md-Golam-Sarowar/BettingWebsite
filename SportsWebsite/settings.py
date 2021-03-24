@@ -30,7 +30,7 @@ SECRET_KEY = ")6@5vrn5@g7%-^iug031o&k1-r)rsaw!tm1188uo!_#$u*#vib"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["betlounge247.com", "216.137.179.96", "127.0.0.1"]
+ALLOWED_HOSTS = ["betlounge247.com", "216.137.179.96", "127.0.0.1", "localhost"]
 
 
 # Application definition
