@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 settings_dir = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(settings_dir))
-STATIC_ROOT = os.path.join(BASE_DIR, "var", "statics")
+STATIC_ROOT = os.path.join(BASE_DIR, "static_files", "statics")
 
 
 # Quick-start development settings - unsuitable for production
