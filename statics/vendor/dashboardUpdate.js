@@ -22,7 +22,7 @@ function send(elem)
     Data = { "username" : username, "password" : password, "role" : role}
 
     $.ajax({
-        url: 'http://127.0.0.1:8000/updateCredential/'+intId,
+        url: 'updateCredential/'+intId,
         type: "post",
         data: Data,
         dataType: 'json',
