@@ -252,6 +252,7 @@ a {
 /* ----- Section----- */
 section {
     position: relative;
+    margin-top: 20px;
 }
 
 .section__content {
