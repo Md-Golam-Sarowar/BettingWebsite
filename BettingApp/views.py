@@ -195,6 +195,16 @@ def findCredential(request, id):
 @csrf_exempt
 def createBet(request):
     body = json.loads(request.body)
+    eventId = body["eventId"]
+    classifier = body["classifier"]
+    groupName = body["groupName"]
+    label = body["label"]
+    line = body["line"]
+    marketId = body["marketId"]
+    marketName = body["marketName"]
+    oddsName = body["oddsName"]
+    oddsVal = body["oddsVal"]
+    toWin = body["toWin"]
     betType = body["type"]
     risk = body["risk"]
     accept = body["accept"]
@@ -214,8 +224,28 @@ def createBet(request):
         riskValueDb = riskValueDb + bet.risk
 
     newBet = []
+
     newBet.extend(
-        [betType, risk, accept, sizesenabled, userFreeBetId, a, user, components]
+        [
+            eventId,
+            classifier,
+            groupName,
+            label,
+            line,
+            marketId,
+            marketName,
+            oddsName,
+            oddsVal,
+            toWin,
+            betType,
+            risk,
+            accept,
+            sizesenabled,
+            userFreeBetId,
+            a,
+            user,
+            components,
+        ]
     )
 
     if (riskValueDb + risk) > user.available or (riskValueDb + risk) > 300:
@@ -228,6 +258,7 @@ def createBet(request):
         )
     else:
         createdBet = betMethods.createnewBet(newBet)
+        print(createdBet)
         return JsonResponse(
             {
                 "success": "successfully creatednewBet",

@@ -90,11 +90,11 @@ WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "myproject",
-        "USER": "myprojectuser",
-        "PASSWORD": "password",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "123456",
         "HOST": "localhost",
-        "PORT": "",
+        "PORT": "5432",
     }
 }
 
