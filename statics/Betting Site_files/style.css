@@ -2924,9 +2924,9 @@ fieldset[disabled] .btn {
 /* Button light */
 
 .btn-light {
-    background-color: #fff;
-    color: inherit;
-    border: 1px solid #BDC4C9;
+    background-color: #e2d34b;
+    color: black;
+    border: 1px solid #98908e;
     font-weight: 900;
 }
 
@@ -2936,8 +2936,8 @@ fieldset[disabled] .btn {
 .btn-light:active,
 .btn-light.active,
 .open>.dropdown-toggle.btn-light {
-    background-color: #f9f9f9;
-    color: inherit;
+    background-color: black;
+    color: #e2d34b;
 }
 
 .btn-light:active,

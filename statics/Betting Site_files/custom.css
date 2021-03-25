@@ -1535,8 +1535,8 @@ input.raceIn {
 /* ACCORDION */
 
 div.accordion {
-    background-color: #eee;
-    color: #000;
+    background-color: #e2d34b;
+    color: black;
     cursor: pointer;
     padding: 12px;
     width: 100%;
@@ -1546,7 +1546,6 @@ div.accordion {
     font-size: 14px;
     transition: 0.4s;
     font-weight: bold;
-    border-bottom: 1px dotted #999;
 }
 
 
@@ -1566,8 +1565,8 @@ div.accordion.odd.active{color: #000;}
 
 div.accordion.active,
 button.accordion:hover {
-    background-color: #0B1629;
-    color: #fff;
+    background-color: #e2d34b;
+    color: black;
 }
 
 div.accordion:after {
