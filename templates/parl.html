@@ -2,7 +2,7 @@
 {% load static %}
 <!-- saved from url=(0051)https://engine.betbig247.com/wager/Sports.aspx?WT=1 -->
 <html lang="en"><head id="ctl00_Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="HandheldFriendly" content="true"><link href="{% static 'Betting Site_files/css' %}" rel="stylesheet"><title>
-	Betting Site
+	Bet Lounge 247
 </title><link href="{% static 'Betting Site_files/root.css' %}" rel="stylesheet"><link href="{% static 'Betting Site_files/custom.css' %}" rel="stylesheet"><link href="{% static 'Betting Site_files/logos.css' %}" rel="stylesheet">
     <script type="text/javascript" src="{% static 'Betting Site_files/jquery.min.js.download' %}"></script>
 
@@ -39,7 +39,7 @@
             }
         }, false);
     </script>
-    <link href="{% static 'Betting Site_files/PlayerChat.css' %}" rel="stylesheet"><link href="{% static 'Betting Site_files/Calendar.css' %}" type="text/css" rel="stylesheet"></head>
+    <!-- <link href="{% static 'Betting Site_files/PlayerChat.css' %}" rel="stylesheet"><link href="{% static 'Betting Site_files/Calendar.css' %}" type="text/css" rel="stylesheet"></head> -->
 
 <body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
     <!-- Start Page Loading -->
@@ -297,7 +297,7 @@
 
         function getactiveleaguesFromDGSService(wt) {
             if ($('#sportsDiv').length > 0) {
-                $.get("/Wager/CreateSports.aspx", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
+                $.get("/createSports", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
                     function (result) {
                         $('#sportsDiv')['html']($(result).find("#leaguesMenu").html());
                         $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="showLines()">CONTINUE</a></div>')['addClass']('stFooter');
@@ -349,7 +349,7 @@
             bal.css('color', '#F00');
         }
     </script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(function () {
             FastClick.attach(document.body);
 
@@ -388,7 +388,7 @@
         }
 
 
-    </script>
+    </script> -->
 
 
 

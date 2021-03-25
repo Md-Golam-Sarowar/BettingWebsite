@@ -298,7 +298,7 @@
 
         function getactiveleaguesFromDGSService(wt) {
             if ($('#sportsDiv').length > 0) {
-                $.get("/Wager/CreateSports.aspx", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
+                $.get("/createSports", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
                     function (result) {
                         $('#sportsDiv')['html']($(result).find("#leaguesMenu").html());
                         $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="showLines()">CONTINUE</a></div>')['addClass']('stFooter');
@@ -313,7 +313,7 @@
                             }
                         }
                         $('.loading').hide();
-                    });
+                    }, );
             }
         }
     </script>

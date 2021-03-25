@@ -476,14 +476,7 @@ function startTeaser() {
     var _0xa31ax6 = $('#idp')['val']();
     openspots = 0;
     $('#sportsDiv')['html']('<center><i class=\'refresh-spinner fa fa-spinner fa-spin fa-3x\'></i></center>');
-    $['get']( 'getteaserlist.asp', {
-        idp: _0xa31ax6,
-        bc: _0xa31ax49,
-        os: openspots,
-        pi: _0xa31axb
-    }, function (_0xa31axc) {
-        $('#sportsDiv')['html'](_0xa31axc)
-    })
+    $['get']('/teaserlist')
 }
 
 function do_teaser() {

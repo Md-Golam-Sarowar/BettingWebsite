@@ -48,11 +48,14 @@ from BettingApp.views import (
     showsports,
     parl,
     teaser,
-
+    createSports,
+    getteaserlist,
 )
 
 urlpatterns = [
     path("", index),
+    path("createSports", createSports),
+    path("teaserlist", getteaserlist),
     path("home", homePage),
     path("adminAccess", adminaccess),
     path("vipLiveBetting", homePage),
@@ -76,5 +79,4 @@ urlpatterns = [
     path("sports", showsports),
     path("parlay", parl),
     path("teaser", teaser),
-
 ]

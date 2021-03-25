@@ -278,7 +278,7 @@
 			  e.preventDefault();
 		});		
         
-			startTeaser()	
+			// startTeaser()	
 		
         remove_all();
 //      setInterval("autoRefresh()", 10000);
@@ -286,7 +286,7 @@
 
         function getactiveleaguesFromDGSService(wt) {
             if ($('#sportsDiv').length > 0) {
-                $.get("/Wager/CreateSports.aspx", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
+                $.get("/teaserlist",
                     function (result) {
                         $('#sportsDiv')['html']($(result).find("#leaguesMenu").html());
                         $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="showLines()">CONTINUE</a></div>')['addClass']('stFooter');
@@ -339,7 +339,7 @@
             bal.css('color', '#F00');
         }
     </script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(function () {
             FastClick.attach(document.body);
 
@@ -378,7 +378,7 @@
         }
 
 
-    </script>
+    </script> -->
 
 
 
