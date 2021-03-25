@@ -1572,7 +1572,7 @@ section {
 
 .account-dropdown__footer a {
     display: block;
-    color: #333;
+    color: white;
     padding: 15px 25px;
     font-size: 14px;
 }
@@ -1830,15 +1830,15 @@ section {
 }
 
 .header-mobile-2.header-mobile .hamburger .hamburger-box .hamburger-inner {
-    background: #fff;
+    background: black;
 }
 
 .header-mobile-2.header-mobile .hamburger .hamburger-box .hamburger-inner::before {
-    background: #fff;
+    background: black;
 }
 
 .header-mobile-2.header-mobile .hamburger .hamburger-box .hamburger-inner::after {
-    background: #fff;
+    background: black;
 }
 
 .sub-header-mobile-2 {
@@ -2946,7 +2946,8 @@ section {
 }
 
 .account-item--style2 .account-dropdown {
-    top: 48px;
+    top: -5px;
+    background-color: black;
 }
 
 .account-item--style2 .account-dropdown .info .image {
