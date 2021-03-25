@@ -296,9 +296,7 @@ section {
 
 @media (max-width: 991px) {
     .page-wrapper {
-    overflow: auto;
-    background: #e5e5e5;
-    padding-bottom: 12vh;
+     padding-bottom: 0vh;
 }
 }
 .page-container {
@@ -1756,8 +1754,8 @@ section {
 .header-mobile .navbar-mobile .navbar-mobile__list {
     background: #000000;
     width: 144px;
-    margin-left: 192px;
-    margin-top: 65px;
+    margin-left: 745px;
+    margin-top: -143px;
 }
 
 .header-mobile .navbar-mobile .navbar-mobile__list > li > a {
@@ -1819,12 +1817,12 @@ section {
 }
 
 .header-mobile-2 {
-    background: #393939;
+    background: #e2d34b;
     position: static;
 }
 
 .header-mobile-2.header-mobile .navbar-mobile {
-    top: 82px;
+    top: 167px;
 }
 
 .header-mobile-2.header-mobile .hamburger {
