@@ -20,7 +20,7 @@ def index(request):
 
 
 def betHistorydetails(request):
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
@@ -43,7 +43,7 @@ def betHistorydetails(request):
 
 
 def OpenBets(request):
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
@@ -67,7 +67,7 @@ def OpenBets(request):
 
 def createSports(request):
 
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
@@ -95,7 +95,7 @@ def getteaserlist(request):
 
 def homePage(request):
 
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
@@ -118,7 +118,7 @@ def homePage(request):
 
 
 def userInformation(request):
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
@@ -244,7 +244,7 @@ def createBet(request):
     fetchedUser = userInfo.objects.filter(id=request.session["id"])
     user = fetchedUser[0]
 
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
 
     riskValueDb = 0
@@ -349,7 +349,7 @@ def createrandomCredentials(request, totalCredentials):
 
 
 def showsports(request):
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
@@ -371,7 +371,7 @@ def showsports(request):
 
 
 def parl(request):
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
@@ -393,7 +393,7 @@ def parl(request):
 
 
 def teaser(request):
-    userfetched = userInfo.objects.get(username=request.session["username"])
+    userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
     allBetsHistory = betHistory.objects.filter(user=userfetched)
 
