@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 settings_dir = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(settings_dir))
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticdd")
 
 
 # Quick-start development settings - unsuitable for production
@@ -90,11 +90,11 @@ WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "myproject",
-        "USER": "myprojectuser",
-        "PASSWORD": "password",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "123456",
         "HOST": "localhost",
-        "PORT": "",
+        "PORT": "5432",
     }
 }
 
