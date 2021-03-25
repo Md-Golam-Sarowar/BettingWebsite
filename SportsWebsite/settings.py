@@ -31,7 +31,7 @@ SECRET_KEY = ")6@5vrn5@g7%-^iug031o&k1-r)rsaw!tm1188uo!_#$u*#vib"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["betlounge247.com", "216.137.179.96", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["betlounge247.com", "216.137.179.96", "www.betlounge247.com"]
 
 
 # Application definition
@@ -90,11 +90,11 @@ WSGI_APPLICATION = "SportsWebsite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "123456",
+        "NAME": "myproject",
+        "USER": "myprojectuser",
+        "PASSWORD": "password",
         "HOST": "localhost",
-        "PORT": "5432",
+        "PORT": "",
     }
 }
 

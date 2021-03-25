@@ -1091,14 +1091,14 @@ FOOTER
 ================================================================================= */
 
 .footer {
-    border-top: 1px solid #e2e2e2;
+    background-color:#e2d34b;
     /*margin-left: -30px;
     margin-right: -30px;*/
     margin-bottom: 0;
     padding: 10px;
     font-size: 11px;
-    color: #666;
-    background: rgba(0, 0, 0, 0.02);
+    color: black;
+    
 }
 
 .footer .col-md-6 {
