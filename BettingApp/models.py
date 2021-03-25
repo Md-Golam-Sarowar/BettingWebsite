@@ -20,11 +20,21 @@ class userInfo(TimeStampMixin):
 
 
 class myBet(TimeStampMixin):
+    eventId = models.FloatField(default=0)
+    classifier = models.CharField(max_length=100, default="")
+    groupName = models.CharField(max_length=100, default="")
+    label = models.CharField(max_length=250, default="")
+    line = models.FloatField(default=0)
+    marketId = models.FloatField(default=0)
+    marketName = models.CharField(max_length=100, default="")
+    oddsName = models.CharField(max_length=200, default="")
+    oddsVal = models.FloatField(default=0)
+    toWin = models.FloatField(default=0)
     betType = models.CharField(max_length=50, default="")
-    risk = models.IntegerField(default=0)
-    accept = models.IntegerField(default=0)
-    sizeEnabled = models.IntegerField(default=0)
-    userFreeBetId = models.IntegerField(default=0)
+    risk = models.FloatField(default=0)
+    accept = models.FloatField(default=0)
+    sizeEnabled = models.FloatField(default=0)
+    userFreeBetId = models.FloatField(default=0)
     a = models.CharField(max_length=100, default="")
     user = models.ForeignKey(userInfo, on_delete=models.CASCADE)
 

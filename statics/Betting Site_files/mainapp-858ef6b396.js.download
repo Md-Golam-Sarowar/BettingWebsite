@@ -26652,8 +26652,8 @@ angular.module("gsLive").constant("BET_STATES", {
                 value: function() {
                     var e = this;
                     this.isPlayerLoggedIn || n.clientNotLoggedIn(), t.placeBet(this.createPlaceBetPayload()).then((function(t) {
-                        
-                    }))
+                        return e.handleServerResponse(t, !0)
+                    })), this.updateStateAfterPlacing()
                 }
             }, {
                 key: "createPlaceBetPayload",
