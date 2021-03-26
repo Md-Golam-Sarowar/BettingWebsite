@@ -11,6 +11,30 @@
 
 
     <style>
+
+#loader {
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #444444;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+          
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+          
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
         html, body {
             overflow-y: scroll;
         }
@@ -36,6 +60,21 @@
     </style>
 
     <script>
+
+
+document.onreadystatechange = function() {
+            if (document.readyState !== "complete") {
+                document.querySelector(
+                  "body").style.visibility = "hidden";
+                document.querySelector(
+                  "#loader").style.visibility = "visible";
+            } else {
+                document.querySelector(
+                  "#loader").style.display = "none";
+                document.querySelector(
+                  "body").style.visibility = "visible";
+            }
+        };
         document.addEventListener('touchmove', function (event) {
             event = event.originalEvent || event;
             if (event.scale > 1) {
@@ -54,6 +93,7 @@
     </script>
 
 <body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+    <div id="loader" class="center"></div>
     <!-- Start Page Loading -->
     <div class="loading" style="display: none;">
         <img src="{% static 'Betting Site_files/loading.gif' %}" alt="loading-img">
@@ -80,7 +120,7 @@
                 <a id="ctl00_lnkSports" href="/sports">Sports</a></li>
 
             
-                <li><a id="ctl00_lnkRacing" href="/#">Racing</a></li>
+                <li><a id="ctl00_lnkRacing" href="#">Racing</a></li>
             
                 <li><a style="color: #f44336;" href="/vipLiveBetting">VIP Live Betting</a></li>
                 <li><div style=" height: 29px;
