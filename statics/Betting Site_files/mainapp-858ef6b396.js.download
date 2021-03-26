@@ -26660,6 +26660,7 @@ angular.module("gsLive").constant("BET_STATES", {
                 value: function() {
                     var e = this;
                     return {
+                        teamname : this.rootBet.odds.name,
                         eventId : this.rootBet.eventId,
                         classifier : this.rootBet.classifier,
                         groupName: this.rootBet.groupName,

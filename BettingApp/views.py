@@ -220,6 +220,75 @@ def findCredential(request, id):
         return HttpResponse("not found")
 
 
+def allActiveBets(request):
+
+    userfetched = userInfo.objects.get(id=request.session["id"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+    }
+
+    Bets = []
+    totalBets = 0
+    totalrisk = 0
+    totalwin = 0
+    for bet in allBets:
+        componenet = componentBet.objects.get(myBet=bet)
+        singlebet = dict()
+        singlebet["eventId"] = bet.eventId
+        singlebet["ticketNo"] = bet.ticketno
+        singlebet["classifier"] = bet.classifier
+        singlebet["groupName"] = bet.groupName
+        singlebet["label"] = bet.label
+        singlebet["line"] = bet.line
+        singlebet["marketId"] = bet.marketId
+        singlebet["oddsName"] = bet.oddsName
+        singlebet["oddsVal"] = bet.oddsVal
+        singlebet["towin"] = bet.toWin
+        singlebet["type"] = bet.betType
+        singlebet["risk"] = bet.risk
+        singlebet["placed"] = bet.placed
+        singlebet["a"] = bet.a
+        singlebet["e"] = componenet.e
+        singlebet["p"] = componenet.p
+        singlebet["m"] = componenet.m
+        singlebet["k"] = componenet.k
+        singlebet["v"] = componenet.v
+        singlebet["sk"] = componenet.sk
+        singlebet["teamname"] = bet.teamname
+        Bets.append(singlebet)
+        totalBets += 1
+        totalrisk += bet.risk
+        totalwin += bet.toWin
+        print(singlebet, totalBets, totalrisk, totalwin)
+
+    return render(
+        request,
+        "myBets.html",
+        {
+            "allBets": allBets,
+            "data": data,
+            "OpenBets": totalBets,
+            "totalrisk": totalrisk,
+            "totalwin": totalwin,
+        },
+    )
+
+
 @csrf_exempt
 def createBet(request):
     body = json.loads(request.body)
@@ -240,12 +309,15 @@ def createBet(request):
     userFreeBetId = body["userFreeBetId"]
     components = body["componentBets"]
     a = body["a"]
+    placed = body["placed"]
+    teamname = body["teamname"]
 
     fetchedUser = userInfo.objects.filter(id=request.session["id"])
     user = fetchedUser[0]
 
     userfetched = userInfo.objects.get(id=request.session["id"])
     allBets = myBet.objects.filter(user=userfetched)
+    ticketNo = len(allBets) + 1
 
     riskValueDb = 0
     for bet in allBets:
@@ -273,6 +345,8 @@ def createBet(request):
             a,
             user,
             components,
+            ticketNo,
+            teamname,
         ]
     )
 
@@ -286,7 +360,6 @@ def createBet(request):
         )
     else:
         createdBet = betMethods.createnewBet(newBet)
-        print(createdBet)
         return JsonResponse(
             {
                 "success": "successfully creatednewBet",

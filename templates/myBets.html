@@ -55,7 +55,7 @@
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <div class="logo">Bal: <a href="/betHistory" class="" style="color: red;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/openBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a></div>
+            <div class="logo">Bal: <a href="/betHistory" class="" style="color: red;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{data.balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{data.available}} </span> | Risk: <a href="/openBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{data.risk}} </span></a></div>
         </div>
         <!-- End App Logo -->
 
@@ -110,7 +110,7 @@
             <li class="link" data-toggle="modal" data-target="#BetTicketMB">
                 <a href="/openBets#" onclick="dashboard()" class="notifications"><i class="fa fa-user"></i>
                     
-        <span id="ctl00_AccountName_lblAccount">{{username}}</span>
+        <span id="ctl00_AccountName_lblAccount">{{data.username}}</span>
     
                 </a>
             </li>
