@@ -20,7 +20,10 @@ class userInfo(TimeStampMixin):
 
 
 class myBet(TimeStampMixin):
-    eventId = models.FloatField(default=0)
+    teamname = models.CharField(max_length=100, default="")
+    ticketno = models.IntegerField(default=0)
+    placed = models.DateTimeField(auto_now=True)
+    eventId = models.IntegerField(default=0)
     classifier = models.CharField(max_length=100, default="")
     groupName = models.CharField(max_length=100, default="")
     label = models.CharField(max_length=250, default="")

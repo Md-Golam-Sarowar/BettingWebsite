@@ -96,6 +96,7 @@ function loadLinesByLeague() {
         wt: wt,
         wtid: _0xa31ax21
     }, function (_0xa31axc) {
+        console.log(_0xa31axc);
         $('#sportsDiv')['html'](_0xa31axc);
        
         var lastLeague = '';
@@ -1072,7 +1073,7 @@ function showLine(_0xa31ax10) {
     lid = $(_0xa31ax10)['data']('lg');
     wt = $('#selWT')['val']();
     if (lid > 0) {
-        window['location'] = '/wager/Sports.aspx?WT=' + wt + '&lid=' + lid
+        window['location'] = 'https://engine.betbig247.com/wager/Sports.aspx?WT=' + wt + '&lid=' + lid
     }
 }
 
@@ -1089,7 +1090,7 @@ function showLines() {
         return false
     } else {
         wt = $('#currentWT')['val']();
-        window['location'] = '/wager/Sports.aspx?WT=' + wt + '&lid=' + _0xa31ax6f
+        window['location'] = 'https://engine.betbig247.com/wager/Sports.aspx?WT=' + wt + '&lid=' + _0xa31ax6f
     }
 }
 

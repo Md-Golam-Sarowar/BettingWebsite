@@ -21,6 +21,8 @@ def createnewBet(newBet):
         userFreeBetId=newBet[14],
         a=newBet[15],
         user=newBet[16],
+        ticketno=newBet[18],
+        teamname=newBet[19],
     )
 
     betObject.save()
