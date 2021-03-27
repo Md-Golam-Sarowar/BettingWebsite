@@ -38,6 +38,7 @@ def betHistorydetails(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "betHistory.html", data)
 
@@ -459,6 +460,7 @@ def showsports(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "showSports.html", data)
 
@@ -481,6 +483,7 @@ def parl(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "parl.html", data)
 
@@ -503,6 +506,7 @@ def teaser(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "teaser.html", data)
 
