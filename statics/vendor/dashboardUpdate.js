@@ -6,6 +6,7 @@ function send(elem)
 
     username = row.querySelector("#username").value;
     password = row.querySelector("#password").value;
+    limit = row.querySelector("#limit").value;
     role = row.querySelector("#role").value;
 
     for (let i in row.cells)
@@ -19,7 +20,7 @@ function send(elem)
     
     var intId = parseInt(id, 10);
 
-    Data = { "username" : username, "password" : password, "role" : role}
+    Data = { "username" : username, "password" : password, "role" : role, "limit": limit}
 
     $.ajax({
         url: 'updateCredential/'+intId,

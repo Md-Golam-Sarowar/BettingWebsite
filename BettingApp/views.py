@@ -113,6 +113,7 @@ def homePage(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit" : userfetched.accountLimit,
     }
     return render(request, "Betting Site.html", data)
 
@@ -354,9 +355,7 @@ def createBet(request):
         ]
     )
 
-    if (riskValueDb + risk) > user.available or (riskValueDb + risk) > request.session[
-        "limit"
-    ]:
+    if (riskValueDb + risk) > user.available or (riskValueDb + risk) > user.accountLimit:
         return JsonResponse(
             {
                 "Failed": "risk value exceeds user limit! ",

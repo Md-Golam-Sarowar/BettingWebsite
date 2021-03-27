@@ -34,7 +34,7 @@ def updateCredential(updatecredential, id):
     credential.username = updatecredential[0]
     credential.password = updatecredential[1]
     credential.role = updatecredential[2]
-    credential.accountLimit = updateCredential[3]
+    credential.accountLimit = updatecredential[3]
     credential.save()
 
 
