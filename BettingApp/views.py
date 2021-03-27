@@ -160,12 +160,14 @@ def readCredentials(request):
             singleCredential["username"] = data.username
             singleCredential["password"] = data.password
             singleCredential["role"] = data.role
+            singleCredential["limit"] = data.accountLimit
             credentials.append(singleCredential)
         elif data.role == "admin":
             singleCredential["id"] = data.id
             singleCredential["username"] = data.username
             singleCredential["password"] = data.password
             singleCredential["role"] = data.role
+            singleCredential["limit"] = data.accountLimit
             admin.append(singleCredential)
 
     return render(request, "index3.html", {"credentials": credentials, "admin": admin})
@@ -198,8 +200,9 @@ def updateCredential(request, id):
     username = request.POST["username"]
     password = request.POST["password"]
     role = request.POST["role"]
+    limit = request.POST["limit"]
     credential = []
-    credential.extend([username, password, role])
+    credential.extend([username, password, role, limit])
     RandomCredentials.updateCredential(credential, id)
     return JsonResponse(
         {
@@ -240,6 +243,7 @@ def allActiveBets(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
 
     Bets = []
@@ -350,7 +354,9 @@ def createBet(request):
         ]
     )
 
-    if (riskValueDb + risk) > user.available or (riskValueDb + risk) > 300:
+    if (riskValueDb + risk) > user.available or (riskValueDb + risk) > request.session[
+        "limit"
+    ]:
         return JsonResponse(
             {
                 "Failed": "risk value exceeds user limit! ",
@@ -508,6 +514,7 @@ def authenticate(request):
         request.session["password"] = user.password
         request.session["role"] = user.role
         request.session["available"] = user.available
+        request.session["limit"] = user.accountLimit
         return JsonResponse(
             {
                 "success": "successfully authenticated",

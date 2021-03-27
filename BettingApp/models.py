@@ -14,6 +14,7 @@ class userInfo(TimeStampMixin):
     password = models.CharField(max_length=50, default="")
     role = models.CharField(max_length=50, default="")
     available = models.IntegerField(default=0)
+    accountLimit = models.IntegerField(default=300)
 
     def __int__(self):
         return self.id
