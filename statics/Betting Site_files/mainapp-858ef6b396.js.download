@@ -26658,6 +26658,7 @@ angular.module("gsLive").constant("BET_STATES", {
             }, {
                 key: "createPlaceBetPayload",
                 value: function() {
+                    console.log(e, t, i, s, r, n, a, o, c, u, d, l, h, n);
                     var e = this;
                     return {
                         teamname : this.rootBet.odds.name,
