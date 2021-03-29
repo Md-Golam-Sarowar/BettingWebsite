@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en"><head id="ctl00_Head"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="HandheldFriendly" content="true"><link href="./Betting Site_files/css" rel="stylesheet"><title>
-	Betting Site
-</title><link href="./Betting Site_files/root.css" rel="stylesheet"><link href="./Betting Site_files/custom.css" rel="stylesheet"><link href="./Betting Site_files/logos.css" rel="stylesheet">
+<html lang="en">
+
+<head id="ctl00_Head">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <link href="./Betting Site_files/css" rel="stylesheet">
+    <title>
+        Betting Site
+    </title>
+    <link href="./Betting Site_files/root.css" rel="stylesheet">
+    <link href="./Betting Site_files/custom.css" rel="stylesheet">
+    <link href="./Betting Site_files/logos.css" rel="stylesheet">
     <script type="text/javascript" src="./Betting Site_files/jquery.min.js.download"></script>
+    <script type="text/javascript" src="./Betting Site_files/showLeague.js"></script>
 
     <style>
-        html, body {
+        html,
+        body {
             overflow-y: scroll;
         }
 
@@ -13,7 +27,8 @@
             -webkit-text-size-adjust: none;
         }
 
-        html, body {
+        html,
+        body {
             overflow-y: scroll;
         }
 
@@ -37,7 +52,9 @@
             }
         }, false);
     </script>
-    <link href="./Betting Site_files/PlayerChat.css" rel="stylesheet"><link href="./Betting Site_files/Calendar.css" type="text/css" rel="stylesheet"></head>
+    <link href="./Betting Site_files/PlayerChat.css" rel="stylesheet">
+    <link href="./Betting Site_files/Calendar.css" type="text/css" rel="stylesheet">
+</head>
 
 <body class="color6-bg">
     <!-- Start Page Loading -->
@@ -47,58 +64,74 @@
     <!-- End Page Loading -->
     <!-- START TOP -->
     <div id="top" class="clearfix">
-        
+
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <div class="logo">Bal: <a href="/betHistory" class="" style="color:#f44336;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/ActiveBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a> <br> Limit: <a href="#" class=""><span>{{limit}} </span></a></div>
+            <div class="logo">Bal: <a href="/betHistory" class="" style="color:#f44336;"><span
+                        id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span
+                    id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/ActiveBets"
+                    class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a> <br> Limit: <a href="#"
+                    class=""><span>{{limit}} </span></a></div>
         </div>
         <!-- End App Logo -->
 
-    
+
         <!-- Start Sidebar Show Hide Button -->
-        <a href="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+        <a href="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG#"
+            class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
         <!-- End Sidebar Show Hide Button -->
         <!-- Start Top Menu -->
-        
+
         <ul class="topmenu">
             <li>
-                <a id="ctl00_lnkSports" href="https://engine.betbig247.com/Wager/Sports.aspx">Sports</a></li>
+                <a id="ctl00_lnkSports" href="https://engine.betbig247.com/Wager/Sports.aspx">Sports</a>
+            </li>
 
-            
-                <li><a id="ctl00_lnkRacing" href="https://engine.betbig247.com/Wager/Bridge.aspx?to=blrhorses">Racing</a></li>
-            
-                <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=LiveBetting">VIP Live Betting</a></li>
-            
-                <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=Esports">E-Sports</a></li>
-            
+
+            <li><a id="ctl00_lnkRacing" href="https://engine.betbig247.com/Wager/Bridge.aspx?to=blrhorses">Racing</a>
+            </li>
+
+            <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=LiveBetting">VIP Live
+                    Betting</a></li>
+
+            <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=Esports">E-Sports</a>
+            </li>
+
 
             <li>
-                <a id="ctl00_lnkFillOpen" href="https://engine.betbig247.com/Wager/FillChoose.aspx">Fill Open</a></li>
+                <a id="ctl00_lnkFillOpen" href="https://engine.betbig247.com/Wager/FillChoose.aspx">Fill Open</a>
+            </li>
             <li>
-                <a id="ctl00_lnkOpenBets" href="https://engine.betbig247.com/Wager/OpenBets.aspx">Open Bets</a></li>
+                <a id="ctl00_lnkOpenBets" href="https://engine.betbig247.com/Wager/OpenBets.aspx">Open Bets</a>
+            </li>
             <li>
-                <a id="ctl00_lnkHistory" href="https://engine.betbig247.com/Wager/History.aspx">History</a></li>
+                <a id="ctl00_lnkHistory" href="https://engine.betbig247.com/Wager/History.aspx">History</a>
+            </li>
             <li>
-                <a id="ctl00_lnkFigures" href="https://engine.betbig247.com/Wager/Figures.aspx">Figures</a></li>
+                <a id="ctl00_lnkFigures" href="https://engine.betbig247.com/Wager/Figures.aspx">Figures</a>
+            </li>
             <li><a target="_blank" href="https://engine.betbig247.com/rules/rules-regulations.php">Rules</a></li>
             <!--<li><a target="_blank" href="/wager/bridge_Historical.asp?a=BT18916&p=blazer">Previous History</a></li>-->
-            
-                <li><a href="https://engine.betbig247.com/Wager/PlayerChat.aspx"><i class="fa fa-comments-o fa-3" aria-hidden="true"></i>Chat<span id="countMessages" style="display: none;"></span></a></li>
-            
+
+            <li><a href="https://engine.betbig247.com/Wager/PlayerChat.aspx"><i class="fa fa-comments-o fa-3"
+                        aria-hidden="true"></i>Chat<span id="countMessages" style="display: none;"></span></a></li>
+
         </ul>
         <span id="cs_phone" class="cs_phone"></span>
         <!-- End Top Menu -->
         <!-- Start Sidepanel Show-Hide Button -->
-        <a href="https://engine.betbig247.com/LogOut.aspx" class="sidepanel-open-button"><i class="fa fa-power-off" style="color: #F00"></i></a>
+        <a href="https://engine.betbig247.com/LogOut.aspx" class="sidepanel-open-button"><i class="fa fa-power-off"
+                style="color: #F00"></i></a>
         <!-- End Sidepanel Show-Hide Button -->
         <!-- Start Top Right-->
         <ul class="top-right">
             <li class="link" data-toggle="modal" data-target="#BetTicketMB">
-                <a href="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG#" class="notifications"><i class="fa fa-user"></i>
-                    
-        <span id="ctl00_AccountName_lblAccount">BT18916</span>
-    
+                <a href="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG#"
+                    class="notifications"><i class="fa fa-user"></i>
+
+                    <span id="ctl00_AccountName_lblAccount">BT18916</span>
+
                 </a>
             </li>
         </ul>
@@ -109,67 +142,924 @@
     <!-- START SIDEBAR -->
     <div class="sidebar clearfix hidden-lg hidden-md">
         <ul class="sidebar-panel nav">
-            <li><a href="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG#"><span class="icon fa fa-user"></span>
-                
-        <span id="ctl00_AccountFigures1_lblAccount">BT18916</span>
-    
-            </a></li>
-            <li><a href="https://engine.betbig247.com/wager/Sports.aspx"><span class="icon sport-menu football"></span>Sports</a></li>
+            <li><a href="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG#"><span
+                        class="icon fa fa-user"></span>
 
-            
-            <li><a href="https://engine.betbig247.com/wager/Bridge.aspx?to=blrhorses" target="_blank"><span class="icon sport-menu horse-racing"></span>Racebook</a></li>
-            
-            <li><a style="color: #ff0;" target="_blank" href="https://engine.betbig247.com/Addons/LiveBetting.aspx"><span class="icon sport-menu other"></span>VIP Live Betting</a></li>
-            
-                <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=Esports">E-Sports</a></li>
-            
-            
+                    <span id="ctl00_AccountFigures1_lblAccount">BT18916</span>
+
+                </a></li>
+            <li><a href="https://engine.betbig247.com/wager/Sports.aspx"><span
+                        class="icon sport-menu football"></span>Sports</a></li>
+
+
+            <li><a href="https://engine.betbig247.com/wager/Bridge.aspx?to=blrhorses" target="_blank"><span
+                        class="icon sport-menu horse-racing"></span>Racebook</a></li>
+
+            <li><a style="color: #ff0;" target="_blank"
+                    href="https://engine.betbig247.com/Addons/LiveBetting.aspx"><span
+                        class="icon sport-menu other"></span>VIP Live Betting</a></li>
+
+            <li><a style="color: #ff0;" href="https://engine.betbig247.com/wager/bridge.aspx?to=Esports">E-Sports</a>
+            </li>
+
+
             <!--<li><a target="_blank" href="/wager/bridge_Historical.asp?a=BT18916&p=blazer"><span class="icon sport-menu other"></span>Previous History</a></li>
             -->
-            
-                <li><a href="https://engine.betbig247.com/Wager/PlayerChat.aspx"><i class="fa fa-comments-o fa-3" aria-hidden="true"></i>Chat<span id="countMessages"></span></a></li>
-            
+
+            <li><a href="https://engine.betbig247.com/Wager/PlayerChat.aspx"><i class="fa fa-comments-o fa-3"
+                        aria-hidden="true"></i>Chat<span id="countMessages"></span></a></li>
+
         </ul>
         <ul class="sidebar-panel nav">
             <li class="sidetitle">ACCOUNT</li>
-            <li><a href="https://engine.betbig247.com/wager/FillChoose.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Fill Open</a></li>
-            <li><a href="https://engine.betbig247.com/wager/OpenBets.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Open Bets</a></li>
-            <li><a href="https://engine.betbig247.com/wager/History.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>History</a></li>
-            <li><a href="https://engine.betbig247.com/wager/Figures.aspx"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Figures</a></li>
-            <li><a target="_blank" href="https://engine.betbig247.com/rules/rules-regulations.php"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Rules</a></li>
+            <li><a href="https://engine.betbig247.com/wager/FillChoose.aspx"><span class="icon color15"><i
+                            class="fa fa-angle-right"></i></span>Fill Open</a></li>
+            <li><a href="https://engine.betbig247.com/wager/OpenBets.aspx"><span class="icon color15"><i
+                            class="fa fa-angle-right"></i></span>Open Bets</a></li>
+            <li><a href="https://engine.betbig247.com/wager/History.aspx"><span class="icon color15"><i
+                            class="fa fa-angle-right"></i></span>History</a></li>
+            <li><a href="https://engine.betbig247.com/wager/Figures.aspx"><span class="icon color15"><i
+                            class="fa fa-angle-right"></i></span>Figures</a></li>
+            <li><a target="_blank" href="https://engine.betbig247.com/rules/rules-regulations.php"><span
+                        class="icon color15"><i class="fa fa-angle-right"></i></span>Rules</a></li>
         </ul>
     </div>
     <!-- END SIDEBAR -->
 
     <!-- START CONTENT -->
     <div class="content">
-        <form name="aspnetForm" method="post" action="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG" id="aspnetForm">
-<div>
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTMxNjc3NTM3NQ9kFgJmD2QWBgIBD2QWBgIBDw8WAh4EVGV4dAUFLTE3MiBkZAIDDw8WAh8ABQQxNjggZGQCBQ8PFgIfAAUEMjYwIGRkAgoPZBYCAgEPDxYCHwAFB0JUMTg5MTZkZAILD2QWAgIBDw8WAh8ABQdCVDE4OTE2ZGRkQ7iOUdI+Fg5scCKht0wtBe57Rr8=">
-</div>
+        <form name="aspnetForm" method="post"
+            action="https://engine.betbig247.com/Wager/CreateSports.aspx?WT=0&amp;auth=mPEV5DMcUXb4FzGG"
+            id="aspnetForm">
+            <div>
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                    value="/wEPDwUKLTMxNjc3NTM3NQ9kFgJmD2QWBgIBD2QWBgIBDw8WAh4EVGV4dAUFLTE3MiBkZAIDDw8WAh8ABQQxNjggZGQCBQ8PFgIfAAUEMjYwIGRkAgoPZBYCAgEPDxYCHwAFB0JUMTg5MTZkZAILD2QWAgIBDw8WAh8ABQdCVDE4OTE2ZGRkQ7iOUdI+Fg5scCKht0wtBe57Rr8=">
+            </div>
 
-<div>
+            <div>
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3DB83FCB">
-</div>
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3DB83FCB">
+            </div>
+
+            <div id="leaguesMenu">
+                <div id="NFL_FOOTBALL" class="accordion even"><span class="logos leagues NFL_FOOTBALL">. </span>NFL
+                    FOOTBALL<a href="javascript:;" data-spt="NFL_FOOTBALL" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL NFL FOOTBALL</a></div>
+                <div class="SportPanel" id="panel_NFL_FOOTBALL">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox"
+                                value="https://mybookie.ag/sportsbook/nfl/afc/" class="c_league" id="chk_188"><label
+                                for="chk_188"><a href="javascript:;" data-lg="188" onclick=" showLeague('mybookie.ag/sportsbook/nfl/afc/')" class="sportLeague">NFL TO WIN THE
+                                    AFC CONFERENCE 2021-2022</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox"
+                                value="https://mybookie.ag/sportsbook/nfl/nfc/" class="c_league" id="chk_187"><label
+                                for="chk_187"><a href="javascript:;" data-lg="187" onclick=" showLeague('mybookie.ag/sportsbook/nfl/nfc/')"
+                                    class="sportLeague">NFL TO WIN THE NFC CONFERENCE 2021-2022</a></label></div>
+                    </div>
+                </div>
+                <div id="NCAA_FOOTBALL" class="accordion odd"><span class="logos leagues NCAA_FOOTBALL">. </span>NCAA
+                    FOOTBALL<a href="javascript:;" data-spt="NCAA_FOOTBALL" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL NCAA FOOTBALL</a></div>
+                <div class="SportPanel" id="panel_NCAA_FOOTBALL">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/college-football/championship/" class="c_league"
+                                id="chk_1161"><label for="chk_1161"><a href="javascript:;" data-lg="1161"
+                                    onclick="showLeague('mybookie.ag/sportsbook/college-football/championship/')" class="sportLeague"> Football National Championship Odds</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox"
+                                value="https://mybookie.ag/sportsbook/college-football/heisman-trophy/" class="c_league" id="chk_113"><label
+                                for="chk_113"><a href="javascript:;" data-lg="113" onclick="showLeague('mybookie.ag/sportsbook/college-football/heisman-trophy/')"
+                                    class="sportLeague">Heisman Trophy Winner</a></label>
+                        </div>
+                    </div>
+                </div>
+                <div id="BASEBALL" class="accordion even"><span class="logos leagues BASEBALL">. </span>BASEBALL<a
+                        href="javascript:;" data-spt="BASEBALL" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL BASEBALL</a></div>
+                <div class="SportPanel" id="panel_BASEBALL">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/spring-training/" class="c_league"
+                                id="chk_436"><label for="chk_436"><a href="javascript:;" data-lg="436"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/spring-training/')" class="sportLeague">MLB - Spring Training Odds</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/contest-props/" class="c_league"
+                                id="chk_821"><label for="chk_821"><a href="javascript:;" data-lg="821"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/contest-props/')" class="sportLeague">MLB - Content Props</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/world-series/" class="c_league"
+                                id="chk_479"><label for="chk_479"><a href="javascript:;" data-lg="479"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/world-series/')" class="sportLeague">MLB - 2021 World Series Odds</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/american-league/" class="c_league"
+                                id="chk_1302"><label for="chk_1302"><a href="javascript:;" data-lg="1302"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/american-league/')" class="sportLeague">MLB - AL Pennant</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/national-league/" class="c_league"
+                                id="chk_416"><label for="chk_416"><a href="javascript:;" data-lg="416"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/national-league/')" class="sportLeague">MLB - NL Pennant</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/american-league-divisions/" class="c_league"
+                                id="chk_1794"><label for="chk_1794"><a href="javascript:;" data-lg="1794"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/american-league-divisions/')" class="sportLeague">MLB - AL Divisional</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/national-league-divisions/" class="c_league"
+                                id="chk_1426"><label for="chk_1426"><a href="javascript:;" data-lg="1426"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/national-league-divisions/')" class="sportLeague">MLB - NL Divisional</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/regular-season-wins/" class="c_league"
+                                id="chk_417"><label for="chk_417"><a href="javascript:;" data-lg="417"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/regular-season-wins/')" class="sportLeague">MLB - Regular Season Wins</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/season-awards/" class="c_league"
+                                id="chk_478"><label for="chk_478"><a href="javascript:;" data-lg="478"
+                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/season-awards/')" class="sportLeague">MLB - Regular Season Award</a></label></div>
+                    </div>
+                </div>
+                <div id="BASKETBALL" class="accordion odd"><span class="logos leagues BASKETBALL">. </span>BASKETBALL<a
+                        href="javascript:;" data-spt="BASKETBALL" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL BASKETBALL</a></div>
+                <div class="SportPanel" id="panel_BASKETBALL">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="66" class="c_league"
+                                id="chk_66"><label for="chk_66"><a href="javascript:;" data-lg="66"
+                                    onclick="showLine(this)" class="sportLeague">NBA GAME LINES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="726" class="c_league"
+                                id="chk_726"><label for="chk_726"><a href="javascript:;" data-lg="726"
+                                    onclick="showLine(this)" class="sportLeague">BRAZIL NBB</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="151" class="c_league"
+                                id="chk_151"><label for="chk_151"><a href="javascript:;" data-lg="151"
+                                    onclick="showLine(this)" class="sportLeague">EUROLEAGUE BASKETBALL</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="856" class="c_league"
+                                id="chk_856"><label for="chk_856"><a href="javascript:;" data-lg="856"
+                                    onclick="showLine(this)" class="sportLeague">EUROLEAGUE BASKETBALL (1H)</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="727" class="c_league"
+                                id="chk_727"><label for="chk_727"><a href="javascript:;" data-lg="727"
+                                    onclick="showLine(this)" class="sportLeague">EUROPEAN CUPS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="728" class="c_league"
+                                id="chk_728"><label for="chk_728"><a href="javascript:;" data-lg="728"
+                                    onclick="showLine(this)" class="sportLeague">GREECE A1</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="747" class="c_league"
+                                id="chk_747"><label for="chk_747"><a href="javascript:;" data-lg="747"
+                                    onclick="showLine(this)" class="sportLeague">ISRAEL SUPER LEAGUE</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="840" class="c_league"
+                                id="chk_840"><label for="chk_840"><a href="javascript:;" data-lg="840"
+                                    onclick="showLine(this)" class="sportLeague">OTHER AMERICAN LEAGUES BK</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1634" class="c_league"
+                                id="chk_1634"><label for="chk_1634"><a href="javascript:;" data-lg="1634"
+                                    onclick="showLine(this)" class="sportLeague">OTHER EUROPEAN LEAGUES BK</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1635" class="c_league"
+                                id="chk_1635"><label for="chk_1635"><a href="javascript:;" data-lg="1635"
+                                    onclick="showLine(this)" class="sportLeague">OTHER ASIAN LEAGUES BK</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1636" class="c_league"
+                                id="chk_1636"><label for="chk_1636"><a href="javascript:;" data-lg="1636"
+                                    onclick="showLine(this)" class="sportLeague">OTHER LEAGUES BK</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1640" class="c_league"
+                                id="chk_1640"><label for="chk_1640"><a href="javascript:;" data-lg="1640"
+                                    onclick="showLine(this)" class="sportLeague">WOMEN INTERNATIONAL LEAGUES</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1066" class="c_league"
+                                id="chk_1066"><label for="chk_1066"><a href="javascript:;" data-lg="1066"
+                                    onclick="showLine(this)" class="sportLeague">EURO BK - EUROLEAGUE 2020-2021 - ODDS
+                                    TO WIN</a></label></div>
+                    </div>
+                </div>
+                <div id="NCAA_BASKETBALL" class="accordion even"><span class="logos leagues NCAA_BASKETBALL">.
+                    </span>NCAA BASKETBALL<a href="javascript:;" data-spt="NCAA_BASKETBALL" onclick="checkAll(this)"
+                        class="hide">
+                        - Select and View ALL NCAA BASKETBALL</a></div>
+                <div class="SportPanel" id="panel_NCAA_BASKETBALL">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="4" class="c_league"
+                                id="chk_4"><label for="chk_4"><a href="javascript:;" data-lg="4"
+                                    onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL - MEN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="87" class="c_league"
+                                id="chk_87"><label for="chk_87"><a href="javascript:;" data-lg="87"
+                                    onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL (1H) - MEN</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="253" class="c_league"
+                                id="chk_253"><label for="chk_253"><a href="javascript:;" data-lg="253"
+                                    onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL - TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox"
+                                value="https://mybookie.ag/sportsbook/ncaa-basketball/championship/" class="c_league"
+                                id="chk_192"><label for="chk_192"><a href="javascript:;" data-lg="192"
+                                    onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL CHAMPIONSHIP 2021 -
+                                    ODDS TO WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1499" class="c_league"
+                                id="chk_1499"><label for="chk_1499"><a href="javascript:;" data-lg="1499"
+                                    onclick="showLine(this)" class="sportLeague">NCAA BK - REGIONS (ODDS TO
+                                    WIN)</a></label></div>
+                    </div>
+                </div>
+                <div id="HOCKEY" class="accordion odd"><span class="logos leagues HOCKEY">. </span>HOCKEY<a
+                        href="javascript:;" data-spt="HOCKEY" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL HOCKEY</a></div>
+                <div class="SportPanel" id="panel_HOCKEY">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="73" class="c_league"
+                                id="chk_73"><label for="chk_73"><a href="javascript:;" data-lg="73"
+                                    onclick="showLine(this)" class="sportLeague">NHL GAME LINES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1045" class="c_league"
+                                id="chk_1045"><label for="chk_1045"><a href="javascript:;" data-lg="1045"
+                                    onclick="showLine(this)" class="sportLeague">EUROPEAN HOCKEY</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1206" class="c_league"
+                                id="chk_1206"><label for="chk_1206"><a href="javascript:;" data-lg="1206"
+                                    onclick="showLine(this)" class="sportLeague">SWEDEN ELITSERIEN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1211" class="c_league"
+                                id="chk_1211"><label for="chk_1211"><a href="javascript:;" data-lg="1211"
+                                    onclick="showLine(this)" class="sportLeague">BELARUS EXTRALIGA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1209" class="c_league"
+                                id="chk_1209"><label for="chk_1209"><a href="javascript:;" data-lg="1209"
+                                    onclick="showLine(this)" class="sportLeague">GERMANY DEL</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1204" class="c_league"
+                                id="chk_1204"><label for="chk_1204"><a href="javascript:;" data-lg="1204"
+                                    onclick="showLine(this)" class="sportLeague">SLOVAKIA EXTRALIGA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1205" class="c_league"
+                                id="chk_1205"><label for="chk_1205"><a href="javascript:;" data-lg="1205"
+                                    onclick="showLine(this)" class="sportLeague">SWEDEN ALLSVENSKAN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1215" class="c_league"
+                                id="chk_1215"><label for="chk_1215"><a href="javascript:;" data-lg="1215"
+                                    onclick="showLine(this)" class="sportLeague">FINLAND SM LIIGA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1224" class="c_league"
+                                id="chk_1224"><label for="chk_1224"><a href="javascript:;" data-lg="1224"
+                                    onclick="showLine(this)" class="sportLeague">RUSSIA KHL</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1203" class="c_league"
+                                id="chk_1203"><label for="chk_1203"><a href="javascript:;" data-lg="1203"
+                                    onclick="showLine(this)" class="sportLeague">RUSSIA VHL</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1591" class="c_league"
+                                id="chk_1591"><label for="chk_1591"><a href="javascript:;" data-lg="1591"
+                                    onclick="showLine(this)" class="sportLeague">HOCKEY - CANADA LEAGUES</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1592" class="c_league"
+                                id="chk_1592"><label for="chk_1592"><a href="javascript:;" data-lg="1592"
+                                    onclick="showLine(this)" class="sportLeague">HOCKEY - CZECH EXTRALIGA</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1593" class="c_league"
+                                id="chk_1593"><label for="chk_1593"><a href="javascript:;" data-lg="1593"
+                                    onclick="showLine(this)" class="sportLeague">HOCKEY - DENMARK
+                                    SUPERISLIGAEN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1611" class="c_league"
+                                id="chk_1611"><label for="chk_1611"><a href="javascript:;" data-lg="1611"
+                                    onclick="showLine(this)" class="sportLeague">USA - AMERICAN HOCKEY
+                                    LEAGUE</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1648" class="c_league"
+                                id="chk_1648"><label for="chk_1648"><a href="javascript:;" data-lg="1648"
+                                    onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER FRENCH
+                                    LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1649" class="c_league"
+                                id="chk_1649"><label for="chk_1649"><a href="javascript:;" data-lg="1649"
+                                    onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER GERMAN
+                                    LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1650" class="c_league"
+                                id="chk_1650"><label for="chk_1650"><a href="javascript:;" data-lg="1650"
+                                    onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER RUSSIAN
+                                    LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1651" class="c_league"
+                                id="chk_1651"><label for="chk_1651"><a href="javascript:;" data-lg="1651"
+                                    onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER SWEDISH
+                                    LEAGUES</a></label></div>
+                    </div>
+                </div>
+                <div id="SOCCER" class="accordion even"><span class="logos leagues SOCCER">. </span>SOCCER<a
+                        href="javascript:;" data-spt="SOCCER" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL SOCCER</a></div>
+                <div class="SportPanel" id="panel_SOCCER">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="734" class="c_league"
+                                id="chk_734"><label for="chk_734"><a href="javascript:;" data-lg="734"
+                                    onclick="showLine(this)" class="sportLeague">AFRICAN LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="101" class="c_league"
+                                id="chk_101"><label for="chk_101"><a href="javascript:;" data-lg="101"
+                                    onclick="showLine(this)" class="sportLeague">ARGENTINA PRIMERA DIVISION</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="647" class="c_league"
+                                id="chk_647"><label for="chk_647"><a href="javascript:;" data-lg="647"
+                                    onclick="showLine(this)" class="sportLeague">AUSTRALIA A LEAGUE</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1144" class="c_league"
+                                id="chk_1144"><label for="chk_1144"><a href="javascript:;" data-lg="1144"
+                                    onclick="showLine(this)" class="sportLeague">BELGIUM PRO</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="125" class="c_league"
+                                id="chk_125"><label for="chk_125"><a href="javascript:;" data-lg="125"
+                                    onclick="showLine(this)" class="sportLeague">BRAZIL A</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="960" class="c_league"
+                                id="chk_960"><label for="chk_960"><a href="javascript:;" data-lg="960"
+                                    onclick="showLine(this)" class="sportLeague">BRAZIL CUPS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1632" class="c_league"
+                                id="chk_1632"><label for="chk_1632"><a href="javascript:;" data-lg="1632"
+                                    onclick="showLine(this)" class="sportLeague">BRAZIL OTHER LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="585" class="c_league"
+                                id="chk_585"><label for="chk_585"><a href="javascript:;" data-lg="585"
+                                    onclick="showLine(this)" class="sportLeague">COLOMBIA PRIMERA DIVISION</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1119" class="c_league"
+                                id="chk_1119"><label for="chk_1119"><a href="javascript:;" data-lg="1119"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND CHAM</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1107" class="c_league"
+                                id="chk_1107"><label for="chk_1107"><a href="javascript:;" data-lg="1107"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND CUPS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1086" class="c_league"
+                                id="chk_1086"><label for="chk_1086"><a href="javascript:;" data-lg="1086"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND CONFERENCE NATIONAL</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="964" class="c_league"
+                                id="chk_964"><label for="chk_964"><a href="javascript:;" data-lg="964"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND L1</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="965" class="c_league"
+                                id="chk_965"><label for="chk_965"><a href="javascript:;" data-lg="965"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND L2</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="91" class="c_league"
+                                id="chk_91"><label for="chk_91"><a href="javascript:;" data-lg="91"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND PREMIER LEAGUE</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1564" class="c_league"
+                                id="chk_1564"><label for="chk_1564"><a href="javascript:;" data-lg="1564"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND PREMIER LEAGUE TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1105" class="c_league"
+                                id="chk_1105"><label for="chk_1105"><a href="javascript:;" data-lg="1105"
+                                    onclick="showLine(this)" class="sportLeague">FRANCE L1</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="95" class="c_league"
+                                id="chk_95"><label for="chk_95"><a href="javascript:;" data-lg="95"
+                                    onclick="showLine(this)" class="sportLeague">FRANCE L1 TEAM TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1084" class="c_league"
+                                id="chk_1084"><label for="chk_1084"><a href="javascript:;" data-lg="1084"
+                                    onclick="showLine(this)" class="sportLeague">FRANCE NATIONAL</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1064" class="c_league"
+                                id="chk_1064"><label for="chk_1064"><a href="javascript:;" data-lg="1064"
+                                    onclick="showLine(this)" class="sportLeague">GERMANY BUND</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1567" class="c_league"
+                                id="chk_1567"><label for="chk_1567"><a href="javascript:;" data-lg="1567"
+                                    onclick="showLine(this)" class="sportLeague">GERMANY BUND TEAM TOTALS</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="967" class="c_league"
+                                id="chk_967"><label for="chk_967"><a href="javascript:;" data-lg="967"
+                                    onclick="showLine(this)" class="sportLeague">GERMANY B2</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1063" class="c_league"
+                                id="chk_1063"><label for="chk_1063"><a href="javascript:;" data-lg="1063"
+                                    onclick="showLine(this)" class="sportLeague">GERMANY 3RD DIVISION</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="135" class="c_league"
+                                id="chk_135"><label for="chk_135"><a href="javascript:;" data-lg="135"
+                                    onclick="showLine(this)" class="sportLeague">HOLLAND E</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1619" class="c_league"
+                                id="chk_1619"><label for="chk_1619"><a href="javascript:;" data-lg="1619"
+                                    onclick="showLine(this)" class="sportLeague">HOLLAND E - TEAM TOTALS</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1120" class="c_league"
+                                id="chk_1120"><label for="chk_1120"><a href="javascript:;" data-lg="1120"
+                                    onclick="showLine(this)" class="sportLeague">HOLLAND JUPILER LEAGUE</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="700" class="c_league"
+                                id="chk_700"><label for="chk_700"><a href="javascript:;" data-lg="700"
+                                    onclick="showLine(this)" class="sportLeague">INTERNATIONAL CLUB
+                                    FRIENDLIES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="198" class="c_league"
+                                id="chk_198"><label for="chk_198"><a href="javascript:;" data-lg="198"
+                                    onclick="showLine(this)" class="sportLeague">INTERNATIONAL FRIENDLIES</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1779" class="c_league"
+                                id="chk_1779"><label for="chk_1779"><a href="javascript:;" data-lg="1779"
+                                    onclick="showLine(this)" class="sportLeague">INTERNATIONAL FRIENDLIES - TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="591" class="c_league"
+                                id="chk_591"><label for="chk_591"><a href="javascript:;" data-lg="591"
+                                    onclick="showLine(this)" class="sportLeague">INTERNATIONAL QUALIFIERS</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1607" class="c_league"
+                                id="chk_1607"><label for="chk_1607"><a href="javascript:;" data-lg="1607"
+                                    onclick="showLine(this)" class="sportLeague">INTERNATIONAL QUALIFIERS - TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="811" class="c_league"
+                                id="chk_811"><label for="chk_811"><a href="javascript:;" data-lg="811"
+                                    onclick="showLine(this)" class="sportLeague">IRELAND PREMIER DIVISION</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="971" class="c_league"
+                                id="chk_971"><label for="chk_971"><a href="javascript:;" data-lg="971"
+                                    onclick="showLine(this)" class="sportLeague">IRELAND PREM</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1075" class="c_league"
+                                id="chk_1075"><label for="chk_1075"><a href="javascript:;" data-lg="1075"
+                                    onclick="showLine(this)" class="sportLeague">ISRAEL LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="97" class="c_league"
+                                id="chk_97"><label for="chk_97"><a href="javascript:;" data-lg="97"
+                                    onclick="showLine(this)" class="sportLeague">ITALY SERIE A</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1566" class="c_league"
+                                id="chk_1566"><label for="chk_1566"><a href="javascript:;" data-lg="1566"
+                                    onclick="showLine(this)" class="sportLeague">ITALY SERIE A TEAM TOTALS</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="522" class="c_league"
+                                id="chk_522"><label for="chk_522"><a href="javascript:;" data-lg="522"
+                                    onclick="showLine(this)" class="sportLeague">ITALY SERIE B</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="554" class="c_league"
+                                id="chk_554"><label for="chk_554"><a href="javascript:;" data-lg="554"
+                                    onclick="showLine(this)" class="sportLeague">ITALY COPPA ITALIA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1735" class="c_league"
+                                id="chk_1735"><label for="chk_1735"><a href="javascript:;" data-lg="1735"
+                                    onclick="showLine(this)" class="sportLeague">ITALY COPPA ITALIA - TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="968" class="c_league"
+                                id="chk_968"><label for="chk_968"><a href="javascript:;" data-lg="968"
+                                    onclick="showLine(this)" class="sportLeague">JAPAN J</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1031" class="c_league"
+                                id="chk_1031"><label for="chk_1031"><a href="javascript:;" data-lg="1031"
+                                    onclick="showLine(this)" class="sportLeague">MEXICO LIGA DE ASCENSO</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="587" class="c_league"
+                                id="chk_587"><label for="chk_587"><a href="javascript:;" data-lg="587"
+                                    onclick="showLine(this)" class="sportLeague">OTHER AMERICAN LEAGUES</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="588" class="c_league"
+                                id="chk_588"><label for="chk_588"><a href="javascript:;" data-lg="588"
+                                    onclick="showLine(this)" class="sportLeague">OTHER ASIAN LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="651" class="c_league"
+                                id="chk_651"><label for="chk_651"><a href="javascript:;" data-lg="651"
+                                    onclick="showLine(this)" class="sportLeague">OTHER GERMAN LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="589" class="c_league"
+                                id="chk_589"><label for="chk_589"><a href="javascript:;" data-lg="589"
+                                    onclick="showLine(this)" class="sportLeague">OTHER ITALIAN LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="702" class="c_league"
+                                id="chk_702"><label for="chk_702"><a href="javascript:;" data-lg="702"
+                                    onclick="showLine(this)" class="sportLeague">OTHER EUROPEAN LEAGUES</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1104" class="c_league"
+                                id="chk_1104"><label for="chk_1104"><a href="javascript:;" data-lg="1104"
+                                    onclick="showLine(this)" class="sportLeague">OTHER ENGLAND LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="704" class="c_league"
+                                id="chk_704"><label for="chk_704"><a href="javascript:;" data-lg="704"
+                                    onclick="showLine(this)" class="sportLeague">OTHER SPANISH LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="705" class="c_league"
+                                id="chk_705"><label for="chk_705"><a href="javascript:;" data-lg="705"
+                                    onclick="showLine(this)" class="sportLeague">POLAND OTHER LEAGUES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="139" class="c_league"
+                                id="chk_139"><label for="chk_139"><a href="javascript:;" data-lg="139"
+                                    onclick="showLine(this)" class="sportLeague">PORTUGAL PRIMEIRA LIGA</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1734" class="c_league"
+                                id="chk_1734"><label for="chk_1734"><a href="javascript:;" data-lg="1734"
+                                    onclick="showLine(this)" class="sportLeague">PORTUGAL PRIMEIRA LIGA - TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1097" class="c_league"
+                                id="chk_1097"><label for="chk_1097"><a href="javascript:;" data-lg="1097"
+                                    onclick="showLine(this)" class="sportLeague">PORTUGAL SEGUNDA LIGA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="740" class="c_league"
+                                id="chk_740"><label for="chk_740"><a href="javascript:;" data-lg="740"
+                                    onclick="showLine(this)" class="sportLeague">ROMANIA LIGA I</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1051" class="c_league"
+                                id="chk_1051"><label for="chk_1051"><a href="javascript:;" data-lg="1051"
+                                    onclick="showLine(this)" class="sportLeague">RUSSIA PREM</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1085" class="c_league"
+                                id="chk_1085"><label for="chk_1085"><a href="javascript:;" data-lg="1085"
+                                    onclick="showLine(this)" class="sportLeague">SCOTLAND CHAMPIONSHIP</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1016" class="c_league"
+                                id="chk_1016"><label for="chk_1016"><a href="javascript:;" data-lg="1016"
+                                    onclick="showLine(this)" class="sportLeague">SCOTLAND 1ST DIVISION</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1094" class="c_league"
+                                id="chk_1094"><label for="chk_1094"><a href="javascript:;" data-lg="1094"
+                                    onclick="showLine(this)" class="sportLeague">SCOTLAND 2ND DIVISION</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="89" class="c_league"
+                                id="chk_89"><label for="chk_89"><a href="javascript:;" data-lg="89"
+                                    onclick="showLine(this)" class="sportLeague">SPAIN LA LIGA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1565" class="c_league"
+                                id="chk_1565"><label for="chk_1565"><a href="javascript:;" data-lg="1565"
+                                    onclick="showLine(this)" class="sportLeague">SPAIN LA LIGA TEAM TOTALS</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="143" class="c_league"
+                                id="chk_143"><label for="chk_143"><a href="javascript:;" data-lg="143"
+                                    onclick="showLine(this)" class="sportLeague">SPAIN COPA DEL REY</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="657" class="c_league"
+                                id="chk_657"><label for="chk_657"><a href="javascript:;" data-lg="657"
+                                    onclick="showLine(this)" class="sportLeague">SPAIN SEGUNDA DIVISION</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="706" class="c_league"
+                                id="chk_706"><label for="chk_706"><a href="javascript:;" data-lg="706"
+                                    onclick="showLine(this)" class="sportLeague">SWEDEN A</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="120" class="c_league"
+                                id="chk_120"><label for="chk_120"><a href="javascript:;" data-lg="120"
+                                    onclick="showLine(this)" class="sportLeague">UEFA CHAMPIONS LEAGUE</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1574" class="c_league"
+                                id="chk_1574"><label for="chk_1574"><a href="javascript:;" data-lg="1574"
+                                    onclick="showLine(this)" class="sportLeague">UEFA CHAMPIONS LEAGUE TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="149" class="c_league"
+                                id="chk_149"><label for="chk_149"><a href="javascript:;" data-lg="149"
+                                    onclick="showLine(this)" class="sportLeague">UEFA EUROPA LEAGUE</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1575" class="c_league"
+                                id="chk_1575"><label for="chk_1575"><a href="javascript:;" data-lg="1575"
+                                    onclick="showLine(this)" class="sportLeague">UEFA EUROPA LEAGUE TEAM
+                                    TOTALS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1134" class="c_league"
+                                id="chk_1134"><label for="chk_1134"><a href="javascript:;" data-lg="1134"
+                                    onclick="showLine(this)" class="sportLeague">UEFA EURO CUP</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="208" class="c_league"
+                                id="chk_208"><label for="chk_208"><a href="javascript:;" data-lg="208"
+                                    onclick="showLine(this)" class="sportLeague">UEFA CHAMPIONS LEAGUE 2020-2021- ODDS
+                                    TO WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="980" class="c_league"
+                                id="chk_980"><label for="chk_980"><a href="javascript:;" data-lg="980"
+                                    onclick="showLine(this)" class="sportLeague">UEFA EUROPA LEAGUE 2020-2021 - ODDS TO
+                                    WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="743" class="c_league"
+                                id="chk_743"><label for="chk_743"><a href="javascript:;" data-lg="743"
+                                    onclick="showLine(this)" class="sportLeague">URUGUAY PRIMERA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="590" class="c_league"
+                                id="chk_590"><label for="chk_590"><a href="javascript:;" data-lg="590"
+                                    onclick="showLine(this)" class="sportLeague">YOUTH INTERNATIONAL
+                                    QUALIFIERS</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="280" class="c_league"
+                                id="chk_280"><label for="chk_280"><a href="javascript:;" data-lg="280"
+                                    onclick="showLine(this)" class="sportLeague">ENGLAND FA CUP 2020/2021 - ODDS TO
+                                    WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="210" class="c_league"
+                                id="chk_210"><label for="chk_210"><a href="javascript:;" data-lg="210"
+                                    onclick="showLine(this)" class="sportLeague">PREMIER LEAGUE 2020/21 - ODDS TO
+                                    WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1383" class="c_league"
+                                id="chk_1383"><label for="chk_1383"><a href="javascript:;" data-lg="1383"
+                                    onclick="showLine(this)" class="sportLeague">SOCCER - 2021 COPA AMERICA - ODDS TO
+                                    WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1244" class="c_league"
+                                id="chk_1244"><label for="chk_1244"><a href="javascript:;" data-lg="1244"
+                                    onclick="showLine(this)" class="sportLeague">SOCCER - UEFA EURO 2021 - ODDS TO
+                                    WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="213" class="c_league"
+                                id="chk_213"><label for="chk_213"><a href="javascript:;" data-lg="213"
+                                    onclick="showLine(this)" class="sportLeague">GERMANY BUNDESLIGA -2020/2021 - ODDS TO
+                                    WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="403" class="c_league"
+                                id="chk_403"><label for="chk_403"><a href="javascript:;" data-lg="403"
+                                    onclick="showLine(this)" class="sportLeague">FRANCE LIGUE 1 2020/2021 - ODDS TO
+                                    WIN</a></label></div>
+                    </div>
+                </div>
+                <div id="TENNIS" class="accordion odd"><span class="logos leagues TENNIS">. </span>TENNIS<a
+                        href="javascript:;" data-spt="TENNIS" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL TENNIS</a></div>
+                <div class="SportPanel" id="panel_TENNIS">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="731" class="c_league"
+                                id="chk_731"><label for="chk_731"><a href="javascript:;" data-lg="731"
+                                    onclick="showLine(this)" class="sportLeague">ATP MATCH BETTING</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="733" class="c_league"
+                                id="chk_733"><label for="chk_733"><a href="javascript:;" data-lg="733"
+                                    onclick="showLine(this)" class="sportLeague">WTA MATCH BETTING</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="580" class="c_league"
+                                id="chk_580"><label for="chk_580"><a href="javascript:;" data-lg="580"
+                                    onclick="showLine(this)" class="sportLeague">ATP DOUBLES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="638" class="c_league"
+                                id="chk_638"><label for="chk_638"><a href="javascript:;" data-lg="638"
+                                    onclick="showLine(this)" class="sportLeague">CHALLENGERS MEN TENNIS</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="581" class="c_league"
+                                id="chk_581"><label for="chk_581"><a href="javascript:;" data-lg="581"
+                                    onclick="showLine(this)" class="sportLeague">ITF</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="643" class="c_league"
+                                id="chk_643"><label for="chk_643"><a href="javascript:;" data-lg="643"
+                                    onclick="showLine(this)" class="sportLeague">WTA DOUBLES</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="582" class="c_league"
+                                id="chk_582"><label for="chk_582"><a href="javascript:;" data-lg="582"
+                                    onclick="showLine(this)" class="sportLeague">ITF WOMEN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="442" class="c_league"
+                                id="chk_442"><label for="chk_442"><a href="javascript:;" data-lg="442"
+                                    onclick="showLine(this)" class="sportLeague">ATP - ROLAND GARROS (FRENCH OPEN) -
+                                    ODDS TO WIN</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="412" class="c_league"
+                                id="chk_412"><label for="chk_412"><a href="javascript:;" data-lg="412"
+                                    onclick="showLine(this)" class="sportLeague">WTA - ROLAND GARROS (FRENCH OPEN) -
+                                    ODDS TO WIN</a></label></div>
+                    </div>
+                </div>
+                <div id="MMA_FIGHTING" class="accordion even"><span class="logos leagues MMA_FIGHTING">. </span>MMA
+                    FIGHTING<a href="javascript:;" data-spt="MMA_FIGHTING" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL MMA FIGHTING</a></div>
+                <div class="SportPanel" id="panel_MMA_FIGHTING">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="803" class="c_league"
+                                id="chk_803"><label for="chk_803"><a href="javascript:;" data-lg="803"
+                                    onclick="showLine(this)" class="sportLeague">MMA</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="762" class="c_league"
+                                id="chk_762"><label for="chk_762"><a href="javascript:;" data-lg="762"
+                                    onclick="showLine(this)" class="sportLeague">UFC</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1441" class="c_league"
+                                id="chk_1441"><label for="chk_1441"><a href="javascript:;" data-lg="1441"
+                                    onclick="showLine(this)" class="sportLeague">MMA PROPS</a></label></div>
+                    </div>
+                </div>
+                <div id="VOLLEYBALL" class="accordion odd"><span class="logos leagues VOLLEYBALL">. </span>VOLLEYBALL<a
+                    href="javascript:;" data-spt="VOLLEYBALL" onclick="checkAll(this)" class="hide">
+                    - Select and View ALL VOLLEYBALL</a></div>
+                    <div class="SportPanel" id="panel_CRICKET">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="checkbox checkbox-primary"><input type="checkbox" value="1756" class="c_league"
+                                    id="chk_1756"><label for="chk_1756"><a href="javascript:;" data-lg="1756"
+                                        onclick="showLine(this)" class="sportLeague">CRICKET AUSTRALIA LEAGUE</a></label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="checkbox checkbox-primary"><input type="checkbox" value="1759" class="c_league"
+                                    id="chk_1759"><label for="chk_1759"><a href="javascript:;" data-lg="1759"
+                                        onclick="showLine(this)" class="sportLeague">CRICKET INDIA PRE LEAGUE</a></label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="checkbox checkbox-primary"><input type="checkbox" value="1760" class="c_league"
+                                    id="chk_1760"><label for="chk_1760"><a href="javascript:;" data-lg="1760"
+                                        onclick="showLine(this)" class="sportLeague">CRICKET INTERNATIONAL
+                                        LEAGUE</a></label></div>
+                        </div>
+                    </div>
                 
-    <div id="leaguesMenu"><div id="NFL_FOOTBALL" class="accordion even"><span class="logos leagues NFL_FOOTBALL">. </span>NFL FOOTBALL<a href="javascript:;" data-spt="NFL_FOOTBALL" onclick="checkAll(this)" class="hide">
-            - Select and View ALL NFL FOOTBALL</a></div><div class="SportPanel" id="panel_NFL_FOOTBALL"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/nfl/afc/" class="c_league" id="chk_188"><label for="chk_188"><a href="javascript:;" data-lg="188" onclick="showLine(this)" class="sportLeague">NFL TO WIN THE AFC CONFERENCE 2021-2022</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="187" class="c_league" id="chk_187"><label for="chk_187"><a href="javascript:;" data-lg="187" onclick="showLine(this)" class="sportLeague">NFL TO WIN THE NFC CONFERENCE 2021-2022</a></label></div></div></div><div id="NCAA_FOOTBALL" class="accordion odd"><span class="logos leagues NCAA_FOOTBALL">. </span>NCAA FOOTBALL<a href="javascript:;" data-spt="NCAA_FOOTBALL" onclick="checkAll(this)" class="hide">
-            - Select and View ALL NCAA FOOTBALL</a></div><div class="SportPanel" id="panel_NCAA_FOOTBALL"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1161" class="c_league" id="chk_1161"><label for="chk_1161"><a href="javascript:;" data-lg="1161" onclick="showLine(this)" class="sportLeague">NCAA FOOTBALL - EXTRA GAMES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/nfl/nfc/" class="c_league" id="chk_113"><label for="chk_113"><a href="javascript:;" data-lg="113" onclick="showLine(this)" class="sportLeague">2021-2022 NCAA FOOTBALL CHAMPIONSHIP - ODDS TO WIN</a></label></div></div></div><div id="BASEBALL" class="accordion even"><span class="logos leagues BASEBALL">. </span>BASEBALL<a href="javascript:;" data-spt="BASEBALL" onclick="checkAll(this)" class="hide">
-            - Select and View ALL BASEBALL</a></div><div class="SportPanel" id="panel_BASEBALL"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="436" class="c_league" id="chk_436"><label for="chk_436"><a href="javascript:;" data-lg="436" onclick="showLine(this)" class="sportLeague">MLB EXHIBITION BASEBALL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="821" class="c_league" id="chk_821"><label for="chk_821"><a href="javascript:;" data-lg="821" onclick="showLine(this)" class="sportLeague">MLB REGULAR SEASON WINS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1426" class="c_league" id="chk_1426"><label for="chk_1426"><a href="javascript:;" data-lg="1426" onclick="showLine(this)" class="sportLeague">MLB - 2021 WORLD SERIES CHAMPION - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1302" class="c_league" id="chk_1302"><label for="chk_1302"><a href="javascript:;" data-lg="1302" onclick="showLine(this)" class="sportLeague">MLB-TO REACH THE CHAMPIONSHIP SERIES - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="416" class="c_league" id="chk_416"><label for="chk_416"><a href="javascript:;" data-lg="416" onclick="showLine(this)" class="sportLeague">MLB - 2021 NATIONAL LEAGUE PENNANT - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1794" class="c_league" id="chk_1794"><label for="chk_1794"><a href="javascript:;" data-lg="1794" onclick="showLine(this)" class="sportLeague">MLB REGULAR SEASON WINS PERCENTAGE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="417" class="c_league" id="chk_417"><label for="chk_417"><a href="javascript:;" data-lg="417" onclick="showLine(this)" class="sportLeague">MLB - 2021 AMERICAN LEAGUE PENNANT- ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="478" class="c_league" id="chk_478"><label for="chk_478"><a href="javascript:;" data-lg="478" onclick="showLine(this)" class="sportLeague">MLB - 2021 NATIONAL LEAGUE DIVISIONS - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="479" class="c_league" id="chk_479"><label for="chk_479"><a href="javascript:;" data-lg="479" onclick="showLine(this)" class="sportLeague">MLB - 2021 AMERICAN LEAGUE DIVISIONS - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="484" class="c_league" id="chk_484"><label for="chk_484"><a href="javascript:;" data-lg="484" onclick="showLine(this)" class="sportLeague">MLB - 2021 AMERICAN LEAGUE - MVP</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1684" class="c_league" id="chk_1684"><label for="chk_1684"><a href="javascript:;" data-lg="1684" onclick="showLine(this)" class="sportLeague">MLB - 2021 NATIONAL LEAGUE - MVP</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="485" class="c_league" id="chk_485"><label for="chk_485"><a href="javascript:;" data-lg="485" onclick="showLine(this)" class="sportLeague">MLB - 2021 AMERICAN LEAGUE - CY YOUNG</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="486" class="c_league" id="chk_486"><label for="chk_486"><a href="javascript:;" data-lg="486" onclick="showLine(this)" class="sportLeague">MLB - 2021 NATIONAL LEAGUE - CY YOUNG</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1748" class="c_league" id="chk_1748"><label for="chk_1748"><a href="javascript:;" data-lg="1748" onclick="showLine(this)" class="sportLeague">MLB - REG SEASON - MOST RBI'S - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1749" class="c_league" id="chk_1749"><label for="chk_1749"><a href="javascript:;" data-lg="1749" onclick="showLine(this)" class="sportLeague">MLB - REG SEASON - MOST HOME RUNS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1750" class="c_league" id="chk_1750"><label for="chk_1750"><a href="javascript:;" data-lg="1750" onclick="showLine(this)" class="sportLeague">MLB - REG SEASON - MOST SAVES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1751" class="c_league" id="chk_1751"><label for="chk_1751"><a href="javascript:;" data-lg="1751" onclick="showLine(this)" class="sportLeague">MLB - REG SEASON - MOST STRIKEOUTS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1752" class="c_league" id="chk_1752"><label for="chk_1752"><a href="javascript:;" data-lg="1752" onclick="showLine(this)" class="sportLeague">MLB - REG SEASON - MOST HITS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1806" class="c_league" id="chk_1806"><label for="chk_1806"><a href="javascript:;" data-lg="1806" onclick="showLine(this)" class="sportLeague">MLB - REG SEASON - MOST PITCHER WINS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1808" class="c_league" id="chk_1808"><label for="chk_1808"><a href="javascript:;" data-lg="1808" onclick="showLine(this)" class="sportLeague">MLB - REG SEASON - MOST STOLEN BASES</a></label></div></div></div><div id="BASKETBALL" class="accordion odd"><span class="logos leagues BASKETBALL">. </span>BASKETBALL<a href="javascript:;" data-spt="BASKETBALL" onclick="checkAll(this)" class="hide">
-            - Select and View ALL BASKETBALL</a></div><div class="SportPanel" id="panel_BASKETBALL"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="66" class="c_league" id="chk_66"><label for="chk_66"><a href="javascript:;" data-lg="66" onclick="showLine(this)" class="sportLeague">NBA GAME LINES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="726" class="c_league" id="chk_726"><label for="chk_726"><a href="javascript:;" data-lg="726" onclick="showLine(this)" class="sportLeague">BRAZIL NBB</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="151" class="c_league" id="chk_151"><label for="chk_151"><a href="javascript:;" data-lg="151" onclick="showLine(this)" class="sportLeague">EUROLEAGUE BASKETBALL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="856" class="c_league" id="chk_856"><label for="chk_856"><a href="javascript:;" data-lg="856" onclick="showLine(this)" class="sportLeague">EUROLEAGUE BASKETBALL (1H)</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="727" class="c_league" id="chk_727"><label for="chk_727"><a href="javascript:;" data-lg="727" onclick="showLine(this)" class="sportLeague">EUROPEAN CUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="728" class="c_league" id="chk_728"><label for="chk_728"><a href="javascript:;" data-lg="728" onclick="showLine(this)" class="sportLeague">GREECE A1</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="747" class="c_league" id="chk_747"><label for="chk_747"><a href="javascript:;" data-lg="747" onclick="showLine(this)" class="sportLeague">ISRAEL SUPER LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="840" class="c_league" id="chk_840"><label for="chk_840"><a href="javascript:;" data-lg="840" onclick="showLine(this)" class="sportLeague">OTHER AMERICAN LEAGUES BK</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1634" class="c_league" id="chk_1634"><label for="chk_1634"><a href="javascript:;" data-lg="1634" onclick="showLine(this)" class="sportLeague">OTHER EUROPEAN LEAGUES BK</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1635" class="c_league" id="chk_1635"><label for="chk_1635"><a href="javascript:;" data-lg="1635" onclick="showLine(this)" class="sportLeague">OTHER ASIAN LEAGUES BK</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1636" class="c_league" id="chk_1636"><label for="chk_1636"><a href="javascript:;" data-lg="1636" onclick="showLine(this)" class="sportLeague">OTHER LEAGUES BK</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1640" class="c_league" id="chk_1640"><label for="chk_1640"><a href="javascript:;" data-lg="1640" onclick="showLine(this)" class="sportLeague">WOMEN INTERNATIONAL LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1066" class="c_league" id="chk_1066"><label for="chk_1066"><a href="javascript:;" data-lg="1066" onclick="showLine(this)" class="sportLeague">EURO BK - EUROLEAGUE 2020-2021 - ODDS TO WIN</a></label></div></div></div><div id="NCAA_BASKETBALL" class="accordion even"><span class="logos leagues NCAA_BASKETBALL">. </span>NCAA BASKETBALL<a href="javascript:;" data-spt="NCAA_BASKETBALL" onclick="checkAll(this)" class="hide">
-            - Select and View ALL NCAA BASKETBALL</a></div><div class="SportPanel" id="panel_NCAA_BASKETBALL"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="4" class="c_league" id="chk_4"><label for="chk_4"><a href="javascript:;" data-lg="4" onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL - MEN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="87" class="c_league" id="chk_87"><label for="chk_87"><a href="javascript:;" data-lg="87" onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL (1H) - MEN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="253" class="c_league" id="chk_253"><label for="chk_253"><a href="javascript:;" data-lg="253" onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL - TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="192" class="c_league" id="chk_192"><label for="chk_192"><a href="javascript:;" data-lg="192" onclick="showLine(this)" class="sportLeague">NCAA BASKETBALL CHAMPIONSHIP 2021  - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1499" class="c_league" id="chk_1499"><label for="chk_1499"><a href="javascript:;" data-lg="1499" onclick="showLine(this)" class="sportLeague">NCAA BK - REGIONS (ODDS TO WIN)</a></label></div></div></div><div id="HOCKEY" class="accordion odd"><span class="logos leagues HOCKEY">. </span>HOCKEY<a href="javascript:;" data-spt="HOCKEY" onclick="checkAll(this)" class="hide">
-            - Select and View ALL HOCKEY</a></div><div class="SportPanel" id="panel_HOCKEY"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="73" class="c_league" id="chk_73"><label for="chk_73"><a href="javascript:;" data-lg="73" onclick="showLine(this)" class="sportLeague">NHL GAME LINES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1045" class="c_league" id="chk_1045"><label for="chk_1045"><a href="javascript:;" data-lg="1045" onclick="showLine(this)" class="sportLeague">EUROPEAN HOCKEY</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1206" class="c_league" id="chk_1206"><label for="chk_1206"><a href="javascript:;" data-lg="1206" onclick="showLine(this)" class="sportLeague">SWEDEN ELITSERIEN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1211" class="c_league" id="chk_1211"><label for="chk_1211"><a href="javascript:;" data-lg="1211" onclick="showLine(this)" class="sportLeague">BELARUS EXTRALIGA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1209" class="c_league" id="chk_1209"><label for="chk_1209"><a href="javascript:;" data-lg="1209" onclick="showLine(this)" class="sportLeague">GERMANY DEL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1204" class="c_league" id="chk_1204"><label for="chk_1204"><a href="javascript:;" data-lg="1204" onclick="showLine(this)" class="sportLeague">SLOVAKIA EXTRALIGA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1205" class="c_league" id="chk_1205"><label for="chk_1205"><a href="javascript:;" data-lg="1205" onclick="showLine(this)" class="sportLeague">SWEDEN ALLSVENSKAN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1215" class="c_league" id="chk_1215"><label for="chk_1215"><a href="javascript:;" data-lg="1215" onclick="showLine(this)" class="sportLeague">FINLAND SM LIIGA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1224" class="c_league" id="chk_1224"><label for="chk_1224"><a href="javascript:;" data-lg="1224" onclick="showLine(this)" class="sportLeague">RUSSIA KHL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1203" class="c_league" id="chk_1203"><label for="chk_1203"><a href="javascript:;" data-lg="1203" onclick="showLine(this)" class="sportLeague">RUSSIA VHL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1591" class="c_league" id="chk_1591"><label for="chk_1591"><a href="javascript:;" data-lg="1591" onclick="showLine(this)" class="sportLeague">HOCKEY - CANADA LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1592" class="c_league" id="chk_1592"><label for="chk_1592"><a href="javascript:;" data-lg="1592" onclick="showLine(this)" class="sportLeague">HOCKEY - CZECH EXTRALIGA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1593" class="c_league" id="chk_1593"><label for="chk_1593"><a href="javascript:;" data-lg="1593" onclick="showLine(this)" class="sportLeague">HOCKEY - DENMARK SUPERISLIGAEN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1611" class="c_league" id="chk_1611"><label for="chk_1611"><a href="javascript:;" data-lg="1611" onclick="showLine(this)" class="sportLeague">USA - AMERICAN HOCKEY LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1648" class="c_league" id="chk_1648"><label for="chk_1648"><a href="javascript:;" data-lg="1648" onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER FRENCH LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1649" class="c_league" id="chk_1649"><label for="chk_1649"><a href="javascript:;" data-lg="1649" onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER GERMAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1650" class="c_league" id="chk_1650"><label for="chk_1650"><a href="javascript:;" data-lg="1650" onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER RUSSIAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1651" class="c_league" id="chk_1651"><label for="chk_1651"><a href="javascript:;" data-lg="1651" onclick="showLine(this)" class="sportLeague">HOCKEY - OTHER SWEDISH LEAGUES</a></label></div></div></div><div id="SOCCER" class="accordion even"><span class="logos leagues SOCCER">. </span>SOCCER<a href="javascript:;" data-spt="SOCCER" onclick="checkAll(this)" class="hide">
-            - Select and View ALL SOCCER</a></div><div class="SportPanel" id="panel_SOCCER"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="734" class="c_league" id="chk_734"><label for="chk_734"><a href="javascript:;" data-lg="734" onclick="showLine(this)" class="sportLeague">AFRICAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="101" class="c_league" id="chk_101"><label for="chk_101"><a href="javascript:;" data-lg="101" onclick="showLine(this)" class="sportLeague">ARGENTINA PRIMERA DIVISION</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="647" class="c_league" id="chk_647"><label for="chk_647"><a href="javascript:;" data-lg="647" onclick="showLine(this)" class="sportLeague">AUSTRALIA A LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1144" class="c_league" id="chk_1144"><label for="chk_1144"><a href="javascript:;" data-lg="1144" onclick="showLine(this)" class="sportLeague">BELGIUM PRO</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="125" class="c_league" id="chk_125"><label for="chk_125"><a href="javascript:;" data-lg="125" onclick="showLine(this)" class="sportLeague">BRAZIL A</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="960" class="c_league" id="chk_960"><label for="chk_960"><a href="javascript:;" data-lg="960" onclick="showLine(this)" class="sportLeague">BRAZIL CUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1632" class="c_league" id="chk_1632"><label for="chk_1632"><a href="javascript:;" data-lg="1632" onclick="showLine(this)" class="sportLeague">BRAZIL OTHER LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="585" class="c_league" id="chk_585"><label for="chk_585"><a href="javascript:;" data-lg="585" onclick="showLine(this)" class="sportLeague">COLOMBIA PRIMERA DIVISION</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1119" class="c_league" id="chk_1119"><label for="chk_1119"><a href="javascript:;" data-lg="1119" onclick="showLine(this)" class="sportLeague">ENGLAND CHAM</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1107" class="c_league" id="chk_1107"><label for="chk_1107"><a href="javascript:;" data-lg="1107" onclick="showLine(this)" class="sportLeague">ENGLAND CUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1086" class="c_league" id="chk_1086"><label for="chk_1086"><a href="javascript:;" data-lg="1086" onclick="showLine(this)" class="sportLeague">ENGLAND CONFERENCE NATIONAL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="964" class="c_league" id="chk_964"><label for="chk_964"><a href="javascript:;" data-lg="964" onclick="showLine(this)" class="sportLeague">ENGLAND L1</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="965" class="c_league" id="chk_965"><label for="chk_965"><a href="javascript:;" data-lg="965" onclick="showLine(this)" class="sportLeague">ENGLAND L2</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="91" class="c_league" id="chk_91"><label for="chk_91"><a href="javascript:;" data-lg="91" onclick="showLine(this)" class="sportLeague">ENGLAND PREMIER LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1564" class="c_league" id="chk_1564"><label for="chk_1564"><a href="javascript:;" data-lg="1564" onclick="showLine(this)" class="sportLeague">ENGLAND PREMIER LEAGUE TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1105" class="c_league" id="chk_1105"><label for="chk_1105"><a href="javascript:;" data-lg="1105" onclick="showLine(this)" class="sportLeague">FRANCE L1</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="95" class="c_league" id="chk_95"><label for="chk_95"><a href="javascript:;" data-lg="95" onclick="showLine(this)" class="sportLeague">FRANCE L1 TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1084" class="c_league" id="chk_1084"><label for="chk_1084"><a href="javascript:;" data-lg="1084" onclick="showLine(this)" class="sportLeague">FRANCE NATIONAL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1064" class="c_league" id="chk_1064"><label for="chk_1064"><a href="javascript:;" data-lg="1064" onclick="showLine(this)" class="sportLeague">GERMANY BUND</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1567" class="c_league" id="chk_1567"><label for="chk_1567"><a href="javascript:;" data-lg="1567" onclick="showLine(this)" class="sportLeague">GERMANY BUND TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="967" class="c_league" id="chk_967"><label for="chk_967"><a href="javascript:;" data-lg="967" onclick="showLine(this)" class="sportLeague">GERMANY B2</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1063" class="c_league" id="chk_1063"><label for="chk_1063"><a href="javascript:;" data-lg="1063" onclick="showLine(this)" class="sportLeague">GERMANY 3RD DIVISION</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="135" class="c_league" id="chk_135"><label for="chk_135"><a href="javascript:;" data-lg="135" onclick="showLine(this)" class="sportLeague">HOLLAND E</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1619" class="c_league" id="chk_1619"><label for="chk_1619"><a href="javascript:;" data-lg="1619" onclick="showLine(this)" class="sportLeague">HOLLAND E - TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1120" class="c_league" id="chk_1120"><label for="chk_1120"><a href="javascript:;" data-lg="1120" onclick="showLine(this)" class="sportLeague">HOLLAND JUPILER LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="700" class="c_league" id="chk_700"><label for="chk_700"><a href="javascript:;" data-lg="700" onclick="showLine(this)" class="sportLeague">INTERNATIONAL CLUB FRIENDLIES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="198" class="c_league" id="chk_198"><label for="chk_198"><a href="javascript:;" data-lg="198" onclick="showLine(this)" class="sportLeague">INTERNATIONAL FRIENDLIES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1779" class="c_league" id="chk_1779"><label for="chk_1779"><a href="javascript:;" data-lg="1779" onclick="showLine(this)" class="sportLeague">INTERNATIONAL FRIENDLIES - TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="591" class="c_league" id="chk_591"><label for="chk_591"><a href="javascript:;" data-lg="591" onclick="showLine(this)" class="sportLeague">INTERNATIONAL QUALIFIERS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1607" class="c_league" id="chk_1607"><label for="chk_1607"><a href="javascript:;" data-lg="1607" onclick="showLine(this)" class="sportLeague">INTERNATIONAL QUALIFIERS - TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="811" class="c_league" id="chk_811"><label for="chk_811"><a href="javascript:;" data-lg="811" onclick="showLine(this)" class="sportLeague">IRELAND PREMIER DIVISION</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="971" class="c_league" id="chk_971"><label for="chk_971"><a href="javascript:;" data-lg="971" onclick="showLine(this)" class="sportLeague">IRELAND PREM</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1075" class="c_league" id="chk_1075"><label for="chk_1075"><a href="javascript:;" data-lg="1075" onclick="showLine(this)" class="sportLeague">ISRAEL LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="97" class="c_league" id="chk_97"><label for="chk_97"><a href="javascript:;" data-lg="97" onclick="showLine(this)" class="sportLeague">ITALY SERIE A</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1566" class="c_league" id="chk_1566"><label for="chk_1566"><a href="javascript:;" data-lg="1566" onclick="showLine(this)" class="sportLeague">ITALY SERIE A TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="522" class="c_league" id="chk_522"><label for="chk_522"><a href="javascript:;" data-lg="522" onclick="showLine(this)" class="sportLeague">ITALY SERIE B</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="554" class="c_league" id="chk_554"><label for="chk_554"><a href="javascript:;" data-lg="554" onclick="showLine(this)" class="sportLeague">ITALY COPPA ITALIA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1735" class="c_league" id="chk_1735"><label for="chk_1735"><a href="javascript:;" data-lg="1735" onclick="showLine(this)" class="sportLeague">ITALY COPPA ITALIA - TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="968" class="c_league" id="chk_968"><label for="chk_968"><a href="javascript:;" data-lg="968" onclick="showLine(this)" class="sportLeague">JAPAN J</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1031" class="c_league" id="chk_1031"><label for="chk_1031"><a href="javascript:;" data-lg="1031" onclick="showLine(this)" class="sportLeague">MEXICO LIGA DE ASCENSO</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="587" class="c_league" id="chk_587"><label for="chk_587"><a href="javascript:;" data-lg="587" onclick="showLine(this)" class="sportLeague">OTHER AMERICAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="588" class="c_league" id="chk_588"><label for="chk_588"><a href="javascript:;" data-lg="588" onclick="showLine(this)" class="sportLeague">OTHER ASIAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="651" class="c_league" id="chk_651"><label for="chk_651"><a href="javascript:;" data-lg="651" onclick="showLine(this)" class="sportLeague">OTHER GERMAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="589" class="c_league" id="chk_589"><label for="chk_589"><a href="javascript:;" data-lg="589" onclick="showLine(this)" class="sportLeague">OTHER ITALIAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="702" class="c_league" id="chk_702"><label for="chk_702"><a href="javascript:;" data-lg="702" onclick="showLine(this)" class="sportLeague">OTHER EUROPEAN LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1104" class="c_league" id="chk_1104"><label for="chk_1104"><a href="javascript:;" data-lg="1104" onclick="showLine(this)" class="sportLeague">OTHER ENGLAND LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="704" class="c_league" id="chk_704"><label for="chk_704"><a href="javascript:;" data-lg="704" onclick="showLine(this)" class="sportLeague">OTHER SPANISH LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="705" class="c_league" id="chk_705"><label for="chk_705"><a href="javascript:;" data-lg="705" onclick="showLine(this)" class="sportLeague">POLAND OTHER LEAGUES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="139" class="c_league" id="chk_139"><label for="chk_139"><a href="javascript:;" data-lg="139" onclick="showLine(this)" class="sportLeague">PORTUGAL PRIMEIRA LIGA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1734" class="c_league" id="chk_1734"><label for="chk_1734"><a href="javascript:;" data-lg="1734" onclick="showLine(this)" class="sportLeague">PORTUGAL PRIMEIRA LIGA - TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1097" class="c_league" id="chk_1097"><label for="chk_1097"><a href="javascript:;" data-lg="1097" onclick="showLine(this)" class="sportLeague">PORTUGAL SEGUNDA LIGA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="740" class="c_league" id="chk_740"><label for="chk_740"><a href="javascript:;" data-lg="740" onclick="showLine(this)" class="sportLeague">ROMANIA LIGA I</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1051" class="c_league" id="chk_1051"><label for="chk_1051"><a href="javascript:;" data-lg="1051" onclick="showLine(this)" class="sportLeague">RUSSIA PREM</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1085" class="c_league" id="chk_1085"><label for="chk_1085"><a href="javascript:;" data-lg="1085" onclick="showLine(this)" class="sportLeague">SCOTLAND CHAMPIONSHIP</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1016" class="c_league" id="chk_1016"><label for="chk_1016"><a href="javascript:;" data-lg="1016" onclick="showLine(this)" class="sportLeague">SCOTLAND 1ST DIVISION</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1094" class="c_league" id="chk_1094"><label for="chk_1094"><a href="javascript:;" data-lg="1094" onclick="showLine(this)" class="sportLeague">SCOTLAND 2ND DIVISION</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="89" class="c_league" id="chk_89"><label for="chk_89"><a href="javascript:;" data-lg="89" onclick="showLine(this)" class="sportLeague">SPAIN LA LIGA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1565" class="c_league" id="chk_1565"><label for="chk_1565"><a href="javascript:;" data-lg="1565" onclick="showLine(this)" class="sportLeague">SPAIN LA LIGA TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="143" class="c_league" id="chk_143"><label for="chk_143"><a href="javascript:;" data-lg="143" onclick="showLine(this)" class="sportLeague">SPAIN COPA DEL REY</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="657" class="c_league" id="chk_657"><label for="chk_657"><a href="javascript:;" data-lg="657" onclick="showLine(this)" class="sportLeague">SPAIN SEGUNDA DIVISION</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="706" class="c_league" id="chk_706"><label for="chk_706"><a href="javascript:;" data-lg="706" onclick="showLine(this)" class="sportLeague">SWEDEN A</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="120" class="c_league" id="chk_120"><label for="chk_120"><a href="javascript:;" data-lg="120" onclick="showLine(this)" class="sportLeague">UEFA CHAMPIONS LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1574" class="c_league" id="chk_1574"><label for="chk_1574"><a href="javascript:;" data-lg="1574" onclick="showLine(this)" class="sportLeague">UEFA CHAMPIONS LEAGUE TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="149" class="c_league" id="chk_149"><label for="chk_149"><a href="javascript:;" data-lg="149" onclick="showLine(this)" class="sportLeague">UEFA EUROPA LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1575" class="c_league" id="chk_1575"><label for="chk_1575"><a href="javascript:;" data-lg="1575" onclick="showLine(this)" class="sportLeague">UEFA EUROPA LEAGUE TEAM TOTALS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1134" class="c_league" id="chk_1134"><label for="chk_1134"><a href="javascript:;" data-lg="1134" onclick="showLine(this)" class="sportLeague">UEFA EURO CUP</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="208" class="c_league" id="chk_208"><label for="chk_208"><a href="javascript:;" data-lg="208" onclick="showLine(this)" class="sportLeague">UEFA CHAMPIONS LEAGUE 2020-2021- ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="980" class="c_league" id="chk_980"><label for="chk_980"><a href="javascript:;" data-lg="980" onclick="showLine(this)" class="sportLeague">UEFA EUROPA LEAGUE 2020-2021 -  ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="743" class="c_league" id="chk_743"><label for="chk_743"><a href="javascript:;" data-lg="743" onclick="showLine(this)" class="sportLeague">URUGUAY PRIMERA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="590" class="c_league" id="chk_590"><label for="chk_590"><a href="javascript:;" data-lg="590" onclick="showLine(this)" class="sportLeague">YOUTH INTERNATIONAL QUALIFIERS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="280" class="c_league" id="chk_280"><label for="chk_280"><a href="javascript:;" data-lg="280" onclick="showLine(this)" class="sportLeague">ENGLAND FA CUP 2020/2021 - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="210" class="c_league" id="chk_210"><label for="chk_210"><a href="javascript:;" data-lg="210" onclick="showLine(this)" class="sportLeague">PREMIER LEAGUE 2020/21 - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1383" class="c_league" id="chk_1383"><label for="chk_1383"><a href="javascript:;" data-lg="1383" onclick="showLine(this)" class="sportLeague">SOCCER - 2021 COPA AMERICA - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1244" class="c_league" id="chk_1244"><label for="chk_1244"><a href="javascript:;" data-lg="1244" onclick="showLine(this)" class="sportLeague">SOCCER - UEFA EURO 2021 - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="213" class="c_league" id="chk_213"><label for="chk_213"><a href="javascript:;" data-lg="213" onclick="showLine(this)" class="sportLeague">GERMANY BUNDESLIGA -2020/2021 -  ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="403" class="c_league" id="chk_403"><label for="chk_403"><a href="javascript:;" data-lg="403" onclick="showLine(this)" class="sportLeague">FRANCE LIGUE 1 2020/2021 - ODDS TO WIN</a></label></div></div></div><div id="TENNIS" class="accordion odd"><span class="logos leagues TENNIS">. </span>TENNIS<a href="javascript:;" data-spt="TENNIS" onclick="checkAll(this)" class="hide">
-            - Select and View ALL TENNIS</a></div><div class="SportPanel" id="panel_TENNIS"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="731" class="c_league" id="chk_731"><label for="chk_731"><a href="javascript:;" data-lg="731" onclick="showLine(this)" class="sportLeague">ATP MATCH BETTING</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="733" class="c_league" id="chk_733"><label for="chk_733"><a href="javascript:;" data-lg="733" onclick="showLine(this)" class="sportLeague">WTA MATCH BETTING</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="580" class="c_league" id="chk_580"><label for="chk_580"><a href="javascript:;" data-lg="580" onclick="showLine(this)" class="sportLeague">ATP DOUBLES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="638" class="c_league" id="chk_638"><label for="chk_638"><a href="javascript:;" data-lg="638" onclick="showLine(this)" class="sportLeague">CHALLENGERS MEN TENNIS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="581" class="c_league" id="chk_581"><label for="chk_581"><a href="javascript:;" data-lg="581" onclick="showLine(this)" class="sportLeague">ITF</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="643" class="c_league" id="chk_643"><label for="chk_643"><a href="javascript:;" data-lg="643" onclick="showLine(this)" class="sportLeague">WTA DOUBLES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="582" class="c_league" id="chk_582"><label for="chk_582"><a href="javascript:;" data-lg="582" onclick="showLine(this)" class="sportLeague">ITF WOMEN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="442" class="c_league" id="chk_442"><label for="chk_442"><a href="javascript:;" data-lg="442" onclick="showLine(this)" class="sportLeague">ATP - ROLAND GARROS (FRENCH OPEN) - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="412" class="c_league" id="chk_412"><label for="chk_412"><a href="javascript:;" data-lg="412" onclick="showLine(this)" class="sportLeague">WTA - ROLAND GARROS (FRENCH OPEN)  - ODDS TO WIN</a></label></div></div></div><div id="MMA_FIGHTING" class="accordion even"><span class="logos leagues MMA_FIGHTING">. </span>MMA FIGHTING<a href="javascript:;" data-spt="MMA_FIGHTING" onclick="checkAll(this)" class="hide">
-            - Select and View ALL MMA FIGHTING</a></div><div class="SportPanel" id="panel_MMA_FIGHTING"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="803" class="c_league" id="chk_803"><label for="chk_803"><a href="javascript:;" data-lg="803" onclick="showLine(this)" class="sportLeague">MMA</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="762" class="c_league" id="chk_762"><label for="chk_762"><a href="javascript:;" data-lg="762" onclick="showLine(this)" class="sportLeague">UFC</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1441" class="c_league" id="chk_1441"><label for="chk_1441"><a href="javascript:;" data-lg="1441" onclick="showLine(this)" class="sportLeague">MMA PROPS</a></label></div></div></div><div id="AUTO_RACING" class="accordion odd"><span class="logos leagues AUTO_RACING">. </span>AUTO RACING<a href="javascript:;" data-spt="AUTO_RACING" onclick="checkAll(this)" class="hide">
-            - Select and View ALL AUTO RACING</a></div><div class="SportPanel" id="panel_AUTO_RACING"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="184" class="c_league" id="chk_184"><label for="chk_184"><a href="javascript:;" data-lg="184" onclick="showLine(this)" class="sportLeague">NASCAR CUP SERIES- CHAMPIONSHIP 2021 - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="185" class="c_league" id="chk_185"><label for="chk_185"><a href="javascript:;" data-lg="185" onclick="showLine(this)" class="sportLeague">NASCAR - FOOD CITY DIRT RACE - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="524" class="c_league" id="chk_524"><label for="chk_524"><a href="javascript:;" data-lg="524" onclick="showLine(this)" class="sportLeague">F1 - CONSTRUCTORS CHAMPIONSHIP 2021 - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="289" class="c_league" id="chk_289"><label for="chk_289"><a href="javascript:;" data-lg="289" onclick="showLine(this)" class="sportLeague">F1 - DRIVERS CHAMPIONSHIP 2021 - ODDS TO WIN</a></label></div></div></div><div id="GOLF" class="accordion even"><span class="logos leagues GOLF">. </span>GOLF<a href="javascript:;" data-spt="GOLF" onclick="checkAll(this)" class="hide">
-            - Select and View ALL GOLF</a></div><div class="SportPanel" id="panel_GOLF"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1414" class="c_league" id="chk_1414"><label for="chk_1414"><a href="javascript:;" data-lg="1414" onclick="showLine(this)" class="sportLeague">WGC - DELL TECHNOLOGIES MATCH PLAY - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="794" class="c_league" id="chk_794"><label for="chk_794"><a href="javascript:;" data-lg="794" onclick="showLine(this)" class="sportLeague">LPGA TOUR MATCHUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1195" class="c_league" id="chk_1195"><label for="chk_1195"><a href="javascript:;" data-lg="1195" onclick="showLine(this)" class="sportLeague">LPGA - KIA CLASSIC 2021 - ODDS TO WIN</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="815" class="c_league" id="chk_815"><label for="chk_815"><a href="javascript:;" data-lg="815" onclick="showLine(this)" class="sportLeague">PGA GOLF  - MATCHUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1108" class="c_league" id="chk_1108"><label for="chk_1108"><a href="javascript:;" data-lg="1108" onclick="showLine(this)" class="sportLeague">PGA - THE OPEN CHAMPIONSHIP - 3 WAY BETTING</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1397" class="c_league" id="chk_1397"><label for="chk_1397"><a href="javascript:;" data-lg="1397" onclick="showLine(this)" class="sportLeague">CORALES PUNTACANA R&amp;C CHAMPIONSHIP- 1ST RND 3BALLS</a></label></div></div></div><div id="BOXING" class="accordion odd"><span class="logos leagues BOXING">. </span>BOXING<a href="javascript:;" data-spt="BOXING" onclick="checkAll(this)" class="hide">
-            - Select and View ALL BOXING</a></div><div class="SportPanel" id="panel_BOXING"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="243" class="c_league" id="chk_243"><label for="chk_243"><a href="javascript:;" data-lg="243" onclick="showLine(this)" class="sportLeague">BOXING</a></label></div></div></div><div id="OTHER_SPORTS" class="accordion even"><span class="logos leagues OTHER_SPORTS">. </span>OTHER SPORTS<a href="javascript:;" data-spt="OTHER_SPORTS" onclick="checkAll(this)" class="hide">
-            - Select and View ALL OTHER SPORTS</a></div><div class="SportPanel" id="panel_OTHER_SPORTS"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="791" class="c_league" id="chk_791"><label for="chk_791"><a href="javascript:;" data-lg="791" onclick="showLine(this)" class="sportLeague">BADMINTON</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1035" class="c_league" id="chk_1035"><label for="chk_1035"><a href="javascript:;" data-lg="1035" onclick="showLine(this)" class="sportLeague">FUTSAL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1698" class="c_league" id="chk_1698"><label for="chk_1698"><a href="javascript:;" data-lg="1698" onclick="showLine(this)" class="sportLeague">DARTS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="853" class="c_league" id="chk_853"><label for="chk_853"><a href="javascript:;" data-lg="853" onclick="showLine(this)" class="sportLeague">SNOOKER</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="760" class="c_league" id="chk_760"><label for="chk_760"><a href="javascript:;" data-lg="760" onclick="showLine(this)" class="sportLeague">AUSSIE RULES</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="642" class="c_league" id="chk_642"><label for="chk_642"><a href="javascript:;" data-lg="642" onclick="showLine(this)" class="sportLeague">VOLLEYBALL - MATCHUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1699" class="c_league" id="chk_1699"><label for="chk_1699"><a href="javascript:;" data-lg="1699" onclick="showLine(this)" class="sportLeague">FLOORBALL</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1665" class="c_league" id="chk_1665"><label for="chk_1665"><a href="javascript:;" data-lg="1665" onclick="showLine(this)" class="sportLeague">RUGBY UNION - MATCHUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1037" class="c_league" id="chk_1037"><label for="chk_1037"><a href="javascript:;" data-lg="1037" onclick="showLine(this)" class="sportLeague">RUGBY LEAGUE - MATCHUPS</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1038" class="c_league" id="chk_1038"><label for="chk_1038"><a href="javascript:;" data-lg="1038" onclick="showLine(this)" class="sportLeague">HANDBALL - MATCHUPS</a></label></div></div></div><div id="CRICKET" class="accordion odd"><span class="logos leagues CRICKET">. </span>CRICKET<a href="javascript:;" data-spt="CRICKET" onclick="checkAll(this)" class="hide">
-            - Select and View ALL CRICKET</a></div><div class="SportPanel" id="panel_CRICKET"><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1756" class="c_league" id="chk_1756"><label for="chk_1756"><a href="javascript:;" data-lg="1756" onclick="showLine(this)" class="sportLeague">CRICKET AUSTRALIA LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1759" class="c_league" id="chk_1759"><label for="chk_1759"><a href="javascript:;" data-lg="1759" onclick="showLine(this)" class="sportLeague">CRICKET INDIA PRE LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1760" class="c_league" id="chk_1760"><label for="chk_1760"><a href="javascript:;" data-lg="1760" onclick="showLine(this)" class="sportLeague">CRICKET INTERNATIONAL LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1761" class="c_league" id="chk_1761"><label for="chk_1761"><a href="javascript:;" data-lg="1761" onclick="showLine(this)" class="sportLeague">CRICKET NEW ZEALAND LEAGUE</a></label></div></div><div class="col-xs-12 col-sm-6"><div class="checkbox checkbox-primary"><input type="checkbox" value="1762" class="c_league" id="chk_1762"><label for="chk_1762"><a href="javascript:;" data-lg="1762" onclick="showLine(this)" class="sportLeague">CRICKET - OTHER CRICKET  LEAGUES</a></label></div></div></div></div>
+                
+                <div id="CRICKET" class="accordion odd"><span class="logos leagues CRICKET">. </span>CRICKET<a
+                        href="javascript:;" data-spt="CRICKET" onclick="checkAll(this)" class="hide">
+                        - Select and View ALL CRICKET</a></div>
+                <div class="SportPanel" id="panel_CRICKET">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1756" class="c_league"
+                                id="chk_1756"><label for="chk_1756"><a href="javascript:;" data-lg="1756"
+                                    onclick="showLine(this)" class="sportLeague">CRICKET AUSTRALIA LEAGUE</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1759" class="c_league"
+                                id="chk_1759"><label for="chk_1759"><a href="javascript:;" data-lg="1759"
+                                    onclick="showLine(this)" class="sportLeague">CRICKET INDIA PRE LEAGUE</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1760" class="c_league"
+                                id="chk_1760"><label for="chk_1760"><a href="javascript:;" data-lg="1760"
+                                    onclick="showLine(this)" class="sportLeague">CRICKET INTERNATIONAL
+                                    LEAGUE</a></label></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1761" class="c_league"
+                                id="chk_1761"><label for="chk_1761"><a href="javascript:;" data-lg="1761"
+                                    onclick="showLine(this)" class="sportLeague">CRICKET NEW ZEALAND LEAGUE</a></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox checkbox-primary"><input type="checkbox" value="1762" class="c_league"
+                                id="chk_1762"><label for="chk_1762"><a href="javascript:;" data-lg="1762"
+                                    onclick="showLine(this)" class="sportLeague">CRICKET - OTHER CRICKET
+                                    LEAGUES</a></label></div>
+                    </div>
+                </div>
+            </div>
 
-            <input type="hidden" name="ctl00$hdfKeyCount" id="ctl00_hdfKeyCount" value="Ro5pwXMyvrXdoIvYC+bfwGCH+fIrlah94lUSfWC6BjW8f0zMxmYr+siCMYJBB4cA">
+            <input type="hidden" name="ctl00$hdfKeyCount" id="ctl00_hdfKeyCount"
+                value="Ro5pwXMyvrXdoIvYC+bfwGCH+fIrlah94lUSfWC6BjW8f0zMxmYr+siCMYJBB4cA">
         </form>
         <!-- Start Footer -->
         <div class="row footer">
@@ -202,4 +1092,6 @@
         }
     </script>
 
-</body></html>
+</body>
+
+</html>
