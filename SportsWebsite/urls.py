@@ -25,7 +25,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from BettingApp.views import (
-    getfromwebpagesfaster,
+    getLeagueInformation,
     homePage,
     getfromwebpageslower,
     getdropdownoptions,
@@ -65,7 +65,7 @@ urlpatterns = [
     path("login", authenticate),
     path("logout", logout),
     path("userinformation", userInformation),
-    path("fasterscrapping", getfromwebpagesfaster),
+    path("leagueInformation", getLeagueInformation),
     path("slowerscrapping", getfromwebpageslower),
     path("dropdownoptions", getdropdownoptions),
     path("generatecredentials/<int:totalCredentials>", createrandomCredentials),
