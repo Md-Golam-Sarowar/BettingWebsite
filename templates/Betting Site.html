@@ -105,7 +105,7 @@ document.onreadystatechange = function() {
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <div class="logo">Bal: <a href="/betHistory" class="" style="color:#f44336;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/openBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a> <br> Limit: <a href="#" class=""><span>{{limit}} </span></a></div>
+            <div class="logo">Bal: <a href="/betHistory" class="" style="color:#f44336;"><span id="ctl00_WagerLnkTop_lblCurrentBalance">{{balance}} </span></a> | Avail: <span id="ctl00_WagerLnkTop_lblRealAvailBalance">{{available}} </span> | Risk: <a href="/ActiveBets" class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{risk}} </span></a> <br> Limit: <a href="#" class=""><span>{{limit}} </span></a></div>
         </div>
         <!-- End App Logo -->
 
@@ -134,7 +134,7 @@ document.onreadystatechange = function() {
                 
         
             <li>
-                <a id="ctl00_lnkOpenBets" href="/openBets" onclick="openBets()">Open Bets</a></li>
+                <a id="ctl00_lnkOpenBets" href="/ActiveBets" onclick="openBets()">Open Bets</a></li>
             <li>
                 <a id="ctl00_lnkHistory" href="/betHistory">BetHistory</a></li>
                 <li><div style=" height: 29px;
@@ -186,7 +186,7 @@ document.onreadystatechange = function() {
         </ul>
         <ul class="sidebar-panel nav">
             <li class="sidetitle">ACCOUNT</li>
-            <li><a href="/openBets"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Open Bets</a></li>
+            <li><a href="/ActiveBets"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Open Bets</a></li>
             <li><a href="/betHistory"><span class="icon color15"><i class="fa fa-angle-right"></i></span>BetHistory</a></li>
         </ul>
     </div>

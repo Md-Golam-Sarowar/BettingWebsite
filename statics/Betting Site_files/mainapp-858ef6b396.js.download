@@ -13535,12 +13535,12 @@ angular.module("gsLive").service("sportPeriodsService", function() {
                     }).then((function(t) {
                         if(t.data.status==500)
                         {
-                            alert("Betting limit exceeded! Failed to Place Bet");
-                            _status = t.data.status;
+                            return t.data;
                         }
-                        else
+                        else if(t.data.status==200)
                         {
-                            return t.data
+                            alert("Bet Placed Successfully!");
+                            _status = t.data.status;
                         }
                     }), t)
                 },

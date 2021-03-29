@@ -38,6 +38,7 @@ def betHistorydetails(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "betHistory.html", data)
 
@@ -113,7 +114,7 @@ def homePage(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
-        "limit" : userfetched.accountLimit,
+        "limit": userfetched.accountLimit,
     }
     return render(request, "Betting Site.html", data)
 
@@ -275,21 +276,34 @@ def allActiveBets(request):
         singlebet["v"] = componenet.v
         singlebet["sk"] = componenet.sk
         singlebet["teamname"] = bet.teamname
-        Bets.append(singlebet)
         totalBets += 1
         totalrisk += bet.risk
         totalwin += bet.toWin
-        print(singlebet, totalBets, totalrisk, totalwin)
+
+        if bet.risk > bet.toWin:
+            if bet.toWin >= 50:
+                singlebet["oddsvalue"] = ((bet.risk * 50) / bet.toWin) * 2
+            else:
+                singlebet["oddsvalue"] = ((bet.risk * 25) / bet.toWin) * 2
+        else:
+            if bet.risk >= 50:
+                singlebet["oddsvalue"] = ((bet.toWin * 50) / bet.risk) * 2
+            else:
+                singlebet["oddsvalue"] = ((bet.toWin * 25) / bet.risk) * 2
+
+        Bets.append(singlebet)
+
+    print(Bets)
 
     return render(
         request,
         "myBets.html",
         {
-            "allBets": allBets,
+            "allBets": Bets,
             "data": data,
-            "OpenBets": totalBets,
-            "totalrisk": totalrisk,
-            "totalwin": totalwin,
+            "OpenBets": int(totalBets),
+            "totalrisk": int(totalrisk),
+            "totalwin": int(totalwin),
         },
     )
 
@@ -355,7 +369,9 @@ def createBet(request):
         ]
     )
 
-    if (riskValueDb + risk) > user.available or (riskValueDb + risk) > user.accountLimit:
+    if (riskValueDb + risk) > user.available or (
+        riskValueDb + risk
+    ) > user.accountLimit:
         return JsonResponse(
             {
                 "Failed": "risk value exceeds user limit! ",
@@ -444,6 +460,7 @@ def showsports(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "showSports.html", data)
 
@@ -466,6 +483,7 @@ def parl(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "parl.html", data)
 
@@ -488,6 +506,7 @@ def teaser(request):
         "available": request.session["available"],
         "risk": risk,
         "balance": balance,
+        "limit": request.session["limit"],
     }
     return render(request, "teaser.html", data)
 

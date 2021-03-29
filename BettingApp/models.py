@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class TimeStampMixin(models.Model):
@@ -23,7 +24,7 @@ class userInfo(TimeStampMixin):
 class myBet(TimeStampMixin):
     teamname = models.CharField(max_length=100, default="")
     ticketno = models.IntegerField(default=0)
-    placed = models.DateTimeField(auto_now=True)
+    placed = models.DateTimeField(default=timezone.now)
     eventId = models.IntegerField(default=0)
     classifier = models.CharField(max_length=100, default="")
     groupName = models.CharField(max_length=100, default="")
