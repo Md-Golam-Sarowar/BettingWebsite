@@ -413,10 +413,17 @@ def deleteCredential(request, id):
     )
 
 
-def getfromwebpagesfaster(request):
-    scrapped_data = fasterScrappingLive.liveSports()
-    print(scrapped_data)
-    return HttpResponse("website fasterscraped successfully")
+def getLeagueInformation(request):
+    body = json.loads(request.body)
+    weburl = body["url"]
+    scrapped_data = fasterScrappingLive.leagueInformation(weburl)
+    return JsonResponse(
+        {
+            "status": 200,
+            "data": str(scrapped_data),
+        },
+        content_type="application/json",
+    )
 
 
 def getfromwebpageslower(request):
