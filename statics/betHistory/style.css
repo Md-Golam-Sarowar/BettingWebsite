@@ -93,9 +93,6 @@
     background: #399bff;
 }
 
-.color6-bg {
-    background: #0B1629;
-}
 
 .color7-bg {
     background: #26a65b;
@@ -149,9 +146,7 @@
 }
 
 body {
-    background: #3d464d;
-    color: #58666e;
-    margin: 0;
+
     /*line-height: 1.7em;
     font-size: 13px;*/
     font-family: 'Roboto', sans-serif;
