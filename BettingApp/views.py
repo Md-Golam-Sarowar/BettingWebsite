@@ -412,18 +412,9 @@ def deleteCredential(request, id):
         content_type="application/json",
     )
 
-
-def getLeagueInformation(request):
-    body = json.loads(request.body)
-    weburl = body["url"]
-    scrapped_data = fasterScrappingLive.leagueInformation(weburl)
-    return JsonResponse(
-        {
-            "status": 200,
-            "data": str(scrapped_data),
-        },
-        content_type="application/json",
-    )
+@csrf_exempt
+def getLeagueInformation(request, name):
+    return render(request, "leagueInformation.html", {"name": name})
 
 
 def getfromwebpageslower(request):

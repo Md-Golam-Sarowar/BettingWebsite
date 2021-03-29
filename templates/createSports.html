@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 
 <head id="ctl00_Head">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +16,7 @@
     <link href="./Betting Site_files/custom.css" rel="stylesheet">
     <link href="./Betting Site_files/logos.css" rel="stylesheet">
     <script type="text/javascript" src="./Betting Site_files/jquery.min.js.download"></script>
-    <script type="text/javascript" src="./Betting Site_files/showLeague.js"></script>
+    <script type="text/javascript" src= "{% static 'Betting Site_files/showLeague.js' %}"></script>
 
     <style>
         html,
@@ -243,8 +244,7 @@
                 <div class="SportPanel" id="panel_BASEBALL">
                     <div class="col-xs-12 col-sm-6">
                         <div class="checkbox checkbox-primary"><input type="checkbox" value="https://mybookie.ag/sportsbook/mlb/spring-training/" class="c_league"
-                                id="chk_436"><label for="chk_436"><a href="javascript:;" data-lg="436"
-                                    onclick="showLeague('mybookie.ag/sportsbook/mlb/spring-training/')" class="sportLeague">MLB - Spring Training Odds</a></label>
+                                id="chk_436"><label for="chk_436"><a href="/leagueInformation/MLB - Spring Training Odds" data-lg="436" class="sportLeague">MLB - Spring Training Odds</a></label>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">

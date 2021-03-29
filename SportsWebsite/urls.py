@@ -65,7 +65,7 @@ urlpatterns = [
     path("login", authenticate),
     path("logout", logout),
     path("userinformation", userInformation),
-    path("leagueInformation", getLeagueInformation),
+    path("leagueInformation/<str:name>", getLeagueInformation),
     path("slowerscrapping", getfromwebpageslower),
     path("dropdownoptions", getdropdownoptions),
     path("generatecredentials/<int:totalCredentials>", createrandomCredentials),

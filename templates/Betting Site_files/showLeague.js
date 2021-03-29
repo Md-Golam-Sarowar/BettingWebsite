@@ -1,22 +1,10 @@
-function showLeague(){
-    Data = {"url":"https://mybookie.ag/sportsbook/mlb/spring-training/"}
+function showLeague(url){
+    Data = {"url":url}
 
     $.ajax({
-        url: 'login',
+        url: 'leagueInformation',
         type: "post",
         data: Data,
         dataType: 'json',
-        success: function (data) {
-            if(data["status"] == 200)
-            {
-                window.location = "/home";
-            }
-            else if (data["status"] == 500)
-            {
-                document.getElementById("username").value = "";
-                document.getElementById("password").value = "";
-                alert("please provide valid username and password");
-            }
-        }
       });
 }

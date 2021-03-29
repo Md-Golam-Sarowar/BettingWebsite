@@ -16,14 +16,14 @@ import math
 
 def leagueInformation(weburl):
 
-    url = weburl
+    url = "https://"+weburl
     options = Options()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     options.add_argument("--log-level=3")
     options.add_argument("--ignore-certificate-errors")
     options.add_argument("--ignore-ssl-errors")
 
-    browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome('C:/Users/USER/chromedriver.exe', options=options)
 
     browser.get(url)
 
