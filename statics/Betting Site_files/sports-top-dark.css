@@ -1,0 +1,265 @@
+.carousel-container {
+  padding: 15px 8px;
+  background: #242526;
+}
+@media screen and (min-width: 768px) {
+  .carousel-container {
+    padding: 32px 8px;
+  }
+}
+.carousel-container .carousel-item div {
+  padding: 0 8px;
+}
+.carousel-container .carousel-item div img {
+  border-radius: 8px;
+}
+@media (max-width: 760px) {
+  .carousel-container .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-container .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+.carousel-container .carousel-inner .carousel-item-next,
+.carousel-container .carousel-inner .carousel-item-prev,
+.carousel-container .carousel-inner .carousel-item.active {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+@media (min-width: 768px) {
+  .carousel-container .carousel-inner .carousel-item-next,
+  .carousel-container .carousel-inner .carousel-item-right.active {
+    transform: translateX(41.666667%);
+  }
+  .carousel-container .carousel-inner .carousel-item-left.active,
+  .carousel-container .carousel-inner .carousel-item-prev {
+    transform: translateX(-41.666667%);
+  }
+  .carousel-container .carousel-inner .carousel-item-left,
+  .carousel-container .carousel-inner .carousel-item-right {
+    transform: translateX(0);
+  }
+}
+.carousel-container .arrow {
+  display: none;
+}
+.carousel-container:hover .arrow {
+  display: flex;
+}
+.carousel-container .carousel-control-next,
+.carousel-container .carousel-control-prev {
+  width: 5%;
+}
+.seg-popup {
+  display: none;
+}
+@-webkit-keyframes loadingC {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+@keyframes loadingC {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+.line {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ff8300;
+}
+.load-3 .line:last-child {
+  -webkit-animation: loadingC 0.6s linear 0.1s infinite;
+  animation: loadingC 0.6s linear 0.1s infinite;
+}
+.load-3 .line:nth-last-child(2) {
+  -webkit-animation: loadingC 0.6s linear 0.2s infinite;
+  animation: loadingC 0.6s linear 0.2s infinite;
+}
+.load-3 .line:nth-last-child(3) {
+  -webkit-animation: loadingC 0.6s linear 0.3s infinite;
+  animation: loadingC 0.6s linear 0.3s infinite;
+}
+.load-wrapp {
+  width: 100%;
+  height: auto;
+  padding: 33px 42px 48px !important;
+  border-radius: 5px;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  background-color: #d8d8d8;
+}
+.load-wrapp p {
+  padding: 0 0 5px;
+}
+.load-wrapp:last-child {
+  margin-right: 0;
+}
+.sports-menu-title {
+  font: normal 600 normal 16px/18px Montserrat, sans-serif;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  border-bottom: 1px solid #fcfcf9;
+  padding: 0.5rem 0;
+  color: #f28911;
+}
+.sports-menu-title a,
+.sports-menu-title a:focus,
+.sports-menu-title a:hover {
+  color: #f28911;
+}
+.sports-menu-title i {
+  transform: rotate(180deg);
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .sports-menu-title i {
+    color: #fff;
+  }
+}
+.sports-menu-title.collapsed i {
+  transform: rotate(0deg);
+}
+@media screen and (min-width: 768px) {
+  .sports-menu-title {
+    background: #272829;
+    padding: 13px 8px;
+    border-bottom: none;
+    margin-bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .sports-menu-title.collapsed {
+    border-radius: 8px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sports-menu-title {
+    font: normal 600 normal calc(0.1em + 0.8vw) / 22px Montserrat, sans-serif;
+  }
+}
+.sports-menu-title.feature {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.sports-menu-title.az-sports {
+  color: #fff;
+  font: normal 600 normal 16px/18px Montserrat, sans-serif;
+  margin: 1rem 0;
+  background: none;
+  border-bottom: 1px solid #fcfcf9;
+}
+@media screen and (min-width: 768px) {
+  .sports-menu-title.az-sports {
+    color: #fff;
+    border-bottom: none;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sports-menu-title.az-sports {
+    font: normal 600 normal calc(0.1em + 1vw) / 22px Montserrat, sans-serif;
+    margin: 1.1rem 0;
+  }
+}
+.sports-menu-title.sub-featured a,
+.sports-menu-title.sub-featured a:focus,
+.sports-menu-title.sub-featured a:hover {
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .sports-menu-title.sub-featured {
+    background: #242526;
+  }
+  .sports-menu-title.sub-featured a,
+  .sports-menu-title.sub-featured a:focus,
+  .sports-menu-title.sub-featured a:hover {
+    color: #fff;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .sports-menu-title.sub-featured {
+    font: normal 600 normal calc(0.1em + 0.7vw) / 16px Montserrat, sans-serif;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-body {
+    background: #242526;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+.left-menu-group__header__title {
+  font: normal 600 normal 14px/18px Montserrat, sans-serif;
+  text-transform: uppercase;
+  color: #f28911;
+  margin: 10px 0 0;
+}
+@media screen and (min-width: 1024px) {
+  .left-menu-group__header__title {
+    font: normal 600 normal calc(0.1em + 0.8vw) / 22px Montserrat, sans-serif;
+  }
+}
+.left-menu-group__header__title.sub-menu-parent {
+  font: normal 600 normal 12px/15px Montserrat, sans-serif;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .left-menu-group__header__title.sub-menu-parent {
+    color: #fff;
+  }
+}
+.left-menu-group__header__title.sub-menu-parent i {
+  transform: rotate(180deg);
+}
+.left-menu-group__header__title.sub-menu-parent.collapsed {
+  border-radius: 8px;
+}
+.left-menu-group__header__title.sub-menu-parent.collapsed i {
+  transform: rotate(0deg);
+}
+@media screen and (min-width: 1280px) {
+  .left-menu-group__header__title.sub-menu-parent {
+    font: normal 600 normal calc(0.1em + 0.8vw) / 16px Montserrat, sans-serif;
+  }
+}
+.left-menu-group .sub-items-menu__body__item__link {
+  font: normal 600 normal 12px/15px Montserrat, sans-serif;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+@media screen and (min-width: 768px) {
+  .left-menu-group .sub-items-menu__body__item__link {
+    color: #fff;
+    padding: 0.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .left-menu-group .sub-items-menu__body__item__link {
+    font: normal 600 normal calc(0.1em + 0.6vw) / 16px Montserrat, sans-serif;
+  }
+}
+.left-menu-group .sub-items-menu__body__item__link.sub-menu-link {
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+.left-menu-group .sub-items-menu__body__item__link.menu_active {
+  color: #f28911;
+}

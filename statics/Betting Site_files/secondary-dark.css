@@ -1,0 +1,2278 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap);
+@charset "UTF-8";
+.zopim[data-test-id="ChatWidgetButton"],
+.zopim[data-test-id="ChatWidgetMobileButton"] {
+  display: none !important;
+}
+.freezen-modal {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+#seg_recommended_bets .lines-header-titles {
+  text-transform: uppercase !important;
+}
+.drop-z-index {
+  z-index: 999;
+}
+.v-hidden {
+  visibility: hidden;
+}
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 32px;
+  margin: 0;
+}
+.custom-checkbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.custom-checkbox .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #908e8f;
+  transition: 0.4s;
+}
+.custom-checkbox .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 3px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+.custom-checkbox .slider.black-slider:before {
+  background-color: #231f20;
+}
+.custom-checkbox .slider.round {
+  border-radius: 34px;
+}
+.custom-checkbox .slider.round:before {
+  border-radius: 50%;
+}
+.custom-checkbox input:checked + .slider {
+  background-color: #91d146;
+}
+.custom-checkbox input:focus + .slider {
+  box-shadow: 0 0 1px #91d146;
+}
+.custom-checkbox input:checked + .slider:before {
+  transform: translateX(90%);
+  background-color: #fff;
+}
+@media screen and (min-width: 425px) {
+  .custom-checkbox input:checked + .slider:before {
+    transform: translateX(115%);
+  }
+}
+.bet-slip {
+  max-width: 450px;
+  width: 100%;
+  background: #3a3c3d;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1015;
+}
+@media screen and (min-width: 768px) {
+  .bet-slip {
+    right: 8.333333%;
+    max-height: calc(100vh - 108px);
+  }
+}
+.bet-slip__header a {
+  color: #f2f2f2;
+  font: normal 700 normal 14px/12px Montserrat, sans-serif;
+  cursor: pointer;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__header a {
+    font: normal 700 normal 16px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__header a[aria-expanded="true"] i:before {
+  content: "A";
+}
+.bet-slip__header__odds {
+  color: #ff8300;
+}
+.bet-slip__main-content {
+  color: #f2f2f2;
+}
+@media screen and (max-width: 640px) {
+  .bet-slip__main-content {
+    overflow: auto;
+    max-height: calc(100vh - 170px);
+    webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+  }
+  @supports (-webkit-touch-callout: none) {
+    .bet-slip__main-content {
+      max-height: calc(100vh - 240px);
+    }
+  }
+}
+.bet-slip__main-content .betslip-nav-container {
+  border-top: 1px solid #fff;
+  position: relative;
+}
+.bet-slip__main-content .betslip-nav-container:after {
+  content: "";
+  background: hsla(0, 0%, 100%, 0.5);
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+.bet-slip__main-content .betslip-nav-container .betslip-nav__link {
+  color: hsla(0, 0%, 100%, 0.5);
+  padding: 8px 10px;
+  font: normal 600 normal 12px/15px Montserrat, sans-serif;
+  border-bottom: 3px solid transparent;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .betslip-nav-container .betslip-nav__link {
+    padding: 8px 16px;
+  }
+}
+.bet-slip__main-content .betslip-nav-container .betslip-nav__link.active {
+  color: #ff8300;
+  border-bottom: 3px solid #ff8300;
+}
+.bet-slip__main-content .betslip-nav-container .betslip-nav__link.active:focus {
+  outline: none;
+}
+.bet-slip__main-content__clear a {
+  text-decoration: underline;
+  font: normal 500 normal 12px/12px Montserrat, sans-serif;
+  color: hsla(0, 0%, 94.9%, 0.5);
+}
+.bet-slip__main-content__set-amount-label {
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+  color: #f8f8f8;
+}
+.bet-slip__main-content__set-amount-input {
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+  color: #fff;
+  text-align: right;
+  border: 1px solid #ff8300;
+  max-width: 80px;
+  height: 24px;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  background: #434444;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .bet-slip__main-content__set-amount-input {
+    font: normal 600 normal 12px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content__set-amount-input::-webkit-input-placeholder {
+  line-height: normal !important;
+  color: #fff;
+}
+.bet-slip__main-content__set-amount-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .bet-slip__main-content .bet-slip-bets-body.if-bet-body,
+  .bet-slip__main-content .bet-slip-bets-body.parlay-body,
+  .bet-slip__main-content .bet-slip-bets-body.round-robin-body,
+  .bet-slip__main-content .bet-slip-bets-body.teaser-body {
+    max-height: calc(100vh - 550px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .bet-slip__main-content .bet-slip-bets-body {
+    overflow-y: auto;
+    webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    max-height: calc(100vh - 432px);
+  }
+  .bet-slip__main-content .bet-slip-bets-body.non-straight-wager {
+    max-height: calc(100vh - 530px);
+  }
+}
+.bet-slip__main-content .bet-slip-bets-body::-webkit-scrollbar {
+  display: none;
+}
+.bet-slip__main-content .bet-content__remove-bet {
+  flex: 0 0 10.666667%;
+  max-width: 10.666667%;
+}
+.bet-slip__main-content .bet-content__remove-bet__icon {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+.bet-slip__main-content .bet-content__selection {
+  background: #242526;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.bet-slip__main-content .bet-content__selection__title {
+  text-transform: uppercase;
+  color: #fff;
+  font: normal 600 normal 12px/15px Montserrat, sans-serif;
+}
+.bet-slip__main-content .bet-content__selection__title .t-odds {
+  color: #ff8300;
+  font-size: 14px;
+  font-weight: 700;
+}
+.bet-slip__main-content .bet-content__selection__title-normal {
+  text-transform: capitalize;
+  font: normal 600 normal 16px/12px Montserrat, sans-serif;
+  color: #f8f8f8;
+}
+.bet-slip__main-content .bet-content__selection__title-normal .t-odds {
+  color: #ff8300;
+  font-size: 16px;
+  font-weight: 700;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .bet-content__selection__title-normal {
+    font: normal 600 normal 14px/15px Montserrat, sans-serif;
+  }
+  .bet-slip__main-content .bet-content__selection__title-normal .t-odds {
+    font-size: 14px;
+  }
+}
+.bet-slip__main-content .bet-content__selection__info {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.bet-slip__main-content .bet-content__selection__info__desc {
+  max-width: 300px;
+  display: inline-block;
+}
+.bet-slip__main-content .bet-content__selection__info__odds {
+  font-weight: 700;
+  color: #ff8300;
+  float: right;
+}
+.bet-slip__main-content .bet-content__selection__type-of-line {
+  font: italic 500 normal 12px/15px Montserrat, sans-serif;
+}
+.bet-slip__main-content .bet-content__selection__match-info {
+  font: normal 500 normal 10px/17px Montserrat, sans-serif;
+}
+.bet-slip__main-content .bet-content__selection__bet-inputs .win-label {
+  font: normal 600 normal 10px/12px Montserrat, sans-serif;
+  padding: 8px 5px;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .bet-content__selection__bet-inputs .win-label {
+    font: normal 600 normal 12px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__selection__bet-inputs .bet_input {
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+  color: #fff;
+  text-align: right;
+  border: 1px solid #ff8300;
+  max-width: 80px;
+  height: 24px;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  background: #434444;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .bet-slip__main-content .bet-content__selection__bet-inputs .bet_input {
+    font: normal 600 normal 12px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .bet_input::-webkit-input-placeholder {
+  line-height: normal !important;
+  color: #fff;
+}
+.bet-slip__main-content .bet-content__selection__bet-inputs .bet_input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .bet_input.win_input {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  padding: 8px 0;
+  margin-right: 8px;
+  background: transparent;
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+}
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .bet_input.win_input.white-label {
+  color: #f8f8f8;
+}
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_if_win_d,
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_if_win_or_tie_d,
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_parlay_d,
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_quick,
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_reverse_d,
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_round_robin_d,
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_straight,
+.bet-slip__main-content
+  .bet-content__selection__bet-inputs
+  .error_message_teaser {
+  font: normal 500 normal 11px/12px Montserrat, sans-serif;
+}
+.bet-slip__main-content .bet-content__selection__select-type {
+  max-width: 240px;
+  position: relative;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .bet-slip__main-content .bet-content__selection__select-type {
+    max-width: 192px;
+  }
+}
+.bet-slip__main-content .bet-content__selection__select-type__icon {
+  position: absolute;
+  background: transparent;
+  right: 0;
+  padding-bottom: 3px;
+  border-radius: 0 4px 4px 0;
+  padding-right: 5px;
+  padding-left: 5px;
+  pointer-events: none;
+  height: 100%;
+  color: #fff;
+}
+.bet-slip__main-content .bet-content__selection__select-type select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ff8300;
+  color: #fff;
+  font: normal 600 normal 12px/15px Montserrat, sans-serif;
+  background: #434444;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .bet-slip__main-content .bet-content__selection__select-type select {
+    font: normal 600 normal 12px/15px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__selection__select-type select:active,
+.bet-slip__main-content .bet-content__selection__select-type select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.bet-slip__main-content .bet-content__selection__select-type select option {
+  border: none;
+}
+.bet-slip__main-content
+  .bet-content__selection__select-type
+  select
+  option:active,
+.bet-slip__main-content
+  .bet-content__selection__select-type
+  select
+  option:focus {
+  outline: none;
+  box-shadow: none;
+}
+.bet-slip__main-content .bet-content__confirmation__bets-accepted-title {
+  color: #ff8300;
+  font: normal 600 normal 16px/22px Montserrat, sans-serif;
+}
+.bet-slip__main-content .bet-content__confirmation__wager-title {
+  color: #fff;
+  font: normal 600 normal 14px/17px Montserrat, sans-serif;
+  border-bottom: 2px solid #f2f2f2;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .bet-content__confirmation__wager-title {
+    font: normal 600 normal 14px/17px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__confirmation__ticket-number {
+  border-bottom: 2px solid #f2f2f2;
+  color: #1976d2;
+  text-transform: capitalize;
+  font: normal 600 normal 12px/17px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .bet-content__confirmation__ticket-number {
+    font: normal 600 normal 14px/17px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__confirmation__ticket-number .placed-on {
+  color: #fff;
+  font: normal 500 normal 12px/17px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .bet-content__confirmation__ticket-number .placed-on {
+    font: normal 500 normal 14px/17px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__confirmation__totals {
+  border-bottom: 1px solid #f2f2f2;
+}
+.bet-slip__main-content .bet-content__confirmation__totals .risk-label,
+.bet-slip__main-content .bet-content__confirmation__totals .risk-total-per-bet {
+  color: #fff;
+  text-transform: capitalize;
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .bet-content__confirmation__totals .risk-label,
+  .bet-slip__main-content
+    .bet-content__confirmation__totals
+    .risk-total-per-bet {
+    font: normal 600 normal 14px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__confirmation__totals .win-label,
+.bet-slip__main-content .bet-content__confirmation__totals .win-total-per-bet {
+  color: #fff;
+  text-transform: capitalize;
+  font: normal 600 normal 16px/12px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content .bet-content__confirmation__totals .win-label,
+  .bet-slip__main-content
+    .bet-content__confirmation__totals
+    .win-total-per-bet {
+    font: normal 600 normal 18px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__confirmation__risk-totals {
+  background: #242526;
+}
+.bet-slip__main-content
+  .bet-content__confirmation__risk-totals
+  .ticket-total-risk {
+  color: #fff;
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content
+    .bet-content__confirmation__risk-totals
+    .ticket-total-risk {
+    font: normal 600 normal 14px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content
+  .bet-content__confirmation__risk-totals
+  .ticket-total-win {
+  color: #fff;
+  font: normal 600 normal 16px/12px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content
+    .bet-content__confirmation__risk-totals
+    .ticket-total-win {
+    font: normal 600 normal 18px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content .bet-content__confirmation__cancel,
+.bet-slip__main-content .bet-content__confirmation__confirm {
+  font: normal 700 normal 18px/20px Montserrat, sans-serif;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 260px;
+  width: 100%;
+  height: 50px;
+  border: none;
+}
+.bet-slip__main-content .bet-content__confirmation__cancel:focus,
+.bet-slip__main-content .bet-content__confirmation__confirm:focus {
+  outline: none;
+  box-shadow: none;
+}
+.bet-slip__main-content .bet-content__confirmation__cancel {
+  background: #908e8f;
+}
+.bet-slip__main-content .bet-content__confirmation__confirm {
+  background: #91d146;
+}
+.bet-slip__main-content .bet-content__confirmation__new-bet {
+  font: normal 700 normal 18px/20px Montserrat, sans-serif;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 290px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: #ff8300;
+}
+.bet-slip__main-content .bet-content__confirmation__new-bet:focus {
+  outline: none;
+  box-shadow: none;
+}
+.bet-slip__main-content .bet-content__confirmation__bets-accept {
+  background: #fcfbfd;
+  border-radius: 8px;
+}
+.bet-slip__main-content .bet-content__confirmation__bets-accept h4 {
+  font: normal 600 normal 18px/22px Montserrat, sans-serif;
+  color: #ff8300;
+}
+.bet-slip__main-content__bet-details {
+  background: #3a3c3d;
+}
+@media screen and (max-width: 640px) {
+  .bet-slip__main-content__bet-details {
+    padding-bottom: 65px !important;
+  }
+}
+.bet-slip__main-content__bet-details .total-bet-amounts {
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+  color: #f8f8f8;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content__bet-details .total-bet-amounts {
+    font: normal 600 normal 14px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content__bet-details .total-bet-amounts .total-bets,
+.bet-slip__main-content__bet-details .total-bet-amounts .total-risk,
+.bet-slip__main-content__bet-details .total-bet-amounts .total-win {
+  border: none;
+  background: none;
+  text-align: right;
+  color: #f8f8f8;
+  font: normal 600 normal 12px/12px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content__bet-details .total-bet-amounts .total-bets,
+  .bet-slip__main-content__bet-details .total-bet-amounts .total-risk,
+  .bet-slip__main-content__bet-details .total-bet-amounts .total-win {
+    font: normal 600 normal 14px/12px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content__bet-details__free-play {
+  font: normal 600 normal 12px/15px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content__bet-details__free-play {
+    font: normal 600 normal 14px/18px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content__bet-details__cta .go-to-cashier-btn {
+  background: #ff8300;
+}
+.bet-slip__main-content__bet-details__cta .place-bet-btn {
+  background: #91d146;
+}
+.bet-slip__main-content__bet-details__cta .place-bet-btn.disabled {
+  background: #908e8f;
+}
+.bet-slip__main-content__bet-details__cta .go-to-cashier-btn,
+.bet-slip__main-content__bet-details__cta .place-bet-btn {
+  max-width: 416px;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  font: normal 700 normal 16px/19px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .bet-slip__main-content__bet-details__cta .go-to-cashier-btn,
+  .bet-slip__main-content__bet-details__cta .place-bet-btn {
+    font: normal 700 normal 18px/22px Montserrat, sans-serif;
+  }
+}
+.bet-slip__main-content__bet-details__cta .go-to-cashier-btn:focus,
+.bet-slip__main-content__bet-details__cta .place-bet-btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+@media screen and (max-width: 640px) {
+  .bet-slip__main-content .cta-row {
+    background: #3a3c3d;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 10px 0 15px;
+  }
+  .bet-slip__main-content .cta-row .go-to-cashier-btn,
+  .bet-slip__main-content .cta-row .place-bet-btn {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+.line-change-btn {
+  text-transform: uppercase;
+  padding: 5px 24px;
+  background: #91d146;
+  color: #fff;
+  border: none;
+}
+.line-change-btn,
+.line-change-text {
+  font: normal 600 normal 12px/18px Montserrat, sans-serif;
+}
+.side-mobile-menu {
+  width: 100vw;
+  left: -105%;
+  position: fixed;
+  height: 100%;
+  text-align: center;
+  top: 10px;
+  background-color: #242526;
+  transition: all 0.5s ease-in-out;
+  margin-top: 65px;
+  padding-top: 10px;
+  z-index: 1032;
+}
+.side-mobile-menu.open-mobile-menu {
+  left: 0;
+}
+.side-mobile-menu__scroll-box {
+  margin-left: auto;
+  margin-right: auto;
+  height: calc(100% - 45px);
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 42px;
+}
+@media screen and (min-width: 768px) {
+  .side-mobile-menu__scroll-box {
+    padding-left: 35px;
+    padding-right: 45px;
+  }
+}
+.side-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.side-menu-list__link {
+  font: normal 600 normal 18px/16px Montserrat, sans-serif;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  padding: 12px 0;
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  width: 100%;
+}
+.side-menu-list__link__small {
+  font-size: 11px;
+  height: 20px;
+  min-height: 20px;
+}
+.side-menu-list__link:focus,
+.side-menu-list__link:hover {
+  color: #fff;
+}
+.side-menu-list__link.active {
+  color: #f48220;
+}
+.side-menu-list__title {
+  font: normal 700 normal 16px/16px Montserrat, sans-serif;
+  color: #77777d;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 56px;
+  margin-bottom: 24px;
+}
+.side-menu-list--social {
+  overflow: hidden;
+}
+.side-menu-list--social__list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.side-menu-list--social__item {
+  padding: 0 13px;
+}
+.side-menu-list--social__link {
+  color: #ff8300;
+  display: block;
+  font-size: 22px;
+  margin: 0 auto;
+  line-height: 44px;
+  text-align: center;
+  text-decoration: none;
+  width: 90%;
+}
+.side-menu-list--social__small {
+  display: none;
+}
+.contact-help-chat {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  z-index: 100;
+}
+.contact-help-chat__change-mode,
+.contact-help-chat__chat,
+.contact-help-chat__contact,
+.contact-help-chat__help-center {
+  font: normal 600 normal 13px/19px Montserrat, sans-serif;
+  color: #231f20;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1607843137254902);
+  right: 0;
+  z-index: -20;
+  opacity: 0;
+  background: #fff;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  text-align: center;
+}
+@media screen and (min-width: 1040px) {
+  .contact-help-chat__change-mode,
+  .contact-help-chat__chat,
+  .contact-help-chat__contact,
+  .contact-help-chat__help-center {
+    font: normal 600 normal 16px/19px Montserrat, sans-serif;
+    padding: 15px;
+  }
+}
+.contact-help-chat__change-mode a,
+.contact-help-chat__chat a,
+.contact-help-chat__contact a,
+.contact-help-chat__help-center a {
+  color: #231f20;
+  text-decoration: none;
+}
+.contact-help-chat__change-mode a:hover,
+.contact-help-chat__chat a:hover,
+.contact-help-chat__contact a:hover,
+.contact-help-chat__help-center a:hover {
+  color: #231f20;
+}
+.contact-help-chat__change-mode.fadeIn,
+.contact-help-chat__chat.fadeIn,
+.contact-help-chat__contact.fadeIn,
+.contact-help-chat__help-center.fadeIn {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.contact-help-chat__help-center {
+  position: absolute;
+  width: 115px;
+}
+.contact-help-chat__help-center.fadeIn {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  transform: translateY(-110px);
+}
+@media screen and (min-width: 1040px) {
+  .contact-help-chat__help-center {
+    width: 130px;
+  }
+  .contact-help-chat__help-center.fadeIn {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    transform: translateY(-145px);
+  }
+}
+.contact-help-chat__change-mode {
+  position: absolute;
+  width: 115px;
+}
+.contact-help-chat__change-mode.fadeIn {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  transform: translateY(-160px);
+}
+@media screen and (min-width: 1040px) {
+  .contact-help-chat__change-mode {
+    width: 130px;
+  }
+  .contact-help-chat__change-mode.fadeIn {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    transform: translateY(-208px);
+  }
+}
+.contact-help-chat__change-mode.dark {
+  display: none;
+}
+.contact-help-chat__contact {
+  position: absolute;
+  width: 105px;
+}
+.contact-help-chat__contact.fadeIn {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+  transform: translateY(-115px);
+}
+@media screen and (min-width: 1040px) {
+  .contact-help-chat__contact {
+    width: 123px;
+  }
+  .contact-help-chat__contact.fadeIn {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+    transform: translateY(-150px);
+  }
+}
+.contact-help-chat__chat {
+  position: absolute;
+  width: 90px;
+}
+.contact-help-chat__chat.fadeIn {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  transform: translateY(-60px);
+}
+@media screen and (min-width: 1040px) {
+  .contact-help-chat__chat {
+    width: 109px;
+  }
+  .contact-help-chat__chat.fadeIn {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    transform: translateY(-80px);
+  }
+}
+.contact-help-chat__contact-circle {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  background: #ff8300;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ff8300;
+}
+@media screen and (min-width: 1040px) {
+  .contact-help-chat__contact-circle {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    border: 6px solid #ff8300;
+  }
+}
+.contact-help-chat__contact-circle i {
+  transition: all 0.5s ease;
+}
+.contact-help-chat__contact-circle.open {
+  background: #fff;
+  color: #ff8300;
+}
+.contact-help-chat__contact-circle.open i {
+  transform: rotate(45deg);
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 1;
+  }
+  to {
+    z-index: 100;
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 1;
+  }
+  to {
+    z-index: 100;
+    opacity: 1;
+  }
+}
+.site-modal-box {
+  max-width: 610px;
+}
+.site-modal {
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  border: none;
+}
+.site-modal__header {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 16px 24px;
+  background: #fcfbfd;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+.site-modal__title {
+  font: 600 normal 18px/22px Montserrat, sans-serif;
+  color: #f28911;
+  text-transform: uppercase;
+}
+.site-modal__close {
+  color: #231f20;
+  background: none;
+  border: none;
+  font-size: 40px;
+  position: absolute;
+  right: 0;
+  padding: 0;
+}
+.site-modal__close:focus {
+  outline: none;
+}
+.site-modal__body {
+  padding: 24px 15px 0;
+}
+@media screen and (min-width: 1040px) {
+  .site-modal__body {
+    padding: 24px 15px;
+  }
+}
+.site-modal__body h3 {
+  color: #231f20;
+  font: 700 normal 18px/22px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .site-modal__body h3 {
+    font: 700 normal 20px/24px Montserrat, sans-serif;
+  }
+}
+.site-modal__body p {
+  font: 500 normal 14px/20px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .site-modal__body p {
+    font: 500 normal 16px/20px Montserrat, sans-serif;
+  }
+}
+.site-modal__body p a {
+  color: #f28911;
+  text-decoration: underline;
+}
+.site-modal__footer {
+  border-top: none;
+}
+.site-modal__footer .btn {
+  border: none;
+  border-radius: 8px;
+  font: 700 normal 23px/28px Montserrat, sans-serif;
+  color: #fff;
+  max-width: 260px;
+  width: 100%;
+  text-align: center;
+  height: 56px;
+}
+.site-modal__footer .btn.continue-betting-btn {
+  max-width: 290px;
+}
+.site-modal__footer .btn.close-dark {
+  font: 700 normal 18px/28px Montserrat, sans-serif;
+}
+@media screen and (min-width: 1040px) {
+  .site-modal__footer .btn {
+    height: 64px;
+    font: 700 normal 20px/27px Montserrat, sans-serif;
+  }
+}
+.site-modal__footer .btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+.site-modal__footer .btn-green {
+  background: #91d146;
+}
+.site-modal__footer .btn-gray {
+  background: #908e8f;
+}
+.site-modal__footer .btn-orange {
+  background: #f28911;
+}
+@font-face {
+  font-family: mybv4;
+  src: url(../../../fonts/myb-v4/mybv4.eot);
+  src: url(../../../fonts/myb-v4/mybv4.eot?#iefix) format("embedded-opentype"),
+    url(../../../fonts/myb-v4/mybv4.woff) format("woff"),
+    url(../../../fonts/myb-v4/mybv4.ttf) format("truetype"),
+    url(../../../fonts/myb-v4/mybv4.svg#mybv4) format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+[data-icon]:before {
+  content: attr(data-icon);
+}
+[class*=" icon-"]:before,
+[class^="icon-"]:before,
+[data-icon]:before {
+  font-family: mybv4 !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class*=" icon-"],
+[class^="icon-"] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+.icon-support:before {
+  content: "m";
+}
+.icon-favorite-selected:before {
+  content: "o";
+}
+.icon-favorite-deselected:before {
+  content: "p";
+}
+.icon-free-bet:before {
+  content: "q";
+}
+.icon-view-password:before {
+  content: "s";
+}
+.icon-hide-password:before {
+  content: "r";
+}
+.icon-tv:before {
+  content: "t";
+}
+.icon-tracker:before {
+  content: "u";
+}
+.icon-message:before {
+  content: "w";
+}
+.icon-refresh:before {
+  content: "x";
+}
+.icon-star-program:before {
+  content: "y";
+}
+.icon-search:before {
+  content: "v";
+}
+.icon-sports-selected:before {
+  content: "z";
+}
+.icon-arrow-down:before {
+  content: "A";
+}
+.icon-arrow-left:before {
+  content: "B";
+}
+.icon-arrow-right:before {
+  content: "C";
+}
+.icon-arrow-up:before {
+  content: "D";
+}
+.icon-close:before {
+  content: "E";
+}
+.icon-twitter:before {
+  content: "F";
+}
+.icon-youtube:before {
+  content: "G";
+}
+.icon-instagram:before {
+  content: "H";
+}
+.icon-tooltip:before {
+  content: "f";
+}
+.icon-load-d:before {
+  content: "g";
+}
+.icon-caret-down:before {
+  content: "h";
+}
+.icon-caret-up:before {
+  content: "j";
+}
+.icon-podcast:before {
+  content: "k";
+}
+.icon-boxscores:before {
+  content: "l";
+}
+.icon-casino-bonus:before {
+  content: "a";
+}
+.icon-top-bets:before {
+  content: "b";
+}
+.icon-plus:before {
+  content: "c";
+}
+.icon-live-indicator:before {
+  content: "d";
+}
+.icon-great-bonus:before {
+  content: "e";
+}
+.icon-clock:before {
+  content: "i";
+}
+.icon-credit-card:before {
+  content: "n";
+}
+.icon-customer:before {
+  content: "I";
+}
+.icon-rewards:before {
+  content: "J";
+}
+.icon-twitch:before {
+  content: "K";
+}
+.icon-casino-games:before {
+  content: "L";
+}
+.icon-contact-livechat:before {
+  content: "M";
+}
+.icon-contact-messaging:before {
+  content: "N";
+}
+.icon-contact-phone:before {
+  content: "O";
+}
+.icon-star-full:before {
+  content: "P";
+}
+.icon-paper-clip:before {
+  content: "Q";
+}
+.icon-pencil:before {
+  content: "R";
+}
+.icon-reply:before {
+  content: "S";
+}
+.icon-reply-avatar:before {
+  content: "T";
+}
+.icon-play-button:before {
+  content: "U";
+}
+.icon-image:before {
+  content: "V";
+}
+.icon-tv:before {
+  content: "X";
+}
+.icon-tracker:before {
+  content: "Y";
+}
+.icon-facebook:before {
+  content: "t";
+}
+form.glsr-form .gl-star-rating[data-star-rating] {
+  position: relative;
+  display: block;
+}
+form.glsr-form .gl-star-rating[data-star-rating] > select {
+  overflow: hidden;
+  visibility: visible !important;
+  position: absolute !important;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: circle(1px at 0 0);
+  clip-path: circle(1px at 0 0);
+  white-space: nowrap;
+}
+form.glsr-form .gl-star-rating[data-star-rating] > select:after,
+form.glsr-form .gl-star-rating[data-star-rating] > select:before {
+  display: none !important;
+}
+form.glsr-form .gl-star-rating-ltr[data-star-rating] > select {
+  left: 0;
+}
+form.glsr-form .gl-star-rating-rtl[data-star-rating] > select {
+  right: 0;
+}
+form.glsr-form
+  .gl-star-rating[data-star-rating]
+  > select:focus
+  + .gl-star-rating-stars:before {
+  opacity: 0.5;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  outline: 1px dotted currentColor;
+  pointer-events: none;
+}
+form.glsr-form .gl-star-rating-stars {
+  position: relative;
+  display: inline-block;
+  height: 26px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+form.glsr-form .gl-star-rating-stars > span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-image: none;
+  margin: 0 4px 0 0;
+}
+form.glsr-form .gl-star-rating-stars > span:last-of-type {
+  margin-right: 0;
+}
+form.glsr-form
+  .gl-star-rating-rtl[data-star-rating]
+  .gl-star-rating-stars
+  > span {
+  margin: 0 0 0 4px;
+}
+form.glsr-form
+  .gl-star-rating-rtl[data-star-rating]
+  .gl-star-rating-stars
+  > span:last-of-type {
+  margin-left: 0;
+}
+form.glsr-form .gl-star-rating-stars.s10 > span:first-child,
+form.glsr-form .gl-star-rating-stars.s20 > span:nth-child(-1n + 2),
+form.glsr-form .gl-star-rating-stars.s30 > span:nth-child(-1n + 3),
+form.glsr-form .gl-star-rating-stars.s40 > span:nth-child(-1n + 4),
+form.glsr-form .gl-star-rating-stars.s50 > span:nth-child(-1n + 5),
+form.glsr-form .gl-star-rating-stars.s60 > span:nth-child(-1n + 6),
+form.glsr-form .gl-star-rating-stars.s70 > span:nth-child(-1n + 7),
+form.glsr-form .gl-star-rating-stars.s80 > span:nth-child(-1n + 8),
+form.glsr-form .gl-star-rating-stars.s90 > span:nth-child(-1n + 9),
+form.glsr-form .gl-star-rating-stars.s100 > span {
+  background-image: url(../img/star-full.svg);
+}
+form.glsr-form .gl-star-rating-text {
+  display: inline-block;
+  position: relative;
+  height: 26px;
+  line-height: 26px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #fff;
+  background-color: #1a1a1a;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0 12px 0 6px;
+  margin: 0 0 0 12px;
+}
+form.glsr-form .gl-star-rating-text:before {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 0;
+  height: 0;
+  content: "";
+  border-color: transparent #1a1a1a transparent transparent;
+  border-style: solid;
+  border-width: 13px 12px 13px 0;
+}
+form.glsr-form .gl-star-rating-rtl[data-star-rating] .gl-star-rating-text {
+  padding: 0 6px 0 12px;
+  margin: 0 12px 0 0;
+}
+form.glsr-form
+  .gl-star-rating-rtl[data-star-rating]
+  .gl-star-rating-text:before {
+  left: unset;
+  right: -12px;
+  border-width: 13px 0 13px 12px;
+  border-color: transparent transparent transparent #1a1a1a;
+}
+@-webkit-keyframes a {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes a {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+form.glsr-form label {
+  float: none;
+  display: block;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+form.glsr-form label.glsr-checkbox-label,
+form.glsr-form label.glsr-radio-label {
+  display: inline;
+}
+form.glsr-form select.glsr-star-rating {
+  visibility: hidden !important;
+  display: block;
+}
+form.glsr-form input[type="email"],
+form.glsr-form input[type="text"],
+form.glsr-form textarea {
+  float: none;
+  display: block;
+  width: 100%;
+  font-size: inherit;
+  line-height: inherit;
+  box-sizing: border-box;
+}
+form.glsr-form [type="submit"] {
+  white-space: nowrap;
+}
+form.glsr-form [type="submit"] .glsr-button-loading {
+  display: none;
+}
+form.glsr-form [type="submit"][disabled] .glsr-button-loading {
+  display: inline;
+  position: relative;
+}
+form.glsr-form [type="submit"] .glsr-button-loading:after,
+form.glsr-form [type="submit"] .glsr-button-loading:before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  height: 1em;
+  width: 1em;
+  content: "";
+  border: 0.2em solid;
+  border-radius: 100%;
+  box-sizing: border-box;
+  margin: -0.5em auto 0;
+  -webkit-animation: a 0.5s linear infinite;
+  animation: a 0.5s linear infinite;
+}
+form.glsr-form [type="submit"] .glsr-button-loading:before {
+  opacity: 0.5;
+  border-top-color: transparent;
+}
+form.glsr-form [type="submit"] .glsr-button-loading:after {
+  border-color: currentColor transparent transparent;
+}
+.glsr-ltr form.glsr-form [type="submit"][disabled] .glsr-button-loading {
+  margin-right: 1.65em;
+}
+.glsr-ltr form.glsr-form [type="submit"] .glsr-button-loading:after,
+.glsr-ltr form.glsr-form [type="submit"] .glsr-button-loading:before {
+  left: 0;
+}
+.glsr-ltr form.glsr-form .glsr-required label span:after {
+  margin-left: 0.33em;
+}
+.glsr-rtl form.glsr-form [type="submit"][disabled] .glsr-button-loading {
+  margin-left: 1.65em;
+}
+.glsr-rtl form.glsr-form [type="submit"] .glsr-button-loading:after,
+.glsr-rtl form.glsr-form [type="submit"] .glsr-button-loading:before {
+  right: 0;
+}
+.glsr-rtl form.glsr-form .glsr-required label span:after {
+  margin-right: 0.33em;
+}
+.glsr-disabled .glsr-button {
+  pointer-events: none;
+  cursor: wait;
+  opacity: 0.5;
+}
+.glsr-field {
+  position: relative;
+}
+.glsr-field ul {
+  list-style-type: none;
+}
+.glsr-error {
+  font-size: 0.875em;
+}
+.glsr-hidden {
+  display: none;
+}
+.glsr-loader {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  -webkit-animation: a 0.5s linear infinite;
+  animation: a 0.5s linear infinite;
+  transform: translateZ(0);
+  margin: 0;
+}
+.glsr-loader:after,
+.glsr-loader:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+}
+.glsr-loader:before {
+  top: 0;
+  left: 0;
+}
+.glsr-loader:after {
+  bottom: 0;
+  right: 0;
+}
+.glsr-hide .glsr-loader {
+  display: block;
+}
+.glsr-read-more {
+  white-space: nowrap;
+}
+.glsr-read-more:before {
+  content: "\2026";
+}
+.glsr-ltr .glsr-read-more:before {
+  margin-right: 0.5em;
+}
+.glsr-rtl .glsr-read-more:before {
+  margin-left: 0.5em;
+}
+.glsr-visible + .glsr-read-more:before {
+  content: "";
+}
+.glsr-recaptcha-holder {
+  margin-top: 1em;
+}
+.glsr-reviews-wrap {
+  position: relative;
+}
+.glsr-reviews-wrap:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.glsr-reviews-wrap .screen-reader-text,
+.glsr-summary-wrap .screen-reader-text {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  word-wrap: normal !important;
+  padding: 0;
+  margin: -1px;
+}
+.glsr-star {
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.glsr-default .glsr-navigation:after,
+.glsr-default .glsr-review:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.glsr-default .glsr-review {
+  margin-bottom: 48px;
+}
+.glsr-default .glsr-review > div {
+  margin-bottom: 16px;
+}
+.glsr-default .glsr-review > div:last-of-type {
+  margin-bottom: 0;
+}
+.glsr-default .glsr-review p {
+  white-space: pre-line;
+  margin: 0 0 16px;
+}
+.glsr-default .glsr-navigation > :not(.glsr-loader),
+.glsr-default .glsr-review {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.glsr-default.glsr-hide .glsr-navigation > :not(.glsr-loader),
+.glsr-default.glsr-hide .glsr-review {
+  opacity: 0 !important;
+}
+.glsr-default .glsr-review-assigned_to {
+  display: block;
+  font-style: italic;
+}
+.glsr-default .glsr-review-author {
+  display: inline-block;
+  vertical-align: top;
+}
+.glsr-default .glsr-review-avatar + .glsr-review-author {
+  margin-top: 0.5em;
+}
+.glsr-default :not(.glsr-review-avatar) + .glsr-review-author:before {
+  content: "\2014";
+}
+.glsr-default .glsr-review-avatar img {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.glsr-default .glsr-review-content p {
+  line-height: 1.5;
+}
+.glsr-default .glsr-review-date {
+  display: inline-block;
+  font-style: italic;
+  white-space: nowrap;
+}
+.glsr-default .glsr-review-rating {
+  display: inline-block;
+}
+.glsr-default .glsr-review-response {
+  position: relative;
+  clear: both;
+}
+.glsr-default .glsr-review-response p:last-of-type {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.glsr-default .glsr-review-response-background {
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  border-radius: 2px;
+  padding: 1em;
+}
+.glsr-default .glsr-review-response-background:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1.5em;
+  height: 0;
+  width: 0;
+  border-color: currentcolor transparent;
+  border-style: solid;
+  border-width: 0 0 1.5em;
+}
+.glsr-default .glsr-review-response-inner {
+  position: relative;
+  padding: 1em;
+  z-index: 1;
+}
+.glsr-default .glsr-star {
+  width: 20px;
+  height: 20px;
+  font-size: inherit;
+  background-size: 20px;
+}
+.glsr-ltr .glsr-default .glsr-review-avatar {
+  float: left;
+  margin-right: 1em;
+}
+.glsr-ltr .glsr-default .glsr-review-rating {
+  margin-right: 0.5em;
+}
+.glsr-ltr .glsr-default .glsr-review-response-background:before {
+  right: 3em;
+  border-right-width: 2em;
+}
+.glsr-rtl .glsr-default .glsr-review-avatar {
+  float: right;
+  margin-left: 1em;
+}
+.glsr-rtl .glsr-default .glsr-review-rating {
+  margin-left: 0.5em;
+}
+.glsr-rtl .glsr-default .glsr-review-response-background:before {
+  left: 3em;
+  border-left-width: 2em;
+}
+form.glsr-form {
+  font-size: 16px;
+  line-height: 1.5;
+}
+form.glsr-form .glsr-field-choice {
+  position: relative;
+  display: block;
+  padding-left: 1.25rem;
+}
+form.glsr-form .glsr-field-choice input {
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
+}
+form.glsr-form .glsr-field-choice label {
+  display: inline-block;
+  margin: 0;
+}
+form.glsr-form input.glsr-field-control,
+form.glsr-form textarea.glsr-field-control {
+  line-height: 1.5;
+  font-size: 1rem;
+  background-color: #fff;
+  min-height: calc(2.25rem + 2px);
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.15rem;
+  transition: border-color 0.15s ease-in-out;
+  padding: 0.375rem 0.5rem;
+}
+form.glsr-form input.glsr-field-control:focus,
+form.glsr-form textarea.glsr-field-control:focus {
+  background-color: #fff;
+  border-color: #9e9e9e;
+  outline: 0;
+}
+form.glsr-form .glsr-required label span:after {
+  content: "*";
+  color: #d32f2f;
+}
+form.glsr-form .glsr-field {
+  margin-bottom: 16px;
+}
+form.glsr-form .glsr-field-error {
+  font-size: 14px;
+  color: #d32f2f;
+}
+form.glsr-form .glsr-form-messages {
+  color: #388e3c;
+}
+form.glsr-form .glsr-form-messages p {
+  margin-top: 16px;
+}
+form.glsr-form .glsr-has-errors {
+  color: #d32f2f;
+}
+form.glsr-form input:not([type="checkbox"]):not([type="radio"]).glsr-is-invalid,
+form.glsr-form textarea.glsr-is-invalid {
+  border-color: #d32f2f;
+}
+form.glsr-form .glsr-field-choice input {
+  outline: none;
+}
+.glsr-ltr form.glsr-form .glsr-field input[type="checkbox"],
+.glsr-ltr form.glsr-form .glsr-field input[type="radio"] {
+  margin-right: 0.5em;
+}
+.glsr-rtl form.glsr-form .glsr-field input[type="checkbox"],
+.glsr-rtl form.glsr-form .glsr-field input[type="radio"] {
+  margin-left: 0.5em;
+}
+.glsr-default.glsr-summary {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.glsr-default.glsr-summary > div {
+  margin-bottom: 8px;
+}
+.glsr-default.glsr-summary > div:last-of-type {
+  margin-bottom: 0;
+}
+.glsr-default .glsr-bar {
+  display: table-row;
+  white-space: nowrap;
+}
+.glsr-default .glsr-bar > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.glsr-default .glsr-bar-background {
+  position: relative;
+  width: 100%;
+}
+.glsr-default .glsr-bar-background:before {
+  opacity: 0.1;
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 12px;
+  background-color: currentColor;
+}
+.glsr-default .glsr-bar-background-percent {
+  position: relative;
+  display: block;
+  height: 12px;
+  background-color: #ffb900;
+}
+.glsr-default .glsr-bar-percent {
+  text-align: right;
+  font-size: 14px;
+}
+.glsr-default .glsr-summary-percentage {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.glsr-default .glsr-summary-rating {
+  display: inline-block;
+  line-height: 1.25;
+  font-size: 24px;
+  font-weight: 700;
+  vertical-align: top;
+}
+.glsr-default .glsr-summary-stars {
+  display: inline-block;
+}
+.glsr-default .glsr-summary-stars .glsr-star {
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+}
+.glsr-ltr .glsr-default .glsr-bar-label {
+  padding-right: 10px;
+}
+.glsr-ltr .glsr-default .glsr-bar-percent {
+  padding-left: 10px;
+}
+.glsr-ltr .glsr-default .glsr-summary-rating,
+.glsr-ltr .glsr-default .glsr-summary-stars {
+  margin-right: 10px;
+}
+.glsr-rtl .glsr-default .glsr-bar-label {
+  padding-left: 10px;
+}
+.glsr-rtl .glsr-default .glsr-bar-percent {
+  padding-right: 10px;
+}
+.glsr-rtl .glsr-default .glsr-summary-rating,
+.glsr-rtl .glsr-default .glsr-summary-stars {
+  margin-left: 10px;
+}
+.glsr-rtl .glsr-default .glsr-summary-stars .glsr-star {
+  transform: scaleX(-1);
+}
+.review {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+  padding: 0;
+  position: relative;
+  background: hsla(0, 0%, 100%, 0.8);
+  clear: both;
+}
+.review .review h3 {
+  margin: 15px 0;
+  padding: 0 0 30px;
+  line-height: 18px;
+  border-bottom: 1px solid #ddd;
+}
+.glsr-summary {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 auto 1em;
+}
+.glsr-ltr .glsr-review-rating,
+.glsr-ltr .glsr-summary-rating {
+  margin-right: 10px;
+}
+.glsr-summary-rating {
+  line-height: 1.25;
+  font-size: 24px;
+  font-weight: 700;
+}
+.glsr-summary .glsr-review-rating {
+  display: inline-block;
+}
+.glsr-summary [class*="glsr-star-"] {
+  display: flex;
+  background-size: 24px;
+}
+.gl-star-rating-stars.s10 > span:first-child,
+.gl-star-rating-stars.s20 > span:nth-child(-1n + 2),
+.gl-star-rating-stars.s30 > span:nth-child(-1n + 3),
+.gl-star-rating-stars.s40 > span:nth-child(-1n + 4),
+.gl-star-rating-stars.s50 > span:nth-child(-1n + 5),
+.gl-star-rating-stars.s60 > span:nth-child(-1n + 6),
+.gl-star-rating-stars.s70 > span:nth-child(-1n + 7),
+.gl-star-rating-stars.s80 > span:nth-child(-1n + 8),
+.gl-star-rating-stars.s90 > span:nth-child(-1n + 9),
+.gl-star-rating-stars.s100 > span,
+.glsr-star-full {
+  background-image: url(/wp-content/uploads/starFull.png);
+}
+.glsr-star-half {
+  background-image: url(/wp-content/uploads/starHalf.png);
+}
+.glsr-star-empty,
+.glsr-star-full,
+.glsr-star-half {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  vertical-align: sub;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+.glsr-summary-text {
+  display: block;
+  font-size: 14px;
+}
+.shortcode-site-reviews {
+  max-width: 1310px;
+  margin: 0 auto;
+  overflow: hidden !important;
+  background: #f6f4f5;
+  border-radius: 8px;
+}
+.glsr-reviews {
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .glsr-reviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.page-template .glsr-reviews-wrap {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-right: -10px;
+  position: relative !important;
+}
+.glsr-review-2 {
+  color: #999;
+  position: relative;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(1);
+}
+.glsr-review-2:hover {
+  color: #333;
+  opacity: 1;
+  filter: none;
+  -webkit-filter: none;
+}
+.glsr-review-2 h2 {
+  font: normal 100 normal 26px/31px Montserrat, sans-serif;
+  text-align: left;
+}
+.page-template .glsr-review {
+  width: 32.5%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 10px 10px 20px;
+  height: 190px;
+  margin-bottom: 10px !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  color: #999;
+  position: relative;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(1);
+  background: #fff;
+  border-radius: 8px;
+}
+.page-template .glsr-review:hover {
+  color: #333;
+  opacity: 1;
+  filter: none;
+  -webkit-filter: none;
+  position: relative;
+  cursor: pointer;
+}
+.page-template .glsr-review .page-template .glsr-review h3 {
+  font-size: 18px;
+  border: none;
+  margin: 0;
+  padding: 0 40px 10px;
+}
+.glsr-review p {
+  white-space: pre-line;
+  margin: 0 0 1em;
+}
+.glsr-review::-webkit-scrollbar-track {
+  border: none;
+  background-color: #f5f5f5;
+}
+.glsr-review::-webkit-scrollbar {
+  width: 3px;
+  background-color: #f5f5f5;
+}
+.glsr-review::-webkit-scrollbar-thumb {
+  background-color: #999;
+}
+.page-template .glsr-review + .glsr-review + .glsr-review + .glsr-review {
+  border-top: 1px solid #ddd;
+}
+@media screen and (max-width: 766px) and (min-width: 0) {
+  .page-template .glsr-review {
+    width: auto;
+    display: block;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+  }
+}
+.review {
+  background: #f6f4f5;
+}
+.site-footer {
+  background: #242526;
+  padding: 46px 15px 0;
+}
+.site-footer__nav__menu .widget-title {
+  font: normal 700 normal 14px/18px Montserrat, sans-serif;
+  color: #ff8300;
+  text-transform: uppercase;
+}
+.site-footer__nav__menu div ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer__nav__menu div ul .menu-item {
+  margin: 5px 0;
+}
+.site-footer__nav__menu div ul .menu-item a {
+  font: normal 600 normal 14px/30px Montserrat, sans-serif;
+  color: #fff;
+}
+.site-footer__information p {
+  font: normal 500 normal 14px/24px Montserrat, sans-serif;
+  color: #fff;
+}
+.site-footer__information h4 {
+  color: #fff;
+}
+.site-footer__information__gambling-p {
+  color: #fff;
+  font: normal 700 normal 16px/19px Montserrat, sans-serif;
+  max-width: 537px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 4px;
+  border: 1px solid #707070;
+}
+.site-footer__information__credentials li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+@media screen and (min-width: 1280px) {
+  .site-footer__information__credentials li {
+    padding-right: 11px;
+    padding-left: 11px;
+  }
+}
+.site-footer__information__credentials li a {
+  display: block;
+}
+.site-footer__information__credentials .footer_logo {
+  padding-top: 45px;
+  overflow: hidden;
+  display: inline-block;
+  background-size: initial;
+}
+.site-footer__information__credentials .footer_logo.nort {
+  background-position: 0 -633px;
+  width: 80px;
+}
+.site-footer__information__credentials .footer_logo.bitcoin {
+  background-position: 0 -685px;
+  width: 85px;
+}
+.site-footer__information__credentials .footer_logo.mstcard {
+  background-position: 0 -733px;
+  width: 45px;
+}
+.site-footer__information__credentials .footer_logo.visa {
+  background-position: 0 -775px;
+  width: 45px;
+}
+.site-footer__information__credentials .footer_logo.bsoft {
+  background-position: 0 -825px;
+  width: 100px;
+}
+.site-footer__information__credentials .footer_logo.age {
+  background-position: 0 -875px;
+  width: 35px;
+}
+.site-footer__information__credentials .footer_logo.ganonymous {
+  background-position: 0 -922px;
+  width: 35px;
+}
+.site-footer__information__credentials .footer_logo.etrus {
+  background-position: 0 -970px;
+  width: 100px;
+}
+.site-footer__information__credentials .footer_logo.ssl {
+  background-position: 0 -1015px;
+  width: 100px;
+}
+.site-footer__information__credentials .footer_logo.ptp {
+  background-position: 0 -1060px;
+  width: 50px;
+}
+.site-footer__information__credentials .footer_logo.curacaogl {
+  background-position: 0 -1099px;
+  width: 100px;
+}
+.site-footer__information__flag-list li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.site-footer__information__flag-list .flag {
+  width: 30px;
+  height: 0;
+  padding-top: 25px;
+  overflow: hidden;
+  display: inline-block;
+  background-size: initial;
+}
+.site-footer__information__flag-list .flag.be {
+  background-position: 0 -35px;
+}
+.site-footer__information__flag-list .flag.br {
+  background-position: 0 -70px;
+}
+.site-footer__information__flag-list .flag.ca {
+  background-position: 0 -105px;
+}
+.site-footer__information__flag-list .flag.fi {
+  background-position: 0 -140px;
+}
+.site-footer__information__flag-list .flag.de {
+  background-position: 0 -175px;
+}
+.site-footer__information__flag-list .flag.ie {
+  background-position: 0 -210px;
+}
+.site-footer__information__flag-list .flag.jp {
+  background-position: 0 -245px;
+}
+.site-footer__information__flag-list .flag.mx {
+  background-position: 0 -280px;
+}
+.site-footer__information__flag-list .flag.nl {
+  background-position: 0 -315px;
+}
+.site-footer__information__flag-list .flag.nz {
+  background-position: 0 -350px;
+}
+.site-footer__information__flag-list .flag.no {
+  background-position: 0 -385px;
+}
+.site-footer__information__flag-list .flag.sg {
+  background-position: 0 -420px;
+}
+.site-footer__information__flag-list .flag.es {
+  background-position: 0 -455px;
+}
+.site-footer__information__flag-list .flag.se {
+  background-position: 0 -490px;
+}
+.site-footer__information__flag-list .flag.uk {
+  background-position: 0 -525px;
+}
+.site-footer__information__flag-list .flag.us {
+  background-position: 0 -560px;
+}
+.site-footer__information__flag-list .flag.cn {
+  background-position: 0 -595px;
+}
+.site-footer__copyright__container {
+  padding: 0 0 15px;
+}
+@media screen and (min-width: 1280px) {
+  .site-footer__copyright__container {
+    padding: 22px 0 15px;
+    margin-top: 2.5rem;
+    border-top: 2px solid #58595a;
+  }
+}
+.site-footer__copyright img {
+  max-width: 154px;
+}
+.site-footer__copyright__social,
+.site-footer__copyright p {
+  font: normal 500 normal 14px/18px Montserrat, sans-serif;
+  color: #fff;
+}
+.site-footer__copyright__social span:first-of-type {
+  font-weight: 700;
+}
+.site-footer__copyright__social .icon-box {
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+}
+.site-footer__copyright__social .icon-box a {
+  color: #fff;
+}
+.site-footer__copyright__links a {
+  color: #fff;
+  font: normal 500 normal 14px/18px Montserrat, sans-serif;
+}
+.site-footer__content-box {
+  background: #17191a;
+}
+.site-footer__content-box__container {
+  font: normal 500 normal 14px/24px Montserrat, sans-serif;
+  color: #fff;
+}
+.site-footer__content-box__main-title {
+  font: normal 700 normal 18px/24px Montserrat, sans-serif;
+  color: #fff;
+}
+@media screen and (min-width: 1280px) {
+  .site-footer__content-box__main-title {
+    font: normal 700 normal 22px/27px Montserrat, sans-serif;
+  }
+}
+.site-footer__content-box__why-text {
+  font: normal 600 normal 18px/22px Montserrat, sans-serif;
+  color: #ff8300;
+}
+@media screen and (min-width: 1280px) {
+  .site-footer__content-box__why-text {
+    font: normal 600 normal 22px/27px Montserrat, sans-serif;
+  }
+}
+.sport-page-content .su-posts-default-loop .su-post-excerpt a.read-more {
+  color: #337ab7;
+}
+.sport-page-body {
+  background: #17191a;
+  color: #fff;
+}
+.sport-page-body .sport-page-content__betting-news__title,
+.sport-page-body .sport-page-content__welcome p,
+.sport-page-body .sport-page-content p {
+  color: #fff;
+}
+.sport-page-body .short-content .su-posts-single-post {
+  background: #272829;
+  color: #fff;
+}
+.sport-page-body .short-content .su-posts-single-post .su-post-content h3 {
+  font-weight: 500;
+}
+.sport-page-body .sport-page-content {
+  color: #fff;
+}
+.sport-page-body .sport-page-content table {
+  color: #fff;
+  background: #272829;
+}
+.teams-container {
+  color: #fff;
+}
+.teams-container .team-box h4 {
+  font-weight: 500;
+}
+.teams-container .team-box .team-tab-logos a .team-name {
+  color: #fff;
+  font-weight: 500;
+}
+.brd,
+.reviews-container,
+.sport-page-content__additional .list-group .list-group-item {
+  background: #272829;
+}
+.gaming__blog-short-content .brd {
+  background: #fff;
+}
+.glsr-summary-text,
+.reviews-container__review h4,
+.sport-page-content__additional,
+.su-post-excerpt {
+  color: #fff !important;
+}
+.shortcode-site-reviews {
+  background: #272829;
+  color: #fff;
+}
+#refer_friends_sigin_trk,
+.blog-short-content,
+.page-404,
+.reviews-container__review,
+.su-post-meta {
+  color: #fff !important;
+}
+.gaming__mobile_bg {
+  background: #272829;
+  color: #fff;
+}
+/*# sourceMappingURL=secondary-dark.css.map*/

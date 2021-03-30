@@ -23,13 +23,3 @@ function teaser()
         type: "get",
       });
 }
-
-
-window.onload = function()
-{
-    leaguename = '{{name}}';
-
-    console.log(leaguename);
-
-    alert(leaguename);
-}

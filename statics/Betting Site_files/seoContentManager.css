@@ -1,0 +1,259 @@
+.sport-page-body {
+  background: #fff;
+}
+.sport-page-body .sport-page-content h1 {
+  font-weight: 300;
+  font-family: Montserrat, sans-serif;
+  font-size: 2.5rem;
+}
+.sport-page-body .sport-page-content p {
+  color: #231f20;
+  font: normal 500 normal 14px/24px Montserrat, sans-serif;
+}
+.sport-page-body .sport-page-content__betting-news__title {
+  font: normal 700 normal 22px/27px Montserrat, sans-serif;
+}
+.sport-page-body .sport-page-content__additional hr {
+  margin-bottom: 35px;
+  border: 0;
+  padding-top: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  border-top: none;
+}
+.sport-page-body .sport-page-content__additional__title {
+  color: #91d146;
+  text-transform: uppercase;
+  font: normal 700 normal 14px/18px Montserrat, sans-serif;
+}
+.sport-page-body .sport-page-content__welcome p {
+  color: rgba(35, 31, 32, 0.75);
+  text-transform: uppercase;
+  font: normal 700 normal 14px/18px Montserrat, sans-serif;
+}
+.first-img {
+  width: 40%;
+  max-width: 160px;
+  margin: 0 auto;
+  display: block;
+}
+.join-container .btn-join {
+  box-shadow: 0 2px 0 0 #417600;
+  background-color: #459418;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 25px 10px;
+  font: normal 400 normal 30px/43px Montserrat, sans-serif;
+  height: 67px;
+  padding: 12px 20px 16px;
+}
+.join-container .why-link {
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  color: #337ab7;
+}
+.teams-container {
+  padding: 10px;
+  max-width: 1330px;
+  margin: 0 auto;
+}
+.teams-container .team-box h4 {
+  font: normal 100 normal 20px/25px Montserrat, sans-serif;
+  margin: 10px 0 15px;
+}
+.teams-container .team-box .team-tab-logos {
+  background: linear-gradient(180deg, hsla(0, 0%, 93.3%, 0.65) 0, transparent);
+  padding-bottom: 10px;
+}
+.teams-container .team-box .team-tab-logos .small {
+  padding: 10px 5px 5px;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+.teams-container .team-box .team-tab-logos a {
+  display: block;
+  font-family: Montserrat, sans-serif;
+  opacity: 0.7;
+}
+.teams-container .team-box .team-tab-logos a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+.teams-container .team-box .team-tab-logos a:hover img {
+  opacity: 1;
+}
+.teams-container .team-box .team-tab-logos a .team-name {
+  font-size: 10px;
+  color: #337ab7;
+}
+.reviews-container {
+  background: #f6f4f5;
+}
+.reviews-container .join-now-box {
+  padding: 0 10px;
+}
+.reviews-container .join-now-box .btn-join {
+  max-width: 252px;
+  width: 100%;
+  height: 48px;
+  background-color: #91d146;
+  color: #fff;
+  text-transform: uppercase;
+  font: normal 700 normal 16px/19px Montserrat, sans-serif;
+  padding: 15px 10px;
+}
+.reviews-container .join-now-box .btn-join:focus {
+  outline: none;
+  box-shadow: none;
+}
+.reviews-container__review h4 {
+  font: normal 700 normal 18px/19px Montserrat, sans-serif;
+  margin: 20px;
+}
+.reviews-container__review .write-review-btn {
+  background: linear-gradient(180deg, #898989, #afafaf);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-top: 0;
+  border-radius: 2px;
+  color: #fff;
+  font: normal 500 normal 15px/30px Montserrat, sans-serif;
+  height: 33px;
+  padding: 0 8px;
+  text-transform: uppercase;
+}
+.reviews-container__review .write-review-btn:hover {
+  background: #000;
+  color: #fff;
+}
+.reviews-container__review .all-review-btn {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 10px;
+  margin: 5px 0 0 10px;
+  border-left: 1px solid #eee;
+  color: #999;
+  font-family: Montserrat, sans-serif;
+}
+.short-content {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.short-content .su-posts-single-post {
+  padding: 15px;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.short-content .su-posts-single-post img {
+  max-width: 100%;
+  width: 100%;
+}
+.short-content .su-posts-single-post img.wp-post-image {
+  border-radius: 10px 10px 0 0;
+}
+.short-content .su-posts-single-post::-webkit-scrollbar {
+  width: 10px;
+}
+.short-content .su-posts-single-post::-webkit-scrollbar-thumb {
+  background: #c7161c;
+}
+.short-content .su-posts-single-post::-webkit-scrollbar-track {
+  background: #eee;
+}
+.short-content .su-posts-single-post h1.su-post-title {
+  margin: 10px 0;
+  color: #999;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.short-content .su-posts-single-post .su-post-meta {
+  margin-bottom: 0.7em;
+  font-size: 0.8em;
+  opacity: 0.6;
+  font-family: Montserrat, sans-serif;
+}
+.short-content .su-posts-single-post .su-post-content h2 {
+  font: normal 100 normal 27px/28px Oswald, sans-serif;
+  color: #999 !important;
+}
+.short-content .su-posts-single-post .su-post-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  font-family: Montserrat, sans-serif;
+}
+.short-content .su-posts-single-post .su-post-content ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.short-content .su-posts-single-post .su-post-content h3 {
+  font: normal 100 normal 25px/29px Montserrat, sans-serif;
+  color: #999 !important;
+}
+.sport-page-content .su-posts-default-loop {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sport-page-content .su-posts-default-loop h2.su-post-title {
+  font: normal 700 normal 14px/18px Montserrat, sans-serif;
+  text-transform: uppercase;
+}
+.sport-page-content .su-posts-default-loop h2.su-post-title a {
+  color: #ff8300;
+}
+.sport-page-content .su-posts-default-loop .su-post {
+  width: 33%;
+  margin: 0 !important;
+  display: inline-block;
+}
+.sport-page-content .su-posts-default-loop .su-post-meta {
+  margin-bottom: 0.5rem;
+  font: normal 500 normal 11px/24px Montserrat, sans-serif;
+  color: #231f20;
+}
+.sport-page-content .su-posts-default-loop .su-post-excerpt {
+  margin-bottom: 20px;
+  font: normal 500 normal 14px/24px Montserrat, sans-serif;
+  color: #231f20;
+}
+.sport-page-content .su-posts-default-loop .su-post-excerpt a.read-more {
+  font-weight: 700;
+  color: #231f20;
+}
+.sport-page-content .su-posts-default-loop .su-post-comments-link {
+  display: none;
+}
+.sport-page-content .su-posts-list-loop {
+  border-top: 1px solid #ccc;
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sport-page-content .su-posts-list-loop li.su-post {
+  padding: 5px 10px 10px 0;
+  width: 33%;
+  font-size: 14px;
+}
+@media screen and (max-width: 766px) and (min-width: 0) {
+  .botDesign .col-12,
+  .botDesign .col-lg-5,
+  .botDesign .su-posts.su-posts-list-loop li,
+  .imgScroll,
+  .su-post,
+  .teams .teamPages {
+    width: 100% !important;
+    margin: 0;
+  }
+}

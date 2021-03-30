@@ -16,28 +16,30 @@ import math
 
 def leagueInformation(weburl):
 
-    url = "https://"+weburl
-    options = Options()
-    # options.add_argument("--headless")
-    options.add_argument("--log-level=3")
-    options.add_argument("--ignore-certificate-errors")
-    options.add_argument("--ignore-ssl-errors")
+    # url = "https://"+weburl
+    # options = Options()
+    # # options.add_argument("--headless")
+    # options.add_argument("--log-level=3")
+    # options.add_argument("--ignore-certificate-errors")
+    # options.add_argument("--ignore-ssl-errors")
 
-    browser = webdriver.Chrome('C:/Users/USER/chromedriver.exe', options=options)
+    # browser = webdriver.Chrome('C:/Users/USER/chromedriver.exe', options=options)
 
-    browser.get(url)
+    # browser.get(url)
 
-    try:
-        WebDriverWait(browser, 10).until(
-            ExpectedConditions.presence_of_element_located(
-                (By.ID, "main-sportsbook-container")
-            )
-        )
-    except Exception as inst:
-        print("Leagues not found")
+    # try:
+    #     WebDriverWait(browser, 10).until(
+    #         ExpectedConditions.presence_of_element_located(
+    #             (By.ID, "main-sportsbook-container")
+    #         )
+    #     )
+    # except Exception as inst:
+    #     print("Leagues not found")
 
-    leagueDiv = BeautifulSoup(browser.page_source, "html.parser").find(
+    page = requests.get(weburl)
+
+    leagueDiv = BeautifulSoup(page.content, "html.parser").find(
         "div", {"id": "main-sportsbook-container"}
     )
-    browser.close()
+
     return leagueDiv

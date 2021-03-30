@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import urllib.parse
+
 from .modules import (
     fasterScrappingLive,
     RandomCredentials,
@@ -412,9 +414,47 @@ def deleteCredential(request, id):
         content_type="application/json",
     )
 
+
 @csrf_exempt
 def getLeagueInformation(request, name):
-    return render(request, "leagueInformation.html", {"name": name})
+    userfetched = userInfo.objects.get(id=request.session["id"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+        "limit": userfetched.accountLimit,
+    }
+
+    return render(request, "leagueInformation.html", {"name": name, "data": data})
+
+
+@csrf_exempt
+def scappingwebLeagueInfo(request):
+    body_unicode = request.body.decode("utf-8")
+    body = body_unicode.split("=")
+
+    scrapped_data = fasterScrappingLive.leagueInformation(urllib.parse.unquote(body[1]))
+    print(scrapped_data)
+    return JsonResponse(
+        {
+            "status": 200,
+            "data": str(scrapped_data),
+        },
+        content_type="application/json",
+    )
 
 
 def getfromwebpageslower(request):

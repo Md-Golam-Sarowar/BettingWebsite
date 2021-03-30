@@ -51,6 +51,7 @@ from BettingApp.views import (
     createSports,
     getteaserlist,
     allActiveBets,
+    scappingwebLeagueInfo,
 )
 
 urlpatterns = [
@@ -81,4 +82,5 @@ urlpatterns = [
     path("parlay", parl),
     path("teaser", teaser),
     path("ActiveBets", allActiveBets),
+    path("scappingLeagueInfo", scappingwebLeagueInfo),
 ]
