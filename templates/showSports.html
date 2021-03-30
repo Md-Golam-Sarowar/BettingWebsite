@@ -300,7 +300,6 @@
                 $.get("/createSports", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
                     function (result) {
                         $('#sportsDiv')['html']($(result).find("#leaguesMenu").html());
-                        $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="showLines()">CONTINUE</a></div>')['addClass']('stFooter');
                         var _0xa31axd = document['getElementsByClassName']('accordion');
                         for (var _0xa31axe = 0; _0xa31axe < _0xa31axd['length']; _0xa31axe++) {
                             _0xa31axd[_0xa31axe]['onclick'] = function () {
