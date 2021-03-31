@@ -301,7 +301,7 @@ function showLeagueInfo(leagueName)
         success: function (returneddata) {
           if(returneddata["status"] == 200)
           {
-              document.getElementById("main-container").innerHTML += returneddata["data"];
+            document.getElementById("main-container").innerHTML = returneddata["data"];
           }
           else if (returneddata["status"] == 500)
           {
@@ -335,7 +335,7 @@ window.onload = function ()
       success: function (returneddata) {
         if(returneddata["status"] == 200)
         {
-            document.getElementById("main-container").innerHTML += returneddata["data"];
+            document.getElementById("main-container").innerHTML = returneddata["data"];
         }
         else if (returneddata["status"] == 500)
         {
