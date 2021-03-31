@@ -684,6 +684,11 @@ def scappingLeagueInfoforContinueButton(request):
             dataUrl = "https://mybookie.ag/sportsbook/switzerland-national-league/"
         elif id == "50":
             dataUrl = "https://mybookie.ag/sportsbook/world-championship-hockey/"
+        elif id == "129":
+            dataUrl = "https://mybookie.ag/sportsbook/atp/#accordionBets3546"
+        elif id == "200":
+            dataUrl = "https://mybookie.ag/sportsbook/wta/#accordionBets3547"
+
         # elif id == "50":
         #     dataUrl = ""
         # elif id == "50":
@@ -778,6 +783,7 @@ def scappingLeagueInfoforContinueButton(request):
             
         # elif id == :
         #     dataUrl = ""
+        print(dataUrl, id)
         scrapped_data += str(fasterScrappingLive.leagueInformation(dataUrl))
 
     return JsonResponse(
