@@ -1384,7 +1384,7 @@ a.bg-danger:hover {
 }
 .page-header {
   padding-bottom: 9px;
-  margin: 40px 0 20px;
+  margin: -18px 0 4px;
   border-bottom: 1px solid #eee;
 }
 ul,
@@ -1598,6 +1598,7 @@ pre code {
 }
 .col-xs-12 {
   width: 100%;
+  text-align: center;
 }
 .col-xs-11 {
   width: 91.66666667%;

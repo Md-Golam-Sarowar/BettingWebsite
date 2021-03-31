@@ -305,7 +305,7 @@ strong {
 }
 
 .container-default {
-  padding: 0;
+  padding: 17px;
 }
 
 .container-widget {
@@ -1086,11 +1086,11 @@ Page Header
 ================================================================================= */
 
 .page-header {
-  background: #fff;
-  margin: -15px 0px 0px 0px;
-  padding: 20px;
-  border-bottom: none;
-  position: relative;
+    background: #242526;
+    margin: -15px 0px 0px 0px;
+    padding: 20px;
+    border-bottom: none;
+    position: relative;
 }
 
 .page-header .title {

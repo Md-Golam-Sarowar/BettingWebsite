@@ -1104,8 +1104,8 @@ Page Header
 ================================================================================= */
 
 .page-header {
-    background: #fff;
-    margin: -15px 0px 0px 0px;
+    background: #212529;
+    margin: -15px 0px px 0px;
     padding: 20px;
     border-bottom: none;
     position: relative;
