@@ -297,10 +297,9 @@
 
         function getactiveleaguesFromDGSService(wt) {
             if ($('#sportsDiv').length > 0) {
-                $.get("/createSports", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
+                $.get("/createSports",
                     function (result) {
                         $('#sportsDiv')['html']($(result).find("#leaguesMenu").html());
-                        $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="showLines()">CONTINUE</a></div>')['addClass']('stFooter');
                         var _0xa31axd = document['getElementsByClassName']('accordion');
                         for (var _0xa31axe = 0; _0xa31axe < _0xa31axd['length']; _0xa31axe++) {
                             _0xa31axd[_0xa31axe]['onclick'] = function () {
@@ -312,7 +311,8 @@
                             }
                         }
                         $('.loading').hide();
-                    }, );
+                    }, 
+                    );
             }
         }
     </script>
@@ -330,7 +330,7 @@
         </div>
         <!-- End Footer -->
         <!-- Start Mobile Footer -->
-        <footer class="col-xs-12 stFooter" id="stFooter"><div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onclick="showLines()">CONTINUE</a></div></footer>
+        <footer class="col-xs-12 stFooter" id="stFooter"><div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onclick="collectcheckedlist()">CONTINUE</a></div></footer>
         <!-- End Mobile Footer -->
     </div>
 

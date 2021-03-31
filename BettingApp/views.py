@@ -442,6 +442,36 @@ def getLeagueInformation(request, name):
 
 
 @csrf_exempt
+def checkedLeaguesInformation(request, listofNames):
+
+    names = listofNames.split(",")
+    userfetched = userInfo.objects.get(id=request.session["id"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+        "limit": userfetched.accountLimit,
+    }
+
+    return render(
+        request, "leagueInformationforchecked.html", {"names": names, "data": data}
+    )
+
+
+@csrf_exempt
 def scappingwebLeagueInfo(request):
     body_unicode = request.body.decode("utf-8")
     body = body_unicode.split("=")

@@ -31,3 +31,10 @@ function showLeagueInfo(leagueName)
       });
   
 }
+
+
+function showLeagueInfoforchecked()
+{
+  names = document.getElementById("listofNames");
+  console.log(names.value);
+}
