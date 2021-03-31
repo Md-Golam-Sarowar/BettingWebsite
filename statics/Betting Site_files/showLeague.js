@@ -230,6 +230,63 @@ function showLeagueInfo(leagueName)
     {
       dataUrl = "https://mybookie.ag/sportsbook/french-open/#accordionBets3307"
     }
+    else if(leagueName == "Austria - EHL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/austria-ehl/"
+    }
+    else if(leagueName == "Belarus - Extra League")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/belarus-extra-league/"
+    }
+    else if(leagueName == "Canada - WHL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/canada-whl/"
+    }
+    else if(leagueName == "Canada - Quebec Major JR HL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/quebec-major-league/"
+    }
+    else if(leagueName == "Czech Republic - First League")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/czech-republic-first-league-hockey/"
+    }
+    else if(leagueName == "Finland - LIIGA")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/finland-liiga/"
+    }
+    else if(leagueName == "Germany - DEL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/germany-del/"
+    }
+    else if(leagueName == "Sweden - SHL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/sweden-shl/"
+    }
+    else if(leagueName == "Russia - MHL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/russia-mhl/"
+    }
+    else if(leagueName == "Russia - VHL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/russia-vhl/"
+    }
+    else if(leagueName == "Russia - KHL")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/russia-khl/"
+    }
+    else if(leagueName == "Switzerland - Swiss League")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/switzerland-swiss-league/"
+    }
+    else if(leagueName == "Switzerland - National League")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/switzerland-national-league/"
+    }
+    else if(leagueName == "U20 World Championshi")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/world-championship-hockey/"
+    }
+    
 
 
 
