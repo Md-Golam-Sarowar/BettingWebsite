@@ -174,6 +174,63 @@ function showLeagueInfo(leagueName)
     {
       dataUrl = "https://mybookie.ag/sportsbook/nba/"
     }
+    else if(leagueName == "ATP Lines")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/atp/"
+    }
+    else if(leagueName == "ATP Doubles")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/atp/#accordionBets3546"
+    }
+    else if(leagueName == "WTA Lines")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/wta/"
+    }
+    else if(leagueName == "WTA Doubles")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/wta/#accordionBets3547"
+    }
+    else if(leagueName == "ATP Challenger")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/atp-challenger/"
+    }
+    else if(leagueName == "ATP Challenger Doubles")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/atp-challenger/#accordionBets3578"
+    }
+    else if(leagueName == "ITF Men")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/itf/"
+    }
+    else if(leagueName == "ITF Men Doubles")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/itf/#accordionBets4908"
+    }
+    else if(leagueName == "ITF Women")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/itf/#accordionBets3551"
+    }
+    else if(leagueName == "ITF Womens Doubles")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/itf/#accordionBets4909"
+    }
+    else if(leagueName == "Australian Open Odds 2022")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/australian-open/"
+    }
+    else if(leagueName == "Wimbledon Odds 2021")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/wimbledon/"
+    }
+    else if(leagueName == "U.S.Open Odds 2021")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/us-open/#accordionBets3309"
+    }
+    else if(leagueName == "French Open Odds to win 2021")
+    {
+      dataUrl = "https://mybookie.ag/sportsbook/french-open/#accordionBets3307"
+    }
+
 
 
 
