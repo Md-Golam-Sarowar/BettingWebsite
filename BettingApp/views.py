@@ -495,40 +495,41 @@ def scappingLeagueInfoforContinueButton(request):
 
     for id in ids:
         dataUrl = ""
-        if id == 11:
+        if id == "11":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/spring-training/"
-        elif id == 12:
+        elif id == "12":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/contest-props/"
-        elif id == 13:
+        elif id == "13":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/world-series/"
-        elif id == 14:
+        elif id == "14":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/american-league/"
-        elif id == 15:
+        elif id == "15":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/national-league/"
-        elif id == 16:
+        elif id == "16":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/american-league-divisions/"
-        elif id == 17:
+        elif id == "17":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/national-league-divisions/"
-        elif id == 18:
+        elif id == "18":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/regular-season-wins/"
-        elif id == 19:
+        elif id == "19":
             dataUrl = "https://mybookie.ag/sportsbook/mlb/season-awards/"
-        elif id == 8:
+        elif id == "8":
             dataUrl = "https://mybookie.ag/sportsbook/college-football/championship/"
-        elif id == 9:
+        elif id == "9":
             dataUrl = "https://mybookie.ag/sportsbook/college-football/heisman-trophy/"
-        elif id == 2:
+        elif id == "2":
             dataUrl = "https://mybookie.ag/sportsbook/nfl/super-bowl/"
-        elif id == 3:
+        elif id == "3":
             dataUrl = "https://mybookie.ag/sportsbook/nfl/nfc/"
-        elif id == 4:
+        elif id == "4":
             dataUrl = "https://mybookie.ag/sportsbook/nfl/afc/"
-        elif id == 5:
+        elif id == "5":
             dataUrl = "https://mybookie.ag/sportsbook/nfl/afc/#accordionBets221"
-        elif id == 6:
+        elif id == "6":
             dataUrl = "https://mybookie.ag/sportsbook/nfl/draft/"
-        elif id == 153:
+        elif id == "153":
             dataUrl = "https://mybookie.ag/sportsbook/indian-premier-league/"
+
         # else if(leagueName == "Futures")
         # {
         # dataUrl = "https://mybookie.ag/sportsbook/cricket/#accordionBets1331"
