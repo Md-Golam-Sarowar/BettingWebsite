@@ -607,6 +607,98 @@ def scappingLeagueInfoforContinueButton(request):
             dataUrl = "https://mybookie.ag/sportsbook/switzerland-national-league/"
         elif id == "50":
             dataUrl = "https://mybookie.ag/sportsbook/world-championship-hockey/"
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        #  elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+        # elif id == "50":
+        #     dataUrl = ""
+
+            
         # elif id == :
         #     dataUrl = ""
 

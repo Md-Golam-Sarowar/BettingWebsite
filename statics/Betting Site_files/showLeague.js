@@ -1,7 +1,7 @@
 
 function showLeagueInfo(leagueName)
 {
-    dataurl = "";
+    dataUrl = "";
     if(leagueName == "MLB - Spring Training Odds")
     {
       dataUrl = "https://mybookie.ag/sportsbook/mlb/spring-training/"
@@ -282,7 +282,7 @@ function showLeagueInfo(leagueName)
     {
       dataUrl = "https://mybookie.ag/sportsbook/switzerland-national-league/"
     }
-    else if(leagueName == "U20 World Championshi")
+    else if(leagueName == "U20 World Championship")
     {
       dataUrl = "https://mybookie.ag/sportsbook/world-championship-hockey/"
     }
