@@ -54,6 +54,8 @@ from BettingApp.views import (
     scappingwebLeagueInfo,
     checkedLeaguesInformation,
     scappingLeagueInfoforContinueButton,
+    TeaserSports,
+    scappingLeagueInfoforTeacher,
 )
 
 urlpatterns = [
@@ -69,6 +71,7 @@ urlpatterns = [
     path("logout", logout),
     path("userinformation", userInformation),
     path("leagueInformation/<str:name>", getLeagueInformation),
+    path("teaserSports/<str:ids>", TeaserSports),
     path("checkedLeagues/<str:listofNames>", checkedLeaguesInformation),
     path("slowerscrapping", getfromwebpageslower),
     path("dropdownoptions", getdropdownoptions),
@@ -87,4 +90,5 @@ urlpatterns = [
     path("ActiveBets", allActiveBets),
     path("scappingLeagueInfo", scappingwebLeagueInfo),
     path("scappingLeagueInfoforContinue", scappingLeagueInfoforContinueButton),
+    path("scappingLeagueInfoforTeacher", scappingLeagueInfoforTeacher),
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import urllib.parse
+import re
 
 from .modules import (
     fasterScrappingLive,
@@ -295,8 +296,6 @@ def allActiveBets(request):
 
         Bets.append(singlebet)
 
-    print(Bets)
-
     return render(
         request,
         "myBets.html",
@@ -482,6 +481,84 @@ def scappingwebLeagueInfo(request):
         {
             "status": 200,
             "data": str(scrapped_data),
+        },
+        content_type="application/json",
+    )
+
+
+@csrf_exempt
+def TeaserSports(request, ids):
+    requiredids = []
+    split1 = ids.split(",")
+    tid = re.split("=", split1[0])
+    actualtid = tid[1].split("&")
+    requiredids.append(actualtid[0])
+    requiredids.append(tid[2])
+
+    for data in split1:
+        if "TID" not in data:
+            requiredids.append(data)
+
+    userfetched = userInfo.objects.get(id=request.session["id"])
+    allBets = myBet.objects.filter(user=userfetched)
+    allBetsHistory = betHistory.objects.filter(user=userfetched)
+
+    risk = 0
+    for bet in allBets:
+        risk = risk + bet.risk
+
+    balance = 0
+    for bethistory in allBetsHistory:
+        balance = balance + betHistory.win_loss_amount
+
+    data = {
+        "username": request.session["username"],
+        "password": request.session["password"],
+        "available": request.session["available"],
+        "risk": risk,
+        "balance": balance,
+        "limit": userfetched.accountLimit,
+    }
+
+    return render(
+        request, "leagueInformationforteacher.html", {"ids": requiredids, "data": data}
+    )
+
+
+@csrf_exempt
+def scappingLeagueInfoforTeacher(request):
+    body_unicode = request.POST
+    ids = body_unicode.getlist("url[]")
+    scrapped_data = ""
+
+    for id in ids:
+        dataUrl = ""
+
+        if id == "66":
+            dataUrl = "https://mybookie.ag/sportsbook/nba/"
+            scrapped_data += str(fasterScrappingLive.leagueInformation(dataUrl))
+        elif id == "69":
+            print("not found url")
+        elif id == "1":
+            print("not found url")
+        elif id == "2":
+            print("not found url")
+        elif id == "3":
+            print("not found url")
+        elif id == "4":
+            dataUrl = "https://mybookie.ag/sportsbook/ncaa-basketball/"
+            scrapped_data += str(fasterScrappingLive.leagueInformation(dataUrl))
+        elif id == "8":
+            print("not found url")
+        elif id == "18":
+            print("not found url")
+        elif id == "1476":
+            print("not found url")
+
+    return JsonResponse(
+        {
+            "status": 200,
+            "data": scrapped_data,
         },
         content_type="application/json",
     )

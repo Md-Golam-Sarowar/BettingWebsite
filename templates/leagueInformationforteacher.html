@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+{% load static %}
+
+<!-- saved from url=(0046)https://engine.betbig247.com/wager/Sports.aspx -->
+<html lang="en">
+
+<head id="ctl00_Head">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <link href="{% static 'Betting Site_files/css' %}" rel="stylesheet">
+    <title>
+        Bet Lounge 247
+    </title>
+    <link href="{% static 'Betting Site_files/root.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/custom.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/logos.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/primary-dark.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/secondary-dark.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/css2' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/sports-top-dark.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/sports-aux-dark.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/seoContentManager.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'Betting Site_files/jquery.min.js.download' %}"></script>
+    <script type="text/javascript" src="{% static 'Betting Site_files/logout.js' %}"></script>
+    <script type="text/javascript" src="{% static 'Betting Site_files/showLeagueforTeacher.js' %}"></script>
+
+
+
+    <style>
+        html,
+        body {
+            overflow-y: scroll;
+        }
+
+        html {
+            -webkit-text-size-adjust: none;
+        }
+
+        html,
+        body {
+            overflow-y: scroll;
+        }
+
+        #countMessages {
+            background-color: #fa3e3e;
+            border-radius: 20px;
+            color: white;
+            padding: 1px 7px;
+            font-size: 12px;
+            position: absolute;
+            margin-left: -3px;
+            margin-top: -7px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('touchmove', function (event) {
+            event = event.originalEvent || event;
+            if (event.scale > 1) {
+                event.preventDefault();
+            }
+        }, false);
+    </script>
+    <link href="{% static 'Betting Site_files/PlayerChat.css' %}" rel="stylesheet">
+    <link href="{% static 'Betting Site_files/Calendar.css' %}" type="text/css" rel="stylesheet">
+</head>
+
+<body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+    <!-- Start Page Loading -->
+    <div class="loading" style="display: none;">
+        <img src="{% static 'Betting Site_files/loading.gif' %}" alt="loading-img">
+    </div>
+    <!-- End Page Loading -->
+    <!-- START TOP -->
+    <div id="top" class="clearfix">
+
+
+        <!-- Start App Logo -->
+        <div class="applogo">
+            <div class="logo">Bal: <a href="/betHistory" class="" style="color:#f44336;"><span
+                        id="ctl00_WagerLnkTop_lblCurrentBalance">{{data.balance}} </span></a> | Avail: <span
+                    id="ctl00_WagerLnkTop_lblRealAvailBalance">{{data.available}} </span> | Risk: <a href="/ActiveBets"
+                    class=""><span id="ctl00_WagerLnkTop_lblAmountAtRisk">{{data.risk}} </span></a> <br> Limit: <a
+                    href="#" class=""><span>{{data.limit}} </span></a></div>
+        </div>
+        <!-- End App Logo -->
+
+
+        <!-- Start Sidebar Show Hide Button -->
+        <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+
+        <!-- End Sidebar Show Hide Button -->
+        <!-- Start Top Menu -->
+
+        <ul class="topmenu">
+            <li>
+                <a id="ctl00_lnkSports" href="/sports">Sports</a>
+            </li>
+
+
+            <li><a id="ctl00_lnkRacing" href="#">Racing</a></li>
+
+            <li><a style="color: #f44336;" href="/vipLiveBetting">VIP Live Betting</a></li>
+            <li>
+                <div style=" height: 29px;
+                    width: 100px;
+                    border: groove;
+                    border-width: 2px;
+                    border-color: black;
+                    display: table-cell;
+                    padding-top: 15px;
+                " class="rectangle"></div>
+                </style>
+            </li>
+
+
+
+            <li>
+                <a id="ctl00_lnkOpenBets" href="/openBets">Open Bets</a>
+            </li>
+            <li>
+                <a id="ctl00_lnkHistory" href="/betHistory">BetHistory</a>
+            </li>
+            <li>
+                <div style=" height: 29px;
+                        width: 113px;
+                        border: groove;
+                        border-width: 2px;
+                        border-color: black;
+                        display: table-cell;
+                        padding-top: 15px;
+                    " class="rectangle"></div>
+                </style>
+            </li>
+
+            <!--<li><a target="_blank" href="/wager/bridge_Historical.asp?a=BT18916&p=blazer">Previous History</a></li>-->
+
+
+        </ul>
+        <span id="cs_phone" class="cs_phone"></span>
+        <!-- End Top Menu -->
+        <!-- Start Sidepanel Show-Hide Button -->
+        <a href="/" id="logoutuser" onclick="logout()" class="sidepanel-open-button"><i class="fa fa-power-off"
+                style="color: #F00"></i></a> <!-- End Sidepanel Show-Hide Button -->
+        <!-- Start Top Right-->
+        <ul class="top-right">
+            <li class="link" data-toggle="modal" data-target="#BetTicketMB">
+                <a href="/dashboard" onclick="dashboard()" class="notifications"><i class="fa fa-user"></i>
+
+                    <span id="ctl00_AccountName_lblAccount">{{data.username}}</span>
+
+                </a>
+            </li>
+        </ul>
+        <!-- End Top Right -->
+    </div>
+    <!-- END TOP -->
+
+    <!-- START SIDEBAR -->
+
+    <div class="sidebar clearfix hidden-lg hidden-md">
+        <ul class="sidebar-panel nav">
+            <li><a href="/dashboard"><span class="icon fa fa-user"></span>
+
+                    <span id="ctl00_AccountFigures1_lblAccount">{{data.username}}</span>
+
+                </a></li>
+            <li><a href="/sports"><span class="icon sport-menu football"></span>Sports</a></li>
+
+
+            <li><a href="/vipLiveBetting"><span class="icon sport-menu horse-racing"></span>Racing</a></li>
+
+            <li><a style="color: red;" href="/vipLiveBetting"><span class="icon sport-menu other"></span>VIP Live
+                    Betting</a></li>
+
+        </ul>
+        <ul class="sidebar-panel nav">
+            <li class="sidetitle">ACCOUNT</li>
+            <li><a href="/openBets"><span class="icon color15"><i class="fa fa-angle-right"></i></span>Open Bets</a>
+            </li>
+            <li><a href="/betHistory"><span class="icon color15"><i class="fa fa-angle-right"></i></span>BetHistory</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--<li><a target="_blank" href="/wager/bridge_Historical.asp?a=BT18916&p=blazer"><span class="icon sport-menu other"></span>Previous History</a></li>
+            -->
+
+
+
+
+    </div>
+    <!-- END SIDEBAR -->
+
+    <!-- START CONTENT -->
+    <div class="content">
+        <form name="aspnetForm" method="post" action="https://engine.betbig247.com/wager/Sports.aspx" id="aspnetForm">
+            <div>
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                    value="/wEPDwUKLTcxNTcyODU3Ng9kFgJmD2QWBgIBD2QWBgIBDw8WAh4EVGV4dAUFLTM0MCBkZAIDDw8WAh8ABQIwIGRkAgUPDxYCHwAFBDI2MCBkZAIKD2QWAgIBDw8WAh8ABQdCVDE4OTE2ZGQCCw9kFgICAQ8PFgIfAAUHQlQxODkxNmRkZEcFaQKJYykknyDthmrVSBB6FbiS">
+            </div>
+
+            <div>
+
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D8889F42">
+            </div>
+
+            <br>
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <select name="selWT" id="selWT" class="form-control" onchange="changeWT()">
+                            <option value="sports" selected="">Straight</option>
+                            <option value="parlay">Parlay</option>
+                            <option value="teaser">Teaser</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="btn-group pull-right btnGrpUp" role="group">
+
+                            <a href="javascript:;" class="btn btn-sm btn-warning" onclick="showLines()">Continue</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Page Header -->
+            <!-- START CONTAINER -->
+            <div class="container-default" id="main-container">
+                <div id="totalids" style="color: white;" name="custId">{{ids}}</div>
+
+            </div>
+            <!-- END CONTAINER -->
+            <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Error</h4>
+                        </div>
+                        <div class="modal-body" id="modal_txt">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div id="betslip_hide" class="hide"></div>
+            <div id="betslip_temp" class="hide"></div>
+            <div id="betslip_start" class="hide"></div>
+            <div id="betslip_on" class="hide"></div>
+            <input type="hidden" name="isR" id="isR" value="false">
+            <input type="hidden" name="pid" id="pid" value="220359">
+            <input type="hidden" name="aid" id="aid" value="13446">
+            <input type="hidden" name="idp" id="idp" value="3164">
+            <input type="hidden" name="idpl" id="idpl" value="747">
+            <input type="hidden" name="idc" id="idc" value="73731405">
+            <input type="hidden" name="idlt" id="idlt" value="20">
+            <input type="hidden" name="idls" id="idls" value="E">
+            <input type="hidden" name="nhll" id="nhll" value="A">
+            <input type="hidden" name="mlbl" id="mlbl" value="W">
+            <input type="hidden" name="utc" id="utc" value="-4">
+            <input type="hidden" name="idlan" id="idlan" value="0">
+            <input type="hidden" name="idbook" id="idbook" value="4">
+            <input type="hidden" name="hash" id="hash" value="A0E271571CA9D37ADD16C0883BC301EB">
+            <input type="hidden" name="counter" id="counter" value="0">
+            <input type="hidden" name="currentWT" id="currentWT" value="0">
+            <input type="hidden" name="currentWTID" id="currentWTID" value="0">
+            <input type="hidden" name="games-sel" id="games-sel" value="">
+            <input type="hidden" name="currentLine" id="currentLine" value="">
+            <input type="hidden" name="currentXML" id="currentXML" value="">
+            <input type="hidden" name="currentP" id="currentP" value="BT18916|blazer">
+            <script>
+                $(function () {
+                    //$("form").addClass("form-inline");
+                    $("form").submit(function (e) {
+                        e.preventDefault();
+                    });
+
+                    // getactiveleagues(3164,20,0,4,0);
+                    getactiveleaguesFromDGSService(0)
+
+                    remove_all();
+                    //      setInterval("autoRefresh()", 10000);
+                });
+
+                function getactiveleaguesFromDGSService(wt) {
+                    if ($('#sportsDiv').length > 0) {
+                        $.get("/createSports", { WT: wt, auth: 'mPEV5DMcUXb4FzGG' },
+                            function (result) {
+                                $('#sportsDiv')['html']($(result).find("#leaguesMenu").html());
+                                $('#stFooter')['html']('<div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block" onClick="showLines()">CONTINUE</a></div>')['addClass']('stFooter');
+                                var _0xa31axd = document['getElementsByClassName']('accordion');
+                                for (var _0xa31axe = 0; _0xa31axe < _0xa31axd['length']; _0xa31axe++) {
+                                    _0xa31axd[_0xa31axe]['onclick'] = function () {
+                                        this['classList']['toggle']('active');
+                                        temp = $(this)['html']();
+                                        sid = $(this)['attr']('id');
+                                        $(this)['find']('a')['toggleClass']('hide');
+                                        this['nextElementSibling']['classList']['toggle']('show')
+                                    }
+                                }
+                                $('.loading').hide();
+                            });
+                    }
+                }
+            </script>
+
+
+            <input type="hidden" name="ctl00$hdfKeyCount" id="ctl00_hdfKeyCount"
+                value="Ro5pwXMyvrXdoIvYC+bfwEznSoUFA5UFX4w41OwfgBgkDtevR+0EeyS5ylplBlnO">
+        </form>
+        <!-- Start Footer -->
+        <div class="row footer">
+            <div class="col-md-6 text-left">
+                Copyright © Bet Lounge 247 2021. All rights reserved.
+            </div>
+            <div class="col-md-6 text-right">
+            </div>
+        </div>
+        <!-- End Footer -->
+        <!-- Start Mobile Footer -->
+        <footer class="col-xs-12 stFooter" id="stFooter">
+            <div class="container"><a href="javascript:;" class="btn btn-warning btn-sm btn-block"
+                    onclick="showLines()">CONTINUE</a></div>
+        </footer>
+        <!-- End Mobile Footer -->
+    </div>
+
+    <!-- End Content -->
+    <script src="{% static 'Betting Site_files/bootstrap.min.js.download' %}"></script>
+    <script type="text/javascript" src="{% static 'Betting Site_files/bootstrap-select.js.download' %}"></script>
+    <script type="text/javascript" src="{% static 'Betting Site_files/plugins.js.download' %}"></script>
+    <script src="{% static 'Betting Site_files/fastclick.min.js.download' %}"></script>
+    <script type="text/javascript" src="{% static 'Betting Site_files/web.js.download' %}"></script>
+    <script>
+        var bal = $('.balLinkTop');
+        balance = parseFloat(bal.find('span').html());
+        if (balance >= 0) {
+            bal.css('color', '#32CD32');
+        } else {
+            bal.css('color', '#F00');
+        }
+    </script>
+    <!-- <script type="text/javascript">
+        $(function () {
+            FastClick.attach(document.body);
+
+            CountNewMessages();
+
+            setInterval(function () {
+                CountNewMessages();
+            }, 60000);
+
+        });
+
+        function CountNewMessages() {
+            var sendRequest = "{key:'" + $('#ctl00_hdfKeyCount').val() + "'}";
+            var url = 'PlayerChat.ashx?type=GetCount';
+            $.ajax({
+                url: url,
+                type: "POST",
+                contentType: 'application/json',
+                data: sendRequest,
+                success: function (response) {
+                    if (response.code === 200 && response.message != 0) {
+                        $('#countMessages').show();
+                        $('#countMessages').text(response.message)
+                    }
+                    else {
+                        $('#countMessages').hide();
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //alert(xhr.status + thrownError);
+                },
+                failure: function (errMsg) {
+                    //alert(errMsg);
+                }
+            })
+        }
+
+
+    </script> -->
+
+
+
+</body>
+
+</html>
