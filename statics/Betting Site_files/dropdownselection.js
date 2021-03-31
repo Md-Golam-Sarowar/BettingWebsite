@@ -36,11 +36,9 @@ function collectcheckedlist()
         exactcheckbox = checkboxes[i].getElementsByClassName("c_league");
         if(exactcheckbox[0].checked == true)
         {
-            listOfLinks.push(checkboxes[i].getElementsByTagName("Label")[0].getElementsByTagName("a")[0].innerText);
+            listOfLinks.push(checkboxes[i].getElementsByTagName("Label")[0].getElementsByTagName("a")[0].attributes.value.value);
         }
     }
-
-    console.log(listOfLinks.length);
 
     if(listOfLinks.length>0)
     {
@@ -50,10 +48,5 @@ function collectcheckedlist()
     {
         alert("No Leagues Selected!");
     }
-    // $.ajax({
-    //     url: 'checkedLeagues',
-    //     type: "post",
-    //     data: Data,
-    //     dataType: 'application/json',
-    //   });
+
 }

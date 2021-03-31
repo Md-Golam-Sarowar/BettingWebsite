@@ -69,9 +69,7 @@
     <link href="{% static 'Betting Site_files/Calendar.css' %}" type="text/css" rel="stylesheet">
 </head>
 
-<input type="hidden" id="listofNames" name="custId" value={{names}}>
-
-<body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="" onload="showLeagueInfoforchecked()">
+<body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
     <!-- Start Page Loading -->
     <div class="loading" style="display: none;">
         <img src="{% static 'Betting Site_files/loading.gif' %}" alt="loading-img">
@@ -231,9 +229,9 @@
                 </div>
             </div>
             <!-- End Page Header -->
-
             <!-- START CONTAINER -->
             <div class="container-default" id="main-container">
+                <div id="totalids" style="color: white;" name="custId">{{ids}}</div>
 
             </div>
             <!-- END CONTAINER -->

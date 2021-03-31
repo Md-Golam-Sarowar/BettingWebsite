@@ -467,7 +467,7 @@ def checkedLeaguesInformation(request, listofNames):
     }
 
     return render(
-        request, "leagueInformationforchecked.html", {"names": names, "data": data}
+        request, "leagueInformationforchecked.html", {"ids": names, "data": data}
     )
 
 
@@ -477,11 +477,165 @@ def scappingwebLeagueInfo(request):
     body = body_unicode.split("=")
 
     scrapped_data = fasterScrappingLive.leagueInformation(urllib.parse.unquote(body[1]))
-    print(scrapped_data)
+
     return JsonResponse(
         {
             "status": 200,
             "data": str(scrapped_data),
+        },
+        content_type="application/json",
+    )
+
+
+@csrf_exempt
+def scappingLeagueInfoforContinueButton(request):
+    body_unicode = request.POST
+    ids = body_unicode.getlist("url[]")
+    scrapped_data = ""
+
+    for id in ids:
+        dataUrl = ""
+        if id == 11:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/spring-training/"
+        elif id == 12:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/contest-props/"
+        elif id == 13:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/world-series/"
+        elif id == 14:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/american-league/"
+        elif id == 15:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/national-league/"
+        elif id == 16:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/american-league-divisions/"
+        elif id == 17:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/national-league-divisions/"
+        elif id == 18:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/regular-season-wins/"
+        elif id == 19:
+            dataUrl = "https://mybookie.ag/sportsbook/mlb/season-awards/"
+        elif id == 8:
+            dataUrl = "https://mybookie.ag/sportsbook/college-football/championship/"
+        elif id == 9:
+            dataUrl = "https://mybookie.ag/sportsbook/college-football/heisman-trophy/"
+        elif id == 2:
+            dataUrl = "https://mybookie.ag/sportsbook/nfl/super-bowl/"
+        elif id == 3:
+            dataUrl = "https://mybookie.ag/sportsbook/nfl/nfc/"
+        elif id == 4:
+            dataUrl = "https://mybookie.ag/sportsbook/nfl/afc/"
+        elif id == 5:
+            dataUrl = "https://mybookie.ag/sportsbook/nfl/afc/#accordionBets221"
+        elif id == 6:
+            dataUrl = "https://mybookie.ag/sportsbook/nfl/draft/"
+        elif id == 153:
+            dataUrl = "https://mybookie.ag/sportsbook/indian-premier-league/"
+        # else if(leagueName == "Futures")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/cricket/#accordionBets1331"
+        # }
+        # else if(leagueName == "Elite Eight Odds March Madness")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/ncaa-basketball/march-madness/#accordionBets4"
+        # }
+        # else if(leagueName == "NCAA 1st Half Lines")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/ncaa-basketball/1st-half/"
+        # }
+        # else if(leagueName == "Women's March Madness Lines")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/ncaa-basketball-women/"
+        # }
+        # else if(leagueName == "France - Ligue A, Women")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/france-ligue-a-volleyball/#accordionBets4871"
+        # }
+        # else if(leagueName == "Korea Republic - V League")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/korea-v-league-volleyball/"
+        # }
+        # else if(leagueName == "Russia - Pro League")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/russia-pro-league/"
+        # }
+        # else if(leagueName == "Russia - Super League")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/russia-super-league-volleyball/"
+        # }
+        # else if(leagueName == "UFC Lines")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/ufc/"
+        # }
+        # else if(leagueName == "UFC Upcoming Events")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/ufc/#accordionBets3778"
+        # }
+        # else if(leagueName == "Bellator Odds")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/bellator/"
+        # }
+        # else if(leagueName == "Conor McGregor Odds")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/conor-mcgregor/"
+        # }
+        # else if(leagueName == "MMA Specials")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/mma/specials/"
+        # }
+        # else if(leagueName == "China - CBA")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/china-cba/"
+        # }
+        # else if(leagueName == "England - BBL")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/croatia-premier-league/"
+        # }
+        # else if(leagueName == "France - Pro A")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/france-lnb/"
+        # }
+        # else if(leagueName == "Germany - BBL")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/germany-bbl/"
+        # }
+        # else if(leagueName == "Greece - A1")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/greece-a1/"
+        # }
+        # else if(leagueName == "International Events ABA League")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/aba-league/"
+        # }
+        # else if(leagueName == "Lithuania - LKL")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/lithuania-lkl/"
+        # }
+        # else if(leagueName == "Slovenia - Premier A League")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/slovenia-premier-a-basketball/"
+        # }
+        # else if(leagueName == "South Korea - KBL")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/south-korea-kbl/"
+        # }
+        # else if(leagueName == "Sweden - Basketligan")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/sweden-basketball-league/"
+        # }
+        # else if(leagueName == "USA - NBA Player Props")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/nba/player-props/#accordionBets123"
+        # }
+        # else if(leagueName == "Uruguay - Uruguay (LUB)")
+        # {
+        # dataUrl = "https://mybookie.ag/sportsbook/nba/"
+        # }
+
+        scrapped_data += str(fasterScrappingLive.leagueInformation(dataUrl))
+
+    return JsonResponse(
+        {
+            "status": 200,
+            "data": scrapped_data,
         },
         content_type="application/json",
     )
