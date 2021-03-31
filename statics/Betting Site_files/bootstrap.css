@@ -1667,6 +1667,8 @@ pre code {
 }
 .col-xs-12 {
   width: 100%;
+  text-align: center;
+  color: white;
 }
 .col-xs-11 {
   width: 91.66666667%;
