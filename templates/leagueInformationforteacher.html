@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>
-        Betting Site
+        Bet Lounge 247
     </title>
     <link href="{% static 'Betting Site_files/root.css' %}" rel="stylesheet">
     <link href="{% static 'Betting Site_files/custom.css' %}" rel="stylesheet">
@@ -30,7 +30,7 @@
     <link href="{% static 'Betting Site_files/seoContentManager.css' %}" rel="stylesheet">
     <script type="text/javascript" src="{% static 'Betting Site_files/jquery.min.js.download' %}"></script>
     <script type="text/javascript" src="{% static 'Betting Site_files/logout.js' %}"></script>
-    <script type="text/javascript" src="{% static 'Betting Site_files/showLeague.js' %}"></script>
+    <script type="text/javascript" src="{% static 'Betting Site_files/showLeagueforTeacher.js' %}"></script>
 
 
 
@@ -73,8 +73,7 @@
     <link href="{% static 'Betting Site_files/Calendar.css' %}" type="text/css" rel="stylesheet">
 </head>
 
-<body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed=""
-    onload="showLeagueInfo('{{name}}')">
+<body class="color6-bg" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
     <!-- Start Page Loading -->
     <div class="loading" style="display: none;">
         <img src="{% static 'Betting Site_files/loading.gif' %}" alt="loading-img">
@@ -234,9 +233,10 @@
                 </div>
             </div>
             <!-- End Page Header -->
-
             <!-- START CONTAINER -->
             <div class="container-default" id="main-container">
+                <div id="totalids" style="color: black;" name="custId">{{ids}}</div>
+
                 <div style="text-align: center;">
                     <div class="spinner-grow text-dark" style="width: 6rem; height: 6rem;"></div>
                 </div>
