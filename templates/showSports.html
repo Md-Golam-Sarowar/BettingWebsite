@@ -172,14 +172,14 @@
         		<div class="col-xs-6">
                     <select name="selWT" id="selWT" class="form-control" onchange="changeWT()">
                         <option value="sports" selected="">Straight</option>
-                        <option value="parlay" >Parlay</option>
+                        <option value="sports" >Parlay</option>
                         <option value="teaser">Teaser</option>
                     </select>
 				</div>
             	<div class="col-xs-6">
                     <div class="btn-group pull-right btnGrpUp" role="group">
                         
-                        <a href="javascript:;" class="btn btn-sm btn-warning" onclick="showLines()">Continue</a>
+                        <a href="javascript:;" class="btn btn-sm btn-warning" onclick="collectcheckedlist()">Continue</a>
                         
                     </div>
                 </div>
@@ -215,13 +215,9 @@
     <div class="BT-allcont">
         <div class="row padding-5">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk1" class="btn btn-option2 btn-xs btn-block" onclick="start_straight()" href="javascript:;">Straight</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk2" class="btn btn-option2 btn-xs btn-block" onclick="start_parlay(&#39;1&#39;)" href="javascript:;">Parlay</a></div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk2" class="btn btn-option2 btn-xs btn-block" onclick="start_parlay()" href="javascript:;">Parlay</a></div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk3" class="btn btn-option2 btn-xs btn-block" onclick="start_teaser()" href="javascript:;">Teaser</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk4" class="btn btn-option2 btn-xs btn-block" onclick="start_parlay(&#39;5&#39;)" href="javascript:;">Round Robin</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk5" class="btn btn-option2 btn-xs btn-block" onclick="start_parlay(&#39;3&#39;)" href="javascript:;">If Win Only</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk6" class="btn btn-option2 btn-xs btn-block" onclick="start_parlay(&#39;7&#39;)" href="javascript:;">If Win or Tie</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk7" class="btn btn-option2 btn-xs btn-block" onclick="start_parlay(&#39;4&#39;)" href="javascript:;">Win Reverse</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-5"><a id="ctl00_WagerContent_SingleTemplateControl2_lnk8" class="btn btn-option2 btn-xs btn-block" onclick="start_parlay(&#39;8&#39;)" href="javascript:;">Action Reverse</a></div>
+
         </div>
     </div>
     

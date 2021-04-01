@@ -58,6 +58,7 @@ function changeLineStyle() {
 
 function changeWT() {
     var wt = $('#selWT')['val']();
+    console.log(wt);
     window['location'] = wt
 }
 

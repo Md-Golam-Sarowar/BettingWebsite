@@ -11,7 +11,7 @@ function straight()
 function parlay()
 {
     console.log("this");
-    window.location = "/parlay";
+    window.location = "sports";
 }
 
 
